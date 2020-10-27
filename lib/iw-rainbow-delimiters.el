@@ -10,4 +10,6 @@
   (rainbow-delimiters-depth-7-face   ((t (:foreground "orange"))))
   (rainbow-delimiters-depth-8-face   ((t (:foreground "slate blue"))))
   (rainbow-delimiters-depth-9-face   ((t (:foreground "light gray"))))
-  (rainbow-delimiters-unmatched-face ((t (:foreground "white")))))
+  (rainbow-delimiters-unmatched-face ((t (:foreground "white"))))
+  :config
+  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))

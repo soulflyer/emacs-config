@@ -18,6 +18,7 @@
  '(font-lock-type-face                 ((t (:foreground "#E00000"))))
  '(font-lock-variable-name-face        ((t (:foreground "#FF6400"))))
  '(font-lock-warning-face              ((t (:bold t :foreground "Pink"))))
- '(font-lock-doc-face                  ((t (:background "Black" :foreground "#61CE3C")))))
+ '(font-lock-doc-face                  ((t (:background "Black" :foreground "#61CE3C"))))
+ '(underline ((nil (:underline nil)))))
 
 (provide-theme 'blackbored)

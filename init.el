@@ -1,4 +1,4 @@
-();;; Setup use-package before anything else:
+;;; Setup use-package before anything else:
 ;;; Easiest to do this by hand.
 ;; (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -22,5 +22,10 @@
 (load "iw-expand-region")
 (load "iw-projectile")
 (load "iw-rainbow-delimiters")
+(load "iw-flycheck.el")
+
+(use-package which-key
+  :config
+  (which-key-mode t))
 (use-package smartparens)
 (use-package paradox)
