@@ -1,7 +1,7 @@
 (deftheme blackbored)
 (custom-theme-set-faces
  'blackbored
- '(default                             ((t (:background "Black" :foreground "#aaa8a8"))))
+ '(default                             ((t (:background "Black" :foreground "white"))))
  '(mode-line                           ((t (:background "gray10" :foreground "#4cff83"))))
  '(font-lock-builtin-face              ((t (:foreground "#4c83ff")))) ;; light blue
  '(font-lock-comment-face              ((t (:italic t :foreground "#aaa8a8"))))

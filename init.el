@@ -1,4 +1,4 @@
-;;; Setup use-package before anything else:
+();;; Setup use-package before anything else:
 ;;; Easiest to do this by hand.
 ;; (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
@@ -11,6 +11,7 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(load-theme 'blackbored)
 (add-to-list 'load-path "~/.emacs.d/lib")
 
 (load "iw-cleanup")
