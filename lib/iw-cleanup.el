@@ -1,3 +1,6 @@
+;;; iw-cleanup --- tidy up the display
+;;; Commentary:
+;;; Code:
 (require 'use-package)
 
 ;;; get rid of clutter
@@ -18,3 +21,5 @@
   (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode))
 
 (setq-default truncate-lines t)
+(provide 'iw-cleanup)
+;;; iw-cleanup.el ends here

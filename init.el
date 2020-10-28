@@ -1,9 +1,9 @@
 ;;; Setup use-package before anything else:
 ;;; Easiest to do this by hand.
-;; (require 'package)
+(require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-;; (package-initialize)
-;; (package-install 'use-package)
+(package-initialize)
+(package-install 'use-package)
 (require 'use-package)
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)

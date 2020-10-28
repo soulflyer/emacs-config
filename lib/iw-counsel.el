@@ -1,4 +1,9 @@
+;;; iw-counsel --- add counsel
+;;; Commentary:
+;;; Include smex or counsel-M-x doesn't keep history.
+;;; Code:
 (require 'use-package)
+(use-package smex)
 (use-package counsel
   :config (setq ivy-count-format "%d/%d:"
                 ivy-use-virtual-buffers t
@@ -11,3 +16,5 @@
          ("C-h f"   . counsel-describe-function)
          :map minibuffer-local-map
          ("C-r"     . counsel-minibuffer-history)))
+(provide 'iw-counsel)
+;;; iw-counsel.el ends here
