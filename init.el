@@ -23,24 +23,33 @@
 (setq savehist-autosave-interval 30
       savehist-mode t)
 
-(load "iw-cleanup")
-(load "iw-single-window")
-(load "iw-counsel")
-(load "iw-popwin")
-(load "iw-mac-osx")
-(load "iw-expand-region")
-(load "iw-projectile")
-(load "iw-rainbow-delimiters")
-(load "iw-flycheck.el")
-(load "iw-dired.el")
+(require 'iw-cleanup)
+(require 'iw-counsel)
+(require 'iw-dired)
+(require 'iw-expand-region)
+(require 'iw-flycheck)
+(require 'iw-ibuffer)
+(require 'iw-mac-osx)
+(require 'iw-popwin)
+(require 'iw-projectile)
+(require 'iw-rainbow-delimiters)
+(require 'iw-single-window)
+(require 'iw-smartparens)
+(require 'iw-global-bindings)
 
 (use-package which-key
   :config
   (which-key-mode t))
-(use-package smartparens)
-(use-package paradox)
 
-(global-set-key (kbd "M-~")     'switch-to-next-buffer)
-(global-set-key (kbd "M-`")     'switch-to-prev-buffer)
+(use-package paradox
+  :config (paradox-enable))
 
+(use-package rainbow-mode
+  :ensure t
+  :config
+  (setq rainbow-html-colors t
+	rainbow-r-colors t)
+  (add-hook 'emacs-lisp-mode-hook 'rainbow-mode))
+
+(global-hl-line-mode 1)
 ;;; init.el ends here

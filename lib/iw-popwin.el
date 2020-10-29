@@ -1,3 +1,6 @@
+;;; iw-popwin --- setup popwin
+;;; Commentary:
+;;; Code:
 (require 'use-package)
 (use-package popwin
   :ensure t
@@ -29,3 +32,6 @@
                                            ("*Compile-Log*" :height 30 :stick t)
                                            ("*git-gutter:diff*" :height 30 :stick t)
                                            ("*bm-bookmarks*" :height 20 :stick t))))
+
+(provide 'iw-popwin)
+;;; iw-popwin.el ends here

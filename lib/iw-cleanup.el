@@ -11,16 +11,13 @@
 ;;; remove bells
 (setq ring-bell-function 'ignore)
 
-;;; make fringe smaller
-(if (fboundp 'fringe-mode)
-    (fringe-mode 4))
-
 (use-package aggressive-indent
-  ;ensure t
+  :ensure t
   :config
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode))
 
 (setq-default truncate-lines t)
+
 (provide 'iw-cleanup)
 ;;; iw-cleanup.el ends here

@@ -5,7 +5,9 @@
 (use-package flycheck
   :ensure t
   :config
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+  (setq-default flycheck-emacs-lisp-load-path 'inherit)
+  (add-hook 'after-init-hook #'global-flycheck-mode)
+  :custom-face (flycheck-info ((t (:underline "pink")))))
 
 (use-package flycheck-clojure
   :ensure t)
