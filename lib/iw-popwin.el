@@ -1,5 +1,6 @@
 (require 'use-package)
 (use-package popwin
+  :ensure t
   :config (setq
            display-buffer-function       'popwin:display-buffer
            popwin:special-display-config '(("*Help*"  :height 30)

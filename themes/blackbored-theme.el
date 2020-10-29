@@ -3,8 +3,8 @@
  'blackbored
  '(default                             ((t (:background "Black" :foreground "white"))))
  '(mode-line                           ((t (:background "gray10" :foreground "#4cff83"))))
- '(font-lock-builtin-face              ((t (:foreground "#4c83ff")))) ;; light blue
- '(font-lock-comment-face              ((t (:foreground "aaa8a8a"))))
+ '(font-lock-builtin-face              ((t (:foreground "#4c83ff"))))
+ '(font-lock-comment-face              ((t (:foreground "#8a8aaa"))))
  '(font-lock-constant-face             ((t (:foreground "#D8FA3C"))))
  '(font-lock-doc-string-face           ((t (:foreground "DarkOrange"))))
  '(font-lock-function-name-face        ((t (:foreground "magenta"))))

@@ -1,3 +1,7 @@
+;;; iw-rainbow-delimiters --- setup pretty parens
+;;; Commentary:
+
+;;; Code:
 (require 'use-package)
 (use-package rainbow-delimiters
   :custom-face
@@ -13,3 +17,6 @@
   (rainbow-delimiters-unmatched-face ((t (:foreground "white"))))
   :config
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+
+(provide 'iw-rainbow-delimiters)
+;;; iw-rainbow-delimiters.el ends here

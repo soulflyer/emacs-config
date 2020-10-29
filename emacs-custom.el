@@ -5,11 +5,13 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(blackbored))
  '(custom-safe-themes
-   '("b28fb45f2260ec97fafe75a1fc98c97eecf7ea49e148bc9ac6ae29baf6a9d42c" "d5e37bf75a5e9ab3fcd8ea329ef324d5c0e9193f85fb47a8ca8ad6b841653dcb" "993047c57e85f9dbc8bf3cabad6195dee076cad8de309792a489c429ddacc1c4" "a379935bc457ef7a2ac15ea7858aa38763622a696ed365d927b4f85d6140daf7" default))
+   '("3312e078ca818f4f524684d66fb95d8b15b69887b8333daed9a2a7e6cc6dc11d" "15646836bf7e70b39fcdc98bb7d806980be33f6d92c91811434002da5b5a0b97" "1f268035025b02bbcc5934bc9fab9122eef89aeb1ee55b703dad868ed7281cd8" "b28fb45f2260ec97fafe75a1fc98c97eecf7ea49e148bc9ac6ae29baf6a9d42c" "d5e37bf75a5e9ab3fcd8ea329ef324d5c0e9193f85fb47a8ca8ad6b841653dcb" "993047c57e85f9dbc8bf3cabad6195dee076cad8de309792a489c429ddacc1c4" "a379935bc457ef7a2ac15ea7858aa38763622a696ed365d927b4f85d6140daf7" default))
  '(package-selected-packages
-   '(smex flycheck-clojure which-key use-package smartparens ripgrep rainbow-delimiters projectile popwin paradox flycheck expand-region exec-path-from-shell counsel aggressive-indent))
- '(savehist-autosave-interval 30)
- '(savehist-mode t))
+   '(org dired smex flycheck-clojure which-key use-package smartparens ripgrep rainbow-delimiters projectile popwin paradox flycheck expand-region exec-path-from-shell counsel aggressive-indent))
+ '(paradox-github-token t))
+
+
+ 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
