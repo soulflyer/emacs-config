@@ -19,6 +19,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'blackbored)
 (add-to-list 'load-path "~/.emacs.d/lib")
+(add-to-list 'load-path "~/.emacs.d/iw-lib")
 
 (setq savehist-autosave-interval 30
       savehist-mode t)
@@ -28,6 +29,7 @@
 (require 'iw-dired)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
+(require 'iw-hl-line)
 (require 'iw-ibuffer)
 (require 'iw-mac-osx)
 (require 'iw-popwin)
@@ -42,6 +44,7 @@
   (which-key-mode t))
 
 (use-package paradox
+  :ensure t
   :config (paradox-enable))
 
 (use-package rainbow-mode
@@ -51,5 +54,4 @@
 	rainbow-r-colors t)
   (add-hook 'emacs-lisp-mode-hook 'rainbow-mode))
 
-(global-hl-line-mode 1)
 ;;; init.el ends here
