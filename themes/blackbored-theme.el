@@ -5,10 +5,11 @@
 (custom-theme-set-faces
  'blackbored
  '(default                             ((t (:background "Black" :foreground "white"))))
- '(mode-line                           ((t (:background "gray10" :foreground "#4cff83"))))
+ '(mode-line                           ((t (:background "gray20" :foreground "#20d030"))))
+ '(mode-line-inactive                  ((t (:background "gray10" :foreground "gray30"))))
  '(hl-line                             ((t (:background "#101010"))))
  '(font-lock-builtin-face              ((t (:foreground "#4c83ff"))))
- '(font-lock-comment-face              ((t (:foreground "#8a8aaa"))))
+ '(font-lock-comment-face              ((t (:foreground "#8a8a8a"))))
  '(font-lock-constant-face             ((t (:foreground "#D8FA3C"))))
  '(font-lock-doc-string-face           ((t (:foreground "Darkorange"))))
  '(font-lock-function-name-face        ((t (:foreground "magenta"))))

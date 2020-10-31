@@ -1,5 +1,6 @@
 ;;; iw-flycheck --- set up syntax checking
 ;;; Commentary:
+;;; Ispell setup is included here too.
 ;;; Code:
 (require 'use-package)
 (use-package flycheck
@@ -7,6 +8,7 @@
   :config
   (setq-default flycheck-emacs-lisp-load-path 'inherit)
   (add-hook 'after-init-hook #'global-flycheck-mode)
+  (setq ispell-program-name "aspell")
   :custom-face (flycheck-info ((t (:underline "pink")))))
 
 (use-package flycheck-clojure

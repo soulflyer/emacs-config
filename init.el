@@ -31,13 +31,20 @@
 (require 'iw-flycheck)
 (require 'iw-hl-line)
 (require 'iw-ibuffer)
+(require 'iw-lisp)
 (require 'iw-mac-osx)
+(require 'iw-mouse)
 (require 'iw-popwin)
 (require 'iw-projectile)
 (require 'iw-rainbow-delimiters)
+(require 'iw-rainbow-mode)
 (require 'iw-single-window)
 (require 'iw-smartparens)
 (require 'iw-global-bindings)
+
+(use-package browse-kill-ring
+  :ensure t
+  :bind (("M-y" . browse-kill-ring)))
 
 (use-package which-key
   :config
@@ -47,11 +54,6 @@
   :ensure t
   :config (paradox-enable))
 
-(use-package rainbow-mode
-  :ensure t
-  :config
-  (setq rainbow-html-colors t
-	rainbow-r-colors t)
-  (add-hook 'emacs-lisp-mode-hook 'rainbow-mode))
+
 
 ;;; init.el ends here

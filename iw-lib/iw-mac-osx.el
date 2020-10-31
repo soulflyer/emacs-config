@@ -1,8 +1,11 @@
 ;;; iw-mac-osx.el --- osx specific setup
 ;;; Commentary:
-;;; Code:
-(require 'use-package)
+;;; Mostly taken from Sam Aarons emacs-live
 
+(require 'use-package)
+;;; Code:
+
+(setq default-input-method "MacOSX")
 (defun live-copy-from-osx ()
   "Copy from the osx clipboard."
   (shell-command-to-string "pbpaste"))

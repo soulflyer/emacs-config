@@ -1,12 +1,17 @@
 ;;; iw-projectile --- Setup projectile
 ;;; Commentary:
 
-;;; Code:
 (require 'use-package)
+
+;;; Code:
+(use-package async
+  :ensure t)
+
 (use-package projectile
   :ensure t
   :config
   (setq projectile-completion-system 'ivy))
+
 (use-package ripgrep
   :ensure t
   :bind (([f6] . projectile-ripgrep)))
