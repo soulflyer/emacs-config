@@ -1,9 +1,9 @@
-;;; iw-git.el --- git config                         -*- lexical-binding: t; -*-
+;;; iw-browse-kill-ring.el --- use kill-ring-browse  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  test
 
 ;; Author: test <test@subversion.local>
-;; Keywords: tools
+;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -20,21 +20,13 @@
 
 ;;; Commentary:
 
-(require 'use-package)
+;;
+
 ;;; Code:
 
-(use-package gitconfig-mode
-  :ensure t)
-
-(use-package gitignore-mode
-  :ensure t)
-
-(use-package git-gutter
+(use-package browse-kill-ring
   :ensure t
-  :init (global-git-gutter-mode +1))
+  :bind (("M-y" . browse-kill-ring)))
 
-(use-package magit
-  :ensure t)
-
-(provide 'iw-git)
-;;; iw-git.el ends here
+(provide 'iw-browse-kill-ring)
+;;; iw-browse-kill-ring.el ends here

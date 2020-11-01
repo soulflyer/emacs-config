@@ -23,12 +23,8 @@
 ;; TODO check that mouse follows window selection next time this is run as daemon
 
 (require 'use-package)
-;;; Code:
-
-(use-package exwm-mff
-  :ensure t)
-
 (require 'mouse)
+;;; Code:
 
 ;; mouse mode must be initialised for each new terminal
 ;; see http://stackoverflow.com/a/6798279/27782

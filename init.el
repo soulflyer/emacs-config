@@ -5,14 +5,13 @@
 
 ;;; Code:
 (require 'package)
+
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
 (package-install 'use-package)
 (require 'use-package)
 (require 'use-package-ensure)
-;; (setq use-package-always-ensure t)
-
-(require 'org-loaddefs)
 
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
@@ -21,14 +20,20 @@
 (add-to-list 'load-path "~/.emacs.d/lib")
 (add-to-list 'load-path "~/.emacs.d/iw-lib")
 
-(setq savehist-autosave-interval 30
-      savehist-mode t)
+(setq-default savehist-autosave-interval 30)
+(setq savehist-mode t)
 
+;;; This allows us to use space to accept y/n questions.
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(require 'iw-autocompile)
+(require 'iw-browse-kill-ring)
 (require 'iw-cleanup)
 (require 'iw-counsel)
 (require 'iw-dired)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
+(require 'iw-git)
 (require 'iw-hl-line)
 (require 'iw-ibuffer)
 (require 'iw-lisp)
@@ -40,11 +45,8 @@
 (require 'iw-rainbow-mode)
 (require 'iw-single-window)
 (require 'iw-smartparens)
+(require 'iw-text)
 (require 'iw-global-bindings)
-
-(use-package browse-kill-ring
-  :ensure t
-  :bind (("M-y" . browse-kill-ring)))
 
 (use-package which-key
   :config

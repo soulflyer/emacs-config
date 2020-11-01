@@ -8,6 +8,7 @@
 (global-set-key (kbd "C-x b")   'ibuffer)
 (global-set-key (kbd "C-\\")	'align-regexp)
 (global-set-key (kbd "M-SPC ")  'live-delete-whitespace-except-one)
+(global-set-key (kbd "M-/")     'comment-or-uncomment-region)
 
 ;; This is not the default behavior, where C-x SPC selects rectangle-mark-mode
 ;; C-space is used by MacOS, so set C-x SPC to the more useful set-matk-command

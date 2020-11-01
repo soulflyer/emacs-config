@@ -11,7 +11,10 @@
 (setq inhibit-startup-message t
       shift-select-mode t
       require-final-newline t
-      delete-by-moving-to-trash t)
+      delete-by-moving-to-trash t
+      make-backup-files nil ; stop creating those backup~ files
+      auto-save-default nil ; stop creating those #autosave# files
+      )
 
 ;;; remove bells
 (setq ring-bell-function 'ignore)

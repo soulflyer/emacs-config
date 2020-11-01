@@ -1,13 +1,16 @@
 ;;; iw-smartparens --- setup smartparens
 ;;; Commentary:
 (require 'use-package)
+
 ;;; Code:
 (use-package smartparens
   :ensure t
+  :init
+  (smartparens-global-mode)
+  (smartparens-global-strict-mode)
+  (show-paren-mode)
   :config
   (require 'smartparens-config)
-  (smartparens-global-mode t)
-  (smartparens-global-strict-mode)
   (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
   :bind (("C-<left>"	. sp-backward-sexp)
 	 ("C-<right>"	. sp-forward-sexp)
