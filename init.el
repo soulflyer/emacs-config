@@ -16,16 +16,20 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'blackbored)
+(load-theme  'blackbored)
 (add-to-list 'load-path "~/.emacs.d/lib")
 (add-to-list 'load-path "~/.emacs.d/iw-lib")
+(setq diary-file "~/Documents/org-mode/diary")
 
 (setq-default savehist-autosave-interval 30)
 (setq savehist-mode t)
 
+(setq-default indent-tabs-mode nil)
+
 ;;; This allows us to use space to accept y/n questions.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(require 'iw-auto-complete)
 (require 'iw-autocompile)
 (require 'iw-browse-kill-ring)
 (require 'iw-cleanup)
@@ -46,6 +50,7 @@
 (require 'iw-single-window)
 (require 'iw-smartparens)
 (require 'iw-text)
+(require 'iw-undo-tree)
 (require 'iw-global-bindings)
 
 (use-package which-key

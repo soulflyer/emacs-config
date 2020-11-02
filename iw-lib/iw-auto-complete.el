@@ -1,4 +1,4 @@
-;;; iw-text.el --- setup text tools                  -*- lexical-binding: t; -*-
+;;; iw-auto-complete.el --- autocomplete setup       -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  test
 
@@ -20,24 +20,17 @@
 
 ;;; Commentary:
 
+(require 'use-package)
 ;;; Code:
 
-(use-package banner-comment
+(use-package auto-complete
   :ensure t
-  :bind (("C-c t b" . banner-comment)))
+  :config
+  (ac-config-default)
+  (global-auto-complete-mode t)
+  :custom-face
+  (popup-face ((t (:inherit default :background "#303030" :foreground "yellow"))))
+  (popup-tip-face ((t (:background "#303030" :foreground "#20d020")))))
 
-(use-package underline-with-char
-  :ensure t
-  :config (setq-default underline-with-char-fill-char ?=)
-  :bind (("C-c t u" . underline-with-char)))
-
-(use-package annotate
-  :ensure t
-  :bind (("C-c a"   . annotate-mode)
-	 ("C-c C-a" . annotate-mode)))
-
-(global-set-key (kbd "C-c t c") 'comment-box)
-
-
-(provide 'iw-text)
-;;; iw-text.el ends here
+(provide 'iw-auto-complete)
+;;; iw-auto-complete.el ends here
