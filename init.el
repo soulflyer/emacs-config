@@ -19,7 +19,10 @@
 (load-theme  'blackbored)
 (add-to-list 'load-path "~/.emacs.d/lib")
 (add-to-list 'load-path "~/.emacs.d/iw-lib")
+
 (setq diary-file "~/Documents/org-mode/diary")
+(add-hook 'calendar-initial-window-hook 'diary-mark-entries)
+(global-set-key (kbd "C-c c") 'calendar)
 
 (setq-default savehist-autosave-interval 30)
 (setq savehist-mode t)

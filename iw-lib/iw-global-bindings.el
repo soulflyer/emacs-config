@@ -1,5 +1,6 @@
 ;;; iw-global-bindings --- set up keybindings
 ;;; Commentary:
+;;; Weird and naughty things that may upset someone used to the standard bindings.
 ;;; Mode specific bindings are in the setup file for that mode
 ;;; Code:
 
@@ -24,7 +25,7 @@
 ;; Shortcuts for C-x-digit commands
 (global-set-key (kbd "M-1")     'delete-other-windows)
 (global-set-key (kbd "M-0")     'delete-window)
-(global-set-key (kbd "M-o")     'win-switch-dispatch)
+(global-set-key (kbd "M-o")     'other-window)
 (global-set-key (kbd "M-2")     'split-window-below)
 (global-set-key (kbd "M-3")     'split-window-right)
 

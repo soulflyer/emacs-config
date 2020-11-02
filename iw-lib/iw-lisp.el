@@ -47,7 +47,9 @@ This checks in turn:
           ((setq sym (variable-at-point)) (describe-variable sym)))))
 
 (define-key lisp-mode-shared-map  (kbd "M-RET")   'live-lisp-describe-thing-at-point)
-(define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
+
+;;; Not necessary when using global aggressive indent
+;;; (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)
 
 (provide 'iw-lisp)
 ;;; iw-lisp.el ends here

@@ -27,10 +27,7 @@
   :ensure t
   :config
   (ac-config-default)
-  (global-auto-complete-mode t)
-  :custom-face
-  (popup-face ((t (:inherit default :background "#303030" :foreground "yellow"))))
-  (popup-tip-face ((t (:background "#303030" :foreground "#20d020")))))
+  (global-auto-complete-mode t))
 
 (provide 'iw-auto-complete)
 ;;; iw-auto-complete.el ends here
