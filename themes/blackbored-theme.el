@@ -39,6 +39,17 @@
  '(rainbow-delimiters-depth-8-face     ((t (:foreground "slate blue"))))
  '(rainbow-delimiters-depth-9-face     ((t (:foreground "light gray"))))
  '(rainbow-delimiters-unmatched-face   ((t (:foreground "white"))))
+
+ '(org-level-1 ((t (:foreground "#80ff00"))))
+ '(org-level-2 ((t (:foreground "#70e000"))))
+ '(org-level-3 ((t (:foreground "#60d000"))))
+ '(org-level-4 ((t (:foreground "#50c800"))))
+ '(org-level-5 ((t (:foreground "#40c000"))))
+ '(org-level-6 ((t (:foreground "#30a000"))))
+ '(org-level-7 ((t (:foreground "#209000"))))
+ '(org-level-8 ((t (:foreground "#108000"))))
+
+
  )
 
 (provide-theme 'blackbored)

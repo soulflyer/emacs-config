@@ -32,6 +32,12 @@
 ;;; This allows us to use space to accept y/n questions.
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(when (eq system-type 'darwin)
+  (require 'iw-mac-osx))
+
+;; (when (string= "subversion\n" (shell-command-to-string "hostname -s"))
+;;   (require 'iw-subversion.el))
+
 (require 'iw-auto-complete)
 (require 'iw-autocompile)
 (require 'iw-browse-kill-ring)
@@ -44,8 +50,9 @@
 (require 'iw-hl-line)
 (require 'iw-ibuffer)
 (require 'iw-lisp)
-(require 'iw-mac-osx)
 (require 'iw-mouse)
+(require 'iw-openwith)
+(require 'iw-org)
 (require 'iw-popwin)
 (require 'iw-projectile)
 (require 'iw-rainbow-delimiters)
@@ -56,6 +63,7 @@
 (require 'iw-undo-tree)
 (require 'iw-global-bindings)
 
+(use-package openwith)
 (use-package which-key
   :config
   (which-key-mode t))
