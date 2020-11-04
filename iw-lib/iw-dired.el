@@ -26,5 +26,8 @@
 	      ("/"   . 'dired-up-directory)
 	      ("\\"  . 'dired-up-directory)))
 
+(use-package openwith
+  :ensure t)
+
 (provide 'iw-dired)
 ;;; iw-dired.el ends here

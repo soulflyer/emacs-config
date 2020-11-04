@@ -37,7 +37,7 @@
 	 ("C-c C-a" . annotate-mode)))
 
 (global-set-key (kbd "C-c t c") 'comment-box)
-
+(global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
 
 (provide 'iw-text)
 ;;; iw-text.el ends here

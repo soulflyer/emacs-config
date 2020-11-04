@@ -42,6 +42,7 @@
 (require 'iw-autocompile)
 (require 'iw-browse-kill-ring)
 (require 'iw-cleanup)
+(require 'iw-clojure)
 (require 'iw-counsel)
 (require 'iw-dired)
 (require 'iw-expand-region)
@@ -63,7 +64,6 @@
 (require 'iw-undo-tree)
 (require 'iw-global-bindings)
 
-(use-package openwith)
 (use-package which-key
   :config
   (which-key-mode t))
@@ -73,5 +73,30 @@
   :config (paradox-enable))
 
 
+(setq live-ascii-art-running
+      ";;     MM\"\"\"\"\"\"\"\"`M
+;;     MM  mmmmmmmM
+;;     M`      MMMM 88d8b.d8b. .d8888b. .d8888b. .d8888b.
+;;     MM  MMMMMMMM 88''88'`88 88'  `88 88'  `\"\" Y8ooooo.
+;;     MM  MMMMMMMM 88  88  88 88.  .88 88.  ...       88
+;;     MM        .M dP  dP  dP `88888P8 '88888P' '88888P'
+;;     MMMMMMMMMMMM
+;;
+;;        M\"\"MMP\"\"\"\"\"\"`MM
+;;        M  M M  mmmmm..M
+;;        M  M M.      `YM
+;;        M  M MMMMMMM.  M
+;;        M  M M. .MMM'  M
+;;        M  M Mb.     .dM
+;;        MMMM MMMMMMMMMMM
+;;
+;;           M\"\"MMMMMMMM M\"\"M M\"\"MMMMM\"\"M MM\"\"\"\"\"\"\"\"`M
+;;           M  MMMMMMMM M  M M  MMMMM  M MM  mmmmmmmM
+;;           M  MMMMMMMM M  M M  MMMMP  M M`      MMMM
+;;           M  MMMMMMMM M  M M  MMMM' .M MM  MMMMMMMM
+;;           M  MMMMMMMM M  M M  MMP' .MM MM  MMMMMMMM
+;;           M         M M  M M     .dMMM MM        .M
+;;           MMMMMMMMMMM MMMM MMMMMMMMMMM MMMMMMMMMMMM")
 
+(message (concat "\n\n Pack loading completed. Your Emacs is Live...\n\n" live-ascii-art-running "\n\n"))
 ;;; init.el ends here
