@@ -26,7 +26,8 @@
   :ensure t
   :init (global-undo-tree-mode)
   :bind (("C-_" . undo-tree-undo)
-	 ("C-M-_" . undo-tree-visualize)))
+	 ("C-M-_" . undo-tree-visualize))
+  :delight)
 
 (provide 'iw-undo-tree)
 ;;; iw-undo-tree.el ends here

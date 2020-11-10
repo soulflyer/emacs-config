@@ -20,11 +20,11 @@
 
 ;;; Commentary:
 
-;; Does nothing yet.  Maybe add some pretty colours to the modeline so I can tell the machine at a glance.
+;; Add some pretty colours to the modeline so I can tell the machine at a glance.
 
 ;;; Code:
 
-
+(set-face-attribute 'mode-line nil :foreground "#4c83ff")
 
 (provide 'iw-subversion)
 ;;; iw-subversion.el ends here

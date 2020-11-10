@@ -12,6 +12,8 @@
 (package-install 'use-package)
 (require 'use-package)
 (require 'use-package-ensure)
+(use-package delight
+  :ensure t)
 
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
@@ -35,8 +37,8 @@
 (when (eq system-type 'darwin)
   (require 'iw-mac-osx))
 
-;; (when (string= "subversion\n" (shell-command-to-string "hostname -s"))
-;;   (require 'iw-subversion.el))
+(when (string= "subversion\n" (shell-command-to-string "hostname -s"))
+  (require 'iw-subversion))
 
 (require 'iw-auto-complete)
 (require 'iw-autocompile)
@@ -66,14 +68,15 @@
 
 (use-package which-key
   :config
-  (which-key-mode t))
+  (which-key-mode t)
+  :delight)
 
 (use-package paradox
   :ensure t
   :config (paradox-enable))
 
 
-(setq live-ascii-art-running
+(setq ascii-art-running
       ";;     MM\"\"\"\"\"\"\"\"`M
 ;;     MM  mmmmmmmM
 ;;     M`      MMMM 88d8b.d8b. .d8888b. .d8888b. .d8888b.
@@ -98,5 +101,5 @@
 ;;           M         M M  M M     .dMMM MM        .M
 ;;           MMMMMMMMMMM MMMM MMMMMMMMMMM MMMMMMMMMMMM")
 
-(message (concat "\n\n Pack loading completed. Your Emacs is Live...\n\n" live-ascii-art-running "\n\n"))
+(message (concat "\n\n Pack loading completed. Your Emacs is Live...\n\n" ascii-art-running "\n\n"))
 ;;; init.el ends here

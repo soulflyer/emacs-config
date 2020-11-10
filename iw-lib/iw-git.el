@@ -31,7 +31,8 @@
 
 (use-package git-gutter
   :ensure t
-  :init (global-git-gutter-mode +1))
+  :init (global-git-gutter-mode +1)
+  :delight)
 
 (use-package magit
   :ensure t)

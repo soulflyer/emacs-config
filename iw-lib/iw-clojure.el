@@ -73,9 +73,5 @@
 (use-package cljr-ivy
   :ensure t)
 
-;;TODO this could be useful when cider isn't available.  Sort out some keybindings, maybe M-Ret can revert to this.
-(use-package ivy-clojuredocs
-  :ensure t)
-
 (provide 'iw-clojure)
 ;;; iw-clojure.el ends here

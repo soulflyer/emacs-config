@@ -7,6 +7,7 @@
   :config
   (setq rainbow-html-colors t
 	rainbow-r-colors t)
-  (add-hook 'emacs-lisp-mode-hook 'rainbow-mode))
+  (add-hook 'emacs-lisp-mode-hook 'rainbow-mode)
+  :delight)
 (provide 'iw-rainbow-mode)
 ;;; iw-rainbow-mode.el ends here
