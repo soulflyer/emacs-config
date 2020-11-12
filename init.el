@@ -35,6 +35,7 @@
 
 ;;  Add config for specific purposes.
 (require 'iw-cleanup)
+(require 'iw-clojure)
 (require 'iw-single-window)
 (require 'iw-text)
 (require 'iw-tweaks)
@@ -43,7 +44,6 @@
 (require 'iw-auto-complete)
 (require 'iw-autocompile)
 (require 'iw-browse-kill-ring)
-(require 'iw-clojure)
 (require 'iw-counsel)
 (require 'iw-dired)
 (require 'iw-expand-region)

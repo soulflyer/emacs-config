@@ -73,5 +73,8 @@
 (use-package cljr-ivy
   :ensure t)
 
+;;(require 're-jump)
+;;(global-set-key (kbd "M->") 're-frame-jump-to-reg)
+
 (provide 'iw-clojure)
 ;;; iw-clojure.el ends here
