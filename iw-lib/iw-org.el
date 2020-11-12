@@ -48,5 +48,8 @@
   :bind (("C-c o" . org-agenda))
   )
 
+(add-hook 'calendar-initial-window-hook 'diary-mark-entries)
+(global-set-key (kbd "C-c c") 'calendar)
+
 (provide 'iw-org)
 ;;; iw-org.el ends here

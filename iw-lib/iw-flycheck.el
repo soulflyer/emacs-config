@@ -7,9 +7,7 @@
   :ensure t
   :config
   (setq-default flycheck-emacs-lisp-load-path 'inherit)
-  (add-hook 'after-init-hook #'global-flycheck-mode)
-  (setq ispell-program-name "aspell")
-  :custom-face (flycheck-info ((t (:underline "pink")))))
+  (add-hook 'after-init-hook #'global-flycheck-mode))
 
 (use-package flycheck-clojure
   :ensure t)

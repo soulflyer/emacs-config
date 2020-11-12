@@ -27,6 +27,7 @@
   (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode))
 
 (setq-default truncate-lines t)
+(setq-default indent-tabs-mode nil)
 
 (defun live-delete-whitespace-except-one ()
   "Remove all whitespace except one."

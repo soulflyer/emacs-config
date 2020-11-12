@@ -4,46 +4,45 @@
 ;;; May need to do the first part by hand after a fresh install.
 
 ;;; Code:
+;; This setup makes extensive use of package and use-package.  Install them first.
 (require 'package)
-
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
-
-(package-install 'use-package)
+(when (not (package-installed-p 'use-package))
+  (package-install 'use-package))
 (require 'use-package)
 (require 'use-package-ensure)
 (use-package delight
   :ensure t)
+(use-package paradox
+  :ensure t
+  :init (paradox-enable))
 
+;; Set some paths.
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme  'blackbored)
 (add-to-list 'load-path "~/.emacs.d/lib")
 (add-to-list 'load-path "~/.emacs.d/iw-lib")
+(setq-default diary-file "~/Documents/org-mode/diary")
 
-(setq diary-file "~/Documents/org-mode/diary")
-(add-hook 'calendar-initial-window-hook 'diary-mark-entries)
-(global-set-key (kbd "C-c c") 'calendar)
-
-(setq-default savehist-autosave-interval 30)
-(setq savehist-mode t)
-
-(setq-default indent-tabs-mode nil)
-
-;;; This allows us to use space to accept y/n questions.
-(defalias 'yes-or-no-p 'y-or-n-p)
-
+;; Add config for specific systems and machines.
 (when (eq system-type 'darwin)
   (require 'iw-mac-osx))
-
 (when (string= "subversion\n" (shell-command-to-string "hostname -s"))
   (require 'iw-subversion))
 
+;;  Add config for specific purposes.
+(require 'iw-cleanup)
+(require 'iw-single-window)
+(require 'iw-text)
+(require 'iw-tweaks)
+
+;;Most of these are just a single package.
 (require 'iw-auto-complete)
 (require 'iw-autocompile)
 (require 'iw-browse-kill-ring)
-(require 'iw-cleanup)
 (require 'iw-clojure)
 (require 'iw-counsel)
 (require 'iw-dired)
@@ -60,22 +59,14 @@
 (require 'iw-projectile)
 (require 'iw-rainbow-delimiters)
 (require 'iw-rainbow-mode)
-(require 'iw-single-window)
 (require 'iw-smartparens)
-(require 'iw-text)
 (require 'iw-undo-tree)
+(require 'iw-which-key)
+
+;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)
 
-(use-package which-key
-  :config
-  (which-key-mode t)
-  :delight)
-
-(use-package paradox
-  :ensure t
-  :config (paradox-enable))
-
-
+;; Display a message, useful when starting the server.
 (setq ascii-art-running
       ";;     MM\"\"\"\"\"\"\"\"`M
 ;;     MM  mmmmmmmM
@@ -101,5 +92,5 @@
 ;;           M         M M  M M     .dMMM MM        .M
 ;;           MMMMMMMMMMM MMMM MMMMMMMMMMM MMMMMMMMMMMM")
 
-(message (concat "\n\n Pack loading completed. Your Emacs is Live...\n\n" ascii-art-running "\n\n"))
+(message (concat "\n\n" ascii-art-running "\n\n"))
 ;;; init.el ends here
