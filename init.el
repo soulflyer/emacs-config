@@ -59,7 +59,9 @@
 (require 'iw-projectile)
 (require 'iw-rainbow-delimiters)
 (require 'iw-rainbow-mode)
-(require 'iw-smartparens)
+;; paredit or smartparens, not both. They use the same bindings.
+(require 'iw-paredit)
+;; (require 'iw-smartparens)
 (require 'iw-undo-tree)
 (require 'iw-which-key)
 

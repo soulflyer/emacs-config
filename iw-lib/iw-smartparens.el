@@ -23,7 +23,7 @@
 	 ("C-c b s"	. sp-backward-slurp-sexp)
 	 ("C-c f b"	. sp-forward-barf-sexp)
 	 ("C-c b b"	. sp-backward-barf-sexp)
-	 ))
+         ("M-)"         . sp-forward-slurp-sexp)))
 
 (provide 'iw-smartparens)
 ;;; iw-smartparens.el ends here
