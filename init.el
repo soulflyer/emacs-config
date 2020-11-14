@@ -19,13 +19,15 @@
   :init (paradox-enable))
 
 ;; Set some paths.
-(setq custom-file "~/.emacs.d/emacs-custom.el")
+(setq custom-file                    "~/.emacs.d/etc/emacs-custom.el")
 (load custom-file)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+(add-to-list 'load-path              "~/.emacs.d/lib")
+(add-to-list 'load-path              "~/.emacs.d/iw-lib")
+(setq-default diary-file             "~/Documents/org-mode/diary"
+              bm-repository-file     "~/.emacs.d/etc/bm-repository")
+
 (load-theme  'blackbored)
-(add-to-list 'load-path "~/.emacs.d/lib")
-(add-to-list 'load-path "~/.emacs.d/iw-lib")
-(setq-default diary-file "~/Documents/org-mode/diary")
 
 ;; Add config for specific systems and machines.
 (when (eq system-type 'darwin)
@@ -34,8 +36,11 @@
   (require 'iw-subversion))
 
 ;;  Add config for specific purposes.
+(require 'iw-bookmark)
 (require 'iw-cleanup)
 (require 'iw-clojure)
+(require 'iw-git)
+(require 'iw-org)
 (require 'iw-single-window)
 (require 'iw-text)
 (require 'iw-tweaks)
@@ -48,13 +53,11 @@
 (require 'iw-dired)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
-(require 'iw-git)
 (require 'iw-hl-line)
 (require 'iw-ibuffer)
 (require 'iw-lisp)
 (require 'iw-mouse)
 (require 'iw-openwith)
-(require 'iw-org)
 (require 'iw-popwin)
 (require 'iw-projectile)
 (require 'iw-rainbow-delimiters)

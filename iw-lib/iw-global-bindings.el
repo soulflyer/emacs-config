@@ -29,5 +29,8 @@
 (global-set-key (kbd "M-2")     'split-window-below)
 (global-set-key (kbd "M-3")     'split-window-right)
 
+;; Tmux steals C-q so this will have to do instead.
+(global-set-key (kbd "C-M-q")   'quoted-insert)
+
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here
