@@ -1,8 +1,8 @@
-;;; iw-ibuffer.el --- Tidy up ibuffer display        -*- lexical-binding: t; -*-
+;;; iw-multiple-cursors.el --- Setup multiple cursors   -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  Iain Wood
 
-;; Author: Iain Wood;;; iw-ibuffer --- tidy up ibuffer display <iain@soulflyer.co.uk>
+;; Author: Iain Wood <iain@soulflyer.co.uk>
 ;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -19,21 +19,23 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; ibuffer-git is using cl which is deprecated.  Maybe there is an alternative?
-
-;;; Code:
 
 (require 'use-package)
+
 ;;; Code:
 
-(use-package ibuffer-git
+(use-package multiple-cursors
   :ensure t
-  :config (setq ibuffer-formats '((mark modified read-only git-status-mini " "
-				        (size 7 -1 :left :elide)
-				        (name))
-			          (mark filename)))
-  :bind (("C-x b"   . ibuffer)
-	 ("C-x C-b" . ibuffer)))
+  :bind (("C-c m n" . mc/mark-next-like-this)
+         ("C-c m p" . mc/mark-previous-like-this)
+         ("C-c m o" . mc/mark-pop)
+         ("C-c m m" . mc/mark-more-like-this-extended)
+         ("C-c m d" . mc/mark-all-dwim)
+         ("C-c m a" . mc/mark-all-like-this)))
 
-(provide 'iw-ibuffer)
-;;; iw-ibuffer.el ends here
+(use-package ace-mc
+  :ensure t
+  :bind (("C-c m j" . ace-mc-add-multiple-cursors)))
+
+(provide 'iw-multiple-cursors)
+;;; iw-multiple-cursors.el ends here

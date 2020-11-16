@@ -1,8 +1,8 @@
-;;; iw-ibuffer.el --- Tidy up ibuffer display        -*- lexical-binding: t; -*-
+;;; iw-helm.el --- Setup helm                        -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2020  Iain Wood
 
-;; Author: Iain Wood;;; iw-ibuffer --- tidy up ibuffer display <iain@soulflyer.co.uk>
+;; Author: Iain Wood <iain@soulflyer.co.uk>
 ;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -19,21 +19,16 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; ibuffer-git is using cl which is deprecated.  Maybe there is an alternative?
-
-;;; Code:
 
 (require 'use-package)
+
 ;;; Code:
 
-(use-package ibuffer-git
-  :ensure t
-  :config (setq ibuffer-formats '((mark modified read-only git-status-mini " "
-				        (size 7 -1 :left :elide)
-				        (name))
-			          (mark filename)))
-  :bind (("C-x b"   . ibuffer)
-	 ("C-x C-b" . ibuffer)))
+(use-package helm
+  :ensure t)
 
-(provide 'iw-ibuffer)
-;;; iw-ibuffer.el ends here
+(use-package helm-descbinds
+  :ensure t)
+
+(provide 'iw-helm)
+;;; iw-helm.el ends here
