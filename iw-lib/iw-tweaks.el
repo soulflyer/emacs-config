@@ -31,5 +31,12 @@
 
 (setq-default ispell-program-name "aspell")
 
+(defun iw-set-mark-no-activate ()
+  "Set the mark without activating the region."
+  (interactive)
+  (push-mark))
+
+(global-set-key (kbd "C-x m") 'iw-set-mark-no-activate)
+
 (provide 'iw-tweaks)
 ;;; iw-tweaks.el ends here

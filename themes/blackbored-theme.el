@@ -48,7 +48,18 @@
  '(org-level-5                         ((t (:foreground "#40c000"))))
  '(org-level-6                         ((t (:foreground "#30a000"))))
  '(org-level-7                         ((t (:foreground "#209000"))))
- '(org-level-8                         ((t (:foreground "#108000")))))
+ '(org-level-8                         ((t (:foreground "#108000"))))
 
+ '(visible-mark-active ((t (:background "#d0ffd0"))))
+ '(visible-mark-face1  ((t (:background "#80ff00"))))
+ '(visible-mark-face2  ((t (:background "#70a000"))))
+ '(visible-mark-face3  ((t (:background "#609000"))))
+ '(visible-mark-face4  ((t (:background "#507000"))))
+ '(visible-mark-face5  ((t (:background "#405000"))))
+ '(visible-mark-face6  ((t (:background "#305000"))))
+ '(visible-mark-face7  ((t (:background "#205020"))))
+ '(visible-mark-face8  ((t (:background "#104020"))))
+
+ )
 (provide-theme 'blackbored)
 ;;; blackbored-theme.el ends here

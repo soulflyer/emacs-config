@@ -21,7 +21,14 @@
 ;;; Commentary:
 ;; ace-jump-mode uses deprecated package: CL.
 ;; Consider switching to AVY instead.  Will need to modify
-;; jump-char.el to call avy instead of ac-jump.
+;; jump-char.el to call avy instead of ace-jump.
+
+;; frog-jump-buffer works in gui Emacs but not command line.  ace-jump-buffer works ok.
+;; jump-tree doesn't work in command line version.  The cursor is invisible so there is
+;; no way to see where its jumping to.  This is probably interaction with tmux.  The
+;; cursor is never visible in an unfocussed frame.
+
+;; back-button could be improved by adding smartrep.  Let's see how much it gets useed first.
 
 (require 'use-package)
 
@@ -33,6 +40,18 @@
 (use-package jump-char
   :ensure t
   :bind (("M-j" . jump-char-forward)))
+
+(use-package back-button
+  :ensure t)
+
+;; (use-package frog-jump-buffer
+;;   :ensure t)
+
+(use-package ace-jump-buffer
+  :ensure t)
+
+;; (use-package jump-tree
+;;   :ensure t)
 
 (provide 'iw-jump)
 ;;; iw-jump.el ends here

@@ -68,6 +68,7 @@
 (require 'iw-paredit)
 ;; (require 'iw-smartparens)
 (require 'iw-undo-tree)
+(require 'iw-visible-mark)
 (require 'iw-which-key)
 
 ;; Add the extra bindings last so they don't get overwriiten.

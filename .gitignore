@@ -9,3 +9,5 @@ ac-comphist.dat
 tramp
 .tmux
 /etc
+/var
+.mc-lists.el
