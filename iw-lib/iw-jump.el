@@ -28,7 +28,8 @@
 ;; no way to see where its jumping to.  This is probably interaction with tmux.  The
 ;; cursor is never visible in an unfocussed frame.
 
-;; back-button could be improved by adding smartrep.  Let's see how much it gets useed first.
+;; back-button could be improved by adding smartrep.  Let's see how much it gets used first.
+;; Have to unbind C-c SPC so it doesn't steal the set-mark command.
 
 (require 'use-package)
 
@@ -42,7 +43,11 @@
   :bind (("M-j" . jump-char-forward)))
 
 (use-package back-button
-  :ensure t)
+  :ensure t
+  :config
+  (back-button-mode 1)
+  :bind (:map back-button-mode-map
+              ("C-x SPC" . nil)))
 
 ;; (use-package frog-jump-buffer
 ;;   :ensure t)

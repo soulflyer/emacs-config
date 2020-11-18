@@ -45,7 +45,7 @@
               ("M-\""       . paredit-meta-doublequote)
               ("M-("        . paredit-wrap-round)
               ;; Bad things happen if M-[ gets remapped . Lose the fn keys for a start.
-              ;; ("M-[" . paredit-wrap-square)
+              ;; ("M-["        . paredit-wrap-square)
               ("M-{"        . paredit-wrap-curly)))
 
 ;; Stop paredit from shooting you in the foot by pasting unbalanced parens.
