@@ -29,5 +29,10 @@
 (use-package openwith
   :ensure t)
 
+(use-package dired-efap
+  :ensure t
+  :bind (:map dired-mode-map
+              ("r"   . 'dired-efap)))
+
 (provide 'iw-dired)
 ;;; iw-dired.el ends here

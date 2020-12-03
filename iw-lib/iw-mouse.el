@@ -20,7 +20,6 @@
 
 ;;; Commentary:
 ;; Most of this lifted from Sam Aarons emacs-live config.
-;; TODO check that mouse follows window selection next time this is run as daemon
 
 (require 'use-package)
 (require 'mouse)

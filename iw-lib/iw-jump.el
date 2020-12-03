@@ -20,8 +20,9 @@
 
 ;;; Commentary:
 ;; ace-jump-mode uses deprecated package: CL.
-;; Consider switching to AVY instead.  Will need to modify
+;; TODO Consider switching to AVY instead.  Will need to modify
 ;; jump-char.el to call avy instead of ace-jump.
+;; TODO consider combining jump and search with ace-search
 
 ;; frog-jump-buffer works in gui Emacs but not command line.  ace-jump-buffer works ok.
 ;; jump-tree doesn't work in command line version.  The cursor is invisible so there is

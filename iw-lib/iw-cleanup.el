@@ -26,6 +26,10 @@
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode))
 
+;; This will expand a line of code that was written all on one line.
+(use-package prog-fill
+  :ensure t)
+
 (setq-default truncate-lines t)
 (setq-default indent-tabs-mode nil)
 

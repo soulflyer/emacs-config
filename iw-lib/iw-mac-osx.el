@@ -10,6 +10,12 @@
 (use-package exec-path-from-shell
   :config (exec-path-from-shell-initialize))
 
+(use-package osx-dictionary
+  :ensure t)
+
+(use-package launchctl
+  :ensure t)
+
 (defun live-paste-to-osx (text &optional push)
   "Paste TEXT to the clipboard.  PUSH."
   (let ((process-connection-type nil))

@@ -23,9 +23,9 @@
  '(font-lock-type-face                 ((t (:foreground "#E00000"))))
  '(font-lock-variable-name-face        ((t (:foreground "#FF6400"))))
  '(font-lock-warning-face              ((t (:foreground "Pink"))))
- '(font-lock-doc-face                  ((t (:background "Black" :foreground "#61CE3C"))))
+ '(font-lock-doc-face                  ((t (:foreground "#61CE3C"))))
  '(region                              ((t (:background "#7F073F"))))
-
+ '(ivy-current-match                   ((t (:background "gray40"))))
  '(popup-face                          ((t (:background "#303030" :foreground "yellow"))))
  '(popup-tip-face                      ((t (:background "#303030" :foreground "#20d020"))))
  '(flycheck-info                       ((t (:underline  "pink"))))

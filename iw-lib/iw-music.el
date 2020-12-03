@@ -1,9 +1,9 @@
-;;; iw-git.el --- git config                         -*- lexical-binding: t; -*-
+;;; iw-music.el --- Setup packages for Music         -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2020  test
+;; Copyright (C) 2020  Iain Wood
 
-;; Author: test <test@subversion.local>
-;; Keywords: tools
+;; Author: Iain Wood <iain@soulflyer.co.uk>
+;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -19,23 +19,11 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; TODO consider git-timemachine https://gitlab.com/pidu/git-timemachine
+
+;;
 (require 'use-package)
 ;;; Code:
 
-(use-package gitconfig-mode
-  :ensure t)
 
-(use-package gitignore-mode
-  :ensure t)
-
-(use-package git-gutter
-  :ensure t
-  :init (global-git-gutter-mode +1)
-  :delight)
-
-(use-package magit
-  :ensure t)
-
-(provide 'iw-git)
-;;; iw-git.el ends here
+(provide 'iw-music)
+;;; iw-music.el ends here

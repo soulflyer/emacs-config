@@ -31,12 +31,41 @@
 
 (setq-default ispell-program-name "aspell")
 
-(defun iw-set-mark-no-activate ()
-  "Set the mark without activating the region."
-  (interactive)
-  (push-mark))
+;; This allows easy tweaking of colours. Select some text and do M-x make-color
+;; Colours can be changed by RGB HSL CMY keys, k to add the current colour to the
+;; kill ring.
+;; https://github.com/alezost/make-color.el
+(use-package make-color
+  :ensure t)
 
-(global-set-key (kbd "C-x m") 'iw-set-mark-no-activate)
+;; This will convert ascii codes into their key equivalents.
+(use-package visual-ascii-mode
+  :ensure t)
+
+(use-package register-list
+  :ensure t)
+
+(use-package iregister
+  :ensure t)
+
+(use-package goto-last-change
+  :ensure t
+  :bind (("M-g c" . goto-last-change)))
+
+;; This is only vaguely useful in terminal emacs. It will scroll the screen so the correct
+;; position is visible but the cursor is not highlighted.
+(use-package goto-char-preview
+  :ensure t)
+
+(use-package beacon
+  :ensure t
+  :init
+  (setq beacon-size 60
+        beacon-color "yellow"
+        beacon-blink-delay 0.3
+        beacon-blink-duration 0.1
+        beacon-dont-blink-major-modes '(cider-repl-mode)
+        beacon-blink-when-window-scrolls t))
 
 (provide 'iw-tweaks)
 ;;; iw-tweaks.el ends here

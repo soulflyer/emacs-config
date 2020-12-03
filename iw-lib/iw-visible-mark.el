@@ -19,7 +19,8 @@
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-
+;; This is mostly for use with multiple-cursors mc/mark-pop
+`
 (require 'use-package)
 
 ;;; Code:
@@ -61,6 +62,13 @@
                              visible-mark-face8))
   (setq visible-mark-max 8)
   :bind (("C-c v" . visible-mark-mode)))
+
+(defun iw-set-mark-no-activate ()
+  "Set the mark without activating the region."
+  (interactive)
+  (push-mark))
+
+(global-set-key (kbd "C-x m") 'iw-set-mark-no-activate)
 
 (provide 'iw-visible-mark)
 ;;; iw-visible-mark.el ends here
