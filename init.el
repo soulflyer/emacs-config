@@ -104,3 +104,4 @@
 
 (message (concat "\n\n" ascii-art-running "\n\n"))
 ;;; init.el ends here
+(put 'upcase-region 'disabled nil)
