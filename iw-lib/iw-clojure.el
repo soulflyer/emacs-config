@@ -47,21 +47,31 @@
                                            (0 (progn (compose-region (match-beginning 1)
                                                                      (match-end 1) "∈")
                                                      nil)))))))
-  :bind (:map clojure-mode-map
-              ("C-c c m" . 'clojure-convert-collection-to-map)
-              ("C-c c v" . 'clojure-convert-collection-to-vector)
-              ("C-c c l" . 'clojure-convert-collection-to-list)
-              ("C-c c s" . 'clojure-convert-collection-to-set)
-              ("C-c c {" . 'clojure-convert-collection-to-map)
-              ("C-c c [" . 'clojure-convert-collection-to-vector)
-              ("C-c c '" . 'clojure-convert-collection-to-quoted-list)
-              ("C-c c (" . 'clojure-convert-collection-to-list)
-              ("C-c c #" . 'clojure-convert-collection-to-set)))
+  :bind (("C-c C-j" . 'cider-jack-in-clj)
+         ("C-c M-j" . 'cider-jack-in-cljs)
+         :map clojure-mode-map
+         ("C-c c m" . 'clojure-convert-collection-to-map)
+         ("C-c c v" . 'clojure-convert-collection-to-vector)
+         ("C-c c l" . 'clojure-convert-collection-to-list)
+         ("C-c c s" . 'clojure-convert-collection-to-set)
+         ("C-c c {" . 'clojure-convert-collection-to-map)
+         ("C-c c [" . 'clojure-convert-collection-to-vector)
+         ("C-c c '" . 'clojure-convert-collection-to-quoted-list)
+         ("C-c c (" . 'clojure-convert-collection-to-list)
+         ("C-c c #" . 'clojure-convert-collection-to-set)))
 
 (use-package cider
   :ensure t
-  :bind (:map cider-mode-map
-              ("M-RET" . 'cider-doc)))
+  :bind (:map
+         cider-mode-map
+         ("M-RET" . 'cider-doc)
+         :map cider-repl-mode-map
+         ("M-RET" . 'cider-doc)
+         ("C-c q" . 'cider-quit)
+         ("C-c h" . 'cider-browse-ns-all))
+  :init
+  (add-hook 'cider-repl-mode-hook '(lambda ()
+                                     (setq scroll-conservatively 101))))
 
 (use-package clj-refactor
   :ensure t

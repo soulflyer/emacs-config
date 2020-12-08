@@ -32,6 +32,7 @@
 
 (setq-default truncate-lines t)
 (setq-default indent-tabs-mode nil)
+(add-hook 'Custom-mode-hook '(lambda () (setq truncate-lines nil)))
 
 (defun live-delete-whitespace-except-one ()
   "Remove all whitespace except one."

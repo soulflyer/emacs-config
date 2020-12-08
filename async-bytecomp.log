@@ -1,0 +1,4 @@
+
+In counsel-read-setq-expression:
+counsel.el:632:38: Warning: ‘elisp-eldoc-documentation-function’ is an
+    obsolete function (as of 28.1); use ElDoc’s interfaces instead.
