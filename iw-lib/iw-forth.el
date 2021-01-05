@@ -1,8 +1,8 @@
-;;; iw-browse-kill-ring.el --- use kill-ring-browse  -*- lexical-binding: t; -*-
+;;; iw-forth.el --- Setup for forth programming      -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2020  test
+;; Copyright (C) 2020  Iain Wood
 
-;; Author: test <test@subversion.local>
+;; Author: Iain Wood <iain@soulflyer.co.uk>
 ;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -20,18 +20,12 @@
 
 ;;; Commentary:
 
-;;
+(require 'use-package)
 
 ;;; Code:
 
-(use-package browse-kill-ring
-  :ensure t
-  :bind (("M-y" . browse-kill-ring)))
+;; (use-package forth-mode
+;;   :ensure t)
 
-;; This will save the system clipboard to the kill ring before a kill
-;; which would overwrite it due to live-paste-to-osx.
-;; Careful. it may fill the kill ring with junk.
-(setq-default save-interprogram-paste-before-kill t)
-
-(provide 'iw-browse-kill-ring)
-;;; iw-browse-kill-ring.el ends here
+(provide 'iw-forth)
+;;; iw-forth.el ends here

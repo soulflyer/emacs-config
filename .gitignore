@@ -4,6 +4,7 @@
 /etc
 /var
 ac-comphist.dat
+async-bytecomp.log
 auto-save-list/
 elpa
 eshell

@@ -56,6 +56,7 @@
 (require 'iw-dired)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
+(require 'iw-forth)
 (require 'iw-hl-line)
 (require 'iw-ibuffer)
 (require 'iw-lisp)

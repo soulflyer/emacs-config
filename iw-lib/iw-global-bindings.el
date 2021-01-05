@@ -35,5 +35,11 @@
 ;; Using M-x doesn't work here, but ESC does and it does the same thing.
 (global-set-key (kbd "ESC <down>") 'forward-paragraph)
 (global-set-key (kbd "ESC <up>")   'backward-paragraph)
+
+;; This is so that command-c etc can be remapped in the iterm settings
+;; remapping M-something doesn't work.
+(global-set-key (kbd "C-x c")      'kill-ring-save)
+(global-set-key (kbd "C-x z")      'undo-tree-undo)
+
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here

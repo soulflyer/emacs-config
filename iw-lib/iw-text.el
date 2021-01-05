@@ -69,6 +69,7 @@
 
 (global-set-key (kbd "C-c t c") 'comment-box)
 (global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
+(global-set-key (kbd "C-c t v") 'visual-line-mode)
 
 (provide 'iw-text)
 ;;; iw-text.el ends here
