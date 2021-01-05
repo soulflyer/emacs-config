@@ -41,5 +41,8 @@
 (global-set-key (kbd "C-x c")      'kill-ring-save)
 (global-set-key (kbd "C-x z")      'undo-tree-undo)
 
+;; Using M-x doesn't work here, but ESC does and it does the same thing.
+(global-set-key (kbd "ESC <down>") 'forward-paragraph)
+(global-set-key (kbd "ESC <up>")   'backward-paragraph)
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here
