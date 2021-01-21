@@ -25,7 +25,8 @@
 (add-to-list 'load-path              "~/.emacs.d/lib")
 (add-to-list 'load-path              "~/.emacs.d/iw-lib")
 (setq-default diary-file             "~/Documents/org-mode/diary"
-              bm-repository-file     "~/.emacs.d/etc/bm-repository")
+              bm-repository-file     "~/.emacs.d/etc/bm-repository"
+              org-agenda-files       '("~/Documents/org-mode/agenda"))
 
 (load-theme  'blackbored)
 

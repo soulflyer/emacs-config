@@ -87,7 +87,7 @@
   (let ((artist-song (split-string (org-entry-get nil "ITEM") ": ")))
     (lyrics (second artist-song) (first artist-song))))
 
-(define-key org-mode-map (kbd "C-c l") 'iw-lyrics)
+;;(define-key org-mode-map (kbd "C-c l") 'iw-lyrics)
 
 ;; Versuri offers more features for lyrics, but most of them are not interactive.
 ;; (use-package versuri

@@ -6,7 +6,7 @@
   :ensure t
   :config (setq
            display-buffer-function       'popwin:display-buffer
-           popwin:special-display-config '(("*Help*"  :height 30)
+           popwin:special-display-config '(;;("*Help*"  :height 30)
                                            ("*Completions*" :noselect t)
                                            ("*Messages*" :noselect t :height 30)
                                            ("*Apropos*" :noselect t :height 30)

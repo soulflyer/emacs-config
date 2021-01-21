@@ -36,7 +36,9 @@
                                            (?H :foreground "#8060a0")
                                            (?I :foreground "#575757")))
                 org-use-speed-commands t
-                org-lowest-priority 73)
+                org-lowest-priority 73
+                org-habit-graph-column 60
+                org-habit-show-all-today t)
   :config
   (setq org-speed-commands-user nil)
   (add-to-list 'org-speed-commands-user '("4" org-priority 68))
