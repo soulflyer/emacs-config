@@ -31,6 +31,12 @@
 
 (setq-default ispell-program-name "aspell")
 
+;; Make sure environment variables are set for clojure repl
+(use-package direnv
+  :ensure t
+  :config
+  (direnv-mode))
+
 ;; This allows easy tweaking of colours. Select some text and do M-x make-color
 ;; Colours can be changed by RGB HSL CMY keys, k to add the current colour to the
 ;; kill ring.
