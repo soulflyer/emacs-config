@@ -61,6 +61,7 @@
 (require 'iw-hl-line)
 (require 'iw-ibuffer)
 (require 'iw-lisp)
+(require 'iw-javascript)
 (require 'iw-mouse)
 (require 'iw-multiple-cursors)
 (require 'iw-openwith)
