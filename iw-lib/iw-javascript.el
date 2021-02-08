@@ -32,13 +32,20 @@
 (use-package ts-comint
   :ensure t)
 
+(use-package web-mode
+  :ensure t)
+
 (use-package typescript-mode
   :ensure t)
 
 (use-package tide
   :ensure t
   :after (typescript-mode company flycheck)
-  :hook ((typescript-mode . tide-setup)
+  :config (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+  :hook ((web-mode . (lambda ()
+                       (when (string-equal "tsx" (file-name-extension buffer-file-name))
+                         (setup-tide-mode))))
+         (typescript-mode . tide-setup)
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-format-before-save))
   :bind (:map typescript-mode-map
