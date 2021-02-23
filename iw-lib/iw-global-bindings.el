@@ -20,7 +20,7 @@
 
 ;; Also not default. C-a usually goes to the begining. Back to indentation is far more useful
 (global-set-key (kbd "C-a")        'back-to-indentation)
-(global-set-key (kbd "C-x C-a")    'move-beginning-of-line)
+(global-set-key (kbd "M-m")        'move-beginning-of-line)
 
 ;; Shortcuts for C-x-digit commands
 (global-set-key (kbd "M-1")        'delete-other-windows)
@@ -32,7 +32,8 @@
 ;; Tmux steals C-q so this will have to do instead.
 (global-set-key (kbd "M-q")        'quoted-insert)
 
-;; Using M-x doesn't work here, but ESC does and it does the same thing.
+;; Using M-<up> etc doesn't work in setting a key, but ESC does and it amounts the same thing.
+;; Pressing M-up still goes back a paragraph etc. howdoyou will steal this binding.
 (global-set-key (kbd "ESC <down>") 'forward-paragraph)
 (global-set-key (kbd "ESC <up>")   'backward-paragraph)
 
@@ -41,8 +42,5 @@
 (global-set-key (kbd "C-x c")      'kill-ring-save)
 (global-set-key (kbd "C-x z")      'undo-tree-undo)
 
-;; Using M-x doesn't work here, but ESC does and it does the same thing.
-(global-set-key (kbd "ESC <down>") 'forward-paragraph)
-(global-set-key (kbd "ESC <up>")   'backward-paragraph)
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here

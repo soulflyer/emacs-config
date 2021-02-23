@@ -43,6 +43,7 @@
 (require 'iw-external)
 (require 'iw-git)
 (require 'iw-jump)
+(require 'iw-lsp)
 (require 'iw-music)
 (require 'iw-org)
 (require 'iw-single-window)

@@ -71,7 +71,16 @@
         beacon-blink-delay 0.3
         beacon-blink-duration 0.1
         beacon-dont-blink-major-modes '(cider-repl-mode)
-        beacon-blink-when-window-scrolls t))
+        beacon-blink-when-window-scrolls t
+        beacon-mode 1) )
+
+(use-package origami
+  :ensure t
+  :bind (:map origami-mode-map
+              ("C-c C-o t" . origami-toggle-node)
+              ("C-c C-o o" . origami-open-node-recursively)
+              ("C-c C-o a" . origami-toggle-all-nodes)
+              ("C-c C-o s" . origami-show-only-node)))
 
 (provide 'iw-tweaks)
 ;;; iw-tweaks.el ends here

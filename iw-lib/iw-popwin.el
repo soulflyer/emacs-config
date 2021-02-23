@@ -9,7 +9,7 @@
            popwin:special-display-config '(;;("*Help*"  :height 30)
                                            ("*Completions*" :noselect t)
                                            ("*Messages*" :noselect t :height 30)
-                                           ("*Apropos*" :noselect t :height 30)
+                                           ("*Apropos*" :height 30)
                                            ("*compilation*" :noselect t)
                                            ("*Backtrace*" :height 30)
                                            ("*Messages*" :height 30)
@@ -31,6 +31,8 @@
                                            ("*Kill Ring*" :height 30)
                                            ("*Compile-Log*" :height 30 :stick t)
                                            ("*git-gutter:diff*" :height 30 :stick t)
+                                           ("*lsp-help*" :height 30 :stick t)
+                                           ("*xref*" :height 20 :stick t)
                                            ("*bm-bookmarks*" :height 20 :stick t))))
 
 (provide 'iw-popwin)

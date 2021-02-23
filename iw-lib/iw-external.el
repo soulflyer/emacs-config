@@ -25,10 +25,10 @@
 ;;; Code:
 
 ;; Works well but getting the results in an org buffer is just bloody stupid.
-(use-package howdoyou
-  :ensure t
-  :bind (("C-M-]" . howdoyou-next-link)
-         ("C-M-[" . howdoyou-previous-link)))
+;; (use-package howdoyou
+;;   :ensure t
+;;   :bind (("C-M-]" . howdoyou-next-link)
+;;          ("C-M-[" . howdoyou-previous-link)))
 
 ;; Old, and google is hardcoded. Maybe not.
 ;; (use-package howdoi

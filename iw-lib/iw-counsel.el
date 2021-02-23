@@ -13,7 +13,7 @@
                 ivy-use-selectable-prompt t)
 
   :bind (("M-x"     . counsel-M-x )
-         ("C-s"     . swiper)
+         ("C-s"     . swiper-thing-at-point)
          ("C-x C-f" . counsel-find-file)
          ("C-h v"   . counsel-describe-variable)
          ("C-h f"   . counsel-describe-function)
