@@ -35,7 +35,11 @@
   :delight)
 
 (use-package magit
-  :ensure t)
+  :ensure t
+  :config
+  (bind-keys :prefix "C-c g"
+             :prefix-map my-magit-map
+             ("b" . magit-blame)))
 
 ;; Wandersons (bartuka) fns for creating and removing a git worktree
 (defun bk/create-worktree ()
