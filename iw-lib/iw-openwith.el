@@ -27,7 +27,7 @@
 (use-package openwith
   :ensure t
   :init
-  (setq openwith-associations '(("\\.\\(png\\|jp?g\\|pdf\\)\\'" "open" (file))
+  (setq openwith-associations '(("\\.\\(png\\|jp?g\\|pdf\\md\\)\\'" "open" (file))
                                 ("\\.torrent\\'" "open" (file))
                                 ("\\.\\(mp3\\|avi\\|wmv\\)\\'" "vlc" (file))
                                 ("\\.\\(doc\\|odt\\|xls\\|ods\\|ppt\\|odp\\)\\'" "open" (file))))
