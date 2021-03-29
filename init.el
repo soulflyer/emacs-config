@@ -49,7 +49,7 @@
 (require 'iw-single-window)
 (require 'iw-text)
 (require 'iw-tweaks)
-
+;;
 ;;Most of these are just a single package.
 (require 'iw-auto-complete)
 (require 'iw-autocompile)
@@ -58,7 +58,7 @@
 (require 'iw-dired)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
-(require 'iw-forth)
+;;(require 'iw-forth)
 (require 'iw-hl-line)
 (require 'iw-ibuffer)
 (require 'iw-lisp)
@@ -108,5 +108,3 @@
 
 (message (concat "\n\n" ascii-art-running "\n\n"))
 ;;; init.el ends here
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)
