@@ -67,6 +67,11 @@
   :bind (("C-c t n" . hl-todo-next)
          ("C-c t n" . hl-todo-previous)))
 
+(use-package string-inflection
+  :ensure t
+  :bind (("C-c t a" . string-inflection-all-cycle)
+         ("C-c t k" . string-inflection-kebab-case)))
+
 (global-set-key (kbd "C-c t c") 'comment-box)
 (global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c t v") 'visual-line-mode)
