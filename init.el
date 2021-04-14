@@ -46,6 +46,7 @@
 (require 'iw-lsp)
 (require 'iw-music)
 (require 'iw-org)
+(require 'iw-reify)
 (require 'iw-single-window)
 (require 'iw-text)
 (require 'iw-tweaks)
