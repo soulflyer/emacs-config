@@ -21,3 +21,4 @@ transient
 url
 .lsp-session*
 .dap-breakpoints
+projectile-bookmarks.eld

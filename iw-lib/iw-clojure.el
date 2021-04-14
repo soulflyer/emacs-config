@@ -50,6 +50,8 @@
   :bind (("C-c C-j"   . 'cider-jack-in-clj)
          ("C-c M-j"   . 'cider-jack-in-cljs)
          ("C-c C-c c" . 'cider-connect-clj)
+         ("C-c C-c s" . 'egg-site-repl)
+         ("C-c C-c a" . 'egg-sponsor-repl)
          :map clojure-mode-map
          ("C-c c m"   . 'clojure-convert-collection-to-map)
          ("C-c c v"   . 'clojure-convert-collection-to-vector)

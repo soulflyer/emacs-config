@@ -41,15 +41,23 @@
   (setq projectile-completion-system 'ivy))
 
 (use-package ripgrep
-  :ensure t
-  :bind (([f6] . projectile-ripgrep)))
+  :ensure t)
+
+(use-package counsel-projectile
+  :ensure t)
 
 (defun iw-projectile-ripgrep-re-frame-defn ()
   "Find a reframe event or subscription definition."
   (interactive)
   (projectile-ripgrep (concat " " (projectile-symbol-or-selection-at-point))))
 
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+(global-set-key [f4] 'projectile-find-file)
 (global-set-key [f5] 'iw-projectile-ripgrep-re-frame-defn)
+(global-set-key [f6] 'counsel-projectile-rg)
+(global-set-key [f7] 'projectile-ripgrep)
+
 (add-hook 'ripgrep-search-mode-hook '(lambda () (define-key ripgrep-search-mode-map (kbd "TAB") 'compilation-next-error)))
 
 (provide 'iw-projectile)
