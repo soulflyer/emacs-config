@@ -7,6 +7,7 @@ ac-comphist.dat
 async-bytecomp.log
 auto-save-list/
 elpa
+elpa*
 eshell
 games
 history

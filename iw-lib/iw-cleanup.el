@@ -13,9 +13,21 @@
       require-final-newline t
       ;; following line might be useful on linux. Not on Mac
       ;; delete-by-moving-to-trash t
-      make-backup-files nil ; stop creating those backup~ files
-      auto-save-default nil ; stop creating those #autosave# files
+
+
+      ;; make-backup-files nil ; stop creating those backup~ files
+      ;; auto-save-default nil ; stop creating those #autosave# files
       )
+
+
+(setq backup-directory-alist `(("." . ,"/Users/iain/emacs-backups")))
+
+(setq backup-by-copying t   ; don't clobber symlinks
+      version-control t     ; use versioned backups
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2)
+
 
 ;;; remove bells
 (setq ring-bell-function 'ignore)
