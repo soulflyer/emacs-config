@@ -51,6 +51,7 @@
   (interactive)
   (projectile-ripgrep (concat " " (projectile-symbol-or-selection-at-point))))
 
+(projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (global-set-key [f4] 'projectile-find-file)

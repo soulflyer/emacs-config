@@ -6,8 +6,7 @@
   :ensure t
   :config (setq
            display-buffer-function       'popwin:display-buffer
-           popwin:special-display-config '(;;("*Help*"  :height 30)
-                                           ("*Completions*" :noselect t)
+           popwin:special-display-config '(("*Completions*" :noselect t)
                                            ("*Messages*" :noselect t :height 30)
                                            ("*Apropos*" :height 30)
                                            ("*compilation*" :noselect t)
@@ -26,7 +25,6 @@
                                            ("*cider-error*" :height 30 :stick t)
                                            ("*cider-doc*" :height 30 :stick t)
                                            ("*cider-src*" :height 30 :stick t)
-                                           ("*cider-result*" :height 30 :stick t)
                                            ("*cider-macroexpansion*" :height 30 :stick t)
                                            ("*Kill Ring*" :height 30)
                                            ("*Compile-Log*" :height 30 :stick t)

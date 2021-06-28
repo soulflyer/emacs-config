@@ -20,4 +20,4 @@ then
 else
     echo "The elpa dir is not a symbolic link. Be careful it matches the version of emacs. There may be problems when reverting to an earlier version"
 fi
-emacs --daemon 2>&1 | lolcat -s 1.5 -S 35
+emacs --daemon
