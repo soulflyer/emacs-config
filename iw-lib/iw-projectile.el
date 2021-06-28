@@ -59,7 +59,7 @@
 (global-set-key [f6] 'counsel-projectile-rg)
 (global-set-key [f7] 'projectile-ripgrep)
 
-(add-hook 'ripgrep-search-mode-hook '(lambda () (define-key ripgrep-search-mode-map (kbd "TAB") 'compilation-next-error)))
+(add-hook 'ripgrep-search-mode-hook #'(lambda () (define-key ripgrep-search-mode-map (kbd "TAB") 'compilation-next-error)))
 
 (provide 'iw-projectile)
 ;;; iw-projectile.el ends here

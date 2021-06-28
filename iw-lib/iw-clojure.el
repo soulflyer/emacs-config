@@ -31,22 +31,22 @@
   :ensure t
   :init
   (setq clojure-indent-style :always-indent)
-  (add-hook 'clojure-mode-hook  '(lambda ()
-                                   (font-lock-add-keywords
-                                    nil `(("(\\(fn\\)[\[[:space:]]"
-                                           (0 (progn (compose-region (match-beginning 1)
-                                                                     (match-end 1) "λ")
-                                                     nil)))))
-                                   (font-lock-add-keywords
-                                    nil `(("\\(#\\)("
-                                           (0 (progn (compose-region (match-beginning 1)
-                                                                     (match-end 1) "ƒ")
-                                                     nil)))))
-                                   (font-lock-add-keywords
-                                    nil `(("\\(#\\){"
-                                           (0 (progn (compose-region (match-beginning 1)
-                                                                     (match-end 1) "∈")
-                                                     nil)))))))
+  (add-hook 'clojure-mode-hook  #'(lambda ()
+                                    (font-lock-add-keywords
+                                     nil `(("(\\(fn\\)[\[[:space:]]"
+                                            (0 (progn (compose-region (match-beginning 1)
+                                                                      (match-end 1) "λ")
+                                                      nil)))))
+                                    (font-lock-add-keywords
+                                     nil `(("\\(#\\)("
+                                            (0 (progn (compose-region (match-beginning 1)
+                                                                      (match-end 1) "ƒ")
+                                                      nil)))))
+                                    (font-lock-add-keywords
+                                     nil `(("\\(#\\){"
+                                            (0 (progn (compose-region (match-beginning 1)
+                                                                      (match-end 1) "∈")
+                                                      nil)))))))
   :bind (("C-c C-j"   . 'cider-jack-in-clj)
          ("C-c M-j"   . 'cider-jack-in-cljs)
          ("C-c C-c c" . 'cider-connect-clj)
@@ -73,8 +73,8 @@
          ("C-c q" . 'cider-quit)
          ("C-c h" . 'cider-browse-ns-all))
   :init
-  (add-hook 'cider-repl-mode-hook '(lambda ()
-                                     (setq scroll-conservatively 101))))
+  (add-hook 'cider-repl-mode-hook #'(lambda ()
+                                      (setq scroll-conservatively 101))))
 
 (use-package clj-refactor
   :ensure t
