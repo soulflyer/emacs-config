@@ -82,5 +82,14 @@
               ("C-c C-o a" . origami-toggle-all-nodes)
               ("C-c C-o s" . origami-show-only-node)))
 
+(when (member "Monaco" (font-family-list))
+  (set-frame-font "Monaco-12" t t))
+
+(setq display-buffer-base-action
+      '((display-buffer-reuse-window
+         display-buffer-reuse-mode-window
+         display-buffer-same-window
+         display-buffer-in-previous-window)))
+
 (provide 'iw-tweaks)
 ;;; iw-tweaks.el ends here
