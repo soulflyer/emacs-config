@@ -5,7 +5,10 @@
 ;; Include smex or counsel-M-x doesn't keep history.
 ;;; Code:
 (require 'use-package)
-(use-package smex)
+
+(use-package smex
+  :ensure t)
+
 (use-package counsel
   :ensure t
   :config (setq ivy-count-format "%d/%d:"

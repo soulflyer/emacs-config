@@ -8,7 +8,6 @@
            display-buffer-function       'popwin:display-buffer
            popwin:special-display-config '(("*Completions*" :noselect t)
                                            ("*Messages*" :noselect t :height 30)
-                                           ("*Apropos*" :height 30)
                                            ("*compilation*" :noselect t)
                                            ("*Backtrace*" :height 30)
                                            ("*Messages*" :height 30)

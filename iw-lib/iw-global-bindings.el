@@ -15,6 +15,9 @@
 (global-set-key (kbd "C-x TAB")    'rectangle-mark-mode)
 (global-set-key (kbd "C-x SPC")    'set-mark-command)
 
+;; For GUI Emacs, terminal version doesn't see C-TAB
+(global-set-key (kbd "C-<tab>")    'other-window)
+
 ;; Who needs to suspend emacs from within? Much more useful to scroll text.
 (global-set-key (kbd "C-z")        'scroll-down)
 
