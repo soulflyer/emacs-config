@@ -94,7 +94,7 @@
 (setq display-buffer-base-action
       '(( display-buffer-reuse-mode-window
           display-buffer-same-window)
-        . ((mode . (org-mode help-mode apropos-mode)))))
+        . ((mode . (org-mode help-mode apropos-mode diary-mode)))))
 
 ;; (setq display-buffer-base-action
 ;;       '((display-buffer-reuse-window

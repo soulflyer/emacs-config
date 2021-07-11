@@ -58,6 +58,7 @@
 (require 'iw-browse-kill-ring)
 (require 'iw-counsel)
 (require 'iw-dired)
+(require 'iw-edwina.el)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
 ;;(require 'iw-forth)
@@ -78,6 +79,7 @@
 (require 'iw-undo-tree)
 (require 'iw-visible-mark)
 (require 'iw-which-key)
+(require 'iw-workgroups2.el)
 
 ;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)
