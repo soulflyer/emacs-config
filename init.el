@@ -51,14 +51,14 @@
 (require 'iw-text)
 (require 'iw-term)
 (require 'iw-tweaks)
-;;
+
 ;;Most of these are just a single package.
 (require 'iw-auto-complete)
 (require 'iw-autocompile)
 (require 'iw-browse-kill-ring)
 (require 'iw-counsel)
 (require 'iw-dired)
-(require 'iw-edwina.el)
+(require 'iw-edwina)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
 ;;(require 'iw-forth)
@@ -69,7 +69,7 @@
 (require 'iw-mouse)
 (require 'iw-multiple-cursors)
 (require 'iw-openwith)
-(require 'iw-popwin)
+;;(require 'iw-popwin)
 (require 'iw-projectile)
 (require 'iw-rainbow-delimiters)
 (require 'iw-rainbow-mode)
@@ -79,7 +79,7 @@
 (require 'iw-undo-tree)
 (require 'iw-visible-mark)
 (require 'iw-which-key)
-(require 'iw-workgroups2.el)
+(require 'iw-workgroups2)
 
 ;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)
