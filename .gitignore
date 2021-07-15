@@ -20,6 +20,7 @@ speed-type
 tmp
 tramp
 transient
+tutorial/
 url
 .lsp-session*
 .dap-breakpoints

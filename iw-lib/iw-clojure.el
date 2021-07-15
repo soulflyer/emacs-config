@@ -30,7 +30,7 @@
 (use-package clojure-mode
   :ensure t
   :init
-  (setq clojure-indent-style :always-indent)
+  (setq clojure-indent-style :align-arguments)
   (add-hook 'clojure-mode-hook  #'(lambda ()
                                     (font-lock-add-keywords
                                      nil `(("(\\(fn\\)[\[[:space:]]"
