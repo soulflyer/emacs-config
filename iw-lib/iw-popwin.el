@@ -6,8 +6,9 @@
   :ensure t
   :config (setq
            display-buffer-function       'popwin:display-buffer
-           popwin:special-display-config '(("*Calendar*" :height 10 :stick t)
-                                           ("*Diary*" :height 30 :position top)
+           popwin:special-display-config '(
+                                           ;; ("*Calendar*" :height 10 :stick t)
+                                           ;; ("*Diary*" :height 30 :position top)
                                            ("*Completions*" :noselect t)
                                            ("*Messages*" :noselect t :height 30)
                                            ("*compilation*" :noselect t)
