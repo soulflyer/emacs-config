@@ -25,5 +25,6 @@ url
 .lsp-session*
 .dap-breakpoints
 projectile-bookmarks.eld
+projectile.cache
 /image-dired/
 .cache

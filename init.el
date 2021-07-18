@@ -36,6 +36,10 @@
 (when (string= "subversion\n" (shell-command-to-string "hostname -s"))
   (require 'iw-subversion))
 
+;; (if (gui-emacs)
+;;     (require 'iw-gui-emacs)
+;;   (require 'iw-terminal-emacs.el))
+
 ;;  Add config for specific purposes.
 (require 'iw-bookmark)
 (require 'iw-cleanup)
@@ -58,8 +62,6 @@
 (require 'iw-browse-kill-ring)
 (require 'iw-counsel)
 (require 'iw-dired)
-;;(require 'iw-edwina)
-;;(require 'iw-exwm)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
 ;;(require 'iw-forth)
@@ -81,7 +83,6 @@
 (require 'iw-undo-tree)
 (require 'iw-visible-mark)
 (require 'iw-which-key)
-;;(require 'iw-workgroups2)
 
 ;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)
