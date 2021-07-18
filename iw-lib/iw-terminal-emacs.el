@@ -24,7 +24,7 @@
 
 ;;; Code:
 
-(require 'iw-popwin)
+(message "Running terminal emacs config.")
 
 (provide 'iw-terminal-emacs)
 ;;; iw-terminal-emacs.el ends here

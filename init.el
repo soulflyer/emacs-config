@@ -36,9 +36,9 @@
 (when (string= "subversion\n" (shell-command-to-string "hostname -s"))
   (require 'iw-subversion))
 
-;; (if (gui-emacs)
-;;     (require 'iw-gui-emacs)
-;;   (require 'iw-terminal-emacs.el))
+(if (display-graphic-p)
+    (require 'iw-gui-emacs)
+  (require 'iw-terminal-emacs))
 
 ;;  Add config for specific purposes.
 (require 'iw-bookmark)

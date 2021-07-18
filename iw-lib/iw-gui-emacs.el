@@ -24,9 +24,13 @@
 
 ;;; Code:
 
+(message "Running GUI Emacs config")
+
 (require 'iw-edwina)
 (require 'iw-exwm)
 (require 'iw-workgroups2)
+
+(switch-to-buffer "*Messages*")
 
 (provide 'iw-gui-emacs)
 ;;; iw-gui-emacs.el ends here
