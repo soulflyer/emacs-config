@@ -36,6 +36,9 @@
 (use-package palimpsest
   :ensure t)
 
+(use-package unidecode
+  :ensure t)
+
 (use-package annotate
   :ensure t
   :bind (("C-c a"   . annotate-mode)
