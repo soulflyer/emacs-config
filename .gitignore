@@ -9,6 +9,7 @@ async-bytecomp.log
 auto-save-list/
 elpa
 elpa*
+quelpa
 eshell
 games
 history
