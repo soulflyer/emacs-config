@@ -7,6 +7,7 @@ flycheck_init.el
 ac-comphist.dat
 async-bytecomp.log
 auto-save-list/
+eaf
 elpa
 elpa*
 quelpa
