@@ -62,6 +62,7 @@
 (require 'iw-browse-kill-ring)
 (require 'iw-counsel)
 (require 'iw-dash)
+(require 'iw-dashboard)
 (require 'iw-dired)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
