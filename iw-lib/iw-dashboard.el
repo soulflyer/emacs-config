@@ -29,6 +29,10 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
+  (setq dashboard-items '((bookmarks . 5)
+                          (projects . 5)
+                          (recents  . 5)
+                          (registers . 5)))
   (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))))
 
 (provide 'iw-dashboard)
