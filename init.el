@@ -73,7 +73,8 @@
 (require 'iw-javascript)
 (require 'iw-mouse)
 (require 'iw-multiple-cursors)
-(require 'iw-openwith)
+;; openwith is now required from iw-terminal-emacs
+;; (require 'iw-openwith)
 ;; popwin messes up edwina display, so maybe only use this when not in GUI Emacs
 (require 'iw-popwin)
 (require 'iw-projectile)

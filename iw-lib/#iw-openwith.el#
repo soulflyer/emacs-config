@@ -1,6 +1,6 @@
-;;; iw-terminal-emacs.el ---                         -*- lexical-binding: t; -*-
+;;; iw-openwith.el --- setup openwith                -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2021  Iain Wood
+;; Copyright (C) 2020  Iain Wood
 
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
 ;; Keywords:
@@ -21,11 +21,19 @@
 ;;; Commentary:
 
 ;;
-
+(require 'use-package)
 ;;; Code:
 
-(message "Running terminal emacs config.")
-(require 'iw-openwith)
+(use-package openwith
+  :ensure t
+  :init
+  (if (display-graphic-p)
+      (setq openwith-associations '(("\\.\\(png\\|jp?g\\|pdf\\|md\\)\\'" "open" (file))
+                                    ("\\.torrent\\'" "open" (file))
+                                    ("\\.\\(mp3\\|avi\\|wmv\\)\\'" "vlc" (file))
+                                    ("\\.\\(doc\\|odt\\|xls\\|ods\\|ppt\\|odp\\)\\'" "open" (file)))))
+  :config
+  (openwith-mode t))
 
-(provide 'iw-terminal-emacs)
-;;; iw-terminal-emacs.el ends here
+(provide 'iw-openwith)
+;;; iw-openwith.el ends here
