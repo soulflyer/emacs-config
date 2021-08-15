@@ -80,5 +80,8 @@
 (global-set-key (kbd "C-c t v") 'visual-line-mode)
 (global-set-key (kbd "C-c t l") 'linum-mode)
 
+;; This makes insert overwrite the current selection
+(delete-selection-mode 1)
+
 (provide 'iw-text)
 ;;; iw-text.el ends here
