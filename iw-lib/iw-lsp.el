@@ -31,6 +31,7 @@
   (setq gc-cons-threshold (* 100 1024 1024)
         read-process-output-max (* 1024 1024)
         lsp-lens-enable t
+        lsp-eldoc-enable-hover nil
         lsp-signature-auto-activate nil
         ;; lsp-enable-indentation nil ; uncomment to use cider indentation instead of lsp
         ;; lsp-enable-completion-at-point nil ; uncomment to use cider completion instead of lsp
@@ -47,6 +48,10 @@
                clojurex-mode))
     (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
   :commands lsp)
+
+
+(use-package lsp-ui
+  :ensure t)
 
 (use-package lsp-ivy
   :ensure t
