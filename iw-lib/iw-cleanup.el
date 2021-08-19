@@ -5,22 +5,19 @@
 
 ;;; get rid of clutter
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode)   (tool-bar-mode   -1))
+(if (fboundp 'menu-bar-mode)   (menu-bar-mode   -1))
 
 (setq inhibit-startup-message t
       shift-select-mode t
       require-final-newline t
       ;; following line might be useful on linux. Not on Mac
       ;; delete-by-moving-to-trash t
-
-
-      ;; make-backup-files nil ; stop creating those backup~ files
-      ;; auto-save-default nil ; stop creating those #autosave# files
       )
 
-
-(setq backup-directory-alist `(("." . ,"/Users/iain/emacs-backups")))
+(defvar emacs-backup-dir "/Users/iain/emacs-backups")
+(setq backup-directory-alist         `((".*" . ,emacs-backup-dir))
+      auto-save-file-name-transforms `((".*" ,emacs-backup-dir t)))
 
 (setq backup-by-copying t   ; don't clobber symlinks
       version-control t     ; use versioned backups
