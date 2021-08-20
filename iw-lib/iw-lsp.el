@@ -49,9 +49,9 @@
     (add-to-list 'lsp-language-id-configuration `(,m . "clojure")))
   :commands lsp)
 
-
-(use-package lsp-ui
-  :ensure t)
+;; Don't add this until I can find a way to disable it without having to toggle it in every clojure window.
+;; (use-package lsp-ui
+;;   :ensure t)
 
 (use-package lsp-ivy
   :ensure t
