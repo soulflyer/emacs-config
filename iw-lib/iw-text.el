@@ -75,10 +75,17 @@
   :bind (("C-c t a" . string-inflection-all-cycle)
          ("C-c t k" . string-inflection-kebab-case)))
 
+(use-package highlight-indent-guides
+  :ensure t
+  :commands (highlight-indent-guides-mode)
+  :custom
+  (highlight-indent-guides-method 'character))
+
 (global-set-key (kbd "C-c t c") 'comment-box)
 (global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c t v") 'visual-line-mode)
 (global-set-key (kbd "C-c t l") 'linum-mode)
+(global-set-key (kbd "C-c t i") 'highlight-indent-guides-mode)
 
 ;; This makes insert overwrite the current selection
 (delete-selection-mode 1)
