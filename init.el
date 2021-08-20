@@ -86,6 +86,7 @@
 (require 'iw-undo-tree)
 (require 'iw-visible-mark)
 (require 'iw-which-key)
+(require 'iw-yasnippet)
 
 ;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)
