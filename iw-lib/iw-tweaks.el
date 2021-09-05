@@ -85,5 +85,8 @@
 (when (member "Monaco" (font-family-list))
   (set-frame-font "Monaco-12" t t))
 
+;; This is so org agenda can see changes made on another machine
+(global-auto-revert-mode)
+
 (provide 'iw-tweaks)
 ;;; iw-tweaks.el ends here

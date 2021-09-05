@@ -1,4 +1,6 @@
 #!/bin/bash
+# This is useful when playing with more than 1 version of emacs. Bad things can happen if an older emacs is linking to a newer
+# elpa directory once it has been updated. This keeps seperate versions of the elpa dir and symlinks to the correct one.
 EMACSVERSION=$(emacs --version | awk '{print $3 ; exit}')
 echo $EMACSVERSION
 if [[ -L ~/.emacs.d/elpa ]]
@@ -14,7 +16,7 @@ then
             ln -s ./elpa-27 ~/.emacs.d/elpa
             ;;
         *)
-            echo "Found emacs version $EMACSVERSION, linking elpa-new"
+            echo "Found emacs version $EMACSVERSION, linking elpa-new. FIX THIS in emacsdaemon.sh and rename!!!"
             ln -s ~/.emacs.d/elpa-new ~/.emacs.d/elpa
     esac
 else

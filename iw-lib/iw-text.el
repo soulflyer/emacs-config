@@ -64,8 +64,9 @@
   :ensure t
   :config
   (setq-default hl-todo-keyword-faces
-                '(("TODO"   . "#FF0000")
-                  ("FIXME"  . "#9F40FF")))
+                '(("TODO"    . "#FF0000")
+                  ("FIXME"   . "#9F40FF")
+                  ("CLARIFY" . "#ff0000")))
   (global-hl-todo-mode)
   :bind (("C-c t n" . hl-todo-next)
          ("C-c t n" . hl-todo-previous)))
