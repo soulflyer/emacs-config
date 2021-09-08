@@ -40,14 +40,20 @@
 
 ;; Using M-<up> etc doesn't work in setting a key, but ESC does and it amounts the same thing.
 ;; Pressing M-up still goes back a paragraph etc. howdoyou will steal this binding.
-(global-set-key (kbd "ESC <down>") 'forward-paragraph)
-(global-set-key (kbd "ESC <up>")   'backward-paragraph)
+;; (global-set-key (kbd "ESC <down>") 'forward-paragraph)
+;; (global-set-key (kbd "ESC <up>")   'backward-paragraph)
+;; moved to bind-keys* because org-mode was still stealing it.
 
 ;; This is so that command-c etc can be remapped in the iterm settings
 ;; remapping M-something doesn't work.
 (global-set-key (kbd "C-x c")      'kill-ring-save)
 (global-set-key (kbd "C-x z")      'undo-tree-undo)
 (global-set-key (kbd "C-x ;")      'iw-eol-and-delete-whitespace-except-one)
+
+(bind-keys* ("M-n"        . forward-paragraph)
+            ("M-p"        . backward-paragraph)
+            ("ESC <down>" . forward-paragraph)
+            ("ESC <up>"   . backward-paragraph))
 
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here
