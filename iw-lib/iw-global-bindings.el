@@ -45,6 +45,7 @@
 ;; remapping M-something doesn't work.
 (global-set-key (kbd "C-x c")      'kill-ring-save)
 (global-set-key (kbd "C-x z")      'undo-tree-undo)
+(global-set-key (kbd "C-x ;")      'iw-eol-and-delete-whitespace-except-one)
 
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here
