@@ -24,7 +24,9 @@
 
 ;; Also not default. C-a usually goes to the begining. Back to indentation is far more useful
 (global-set-key (kbd "C-a")        'smart-line-beginning)
-(global-set-key (kbd "M-m")        'move-beginning-of-line)
+
+;; mostly to cleanup when gui emacsclient insists on adding the menu bar. Kinda handy anyway.
+(global-set-key (kbd "M-m")        'menu-bar-mode)
 
 ;; Shortcuts for C-x-digit commands
 (global-set-key (kbd "M-1")        'delete-other-windows)
