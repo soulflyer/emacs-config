@@ -53,6 +53,7 @@
 
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "M-p")   'projectile-command-map)
 
 (global-set-key [f4] 'projectile-find-file)
 (global-set-key [f5] 'iw-projectile-ripgrep-re-frame-defn)
