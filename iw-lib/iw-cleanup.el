@@ -65,6 +65,15 @@
 
 (add-hook 'before-save-hook 'live-cleanup-whitespace)
 
+;; from https://stackoverflow.com/a/7250027/1671119
+(defun smart-line-beginning ()
+  "Move point to the beginning of text on the current line; if that is already
+the current position of point, then move it to the beginning of the line."
+  (interactive)
+  (let ((pt (point)))
+    (beginning-of-line-text)
+    (when (eq pt (point))
+      (beginning-of-line))))
 
 (provide 'iw-cleanup)
 ;;; iw-cleanup.el ends here

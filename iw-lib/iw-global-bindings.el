@@ -23,7 +23,7 @@
 (global-set-key (kbd "C-z")        'scroll-down)
 
 ;; Also not default. C-a usually goes to the begining. Back to indentation is far more useful
-(global-set-key (kbd "C-a")        'back-to-indentation)
+(global-set-key (kbd "C-a")        'smart-line-beginning)
 (global-set-key (kbd "M-m")        'move-beginning-of-line)
 
 ;; Shortcuts for C-x-digit commands
