@@ -69,7 +69,7 @@
                   ("CLARIFY" . "#ff0000")))
   (global-hl-todo-mode)
   :bind (("C-c t n" . hl-todo-next)
-         ("C-c t n" . hl-todo-previous)))
+         ("C-c t p" . hl-todo-previous)))
 
 (use-package string-inflection
   :ensure t

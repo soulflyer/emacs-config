@@ -33,7 +33,8 @@
                           (projects . 5)
                           (recents  . 5)
                           (registers . 5)))
-  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*"))))
+  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
+  (setq dashboard-projects-switch-function 'find-file))
 
 (provide 'iw-dashboard)
 ;;; iw-dashboard.el ends here

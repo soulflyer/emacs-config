@@ -78,20 +78,5 @@
   :bind (("C-c w w" . counsel-web-search)
          ("C-c w s" . counsel-web-thing-at-point)))
 
-(use-package lyrics
-  :ensure t)
-
-(defun iw-lyrics ()
-  "Gets lyrics using the current line."
-  (interactive)
-  (let ((artist-song (split-string (org-entry-get nil "ITEM") ": ")))
-    (lyrics (second artist-song) (first artist-song))))
-
-;;(define-key org-mode-map (kbd "C-c l") 'iw-lyrics)
-
-;; Versuri offers more features for lyrics, but most of them are not interactive.
-;; (use-package versuri
-;;   :ensure t)
-
 (provide 'iw-external)
 ;;; iw-external.el ends here

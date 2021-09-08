@@ -1,8 +1,8 @@
-;;; iw-music.el --- Setup packages for Music         -*- lexical-binding: t; -*-
+;;; iw-acceptance.el ---                             -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2020  Iain Wood
+;; Copyright (C) 2021  Iain Wood
 
-;; Author: Iain Wood <iain@soulflyer.co.uk>
+;; Author: Iain Wood <iain@acceptance.local>
 ;; Keywords:
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -20,24 +20,12 @@
 
 ;;; Commentary:
 
-;;
-(require 'use-package)
+;; Not even sure if this works yet, as this file will be run before lsp
+;; is required. However it works when running it by hand.
+
 ;;; Code:
 
-(use-package lyrics
-  :ensure t)
+(setq lsp-clojure-server-command '("/opt/homebrew/bin/clojure-lsp"))
 
-(defun iw-lyrics ()
-  "Gets lyrics using the current line."
-  (interactive)
-  (let ((artist-song (split-string (org-entry-get nil "ITEM") ": ")))
-    (lyrics (second artist-song) (first artist-song))))
-
-;;(define-key org-mode-map (kbd "C-c l") 'iw-lyrics)
-
-;; Versuri offers more features for lyrics, but most of them are not interactive.
-;; (use-package versuri
-;;   :ensure t)
-
-(provide 'iw-music)
-;;; iw-music.el ends here
+(provide 'iw-acceptance)
+;;; iw-acceptance.el ends here

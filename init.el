@@ -35,6 +35,8 @@
   (require 'iw-mac-osx))
 (when (string= "subversion\n" (shell-command-to-string "hostname -s"))
   (require 'iw-subversion))
+(when (string= "acceptance\n" (shell-command-to-string "hostname -s"))
+  (require 'iw-acceptance))
 
 (if (display-graphic-p)
     (require 'iw-gui-emacs)
@@ -119,3 +121,4 @@
 
 (message (concat "\n\n" ascii-art-running "\n\n"))
 ;;; init.el ends here
+(put 'upcase-region 'disabled nil)
