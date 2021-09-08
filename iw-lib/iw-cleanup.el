@@ -48,6 +48,12 @@
   (interactive)
   (cycle-spacing -1))
 
+(defun iw-eol-and-delete-whitespace-except-one ()
+  "go to end of line and delete all witespace except one"
+  (interactive)
+  (end-of-line)
+  (cycle-spacing -1))
+
 ;;remove all trailing whitespace and trailing blank lines before
 ;;saving the file
 (defvar live-ignore-whitespace-modes '(markdown-mode))
