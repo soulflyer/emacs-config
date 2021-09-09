@@ -17,7 +17,7 @@
 
 (defvar emacs-backup-dir "/Users/iain/emacs-backups")
 (setq backup-directory-alist         `((".*" . ,emacs-backup-dir))
-      auto-save-file-name-transforms `((".*" ,emacs-backup-dir t)))
+      auto-save-file-name-transforms `((".*" ,(concat emacs-backup-dir "/autosaves/\\1") t)))
 
 (setq backup-by-copying t   ; don't clobber symlinks
       version-control t     ; use versioned backups
@@ -74,6 +74,11 @@ the current position of point, then move it to the beginning of the line."
     (beginning-of-line-text)
     (when (eq pt (point))
       (beginning-of-line))))
+
+(defun backward-kill-line (arg)
+  "Kill ARG lines backward."
+  (interactive "p")
+  (kill-line (- 1 arg)))
 
 (provide 'iw-cleanup)
 ;;; iw-cleanup.el ends here

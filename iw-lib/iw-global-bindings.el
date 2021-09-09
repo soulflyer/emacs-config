@@ -49,6 +49,7 @@
 (global-set-key (kbd "C-x c")      'kill-ring-save)
 (global-set-key (kbd "C-x z")      'undo-tree-undo)
 (global-set-key (kbd "C-x ;")      'iw-eol-and-delete-whitespace-except-one)
+(global-set-key (kbd "C-c b k")    'backward-kill-line)
 
 (bind-keys* ("M-n"        . forward-paragraph)
             ("M-p"        . backward-paragraph)

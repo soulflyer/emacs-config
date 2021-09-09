@@ -38,21 +38,23 @@
   :config
   (require 'smartparens-config)
   ;;(add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
-  :bind (("C-<left>"  . sp-backward-sexp)
-	 ("C-<right>" . sp-forward-sexp)
-	 ("C-<up>"    . sp-up-sexp)
-	 ("C-<down>"  . sp-down-sexp)
-	 ("C-c j"     . sp-join-sexp)
-	 ("C-c s"     . sp-split-sexp)
-	 ("C-c u"     . sp-splice-sexp)
-	 ("C-c f s"   . sp-forward-slurp-sexp)
-	 ("C-c b s"   . sp-backward-slurp-sexp)
-	 ("C-c f b"   . sp-forward-barf-sexp)
-	 ("C-c b b"   . sp-backward-barf-sexp)
-         ("M-)"       . sp-forward-slurp-sexp)
-         ("M-\""      . sp-wrap-with-double-quote)
-         ("M-("       . sp-wrap-with-round)
-         ("M-{"       . sp-wrap-with-curly)))
+  :bind (:map smartparens-mode-map
+              ("C-<left>"  . sp-backward-sexp)
+	      ("C-<right>" . sp-forward-sexp)
+	      ("C-<up>"    . sp-up-sexp)
+	      ("C-<down>"  . sp-down-sexp)
+	      ("C-c j"     . sp-join-sexp)
+	      ("C-c s"     . sp-split-sexp)
+	      ("C-c u"     . sp-splice-sexp)
+	      ("C-c f s"   . sp-forward-slurp-sexp)
+	      ("C-c b s"   . sp-backward-slurp-sexp)
+	      ("C-c f b"   . sp-forward-barf-sexp)
+	      ("C-c b b"   . sp-backward-barf-sexp)
+              ("C-c b k"   . iw-backward-kill-sexp)
+              ("M-)"       . sp-forward-slurp-sexp)
+              ("M-\""      . sp-wrap-with-double-quote)
+              ("M-("       . sp-wrap-with-round)
+              ("M-{"       . sp-wrap-with-curly)))
 
 (defmacro def-pairs (pairs)
   "Define functions for pairing.  PAIRS is an alist of (NAME . STRING)
@@ -79,6 +81,12 @@ respectively."
             (curly        . "{")
             (single-quote . "'")
             (double-quote . "\"")))
+
+(defun iw-backward-kill-sexp ()
+  "Delete everything back to the start of the sexp"
+  (interactive)
+  (let ((current-prefix-arg '(4))) ;; emulate C-u
+    (call-interactively 'sp-backward-kill-sexp)))
 
 ;; Stop pasting unbalanced parens.
 (defun sp-check-region-for-yank ()
