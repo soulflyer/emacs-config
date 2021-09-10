@@ -31,6 +31,8 @@
 
 (setq-default ispell-program-name "aspell")
 
+(setq-default glogal-visual-line-mode t)
+
 ;; Make sure environment variables are set for clojure repl
 (use-package direnv
   :ensure t
