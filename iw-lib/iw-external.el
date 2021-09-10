@@ -59,6 +59,11 @@
   (setq deft-use-filename-as-title t
         deft-use-filter-string-for-filename t))
 
+(use-package zetteldeft
+  :ensure t
+  :after deft
+  :config (zetteldeft-set-classic-keybindings))
+
 ;; (use-package hyperspace
 ;;   :ensure t)
 
