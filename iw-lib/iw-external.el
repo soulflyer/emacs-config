@@ -57,12 +57,15 @@
   :ensure t
   :config
   (setq deft-use-filename-as-title t
-        deft-use-filter-string-for-filename t))
+        deft-use-filter-string-for-filename t
+        deft-default-extension "org"))
 
 (use-package zetteldeft
   :ensure t
   :after deft
-  :config (zetteldeft-set-classic-keybindings))
+  :config (zetteldeft-set-classic-keybindings)
+  (setq zetteldeft-id-format "%y%m%d%H%M"
+        zetteldeft-id-regex "[0-9]\\{10\\}"))
 
 ;; (use-package hyperspace
 ;;   :ensure t)
