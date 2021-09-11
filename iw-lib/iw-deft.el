@@ -1,4 +1,4 @@
-;;; iw-gui-emacs.el ---                              -*- lexical-binding: t; -*-
+;;; iw-deft.el ---                                   -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021  Iain Wood
 
@@ -20,29 +20,24 @@
 
 ;;; Commentary:
 
-;;
+;; This does the same thing as nvALT and can share notes
 
 ;;; Code:
 
-(message "Running GUI Emacs config")
+(use-package deft
+  :ensure t
+  :config
+  (setq deft-use-filename-as-title t
+        deft-use-filter-string-for-filename t
+        deft-default-extension "org"))
 
-;;(require 'iw-edwina)
-;;(require 'iw-exwm)
-;;(require 'iw-workgroups2)
+(use-package zetteldeft
+  :ensure t
+  :after deft
+  :config (zetteldeft-set-classic-keybindings)
+  (setq zetteldeft-id-format "%y%m%d%H%M"
+        zetteldeft-id-regex "[0-9]\\{10\\}"
+        zetteldeft-title-suffix "\n# Tags #"))
 
-;;(switch-to-buffer "*Messages*")
-
-;; set font for symbols
-(set-fontset-font
- t
- 'symbol
-
- (cond
-  ((member "Symbola" (font-family-list)) "Symbola")
-  ((member "Apple Symbols" (font-family-list)) "Apple Symbols")))
-
-(when (member "Monaco" (font-family-list))
-  (set-frame-font "Monaco-12" t t))
-
-(provide 'iw-gui-emacs)
-;;; iw-gui-emacs.el ends here
+(provide 'iw-deft)
+;;; iw-deft.el ends here

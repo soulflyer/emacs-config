@@ -65,6 +65,7 @@
 (require 'iw-counsel)
 (require 'iw-dash)
 (require 'iw-dashboard)
+(require 'iw-deft)
 (require 'iw-dired)
 (require 'iw-expand-region)
 (require 'iw-flycheck)

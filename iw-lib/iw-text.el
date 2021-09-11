@@ -85,6 +85,16 @@
   :custom
   (highlight-indent-guides-method 'character))
 
+;; set font for symbols
+(set-fontset-font
+ t
+ 'symbol
+
+ (cond
+  ((member "Symbola" (font-family-list)) "Symbola")
+  ((member "Apple Symbols" (font-family-list)) "Apple Symbols")
+  ))
+
 (global-set-key (kbd "C-c t c") 'comment-box)
 (global-set-key (kbd "C-c t t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c t v") 'visual-line-mode)

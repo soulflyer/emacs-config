@@ -89,9 +89,6 @@
               ("C-c C-o a" . origami-toggle-all-nodes)
               ("C-c C-o s" . origami-show-only-node)))
 
-(when (member "Monaco" (font-family-list))
-  (set-frame-font "Monaco-12" t t))
-
 ;; This is so org agenda can see changes made on another machine
 (global-auto-revert-mode)
 
