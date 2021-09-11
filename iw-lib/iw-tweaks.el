@@ -32,6 +32,10 @@
 (setq-default ispell-program-name "aspell")
 
 (setq-default glogal-visual-line-mode t)
+(add-hook 'dired-mode-hook      (lambda () (visual-line-mode -1)))
+(add-hook 'ibuffer-mode-hook    (lambda () (visual-line-mode -1)))
+(add-hook 'dashboard-mode-hook  (lambda () (visual-line-mode -1)))
+(add-hook 'org-agenda-mode-hook (lambda () (visual-line-mode -1)))
 
 ;; Make sure environment variables are set for clojure repl
 (use-package direnv

@@ -37,7 +37,7 @@
                                            (?I :foreground "#575757")))
                 org-use-speed-commands t
                 org-lowest-priority 73
-                org-habit-graph-column 60
+                org-habit-graph-column 40
                 org-habit-show-all-today t)
   :config
   (setq org-speed-commands-user nil)
@@ -47,8 +47,7 @@
   (add-to-list 'org-speed-commands-user '("7" org-priority 71))
   (add-to-list 'org-speed-commands-user '("8" org-priority 72))
   (add-to-list 'org-speed-commands-user '("9" org-priority 73))
-  :bind (("C-c o" . org-agenda))
-  )
+  :bind (("C-c o" . org-agenda)))
 
 (add-hook 'calendar-initial-window-hook 'diary-mark-entries)
 (global-set-key (kbd "C-c c") 'calendar)

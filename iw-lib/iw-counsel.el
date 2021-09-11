@@ -21,7 +21,7 @@
          ("C-h v"   . counsel-describe-variable)
          ("C-h f"   . counsel-describe-function)
 	 ("C-x C-d" . ido-dired)
-	 ("C-x d"   . ido-dired)
+	 ("C-x d"   . counsel-dired)
 	 :map minibuffer-local-map
 	 ("C-r"     . counsel-minibuffer-history)))
 
