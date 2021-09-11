@@ -37,7 +37,9 @@
   :config (zetteldeft-set-classic-keybindings)
   (setq zetteldeft-id-format "%y%m%d%H%M"
         zetteldeft-id-regex "[0-9]\\{10\\}"
-        zetteldeft-title-suffix "\n# Tags #"))
+        zetteldeft-title-suffix "\n# Tags #")
+  :bind
+  (("C-c d e" . zetteldeft-extract-region-to-note)))
 
 (provide 'iw-deft)
 ;;; iw-deft.el ends here
