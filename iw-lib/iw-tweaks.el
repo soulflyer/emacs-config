@@ -93,5 +93,8 @@
 ;; This is so org agenda can see changes made on another machine
 (global-auto-revert-mode)
 
+;; Turn on the line/col display in the status bar
+(column-number-mode 1)
+
 (provide 'iw-tweaks)
 ;;; iw-tweaks.el ends here

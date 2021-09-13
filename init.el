@@ -92,31 +92,16 @@
 ;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)
 
-;; Display a message, useful when starting the server.
-(setq ascii-art-running
-      ";;     MM\"\"\"\"\"\"\"\"`M
-;;     MM  mmmmmmmM
-;;     M`      MMMM 88d8b.d8b. .d8888b. .d8888b. .d8888b.
-;;     MM  MMMMMMMM 88''88'`88 88'  `88 88'  `\"\" Y8ooooo.
-;;     MM  MMMMMMMM 88  88  88 88.  .88 88.  ...       88
-;;     MM        .M dP  dP  dP `88888P8 '88888P' '88888P'
-;;     MMMMMMMMMMMM
-;;
-;;        M\"\"MMP\"\"\"\"\"\"`MM
-;;        M  M M  mmmmm..M
-;;        M  M M.      `YM
-;;        M  M MMMMMMM.  M
-;;        M  M M. .MMM'  M
-;;        M  M Mb.     .dM
-;;        MMMM MMMMMMMMMMM
-;;
-;;           M\"\"MMMMMMMM M\"\"M M\"\"MMMMM\"\"M MM\"\"\"\"\"\"\"\"`M
-;;           M  MMMMMMMM M  M M  MMMMM  M MM  mmmmmmmM
-;;           M  MMMMMMMM M  M M  MMMMP  M M`      MMMM
-;;           M  MMMMMMMM M  M M  MMMM' .M MM  MMMMMMMM
-;;           M  MMMMMMMM M  M M  MMP' .MM MM  MMMMMMMM
-;;           M         M M  M M     .dMMM MM        .M
-;;           MMMMMMMMMMM MMMM MMMMMMMMMMM MMMMMMMMMMMM")
+;; TODO move these to somewhere else
+(defun slurp (f)
+  (with-temp-buffer
+    (insert-file-contents f)
+    (buffer-substring-no-properties
+     (point-min)
+     (point-max))))
 
-(message (concat "\n\n" ascii-art-running "\n\n"))
+(zetteldeft-set-classic-keybindings)
+
+(message (concat "\n\n" (slurp (concat user-emacs-directory "banner.txt")) "\n\n"))
+
 ;;; init.el ends here

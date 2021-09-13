@@ -32,9 +32,10 @@
   (setq dashboard-items '((bookmarks . 5)
                           (projects . 5)
                           (recents  . 15)
-                          (registers . 5)))
-  (setq initial-buffer-choice (lambda () (get-buffer "*dashboard*")))
-  (setq dashboard-projects-switch-function 'find-file))
+                          (registers . 5))
+        initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
+        dashboard-projects-switch-function 'find-file
+        dashboard-startup-banner (concat user-emacs-directory "banner-centre.txt")))
 
 (provide 'iw-dashboard)
 ;;; iw-dashboard.el ends here
