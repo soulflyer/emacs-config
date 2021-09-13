@@ -24,7 +24,8 @@
   :bind (:map dired-mode-map
 	      ("f"   . 'dired-make-file)
 	      ("/"   . 'dired-up-directory)
-	      ("\\"  . 'dired-up-directory)))
+	      ("\\"  . 'dired-up-directory)
+              ("C-s" . 'swiper)))
 
 (use-package openwith
   :ensure t)

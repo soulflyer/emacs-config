@@ -34,12 +34,42 @@
 (use-package zetteldeft
   :ensure t
   :after deft
-  :config (zetteldeft-set-classic-keybindings)
+  :config
+  (zetteldeft-set-classic-keybindings)
   (setq zetteldeft-id-format "%y%m%d%H%M"
         zetteldeft-id-regex "[0-9]\\{10\\}"
         zetteldeft-title-suffix "\n# Tags #")
   :bind
   (("C-c d e" . zetteldeft-extract-region-to-note)))
+
+(defun iw-deft-complete ()
+  "Complete the current action.
+If there is a button at the point, press it.  If a filter is
+applied and there is at least one match, open the first matching
+file.  If there is an active filter but there are no matches,
+quick create a new file using the filter string as the title.
+Otherwise, quick create a new file."
+  (interactive)
+  (cond
+   ;; Activate button
+   ((button-at (point))
+    (push-button))
+   ;; Active filter string with match
+   ((and deft-filter-regexp deft-current-files)
+    (deft-open-file (car deft-current-files)))
+   ;; Default
+   (t
+    (let (slug)
+      (if (and deft-filter-regexp deft-use-filter-string-for-filename)
+          ;; If the filter string is non-emtpy and titles are taken from
+          ;; filenames is set, construct filename from filter string.
+          (setq slug (deft-whole-filter-regexp))
+        ;; If the filter string is empty, or titles are taken from file
+        ;; contents, then use an automatically generated unique filename.
+        (setq slug (deft-unused-slug)))
+      (zetteldeft-new-file slug)))))
+
+(define-key deft-mode-map (kbd "RET") 'iw-deft-complete)
 
 (provide 'iw-deft)
 ;;; iw-deft.el ends here
