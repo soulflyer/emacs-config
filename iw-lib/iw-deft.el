@@ -21,6 +21,9 @@
 ;;; Commentary:
 
 ;; This does the same thing as nvALT and can share notes
+;; iw-deft-complete is lifted from 2 fns in deft and is there so that
+;; when searching in deft fails to find a note, hitting return will
+;; create a new zetteldeft note.
 
 ;;; Code:
 
@@ -38,7 +41,8 @@
   (zetteldeft-set-classic-keybindings)
   (setq zetteldeft-id-format "%y%m%d%H%M"
         zetteldeft-id-regex "[0-9]\\{10\\}"
-        zetteldeft-title-suffix "\n# Tags #")
+        zetteldeft-title-suffix "\n# Tags #"
+        zetteldeft-home-id "2109122138")
   :bind
   (("C-c d e" . zetteldeft-extract-region-to-note)))
 

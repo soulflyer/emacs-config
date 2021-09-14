@@ -25,17 +25,25 @@
 ;;; Code:
 (require 'use-package)
 
+(defun fortune-string-list ()
+  "Creates a list containing one entry. No point having more as the list is refreshed whenever
+the server or a client is started and only one entry is used between server restarts"
+  (list (shell-command-to-string "/opt/homebrew/bin/fortune")))
+
 (use-package dashboard
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((bookmarks . 5)
-                          (projects . 5)
-                          (recents  . 15)
+  (setq dashboard-items '((projects . 5)
+                          (recents  . 12)
+                          (bookmarks . 5)
                           (registers . 5))
         initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
         dashboard-projects-switch-function 'find-file
-        dashboard-startup-banner (concat user-emacs-directory "banner-centre.txt")))
+        dashboard-startup-banner (concat user-emacs-directory "banners/small-80.txt")
+        dashboard-footer-messages (fortune-string-list)))
+
+(add-hook 'server-visit-hook #'(lambda () (setq dashboard-footer-messages (fortune-string-list))))
 
 (provide 'iw-dashboard)
 ;;; iw-dashboard.el ends here

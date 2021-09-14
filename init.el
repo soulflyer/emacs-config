@@ -102,6 +102,6 @@
 
 (zetteldeft-set-classic-keybindings)
 
-(message (concat "\n\n" (slurp (concat user-emacs-directory "banner.txt")) "\n\n"))
+(message (concat "\n\n" (slurp (concat user-emacs-directory "banners/banner.txt")) "\n\n"))
 
 ;;; init.el ends here

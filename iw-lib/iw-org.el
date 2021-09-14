@@ -47,10 +47,13 @@
   (add-to-list 'org-speed-commands-user '("7" org-priority 71))
   (add-to-list 'org-speed-commands-user '("8" org-priority 72))
   (add-to-list 'org-speed-commands-user '("9" org-priority 73))
-  :bind (("C-c o" . org-agenda)))
+  :bind (("C-c o" . org-agenda)
+         :map org-mode-map
+         ("C-c i" . org-insert-structure-template)))
 
 (add-hook 'calendar-initial-window-hook 'diary-mark-entries)
 (global-set-key (kbd "C-c c") 'calendar)
+;;(define-key org-mode-map (kbd "C-c i") 'org-insert-structure-template)
 
 (provide 'iw-org)
 ;;; iw-org.el ends here
