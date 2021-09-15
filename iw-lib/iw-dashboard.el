@@ -25,10 +25,11 @@
 ;;; Code:
 (require 'use-package)
 
-(defun fortune-string-list ()
-  "Creates a list containing one entry. No point having more as the list is refreshed whenever
-the server or a client is started and only one entry is used between server restarts"
-  (list (shell-command-to-string "/opt/homebrew/bin/fortune")))
+(defun fortune-string-list (n)
+  "Creates a list of n fortunes"
+  (cl-loop for i
+           below n
+           collect (shell-command-to-string "fortune")))
 
 (use-package dashboard
   :ensure t
@@ -41,9 +42,13 @@ the server or a client is started and only one entry is used between server rest
         initial-buffer-choice (lambda () (get-buffer "*dashboard*"))
         dashboard-projects-switch-function 'find-file
         dashboard-startup-banner (concat user-emacs-directory "banners/small-80.txt")
-        dashboard-footer-messages (fortune-string-list)))
+        dashboard-footer-messages (fortune-string-list 1)
+        dashboard-force-refresh t))
 
-(add-hook 'server-visit-hook #'(lambda () (setq dashboard-footer-messages (fortune-string-list))))
+;; In order to see a new fortune with every emacsclient we must refresh the list and set
+;; dashboard-force-refresh to something other than nil
+(add-hook 'after-make-frame-functions
+          #'(lambda (_) (setq dashboard-footer-messages (fortune-string-list 1))))
 
 (provide 'iw-dashboard)
 ;;; iw-dashboard.el ends here
