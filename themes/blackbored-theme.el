@@ -7,7 +7,7 @@
  '(default                                ((t (:background "Black" :foreground "white"))))
  '(mode-line                              ((t (:background "gray20" :foreground "#20d030"))))
  '(mode-line-inactive                     ((t (:background "gray10" :foreground "gray30"))))
- '(hl-line                                ((t (:background "#101010"))))
+ '(hl-line                                ((t (:background "#151515y"))))
  '(diary                                  ((t (:foreground "orange"))))
  '(font-lock-builtin-face                 ((t (:foreground "#4c83ff"))))
  '(font-lock-comment-face                 ((t (:foreground "#8a8a8a"))))
@@ -32,6 +32,8 @@
  '(highlight-indent-guides-character-face ((t (:foreground "brightblack"))))
  '(term-color-blue                        ((t (:background "brightblue" :foreground "brightblue"))))
  '(term-color-red                         ((t (:background "red" :foreground "red"))))
+ '(show-paren-match                       ((t (:background "gray24"))))
+ '(widget-field                           ((t (:backgroundf "gray13" :foreground "brightmagen"))))
 
  '(rainbow-delimiters-depth-1-face        ((t (:foreground "red"))))
  '(rainbow-delimiters-depth-2-face        ((t (:foreground "dark green"))))

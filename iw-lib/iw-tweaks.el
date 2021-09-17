@@ -75,12 +75,12 @@
   :ensure t
   :init
   (setq beacon-size 60
-        beacon-color "yellow"
+        beacon-color "gray23"
         beacon-blink-delay 0.3
         beacon-blink-duration 0.1
         beacon-dont-blink-major-modes '(cider-repl-mode)
         beacon-blink-when-window-scrolls t
-        beacon-mode 1) )
+        beacon-mode 1))
 
 (use-package origami
   :ensure t

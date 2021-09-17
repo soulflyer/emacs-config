@@ -19,7 +19,7 @@
 (setq hl-line-range-function #'my-hl-line-range-function)
 (global-hl-line-mode 1)
 
-(setq global-hl-line-sticky-flag nil)
+(setq global-hl-line-sticky-flag t)
 
 (provide 'iw-hl-line)
 ;;; iw-hl-line.el ends here
