@@ -43,9 +43,7 @@
   (setq zetteldeft-id-format "%y%m%d%H%M"
         zetteldeft-id-regex "[0-9]\\{10\\}"
         zetteldeft-title-suffix "\n# Tags #"
-        zetteldeft-home-id "2109122138")
-  :bind
-  (("C-c d e" . zetteldeft-extract-region-to-note)))
+        zetteldeft-home-id "2109122138"))
 
 (defun iw-deft-complete ()
   "Complete the current action.
