@@ -73,7 +73,7 @@ the current position of point, then move it to the beginning of the line."
   (let ((pt (point)))
     (beginning-of-line-text)
     (when (eq pt (point))
-      (beginning-of-line))))
+      (beginning-of-visual-line))))
 
 (defun backward-kill-line (arg)
   "Kill ARG lines backward."

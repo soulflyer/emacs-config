@@ -3,5 +3,6 @@
   '(
     ("deg" "°" nil :count 2)
     ("pi" "π" nil :count 2)
+    ("half" "½" nil :count 2)
+    ("third" "⅓" nil :count 2)
    ))
-
