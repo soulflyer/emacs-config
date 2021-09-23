@@ -54,6 +54,6 @@
 (add-hook 'calendar-initial-window-hook 'diary-mark-entries)
 (global-set-key (kbd "C-c c") 'calendar)
 ;;(define-key org-mode-map (kbd "C-c i") 'org-insert-structure-template)
-
+(define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
 (provide 'iw-org)
 ;;; iw-org.el ends here

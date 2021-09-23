@@ -54,6 +54,7 @@
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
+;; A useful alternative is remap: see iw-org.el for an example
 (bind-keys* ("M-n"        . forward-paragraph)
             ("M-p"        . backward-paragraph)
             ("ESC <down>" . forward-paragraph)
