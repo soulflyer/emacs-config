@@ -49,7 +49,7 @@
   (cycle-spacing -1))
 
 (defun iw-eol-and-delete-whitespace-except-one ()
-  "go to end of line and delete all whitespace except one"
+  "Go to end of line and delete all whitespace except one."
   (interactive)
   (end-of-line)
   (just-one-space -1))
@@ -67,13 +67,21 @@
 
 ;; from https://stackoverflow.com/a/7250027/1671119
 (defun smart-line-beginning ()
-  "Move point to the beginning of text on the current line; if that is already
-the current position of point, then move it to the beginning of the line."
+  "Move to the beginning of the visual line.
+If already there, then move it to the beginning of the real text."
   (interactive)
   (let ((pt (point)))
-    (beginning-of-line-text)
+    (beginning-of-visual-line)
     (when (eq pt (point))
-      (beginning-of-visual-line))))
+      (beginning-of-line-text))))
+
+(defun smart-line-end ()
+  "Move to end of visual line, if already there then move to end of real line."
+  (interactive)
+  (let ((pt (point)))
+    (end-of-visual-line)
+    (when (eq pt (point))
+      (end-of-line))))
 
 (defun backward-kill-line (arg)
   "Kill ARG lines backward."

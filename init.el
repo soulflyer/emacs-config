@@ -51,6 +51,7 @@
 (require 'iw-jump)
 (require 'iw-lsp)
 (require 'iw-music)
+(require 'iw-occur)
 (require 'iw-org)
 (require 'iw-reify)
 (require 'iw-single-window)
