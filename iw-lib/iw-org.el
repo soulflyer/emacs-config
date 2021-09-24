@@ -49,7 +49,8 @@
   (add-to-list 'org-speed-commands-user '("9" org-priority 73))
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
-         ("C-c i" . org-insert-structure-template)))
+         ("C-c i" . org-insert-structure-template)
+         ("C-c C-o" . org-agenda-open-link)))
 
 (add-hook 'calendar-initial-window-hook 'diary-mark-entries)
 (global-set-key (kbd "C-c c") 'calendar)
