@@ -25,8 +25,15 @@
 (add-to-list 'load-path              "~/.emacs.d/lib")
 (add-to-list 'load-path              "~/.emacs.d/iw-lib")
 (setq diary-file                     "~/Documents/org-mode/diary"
-      bm-repository-file     "~/.emacs.d/etc/bm-repository"
-      org-agenda-files       '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes"))
+      bm-repository-file        "~/.emacs.d/etc/bm-repository"
+      org-agenda-files          '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes")
+      world-clock-list          t
+      zoneinfo-style-world-list '(("Asia/Saigon" "Vietnam")
+                                  ("Europe/London" "Newcastle")
+                                  ("Europe/Prague" "Czech")
+                                  ("Europe/Budapest" "Hungary")
+                                  ("Europe/Kiev" "Ukraine")
+                                  ("Argentina/Buenos_Aires" "Argentina")))
 
 (load-theme  'blackbored)
 
