@@ -47,14 +47,37 @@
   (add-to-list 'org-speed-commands-user '("7" org-priority 71))
   (add-to-list 'org-speed-commands-user '("8" org-priority 72))
   (add-to-list 'org-speed-commands-user '("9" org-priority 73))
+  (setq org-return-follows-link t
+        org-refile-targets          '((org-agenda-files :tag . ""))
+        org-refile-use-outline-path 'file
+        org-log-done                'time
+        org-taxonomy-file           "~/Documents/org-mode/plans/taxonomy.org"
+        org-capture-templates
+        '(("e" "Emacs" entry (file "~/Documents/org-mode/notes/emacs.org"))
+          ("s" "Study" entry (file "~/Documents/org-mode/notes/study.org"))
+          ("p" "Plan"  entry (file "~/Documents/org-mode/plans/plan.org")
+           "* TODO %?%i [/]")
+          ("t" "Taxonomy")
+          ("tf" "Fish" entry (file+headline org-taxonomy-file "Fish")
+           "*** %?%i")
+          ("tc" "Crustacea" entry (file+headline org-taxonomy-file "Crustacea")
+           "*** %?%i")
+          ("ta" "Anemones" entry (file+headline org-taxonomy-file "Anemones")
+           "* %?%i")
+          ("tm" "Molluscs" entry (file+headline org-taxonomy-file "Molluscs")
+           "* %?%i")
+          ("ts" "Starfish" entry (file+headline org-taxonomy-file "Starfish")
+           "* %?%i")))
+
+  (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
          ("C-c i" . org-insert-structure-template)
          ("C-c C-o" . org-agenda-open-link)))
 
 (add-hook 'calendar-initial-window-hook 'diary-mark-entries)
-(global-set-key (kbd "C-c c") 'calendar)
-;;(define-key org-mode-map (kbd "C-c i") 'org-insert-structure-template)
 
+;; TODO I think this should be in :config with a mention of 'calendar in :commands.
+(global-set-key (kbd "C-c c") 'calendar)
 (provide 'iw-org)
 ;;; iw-org.el ends here

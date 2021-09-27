@@ -22,8 +22,8 @@
 ;; Who needs to suspend emacs from within? Much more useful to scroll text.
 (global-set-key (kbd "C-z")        'scroll-down)
 
-;; Also not default. C-a usually goes to the begining. Back to indentation is far more useful
 (global-set-key (kbd "C-a")        'smart-line-beginning)
+(global-set-key (kbd "C-e")        'smart-line-end)
 
 ;; mostly to cleanup when gui emacsclient insists on adding the menu bar. Kinda handy anyway.
 (global-set-key (kbd "M-m")        'menu-bar-mode)
@@ -52,8 +52,12 @@
 
 (global-set-key (kbd "C-c b k")    'backward-kill-line)
 
+;; These are added to a minor mode map that is generally applied so that keybindings here
+;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
+;; A useful alternative is remap: see iw-org.el for an example
 (bind-keys* ("M-n"        . forward-paragraph)
             ("M-p"        . backward-paragraph)
+            ;; FIXME the above work, but the following don't
             ("ESC <down>" . forward-paragraph)
             ("ESC <up>"   . backward-paragraph)
             ("C-c d e"    . zetteldeft-extract-region-to-note)

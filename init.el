@@ -26,7 +26,7 @@
 (add-to-list 'load-path              "~/.emacs.d/iw-lib")
 (setq diary-file                     "~/Documents/org-mode/diary"
       bm-repository-file     "~/.emacs.d/etc/bm-repository"
-      org-agenda-files       '("~/Documents/org-mode/agenda"))
+      org-agenda-files       '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes"))
 
 (load-theme  'blackbored)
 
@@ -51,6 +51,7 @@
 (require 'iw-jump)
 (require 'iw-lsp)
 (require 'iw-music)
+(require 'iw-occur)
 (require 'iw-org)
 (require 'iw-reify)
 (require 'iw-single-window)
