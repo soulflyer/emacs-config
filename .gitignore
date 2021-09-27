@@ -32,3 +32,5 @@ projectile.cache
 .cache
 recentf
 annotations
+.org-id-locations
+org-roam.db

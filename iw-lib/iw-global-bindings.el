@@ -57,6 +57,7 @@
 ;; A useful alternative is remap: see iw-org.el for an example
 (bind-keys* ("M-n"        . forward-paragraph)
             ("M-p"        . backward-paragraph)
+            ;; FIXME the above work, but the following don't
             ("ESC <down>" . forward-paragraph)
             ("ESC <up>"   . backward-paragraph)
             ("C-c d e"    . zetteldeft-extract-region-to-note)

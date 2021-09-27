@@ -7,7 +7,7 @@
  '(default                                ((t (:background "Black" :foreground "white"))))
  '(mode-line                              ((t (:background "gray20" :foreground "#20d030"))))
  '(mode-line-inactive                     ((t (:background "gray10" :foreground "gray30"))))
- '(hl-line                                ((t (:background "#151515y"))))
+ '(hl-line                                ((t (:background "#151515"))))
  '(diary                                  ((t (:foreground "orange"))))
  '(font-lock-builtin-face                 ((t (:foreground "#4c83ff"))))
  '(font-lock-comment-face                 ((t (:foreground "#8a8a8a"))))
