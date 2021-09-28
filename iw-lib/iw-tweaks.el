@@ -46,7 +46,7 @@
 
 ;; This allows easy tweaking of colours. Select some text and do M-x make-color
 ;; to open the make-color buffer, select something and press n, then adjust the colour
-;; Colours can be changed by RGB HSL CMY keys, uper case to increase, lower to decrease
+;; Colours can be changed by RGB HSL CMY keys, upper case to increase, lower to decrease
 ;; press k to add the current colour to the kill ring.
 ;; https://github.com/alezost/make-color.el
 (use-package make-color

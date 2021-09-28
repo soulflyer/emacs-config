@@ -59,10 +59,10 @@
   :ensure t)
 
 ;; This is newer and asynchronous, but doesn't seem to work for Vietnamese
-;; (use-package go-translate
-;;   :ensure t
-;;   :config (setq go-translate-target-language "vn"
-;;                 go-translate-local-language "en"))
+(use-package go-translate
+  :ensure t
+  :config (setq go-translate-target-language "vn"
+                go-translate-local-language "en"))
 
 (use-package counsel-web
   :ensure t

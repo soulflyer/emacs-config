@@ -24,7 +24,8 @@
 
 (use-package banner-comment
   :ensure t
-  :bind (("C-c t b" . banner-comment)))
+  :bind
+  (("C-c t b" . banner-comment)))
 
 (use-package underline-with-char
   :ensure t
@@ -66,7 +67,7 @@
   (setq-default hl-todo-keyword-faces
                 '(("TODO"    . "#FF0000")
                   ("FIXME"   . "#9F40FF")
-                  ("CLARIFY" . "#ff0000")))
+                  ("CLARIFY" . "#ff8000")))
   (global-hl-todo-mode)
   :bind (("C-c t n" . hl-todo-next)
          ("C-c t p" . hl-todo-previous)))
