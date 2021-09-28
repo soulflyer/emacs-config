@@ -29,11 +29,13 @@
       org-agenda-files          '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes")
       world-clock-list          t
       zoneinfo-style-world-list '(("Asia/Saigon" "Vietnam")
+                                  ("Europe/Kiev" "Ukraine")
                                   ("Europe/London" "Newcastle")
                                   ("Europe/Prague" "Czech")
                                   ("Europe/Budapest" "Hungary")
-                                  ("Europe/Kiev" "Ukraine")
-                                  ("Argentina/Buenos_Aires" "Argentina")))
+                                  ("Argentina/Buenos_Aires" "Argentina")
+                                  ("America/Montevideo" "Uraguay"))
+      world-clock-time-format    "%a %d %b %R %Z")
 
 (load-theme  'blackbored)
 
