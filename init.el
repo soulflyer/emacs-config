@@ -52,7 +52,7 @@
   (require 'iw-terminal-emacs))
 
 ;;  Add config for specific purposes.
-(require 'iw-bookmark)
+;; (require 'iw-bookmark)
 (require 'iw-cleanup)
 (require 'iw-clojure)
 (require 'iw-external)
