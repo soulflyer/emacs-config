@@ -40,9 +40,7 @@
                 org-habit-graph-column 40
                 org-habit-show-all-today t)
   (add-to-list 'display-buffer-alist
-               '("*Agenda Commands*" display-buffer-in-side-window
-                 (side . bottom-only)
-                 (window-height . 8)))
+               '("*Agenda Commands*" display-buffer-at-bottom))
   :config
   (setq org-speed-commands-user nil)
   (add-to-list 'org-speed-commands-user '("4" org-priority 68))
