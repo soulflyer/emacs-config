@@ -51,6 +51,7 @@
         org-refile-targets          '((org-agenda-files :tag . ""))
         org-refile-use-outline-path 'file
         org-log-done                'time
+        org-default-notes-file      "~/Documents/org-mode/notes/new-notes"
         org-taxonomy-file           "~/Documents/org-mode/plans/taxonomy.org"
         org-capture-templates       '(("e" "Emacs" entry (file "~/Documents/org-mode/notes/emacs.org"))
                                       ("s" "Study" entry (file "~/Documents/org-mode/notes/study.org"))

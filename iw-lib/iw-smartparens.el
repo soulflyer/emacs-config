@@ -37,7 +37,8 @@
   (show-paren-mode)
   :config
   (require 'smartparens-config)
-  ;;(add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
+  ;;(add-hook 'prog-mode-hook #'smartparens-mode)
+
   :bind (:map smartparens-mode-map
               ("C-<left>"  . sp-backward-sexp)
 	      ("C-<right>" . sp-forward-sexp)

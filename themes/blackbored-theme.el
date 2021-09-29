@@ -34,6 +34,7 @@
  '(term-color-red                         ((t (:background "red" :foreground "red"))))
  '(show-paren-match                       ((t (:background "gray24"))))
  '(widget-field                           ((t (:backgroundf "gray13" :foreground "brightmagen"))))
+ '(bookmark-face                          ((t (:background "darkslategray"))))
 
  '(rainbow-delimiters-depth-1-face        ((t (:foreground "red"))))
  '(rainbow-delimiters-depth-2-face        ((t (:foreground "dark green"))))
@@ -54,6 +55,7 @@
  '(org-level-6                            ((t (:foreground "#30a000"))))
  '(org-level-7                            ((t (:foreground "#209000"))))
  '(org-level-8                            ((t (:foreground "#108000"))))
+ '(org-meta-line                          ((t (:foreground "gray17"))))
 
  '(visible-mark-active                    ((t (:background "#d0ffd0"))))
  '(visible-mark-face1                     ((t (:background "#80ff00"))))
@@ -65,6 +67,7 @@
  '(visible-mark-face7                     ((t (:background "#205020"))))
  '(visible-mark-face8                     ((t (:background "#104020"))))
 
+ '(sp-pair-overlay-face                   ((t nil)))
  )
 (provide-theme 'blackbored)
 ;;; blackbored-theme.el ends here
