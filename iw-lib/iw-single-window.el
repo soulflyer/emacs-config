@@ -5,7 +5,7 @@
 
 ;;; Code:
 (setq split-window-preferred-function 'split-window-sensibly
-      split-width-threshold 100
+      split-width-threshold nil
       pop-up-windows nil)
 
 (eval-after-load "compile"
