@@ -55,16 +55,26 @@
         org-log-done                'time
         org-default-notes-file      "~/Documents/org-mode/notes/new-notes"
         org-taxonomy-file           "~/Documents/org-mode/plans/taxonomy.org"
-        org-capture-templates       '(("e" "Emacs"
-                                       entry (file "~/Documents/org-mode/notes/emacs.org")
-                                       "** TODO %?%i [4]")
-                                      ("s" "Sing use: <artist>:<title>"
-                                       entry (file "~/Documents/org-mode/agenda/sing.org"))
-                                      ("p" "Plan"
-                                       entry (file "~/Documents/org-mode/plans/plan.org")
-                                       "** TODO %?%i [5]")
-                                      ("S" "Study"
-                                       entry (file "~/Documents/org-mode/notes/study.org"))
+        org-capture-templates       '(("e"
+                                       "Emacs"
+                                       plain
+                                       (file "~/Documents/org-mode/notes/emacs.org")
+                                       "** TODO [4] %?")
+                                      ("s"
+                                       "Sing use: <artist>:<title>"
+                                       plain
+                                       (file "~/Documents/org-mode/agenda/sing.org")
+                                       "* %?: ")
+                                      ("p"
+                                       "Plan"
+                                       plain
+                                       (file "~/Documents/org-mode/plans/plan.org")
+                                       "** TODO [5] %?")
+                                      ("S"
+                                       "Study"
+                                       plain
+                                       (file "~/Documents/org-mode/notes/study.org")
+                                       "** TODO [6] %?")
                                       ("t" "Taxonomy")
                                       ("tf" "Fish" entry (file+headline org-taxonomy-file "Fish")
                                        "*** %?%i")
