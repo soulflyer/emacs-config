@@ -42,6 +42,16 @@
   (add-to-list 'display-buffer-alist
                '("*Agenda Commands*" display-buffer-at-bottom))
   :config
+  (defun iw-zetteldeft-return ()
+    (interactive)
+    (if (thing-at-point 'symbol)
+        (save-excursion
+          (beginning-of-thing 'symbol)
+          (cond
+           ((= (char-before) 35)  (zetteldeft-search-at-point))
+           ((= (char-before) 167) (zetteldeft-follow-link))
+           (t                     (org-return))))
+      (org-return)))
   (setq org-speed-commands-user nil)
   (add-to-list 'org-speed-commands-user '("4" org-priority 68))
   (add-to-list 'org-speed-commands-user '("5" org-priority 69))
@@ -95,8 +105,9 @@
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
-         ("C-c i" . org-insert-structure-template)
-         ("C-c C-o" . org-agenda-open-link)))
+         ("C-c i"   . org-insert-structure-template)
+         ("C-c C-o" . org-agenda-open-link)
+         ("RET"     . iw-zetteldeft-return)))
 
 (add-hook 'calendar-initial-window-hook 'diary-mark-entries)
 

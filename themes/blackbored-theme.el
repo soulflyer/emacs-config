@@ -33,7 +33,7 @@
  '(term-color-blue                        ((t (:background "brightblue" :foreground "brightblue"))))
  '(term-color-red                         ((t (:background "red" :foreground "red"))))
  '(show-paren-match                       ((t (:background "gray24"))))
- '(widget-field                           ((t (:backgroundf "gray13" :foreground "brightmagen"))))
+ '(widget-field                           ((t (:background "gray13" :foreground "brightmagen"))))
  '(bookmark-face                          ((t (:background "darkslategray"))))
 
  '(rainbow-delimiters-depth-1-face        ((t (:foreground "red"))))
@@ -51,11 +51,11 @@
  '(org-level-2                            ((t (:foreground "#70e000"))))
  '(org-level-3                            ((t (:foreground "#60d000"))))
  '(org-level-4                            ((t (:foreground "#50c800"))))
- '(org-level-5                            ((t (:foreground "#40c000"))))
+ '(org-level-5                            ((t (:foreground "#40b000"))))
  '(org-level-6                            ((t (:foreground "#30a000"))))
  '(org-level-7                            ((t (:foreground "#209000"))))
  '(org-level-8                            ((t (:foreground "#108000"))))
- '(org-meta-line                          ((t (:foreground "gray17"))))
+ '(org-meta-line                          ((t (:foreground "gray30"))))
 
  '(visible-mark-active                    ((t (:background "#d0ffd0"))))
  '(visible-mark-face1                     ((t (:background "#80ff00"))))
