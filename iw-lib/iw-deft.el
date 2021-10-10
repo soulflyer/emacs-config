@@ -51,7 +51,7 @@ If there is a button at the point, press it.  If a filter is
 applied and there is at least one match, open the first matching
 file.  If there is an active filter but there are no matches,
 quick create a new file using the filter string as the title.
-Otherwise, quick create a new file."
+Otherwise, ask for a note name and create a new file."
   (interactive)
   (cond
    ;; Activate button
@@ -69,7 +69,7 @@ Otherwise, quick create a new file."
           (setq slug (deft-whole-filter-regexp))
         ;; If the filter string is empty, or titles are taken from file
         ;; contents, then use an automatically generated unique filename.
-        (setq slug (deft-unused-slug)))
+        (setq slug (read-string "New note title: ")))
       (zetteldeft-new-file slug)))))
 
 (define-key deft-mode-map (kbd "RET") 'iw-deft-complete)
