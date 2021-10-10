@@ -37,7 +37,10 @@
 (add-hook 'dashboard-mode-hook      (lambda () (visual-line-mode -1)))
 (add-hook 'org-agenda-mode-hook     (lambda () (visual-line-mode -1)))
 (add-hook 'tabulated-list-mode-hook (lambda () (visual-line-mode -1)))
-;; TODO tabulated-list-mode underlies paradox-menu-mode. Check this works
+;; tabulated-list-mode underlies paradox-menu-mode.
+;; TODO why does Text mode ignore global-visual-line-mode?
+(add-hook 'text-mode-hook           (lambda () (visual-line-mode  1)))
+
 ;; Make sure environment variables are set for clojure repl
 (use-package direnv
   :ensure t

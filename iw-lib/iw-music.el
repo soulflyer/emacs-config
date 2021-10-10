@@ -27,7 +27,7 @@
 (use-package lyrics
   :ensure t
   :config
-  (setq lyrics-backend 'lyrics-musixmatch))
+  (setq lyrics-backend 'lyrics-azlyrics))
 
 (defun iw-lyrics ()
   "Gets lyrics using the current line."

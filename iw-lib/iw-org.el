@@ -55,10 +55,16 @@
         org-log-done                'time
         org-default-notes-file      "~/Documents/org-mode/notes/new-notes"
         org-taxonomy-file           "~/Documents/org-mode/plans/taxonomy.org"
-        org-capture-templates       '(("e" "Emacs" entry (file "~/Documents/org-mode/notes/emacs.org"))
-                                      ("s" "Study" entry (file "~/Documents/org-mode/notes/study.org"))
-                                      ("p" "Plan"  entry (file "~/Documents/org-mode/plans/plan.org")
-                                       "* TODO %?%i [/]")
+        org-capture-templates       '(("e" "Emacs"
+                                       entry (file "~/Documents/org-mode/notes/emacs.org")
+                                       "** TODO %?%i [4]")
+                                      ("s" "Sing use: <artist>:<title>"
+                                       entry (file "~/Documents/org-mode/agenda/sing.org"))
+                                      ("p" "Plan"
+                                       entry (file "~/Documents/org-mode/plans/plan.org")
+                                       "** TODO %?%i [5]")
+                                      ("S" "Study"
+                                       entry (file "~/Documents/org-mode/notes/study.org"))
                                       ("t" "Taxonomy")
                                       ("tf" "Fish" entry (file+headline org-taxonomy-file "Fish")
                                        "*** %?%i")
