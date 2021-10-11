@@ -44,14 +44,17 @@
   :config
   (defun iw-zetteldeft-return ()
     (interactive)
-    (if (thing-at-point 'symbol)
-        (save-excursion
-          (beginning-of-thing 'symbol)
-          (cond
-           ((= (char-before) 35)  (zetteldeft-search-at-point))
-           ((= (char-before) 167) (zetteldeft-follow-link))
-           (t                     (org-return))))
-      (org-return)))
+    (let ((in-thing (if (thing-at-point 'symbol)
+                        (save-excursion
+                          (beginning-of-thing 'symbol)
+                          (cond
+                           ((and (not (string= "+" (thing-at-point 'char 'no-properties)))
+                                 (= (char-before) 35)) "tag")
+                           ((= (char-before) 167) "link")
+                           (t                      nil))))))
+      (cond ((string= in-thing "tag") (zetteldeft-search-at-point))
+            ((string= in-thing "link") (zetteldeft-follow-link))
+            (t (org-return)))))
   (setq org-speed-commands-user nil)
   (add-to-list 'org-speed-commands-user '("4" org-priority 68))
   (add-to-list 'org-speed-commands-user '("5" org-priority 69))
