@@ -62,8 +62,10 @@
             ("ESC <up>"   . backward-paragraph)
             ("C-c d e"    . zetteldeft-extract-region-to-note)
             ("C-c d 2"    . zetteldeft-tag-insert)
+            ("C-c d 3"    . zetteldeft-tag-insert)
             ("C-c d r"    . deft-refresh)
             ("C-c d R"    . zetteldeft-file-rename)
+            ("C-c d z"    . iw-nv-zd)
             ("C-c C-j"    . avy-goto-char-in-line))
 
 (provide 'iw-global-bindings)
