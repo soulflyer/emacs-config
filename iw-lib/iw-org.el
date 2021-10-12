@@ -72,7 +72,7 @@
                                        "Emacs"
                                        plain
                                        (file "~/Documents/org-mode/notes/emacs.org")
-                                       "** TODO [4] %?")
+                                       "** TODO [#G] %?")
                                       ("s"
                                        "Sing use: <artist>:<title>"
                                        plain
@@ -82,12 +82,12 @@
                                        "Plan"
                                        plain
                                        (file "~/Documents/org-mode/plans/plan.org")
-                                       "** TODO [5] %?")
+                                       "** TODO [#H] %?")
                                       ("S"
                                        "Study"
                                        plain
                                        (file "~/Documents/org-mode/notes/study.org")
-                                       "** TODO [6] %?")
+                                       "** TODO [#I] %?")
                                       ("t" "Taxonomy")
                                       ("tf" "Fish" entry (file+headline org-taxonomy-file "Fish")
                                        "*** %?%i")
