@@ -52,6 +52,16 @@
 
 (global-set-key (kbd "C-c b k")    'backward-kill-line)
 
+(global-set-key (kbd "C-x 8 r")    "🟥")
+(global-set-key (kbd "C-x 8 g")    "🟩")
+(global-set-key (kbd "C-x 8 o")    "🟧")
+(global-set-key (kbd "C-x 8 y")    "🟨")
+(global-set-key (kbd "C-x 8 p")    "🟪")
+(global-set-key (kbd "C-x 8 w")    "⬜")
+(global-set-key (kbd "C-x 8 b")    "🟦")
+(global-set-key (kbd "C-x 8 B")    "🟫")
+(global-set-key (kbd "C-x 8 k")    "⬛")
+
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
 ;; A useful alternative is remap: see iw-org.el for an example

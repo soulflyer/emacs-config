@@ -33,9 +33,15 @@
  '(term-color-blue                        ((t (:background "brightblue" :foreground "brightblue"))))
  '(term-color-red                         ((t (:background "red" :foreground "red"))))
  '(show-paren-match                       ((t (:background "gray24"))))
- '(widget-field                           ((t (:background "gray13" :foreground "brightmagen"))))
+ '(widget-field                           ((t (:background "gray13" :foreground "#ff00ff"))))
  '(bookmark-face                          ((t (:background "darkslategray"))))
-
+ '(lsp-face-highlight-textual             ((t (:background "#204030"))))
+ '(secondary-selection                    ((t (:extend t :background "gray16"))))
+ '(custom-button                          ((t (
+                                               :background "#606060"
+                                               :foreground "black"
+                                               :box (:line-width (2 . 2) :style released-button)))))
+ 
  '(rainbow-delimiters-depth-1-face        ((t (:foreground "red"))))
  '(rainbow-delimiters-depth-2-face        ((t (:foreground "dark green"))))
  '(rainbow-delimiters-depth-3-face        ((t (:foreground "deep pink"))))

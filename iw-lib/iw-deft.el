@@ -1,22 +1,6 @@
 ;;; iw-deft.el ---                                   -*- lexical-binding: t; -*-
-
 ;; Copyright (C) 2021  Iain Wood
-
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
-;; Keywords:
-
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
@@ -77,7 +61,8 @@ Otherwise, ask for a note name and create a new file."
 text file into a zetteldeft note in an org file and returns the new file name"
   (interactive)
   (let ((command (format "nv-zd '%s'" (buffer-file-name))))
-    (zetteldeft-find-file (shell-command-to-string command))))
+    (zetteldeft-find-file (shell-command-to-string command))
+    (deft-refresh)))
 
 (define-key deft-mode-map (kbd "RET") 'iw-deft-complete)
 

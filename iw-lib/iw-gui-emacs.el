@@ -1,22 +1,6 @@
 ;;; iw-gui-emacs.el ---                              -*- lexical-binding: t; -*-
-
 ;; Copyright (C) 2021  Iain Wood
-
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
-;; Keywords:
-
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 ;;; Commentary:
 
@@ -36,13 +20,15 @@
 (set-fontset-font
  t
  'symbol
-
  (cond
   ((member "Symbola" (font-family-list)) "Symbola")
   ((member "Apple Symbols" (font-family-list)) "Apple Symbols")))
 
 (when (member "Monaco" (font-family-list))
   (set-frame-font "Monaco-12" t t))
+
+(set-fontset-font t '(#x1F7E0 . #x1F7EB) "Apple Color Emoji")
+(set-fontset-font t '(#x2B1B . #x2B1C) "Apple Color Emoji")
 
 (provide 'iw-gui-emacs)
 ;;; iw-gui-emacs.el ends here
