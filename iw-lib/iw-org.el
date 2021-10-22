@@ -3,8 +3,9 @@
 ;; Author: Iain Wood <iain@subversion.local>
 ;;; Commentary:
 
-(require 'use-package)
 ;;; Code:
+(require 'use-package)
+(require 'iw-lisp)
 
 (use-package org
   :init
@@ -87,7 +88,9 @@
                                          (alltodo "" nil))
                                         nil)
                                        ("c" "Capture" org-capture "" nil)))
-  (org-babel-do-load-languages 'org-babel-load-languages '((ditaa . t)))
+  (org-babel-do-load-languages 'org-babel-load-languages '((ditaa  . t)
+                                                           (python . t)
+                                                           (shell  . t)))
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
   :bind (("C-c o" . org-agenda)
          :map org-mode-map

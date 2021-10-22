@@ -19,8 +19,8 @@
 (add-hook 'ibuffer-mode-hook        (lambda () (visual-line-mode -1)))
 (add-hook 'dashboard-mode-hook      (lambda () (visual-line-mode -1)))
 (add-hook 'org-agenda-mode-hook     (lambda () (visual-line-mode -1)))
-(add-hook 'tabulated-list-mode-hook (lambda () (visual-line-mode -1)))
 ;; tabulated-list-mode underlies paradox-menu-mode.
+(add-hook 'tabulated-list-mode-hook (lambda () (visual-line-mode -1)))
 ;; TODO why does Text mode ignore global-visual-line-mode?
 (add-hook 'text-mode-hook           (lambda () (visual-line-mode  1)))
 
@@ -57,6 +57,11 @@
 (use-package goto-char-preview
   :ensure t)
 
+;; Beacon mode is set up here to emulate a block cursor when it is moving, but revert to
+;; a bar when it stops. This is set for GUI Emacs in iw-gui-emacs.el using:
+;; (blink-cursor-mode 0)
+;; (setq cursor-type 'bar)
+;; Terminal emacs uses the settings in iTerm profiles.
 (use-package beacon
   :ensure t
   :init

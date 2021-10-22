@@ -33,7 +33,8 @@
   :ensure t
   :config
   (global-aggressive-indent-mode 1)
-  (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode))
+  (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'org-mode))
 
 ;; This will expand a line of code that was written all on one line.
 (use-package prog-fill
