@@ -26,19 +26,31 @@
   (add-to-list 'display-buffer-alist
                '("*Agenda Commands*" display-buffer-at-bottom))
   :config
+
   (defun iw-zetteldeft-return ()
+    "Calls zettledeft-search-at-point if in a tag, and zettledeft-follow-link if in a link,
+otherwise it calls org-return
+TODO a cond in an if in a cond ?!? Yuk"
     (interactive)
-    (let ((in-thing (if (thing-at-point 'symbol)
-                        (save-excursion
-                          (beginning-of-thing 'symbol)
-                          (cond
-                           ((and (not (string= "+" (thing-at-point 'char 'no-properties)))
-                                 (= (char-before) 35)) "tag")
-                           ((= (char-before) 167) "link")
-                           (t                      nil))))))
+    (let ((in-thing (cond ((thing-at-point 'symbol)
+                           (if ; at the end of a symbol
+                               (= (point) (cdr (bounds-of-thing-at-point 'symbol)))
+                               nil
+                             (save-excursion
+                               (beginning-of-thing 'symbol)
+                               (cond
+                                ((and (not (string= "+" (thing-at-point 'char 'no-properties)))
+                                      (= (char-before) 35)) ; preceeded by #
+                                 "tag")
+                                ((= ((char-before)) 167) ; preceeded by §
+                                 "link")
+                                (t                      nil)))))
+                          ((string= "§" (thing-at-point 'char)) ; on the §
+                           "link"))))
       (cond ((string= in-thing "tag") (zetteldeft-search-at-point))
             ((string= in-thing "link") (zetteldeft-follow-link))
             (t (org-return)))))
+
   (setq org-speed-commands-user nil)
   (add-to-list 'org-speed-commands-user '("4" org-priority 68))
   (add-to-list 'org-speed-commands-user '("5" org-priority 69))
@@ -55,7 +67,7 @@
         org-capture-templates       '(("e"
                                        "Emacs"
                                        plain
-                                       (file "~/Documents/org-mode/notes/emacs.org")
+                                       (file+headline "~/Documents/org-mode/notes/emacs.org" "Emacs TODOs")
                                        "** TODO [#G] %?")
                                       ("s"
                                        "Sing use: <artist>:<title>"
