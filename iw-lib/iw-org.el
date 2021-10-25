@@ -42,7 +42,7 @@ TODO a cond in an if in a cond ?!? Yuk"
                                 ((and (not (string= "+" (thing-at-point 'char 'no-properties)))
                                       (= (char-before) 35)) ; preceeded by #
                                  "tag")
-                                ((= ((char-before)) 167) ; preceeded by §
+                                ((= (char-before) 167) ; preceeded by §
                                  "link")
                                 (t                      nil)))))
                           ((string= "§" (thing-at-point 'char)) ; on the §

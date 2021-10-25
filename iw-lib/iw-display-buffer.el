@@ -1,10 +1,8 @@
 ;;; iw-display-buffer.el ---                         -*- lexical-binding: t; -*-
 ;; Copyright (C) 2021  Iain Wood
-
 ;; Author: Iain Wood <iain@subversion>
 
 ;;; Commentary:
-
 ;;
 
 ;;; Code:
