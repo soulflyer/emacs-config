@@ -62,6 +62,7 @@
 (require 'iw-music)
 (require 'iw-occur)
 (require 'iw-org)
+(require 'iw-regex)
 (require 'iw-reify)
 (require 'iw-single-window)
 (require 'iw-text)

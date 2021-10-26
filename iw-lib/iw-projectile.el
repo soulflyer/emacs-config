@@ -3,10 +3,11 @@
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
 ;;; Commentary:
 
-;; iw-projectile-ripgrep-re-frame-defn is a quick and dirty method of locating re-frame definitions.
-;; It assumes that the name of an event or subcription in its definiton will be preceded by a space,
-;; and any call to it will not as they are wrapped in square brackets.  If the code is formatted
-;; strictly this will (always/usually?) be true.
+;; iw-projectile-ripgrep-re-frame-defn is a quick and dirty method of locating
+;; re-frame definitions. It assumes that the name of an event or subcription in
+;; its definiton will be preceded by a space, and any call to it will not as
+;; they are wrapped in square brackets.  If the code is formatted strictly this
+;; will (always/usually?) be true.
 
 ;; This is also handy for jumping to an Emacs Lisp file from its require call.
 

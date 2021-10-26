@@ -15,12 +15,8 @@
          ("C-c m o" . mc/mark-pop)
          ("C-c m m" . mc/mark-more-like-this-extended)
          ("C-c m d" . mc/mark-all-dwim)
-         ("C-c m a" . mc/mark-all-like-this)))
-
-;; TODO this appears to be broken
-(use-package ace-mc
-  :ensure t
-  :bind (("C-c m j" . ace-mc-add-multiple-cursors)))
+         ("C-c m a" . mc/mark-all-like-this)
+         ("C-c m r" . vr/mc-mark)))
 
 (provide 'iw-multiple-cursors)
 ;;; iw-multiple-cursors.el ends here
