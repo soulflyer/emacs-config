@@ -61,12 +61,16 @@
 (defun live-cleanup-whitespace ()
   "Cleanup spurious whitespace.  Salvaged from Sam Aarons emacs-live config."
   (if (not (member major-mode live-ignore-whitespace-modes))
-      (let ((whitespace-style '(trailing empty)) )
+      (let ((whitespace-style '(trailing empty)))
         (whitespace-cleanup))))
 
-(add-hook 'before-save-hook 'live-cleanup-whitespace)
+;;(add-hook 'before-save-hook 'live-cleanup-whitespace)
 
 ;; from https://stackoverflow.com/a/7250027/1671119
+;; For coding it would be beter to switch beginning-of-line-text and
+;; beginning-of-visual-line but that would lose the ability to go to the point
+;; where visual-line-mode has wrapped a long text line before going to the
+;; actual start of the line.
 (defun smart-line-beginning ()
   "Move to the beginning of the visual line.
 If already there, then move it to the beginning of the real text."

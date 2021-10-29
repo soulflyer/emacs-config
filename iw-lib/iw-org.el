@@ -26,6 +26,10 @@
   (add-to-list 'display-buffer-alist
                '("*Agenda Commands*" display-buffer-at-bottom))
   :config
+  (font-lock-add-keywords
+   'org-mode
+   '(("\\(┃\\|┏.*┓\\|┣.*┫\\|┗.*┛\\|║\\|╔.*╗\\|╠.*╣\\|╚.*╝\\)" 1
+      'font-lock-comment-face prepend)))
 
   (defun iw-zetteldeft-return ()
     "Calls zettledeft-search-at-point if in a tag, and zettledeft-follow-link if in a link,

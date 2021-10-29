@@ -40,7 +40,6 @@
   :config
   (dynamic-spaces-global-mode 1))
 
-;; TODO check this works. TODO should be highlighted without having to toggle hl-todo-mode
 (use-package hl-todo
   :ensure t
   :demand
@@ -52,6 +51,14 @@
   (global-hl-todo-mode)
   :bind (("C-c t n" . hl-todo-next)
          ("C-c t p" . hl-todo-previous)))
+
+;; This turns boxes made of -|+ into neat drawings using box-drawing unicode chars
+;; set to heavy because emacs insists on using the default font for the light versions
+;; of the bax drawing chars, even when redefined with unicode-chars
+(use-package ascii-art-to-unicode
+  :ensure t
+  :config
+  (setq aa2u-uniform-weight "HEAVY"))
 
 (use-package string-inflection
   :ensure t

@@ -7,6 +7,7 @@
  '(default                                ((t (:background "Black" :foreground "white"))))
  '(mode-line                              ((t (:background "gray20" :foreground "#20d030"))))
  '(mode-line-inactive                     ((t (:background "gray10" :foreground "gray30"))))
+ '(vertical-border                        ((t (:foreground "#20d030"))))
  '(hl-line                                ((t (:background "#151515"))))
  '(diary                                  ((t (:foreground "orange"))))
  '(font-lock-builtin-face                 ((t (:foreground "#4c83ff"))))
@@ -41,7 +42,7 @@
                                                :background "#606060"
                                                :foreground "black"
                                                :box (:line-width (2 . 2) :style released-button)))))
- 
+
  '(rainbow-delimiters-depth-1-face        ((t (:foreground "red"))))
  '(rainbow-delimiters-depth-2-face        ((t (:foreground "dark green"))))
  '(rainbow-delimiters-depth-3-face        ((t (:foreground "deep pink"))))

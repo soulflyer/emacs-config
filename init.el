@@ -1,43 +1,30 @@
 ;;; init.el --- all starts here
 ;;; Commentary:
-;;; Setup use-package before anything else:
-;;; May need to do the first part by hand after a fresh install.
-
 ;;; Code:
-;; This setup makes extensive use of package and use-package.  Install them first.
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-(package-initialize)
-(when (not (package-installed-p 'use-package))
-  (package-install 'use-package))
-(require 'use-package)
-(require 'use-package-ensure)
-(use-package delight
-  :ensure t)
-(use-package paradox
-  :ensure t
-  :init (paradox-enable))
-
 ;; Set some paths.
-(setq custom-file                    "~/.emacs.d/etc/emacs-custom.el")
-(load custom-file)
+(add-to-list 'package-archives       '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path              "~/.emacs.d/lib")
 (add-to-list 'load-path              "~/.emacs.d/iw-lib")
-(setq diary-file                     "~/Documents/org-mode/diary"
-      bm-repository-file        "~/.emacs.d/etc/bm-repository"
-      org-agenda-files          '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes")
-      world-clock-list          t
-      zoneinfo-style-world-list '(("Asia/Saigon" "Vietnam")
-                                  ("Europe/Kiev" "Ukraine")
-                                  ("Europe/London" "Newcastle")
-                                  ("Europe/Prague" "Czech")
-                                  ("Europe/Budapest" "Hungary")
-                                  ("Argentina/Buenos_Aires" "Argentina")
-                                  ("America/Montevideo" "Uraguay"))
-      world-clock-time-format    "%a %d %b %R %Z")
+(setq custom-file                    "~/.emacs.d/etc/emacs-custom.el")
+(setq-default diary-file             "~/Documents/org-mode/diary"
+              bm-repository-file     "~/.emacs.d/etc/bm-repository"
+              org-agenda-files       '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes")
+              world-clock-list       t
+              zoneinfo-style-world-list '(("Asia/Saigon" "Vietnam")
+                                          ("Europe/Kiev" "Ukraine")
+                                          ("Europe/London" "Newcastle")
+                                          ("Europe/Prague" "Czech")
+                                          ("Europe/Budapest" "Hungary")
+                                          ("Argentina/Buenos_Aires" "Argentina")
+                                          ("America/Montevideo" "Uraguay"))
+              world-clock-time-format    "%a %d %b %R %Z")
 
+(load custom-file)
 (load-theme  'blackbored)
+
+;; This setup makes extensive use of package and use-package.  Install them first.
+(require 'iw-package)
 
 ;; Add config for specific systems and machines.
 (when (eq system-type 'darwin)
@@ -110,8 +97,6 @@
     (buffer-substring-no-properties
      (point-min)
      (point-max))))
-
-(zetteldeft-set-classic-keybindings)
 
 (message (concat "\n\n" (slurp (concat user-emacs-directory "banners/banner.txt")) "\n\n"))
 
