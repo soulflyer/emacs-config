@@ -25,7 +25,8 @@
 	      ("f"   . 'dired-make-file)
 	      ("/"   . 'dired-up-directory)
 	      ("\\"  . 'dired-up-directory)
-              ("C-s" . 'swiper)))
+              ("C-s" . 'swiper)
+              ("1"   . 'dired-do-shell-command)))
 
 (use-package openwith
   :ensure t)
