@@ -39,17 +39,18 @@
   :ensure t
   :config
   (unicode-fonts-setup)
-  (setq unicode-fonts-block-font-mapping
-        '(("Box Drawing"
-           ("Menlo" "FreeMono" "DejaVu Sans" "Everson Mono" "Quivira" "Code2000" "Noto Sans Symbols" "Segoe UI Symbol" "Symbola"))
-          ("Geometric Shapes Extended"
-           ("Apple Color Emoji" "Symbola" "Quivira"))
-          ("Miscellaneous Symbols and Arrows"
-           ("JuliaMono" "DejaVu Sans Mono" "Apple Color Emoji" "Symbola" "Quivira" "Asana Math" "Code2000" "Segoe UI Symbol" "Noto Sans Symbols"))
-          ("Miscellaneous Symbols and Pictographs"
-           ("Apple Color Emoji" "Segoe UI Symbol" "Symbola" "Quivira"))
-          )))
-
+  (setq
+   unicode-fonts-block-font-mapping '(("Box Drawing"
+                                       ("Menlo" "FreeMono" "DejaVu Sans" "Everson Mono" "Quivira" "Code2000" "Noto Sans Symbols" "Segoe UI Symbol" "Symbola"))
+                                      ("Geometric Shapes Extended"
+                                       ("Apple Color Emoji" "Symbola" "Quivira"))
+                                      ("Miscellaneous Symbols and Arrows"
+                                       ("JuliaMono" "DejaVu Sans Mono" "Apple Color Emoji" "Symbola" "Quivira" "Asana Math" "Code2000" "Segoe UI Symbol" "Noto Sans Symbols"))
+                                      ("Miscellaneous Symbols and Pictographs"
+                                       ("Apple Color Emoji" "Segoe UI Symbol" "Symbola" "Quivira")))
+   unicode-fonts-overrides-mapping '(("Black Large Square" "White Large Square"
+                                      ("Apple Color Emoji"))
+                                     )))
 
 (provide 'iw-gui-emacs)
 ;;; iw-gui-emacs.el ends here

@@ -12,8 +12,6 @@
 (setq-default savehist-autosave-interval 30)
 (setq savehist-mode t)
 
-(setq-default ispell-program-name "aspell")
-
 (setq-default glogal-visual-line-mode t)
 (add-hook 'dired-mode-hook          (lambda () (visual-line-mode -1)))
 (add-hook 'ibuffer-mode-hook        (lambda () (visual-line-mode -1)))

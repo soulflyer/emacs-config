@@ -1,6 +1,5 @@
 ;;; iw-flycheck --- set up syntax checking
 ;;; Commentary:
-;;; Ispell setup is included here too.
 ;;; Code:
 (require 'use-package)
 (use-package flycheck
