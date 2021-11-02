@@ -73,8 +73,12 @@
          ("C-c q" . 'cider-quit)
          ("C-c h" . 'cider-browse-ns-all))
   :init
-  (add-hook 'cider-repl-mode-hook #'(lambda ()
-                                      (setq scroll-conservatively 101))))
+  (add-hook 'cider-repl-mode-hook #'(lambda () (setq scroll-conservatively 101)))
+  
+  :bind (:map
+         cider-repl-mode-map
+         ("S-<up>"   . 'cider-repl-previous-input)
+         ("S-<down>" . 'cider-repl-next-input)))
 
 (use-package clj-refactor
   :ensure t
