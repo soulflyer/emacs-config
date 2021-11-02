@@ -82,6 +82,7 @@
 ;; paredit or smartparens, not both. They use the same bindings.
 ;; (require 'iw-paredit)
 (require 'iw-smartparens)
+(require 'iw-spell)
 (require 'iw-undo-tree)
 (require 'iw-visible-mark)
 (require 'iw-which-key)
