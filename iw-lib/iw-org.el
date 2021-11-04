@@ -73,6 +73,11 @@ TODO a cond in an if in a cond ?!? Yuk"
                                        plain
                                        (file+headline "~/Documents/org-mode/notes/emacs.org" "Emacs TODOs")
                                        "** TODO [#G] %?")
+                                      ("f"
+                                       "FIXME"
+                                       plain
+                                       (file+headline "~/Documents/org-mode/notes/fixme.org" "FIXME TODOs")
+                                       "** TODO [#C] %?")
                                       ("s"
                                        "Sing use: <artist>:<title>"
                                        plain
