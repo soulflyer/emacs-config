@@ -37,6 +37,7 @@
   (add-to-list 'aggressive-indent-excluded-modes 'org-mode))
 
 ;; This will expand a line of code that was written all on one line.
+;; TODO move some of these somewhere better. Maybe iw-text.el
 (use-package prog-fill
   :ensure t)
 
