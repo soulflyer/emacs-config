@@ -59,6 +59,7 @@
 ;;Most of these are just a single package.
 (require 'iw-auto-complete)
 (require 'iw-autocompile)
+(require 'iw-auto-insert)
 (require 'iw-browse-kill-ring)
 (require 'iw-counsel)
 (require 'iw-dash)
