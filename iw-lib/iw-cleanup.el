@@ -34,7 +34,8 @@
   :config
   (global-aggressive-indent-mode 1)
   (add-to-list 'aggressive-indent-excluded-modes 'cider-repl-mode)
-  (add-to-list 'aggressive-indent-excluded-modes 'org-mode))
+  (add-to-list 'aggressive-indent-excluded-modes 'org-mode)
+  (add-to-list 'aggressive-indent-excluded-modes 'clojure-mode))
 
 ;; This will expand a line of code that was written all on one line.
 ;; TODO move some of these somewhere better. Maybe iw-text.el

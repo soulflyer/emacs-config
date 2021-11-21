@@ -3,29 +3,14 @@
 ;; Copyright (C) 2020  Iain Wood
 
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
-;; Keywords:
-
-;; This program is free software; you can redistribute it and/or modify
-;; it under the terms of the GNU General Public License as published by
-;; the Free Software Foundation, either version 3 of the License, or
-;; (at your option) any later version.
-
-;; This program is distributed in the hope that it will be useful,
-;; but WITHOUT ANY WARRANTY; without even the implied warranty of
-;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;; GNU General Public License for more details.
-
-;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 ;;; Commentary:
-
 ;; Modified from emacs-live config.  Putting font-lock-add-keywords into
 ;; a clojure mode hook means that it gets applied to derived modes too,
 ;; like clojurescript.
 
 (require 'use-package)
 
+(require 'cljstyle-mode)
 ;;; Code:
 (use-package clojure-mode
   :ensure t
@@ -47,12 +32,19 @@
                                             (0 (progn (compose-region (match-beginning 1)
                                                                       (match-end 1) "∈")
                                                       nil)))))))
+  :config
+  (defun iw-pv-return-and-indent ()
+    (interactive)
+    (insert-char ?\n)
+    (cljstyle))
+
   :bind (("C-c C-x C-j j"    . 'cider-jack-in-clj)
          ("C-c C-x C-j C-j"  . 'cider-jack-in-clj)
          ("C-c C-x C-j s"    . 'cider-jack-in-cljs)
          ("C-c C-x C-j C-s"  . 'cider-jack-in-cljs)
          ("C-c C-x C-j RET"  . 'cider-jack-in-clj&cljs)
          :map clojure-mode-map
+         ("RET"       . 'iw-pv-return-and-indent)
          ("C-c c m"   . 'clojure-convert-collection-to-map)
          ("C-c c v"   . 'clojure-convert-collection-to-vector)
          ("C-c c l"   . 'clojure-convert-collection-to-list)
