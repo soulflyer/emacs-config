@@ -91,7 +91,7 @@ TODO a cond in an if in a cond ?!? Yuk"
                                       ("S"
                                        "Study"
                                        plain
-                                       (file "~/Documents/org-mode/notes/study.org")
+                                       (file+headline "~/Documents/org-mode/notes/study.org" "Things to study")
                                        "** TODO [#I] %?")
                                       ("t" "Taxonomy")
                                       ("tf" "Fish" entry (file+headline org-taxonomy-file "Fish")
