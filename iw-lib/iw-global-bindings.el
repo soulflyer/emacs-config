@@ -79,7 +79,8 @@
             ("C-c d r"    . deft-refresh)
             ("C-c d R"    . zetteldeft-file-rename)
             ("C-c d z"    . iw-nv-zd)
-            ("C-c C-j"    . avy-goto-char-in-line))
+            ("C-c C-j"    . avy-goto-char-in-line)
+            ("C-c j"      . avy-goto-char-timer))
 
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here
