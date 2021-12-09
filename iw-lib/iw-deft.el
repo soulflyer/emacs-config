@@ -17,7 +17,8 @@
   (setq deft-use-filename-as-title t
         deft-use-filter-string-for-filename t
         deft-default-extension "org"
-        deft-auto-save-interval 10.0))
+        deft-auto-save-interval 10.0)
+  (advice-add 'deft :after #'deft-refresh))
 
 (use-package zetteldeft
   :ensure t

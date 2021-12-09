@@ -49,8 +49,10 @@ TODO a cond in an if in a cond ?!? Yuk"
                                 ((= (char-before) 167) ; preceeded by §
                                  "link")
                                 (t                      nil)))))
-                          ((string= "§" (thing-at-point 'char)) ; on the §
-                           "link"))))
+                          ((string= "§" (thing-at-point 'char)) ; just before a §
+                           "link")
+                          ((string= "#" (thing-at-point 'char)) ; just before a #
+                           "tag"))))
       (cond ((string= in-thing "tag") (zetteldeft-search-at-point))
             ((string= in-thing "link") (zetteldeft-follow-link))
             (t (org-return)))))

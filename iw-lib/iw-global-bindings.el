@@ -7,8 +7,8 @@
 (global-set-key (kbd "M-~")        'switch-to-next-buffer)
 (global-set-key (kbd "M-`")        'switch-to-prev-buffer)
 (global-set-key (kbd "C-\\")       'align-regexp)
-(global-set-key (kbd "M-SPC ")     'live-delete-whitespace-except-one)
-(global-set-key (kbd "M-/")        'comment-or-uncomment-region)
+(global-set-key (kbd "M-;")        'live-delete-whitespace-except-one)
+(global-set-key (kbd "M-/")        'comment-dwim)
 (global-set-key (kbd "C-;")        'iw-eol-and-delete-whitespace-except-one)
 
 ;; This is not the default behavior, where C-x SPC selects rectangle-mark-mode
