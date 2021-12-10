@@ -22,6 +22,11 @@
 ;; TODO why does Text mode ignore global-visual-line-mode?
 (add-hook 'text-mode-hook           (lambda () (visual-line-mode  1)))
 
+(use-package highlight-context-line
+  :ensure t
+  :config
+  (highlight-context-line-mode 1))
+
 ;; Make sure environment variables are set for clojure repl
 (use-package direnv
   :ensure t
