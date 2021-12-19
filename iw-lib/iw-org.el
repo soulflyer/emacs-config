@@ -22,7 +22,8 @@
                 org-use-speed-commands t
                 org-lowest-priority 73
                 org-habit-graph-column 40
-                org-habit-show-all-today t)
+                org-habit-show-all-today t
+                org-image-actual-width (list 240))
   (add-to-list 'display-buffer-alist
                '("*Agenda Commands*" display-buffer-at-bottom))
   :config
