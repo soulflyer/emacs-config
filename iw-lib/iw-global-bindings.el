@@ -62,8 +62,7 @@
 (global-set-key (kbd "C-x 8 B")    "🟫")
 (global-set-key (kbd "C-x 8 k")    "⬛")
 
-(global-set-key (kbd "C-<mouse-4>") (lambda () (interactive) (scroll-down 10)))
-(global-set-key (kbd "C-<mouse-5>") (lambda () (interactive) (scroll-up 10)))
+
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
