@@ -45,6 +45,7 @@
 (require 'iw-external)
 (require 'iw-generic-mode)
 (require 'iw-git)
+(require 'iw-haskell)
 (require 'iw-jump)
 (require 'iw-lsp)
 (require 'iw-music)
