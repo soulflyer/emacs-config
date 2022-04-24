@@ -30,7 +30,7 @@
 ;; This changes a lisp command for its output ie:
 ;; (current-time-string)
 ;; will be reclaced by the current (incorrectly formatted) time
-;; when running M-x lively at the end of the line.
+;; when running M-x lively at the end of the line. Use M-x lively-stop to revert.
 (use-package lively
   :ensure t)
 

@@ -19,7 +19,21 @@
   (let ((artist-song (split-string (org-entry-get nil "ITEM") ": ")))
     (lyrics (second artist-song) (first artist-song))))
 
-;;(define-key org-mode-map (kbd "C-c l") 'iw-lyrics)
+(define-key org-mode-map (kbd "C-c l") 'iw-lyrics)
+
+(defun iw-edit-lyrics ()
+  (interactive)
+  (let ((song-title (save-excursion
+                      (goto-char (point-min))
+                      (string-trim (substring (thing-at-point 'line t) 5))))
+        (song-artist (save-excursion
+                       (goto-char (point-min))
+                       (forward-line 1)
+                       (string-trim (substring (thing-at-point 'line t) 7)))))
+    (lyrics-edit song-artist song-title)))
+
+(define-key lyrics-show-mode-map (kbd "e") 'iw-edit-lyrics)
+
 
 ;; Versuri offers more features for lyrics, but most of them are not interactive.
 ;; (use-package versuri
