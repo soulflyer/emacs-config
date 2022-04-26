@@ -19,7 +19,7 @@
   (let ((artist-song (split-string (org-entry-get nil "ITEM") ": ")))
     (lyrics (second artist-song) (first artist-song))))
 
-(define-key org-mode-map (kbd "C-c l") 'iw-lyrics)
+;; (define-key org-mode-map (kbd "C-c l") 'iw-lyrics)
 
 (defun iw-edit-lyrics ()
   (interactive)
