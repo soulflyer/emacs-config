@@ -80,6 +80,12 @@
 (use-package cljr-ivy
   :ensure t)
 
+(use-package neil
+  :ensure t
+  :config
+  (setq neil-prompt-for-version-p nil
+        neil-inject-dep-to-project-p t))
+
 ;;(require 're-jump)
 ;;(global-set-key (kbd "M->") 're-frame-jump-to-reg)
 
