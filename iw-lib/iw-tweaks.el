@@ -83,12 +83,13 @@
 
 (use-package origami
   :ensure t
-  ;; :bind (:map origami-mode-map
-  ;;             ("C-c C-o t" . origami-toggle-node)
-  ;;             ("C-c C-o o" . origami-open-node-recursively)
-  ;;             ("C-c C-o a" . origami-toggle-all-nodes)
-  ;;             ("C-c C-o s" . origami-show-only-node))
-  )
+  :bind (("C-c C-c f" . origami-mode)
+         :map origami-mode-map
+         ("C-c C-c t" . origami-toggle-node)
+         ("C-c C-c o" . origami-open-node-recursively)
+         ("C-c C-c a" . origami-toggle-all-nodes)
+         ("C-c C-c 1" . origami-show-only-node)
+         ("C-c C-c q" . origami-open-all-nodes)))
 
 ;; This is so org agenda can see changes made on another machine
 (global-auto-revert-mode)

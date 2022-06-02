@@ -62,7 +62,7 @@
 (global-set-key (kbd "C-x 8 B")    "🟫")
 (global-set-key (kbd "C-x 8 k")    "⬛")
 
-
+(global-set-key (kbd "C-h x") 'howdoyou-query)
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
@@ -72,6 +72,8 @@
             ;; FIXME the above work, but the following don't
             ("ESC <down>" . forward-paragraph)
             ("ESC <up>"   . backward-paragraph)
+
+            ("C-c C-b"    . (lambda () (interactive) (find-file "~/Documents/books/bookshelf/")))
             ("C-c d e"    . zetteldeft-extract-region-to-note)
             ("C-c d 2"    . zetteldeft-tag-insert)
             ("C-c d 3"    . zetteldeft-tag-insert)

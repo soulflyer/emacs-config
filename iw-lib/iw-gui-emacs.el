@@ -37,5 +37,8 @@
                                       ("Apple Color Emoji"))
                                      )))
 
+(use-package pdf-tools
+  :ensure t)
+
 (provide 'iw-gui-emacs)
 ;;; iw-gui-emacs.el ends here
