@@ -32,10 +32,8 @@
 
 (defun iw-deft-complete ()
   "Complete the current action.
-If there is a button at the point, press it.  If a filter is
-applied and there is at least one match, open the first matching
-file.  If there is an active filter but there are no matches,
-quick create a new file using the filter string as the title.
+If there is a button at the point, press it.
+If there is an active filter quick create a new file using the filter string as the title.
 Otherwise, ask for a note name and create a new file."
   (interactive)
   (cond
@@ -43,8 +41,8 @@ Otherwise, ask for a note name and create a new file."
    ((button-at (point))
     (push-button))
    ;; Active filter string with match
-   ((and deft-filter-regexp deft-current-files)
-    (deft-open-file (car deft-current-files)))
+   ;; ((and deft-filter-regexp deft-current-files)
+   ;;  (deft-open-file (car deft-current-files)))
    ;; Default
    (t
     (let (slug)
