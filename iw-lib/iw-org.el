@@ -65,58 +65,63 @@ TODO a cond in an if in a cond ?!? Yuk"
   (add-to-list 'org-speed-commands-user '("7" org-priority 71))
   (add-to-list 'org-speed-commands-user '("8" org-priority 72))
   (add-to-list 'org-speed-commands-user '("9" org-priority 73))
-  (setq org-return-follows-link t
-        org-refile-targets          '((org-agenda-files :tag . ""))
-        org-refile-use-outline-path 'file
-        org-log-done                'time
-        org-default-notes-file      "~/Documents/org-mode/notes/new-notes"
-        org-taxonomy-file           "~/Documents/org-mode/plans/taxonomy.org"
-        org-capture-templates       '(("e"
-                                       "Emacs"
-                                       plain
-                                       (file+headline "~/Documents/org-mode/notes/emacs.org" "Emacs TODOs")
-                                       "** TODO [#G] %?")
-                                      ("f"
-                                       "FIXME"
-                                       plain
-                                       (file+headline "~/Documents/org-mode/notes/fixme.org" "FIXME TODOs")
-                                       "** TODO [#C] %?")
-                                      ("s"
-                                       "Sing use: <artist>:<title>"
-                                       plain
-                                       (file "~/Documents/org-mode/agenda/sing.org")
-                                       "* %?: ")
-                                      ("p"
-                                       "Plan"
-                                       plain
-                                       (file "~/Documents/org-mode/plans/plan.org")
-                                       "** TODO [#H] %?")
-                                      ("S"
-                                       "Study"
-                                       plain
-                                       (file+headline "~/Documents/org-mode/notes/study.org" "Things to study")
-                                       "** TODO [#I] %?")
-                                      ("t" "Taxonomy")
-                                      ("tf" "Fish" entry (file+headline org-taxonomy-file "Fish")
-                                       "*** %?%i")
-                                      ("tc" "Crustacea" entry (file+headline org-taxonomy-file "Crustacea")
-                                       "*** %?%i")
-                                      ("ta" "Anemones" entry (file+headline org-taxonomy-file "Anemones")
-                                       "* %?%i")
-                                      ("tm" "Molluscs" entry (file+headline org-taxonomy-file "Molluscs")
-                                       "* %?%i")
-                                      ("ts" "Starfish" entry (file+headline org-taxonomy-file "Starfish")
-                                       "* %?%i"))
-        org-agenda-custom-commands   '(("n" "Agenda and all TODOs"
-                                        ((agenda "" nil)
-                                         (alltodo "" nil))
-                                        nil)
-                                       ("c" "Capture" org-capture "" nil))
-        org-confirm-babel-evaluate nil)
-  (org-babel-do-load-languages 'org-babel-load-languages '((ditaa   . t)
-                                                           (python  . t)
-                                                           (shell   . t)
-                                                           (clojure . t)))
+  (setq-default org-return-follows-link t
+                org-refile-targets          '((org-agenda-files :tag . ""))
+                org-refile-use-outline-path 'file
+                org-log-done                'time
+                org-default-notes-file      "~/Documents/org-mode/notes/new-notes"
+                org-taxonomy-file           "~/Documents/org-mode/plans/taxonomy.org"
+                org-capture-templates       '(("e"
+                                               "Emacs"
+                                               plain
+                                               (file+headline "~/Documents/org-mode/notes/emacs.org" "Emacs TODOs")
+                                               "** TODO [#G] %?")
+                                              ("f"
+                                               "FIXME"
+                                               plain
+                                               (file+headline "~/Documents/org-mode/notes/fixme.org" "FIXME TODOs")
+                                               "** TODO [#C] %?")
+                                              ("s"
+                                               "Sing use: <artist>:<title>"
+                                               plain
+                                               (file "~/Documents/org-mode/agenda/sing.org")
+                                               "* %?: ")
+                                              ("p"
+                                               "Plan"
+                                               plain
+                                               (file "~/Documents/org-mode/plans/plan.org")
+                                               "** TODO [#H] %?")
+                                              ("S"
+                                               "Study"
+                                               plain
+                                               (file+headline "~/Documents/org-mode/notes/study.org" "Things to study")
+                                               "** TODO [#I] %?")
+                                              ("t" "Taxonomy")
+                                              ("tf" "Fish" entry (file+headline org-taxonomy-file "Fish")
+                                               "*** %?%i")
+                                              ("tc" "Crustacea" entry (file+headline org-taxonomy-file "Crustacea")
+                                               "*** %?%i")
+                                              ("ta" "Anemones" entry (file+headline org-taxonomy-file "Anemones")
+                                               "* %?%i")
+                                              ("tm" "Molluscs" entry (file+headline org-taxonomy-file "Molluscs")
+                                               "* %?%i")
+                                              ("ts" "Starfish" entry (file+headline org-taxonomy-file "Starfish")
+                                               "* %?%i"))
+                org-agenda-custom-commands   '(("n" "Agenda and all TODOs"
+                                                ((agenda "" nil)
+                                                 (alltodo "" nil))
+                                                nil)
+                                               ("c" "Capture" org-capture "" nil))
+                org-confirm-babel-evaluate nil
+                org-babel-clojure-backend 'cider)
+  
+  ;; removed this line from custom-set-variables in emacs-custom.el
+  ;; '(org-babel-load-languages '((clojure . t) (ditaa . t) (emacs-lisp . t)))
+  (org-babel-do-load-languages 'org-babel-load-languages '((emacs-lisp . t)
+                                                           (ditaa      . t)
+                                                           (python     . t)
+                                                           (shell      . t)
+                                                           (clojure    . t)))
   
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
   :bind (("C-c o" . org-agenda)

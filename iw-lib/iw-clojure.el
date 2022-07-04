@@ -77,6 +77,9 @@
 ;;                                  (clj-refactor-mode 1)
 ;;                                  (cljr-add-keybindings-with-prefix "C-c C-r"))))
 
+(use-package inf-clojure
+  :ensure t)
+
 (use-package cljr-ivy
   :ensure t)
 
