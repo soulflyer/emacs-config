@@ -135,5 +135,12 @@ TODO a cond in an if in a cond ?!? Yuk"
 
 ;; TODO I think this should be in :config with a mention of 'calendar in :commands.
 (global-set-key (kbd "C-c c") 'calendar)
+
+(use-package verb
+  :ensure t)
+
+(with-eval-after-load 'org
+  (define-key org-mode-map (kbd "C-c C-r") verb-command-map))
+
 (provide 'iw-org)
 ;;; iw-org.el ends here

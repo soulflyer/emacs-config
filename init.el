@@ -43,6 +43,7 @@
 (require 'iw-cleanup)
 (require 'iw-clojure)
 (require 'iw-external)
+(require 'iw-folding)
 (require 'iw-generic-mode)
 (require 'iw-git)
 (require 'iw-haskell)
