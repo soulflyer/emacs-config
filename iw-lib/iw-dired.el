@@ -36,5 +36,12 @@
   :bind (:map dired-mode-map
               ("r"   . 'dired-efap)))
 
+(use-package dired-ranger
+  :ensure t
+  :bind (:map dired-mode-map
+              ("c" . dired-ranger-copy)
+              ("X" . dired-ranger-move)
+              ("v" . dired-ranger-paste)))
+
 (provide 'iw-dired)
 ;;; iw-dired.el ends here
