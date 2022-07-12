@@ -34,7 +34,9 @@
 (use-package dired-efap
   :ensure t
   :bind (:map dired-mode-map
-              ("r"   . 'dired-efap)))
+              ("r"   . 'dired-efap))
+  :config
+  (setq dired-efap-initial-filename-selection nil))
 
 (use-package dired-ranger
   :ensure t
