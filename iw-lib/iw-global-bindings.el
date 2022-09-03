@@ -12,7 +12,7 @@
 (global-set-key (kbd "C-;")        'iw-eol-and-delete-whitespace-except-one)
 
 ;; This is not the default behavior, where C-x SPC selects rectangle-mark-mode
-;; C-space is used by MacOS, so set C-x SPC to the more useful set-matk-command
+;; C-space is used by MacOS, so set C-x SPC to the more useful set-mark-command
 (global-set-key (kbd "C-x TAB")    'rectangle-mark-mode)
 (global-set-key (kbd "C-x SPC")    'set-mark-command)
 

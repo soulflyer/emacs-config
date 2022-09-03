@@ -8,10 +8,10 @@
 ;; a clojure mode hook means that it gets applied to derived modes too,
 ;; like clojurescript.
 
-(require 'use-package)
-
-(require 'cljstyle-mode)
 ;;; Code:
+(require 'use-package)
+(require 'cljstyle-mode)
+
 (use-package clojure-mode
   :ensure t
   :init
