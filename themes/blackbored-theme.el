@@ -4,8 +4,8 @@
 (deftheme blackbored)
 (custom-theme-set-faces
  'blackbored
- '(default                                ((t (:background "#ffffff" :foreground "#e5e5e5"))))
- '(mode-line                              ((t (:background "#33333" :foreground "#20d030"))))
+ '(default                                ((t (:background "#000000" :foreground "#e5e5e5"))))
+ '(mode-line                              ((t (:background "#333333" :foreground "#20d030"))))
  '(mode-line-inactive                     ((t (:background "#1a1a1a" :foreground "#4d4d4d"))))
  '(vertical-border                        ((t (:foreground "#20d030"))))
  '(hl-line                                ((t (:background "#151515"))))
@@ -14,7 +14,7 @@
  '(font-lock-comment-face                 ((t (:foreground "#8a8a8a"))))
  '(font-lock-constant-face                ((t (:foreground "#D8FA3C"))))
  '(font-lock-doc-string-face              ((t (:foreground "#ff8c00"))))
- '(font-lock-function-name-face           ((t (:foreground "magenta"))))
+ '(font-lock-function-name-face           ((t (:foreground "#cd00cd"))))
  '(font-lock-keyword-face                 ((t (:foreground "#FBDE2D"))))
  '(font-lock-preprocessor-face            ((t (:foreground "#919191"))))
  '(font-lock-reference-face               ((t (:foreground "#bebebe"))))
