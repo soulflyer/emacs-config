@@ -36,11 +36,19 @@
 	      ("C-c f b"   . sp-forward-barf-sexp)
 	      ("C-c b b"   . sp-backward-barf-sexp)
               ("C-c b k"   . iw-backward-kill-sexp)
+              ("C-c w ("   . sp-wrap-with-round)
+              ("C-c w ["   . sp-wrap-with-square)
+              ("C-c w {"   . sp-wrap-with-curly)
+              ("C-c w \""  . sp-wrap-with-double-quote)
               ("M-)"       . sp-forward-slurp-sexp)
               ("M-\""      . sp-wrap-with-double-quote)
               ("M-("       . sp-wrap-with-round)
+              ;; This causes a problem in terminal emacs. Moving the mouse inserts garbage in the buffer.
               ;; ("M-["       . sp-wrap-with-square)
               ("M-{"       . sp-wrap-with-curly)))
+
+(sp-pair "<" ">")
+(sp-pair "*" "*")
 
 (defmacro def-pairs (pairs)
   "Define functions for pairing.  PAIRS is an alist of (NAME . STRING)
@@ -67,6 +75,8 @@ respectively."
             (curly        . "{")
             (single-quote . "'")
             (double-quote . "\"")
+            (asterisk     . "*")
+            (angles       . "<")
             ))
 
 (defun iw-backward-kill-sexp ()
