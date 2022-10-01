@@ -39,6 +39,7 @@
               ("M-)"       . sp-forward-slurp-sexp)
               ("M-\""      . sp-wrap-with-double-quote)
               ("M-("       . sp-wrap-with-round)
+              ;; ("M-["       . sp-wrap-with-square)
               ("M-{"       . sp-wrap-with-curly)))
 
 (defmacro def-pairs (pairs)
@@ -52,20 +53,21 @@ STRING is a single-character string that marks the opening character.
 defines the functions WRAP-WITH-PAREN and WRAP-WITH-BRACKET,
 respectively."
   `(progn
-     ,@(loop for (key . val) in pairs
-             collect
-             `(defun ,(read (concat
-                             "sp-wrap-with-"
-                             (prin1-to-string key)))
-                  (&optional arg)
-                (interactive "p")
-                (sp-wrap-with-pair ,val)))))
+     ,@(cl-loop for (key . val) in pairs
+                collect
+                `(defun ,(read (concat
+                                "sp-wrap-with-"
+                                (prin1-to-string key)))
+                     (&optional arg)
+                   (interactive "p")
+                   (sp-wrap-with-pair ,val)))))
 
 (def-pairs ((round        . "(")
             (square       . "[")
             (curly        . "{")
             (single-quote . "'")
-            (double-quote . "\"")))
+            (double-quote . "\"")
+            ))
 
 (defun iw-backward-kill-sexp ()
   "Delete everything back to the start of the sexp"

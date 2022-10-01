@@ -7,7 +7,7 @@
  '(default                                ((t (:background "#000000" :foreground "#e5e5e5"))))
  '(mode-line                              ((t (:background "#333333" :foreground "#20d030"))))
  '(mode-line-inactive                     ((t (:background "#1a1a1a" :foreground "#4d4d4d"))))
- '(vertical-border                        ((t (:foreground "#20d030"))))
+ '(vertical-border                        ((t (:foreground "#1a1a1a"))))
  '(hl-line                                ((t (:background "#151515"))))
  '(diary                                  ((t (:foreground "#ffa500"))))
  '(font-lock-builtin-face                 ((t (:foreground "#4c83ff"))))
@@ -26,6 +26,7 @@
  '(font-lock-warning-face                 ((t (:foreground "#ffc0cb"))))
  '(font-lock-doc-face                     ((t (:foreground "#61CE3C"))))
  '(region                                 ((t (:background "#7F073F"))))
+ '(link                                   ((t (:foreground "#44aaff" :underline t))))
  '(ivy-current-match                      ((t (:background "#666666"))))
  '(popup-face                             ((t (:background "#303030" :foreground "#cdcd00"))))
  '(popup-tip-face                         ((t (:background "#303030" :foreground "#20d020"))))
@@ -35,10 +36,12 @@
  '(term-color-red                         ((t (:background "#cd0000" :foreground "#cd0000"))))
  '(show-paren-match                       ((t (:background "#3d3d3d"))))
  '(widget-field                           ((t (:background "#212121" :foreground "#ff00ff"))))
+ '(custom-variable-tag                    ((t (:foreground "#ff00ff" :weight bold))))
  '(bookmark-face                          ((t (:background "#2f4f4f"))))
  '(lsp-face-highlight-textual             ((t (:background "#204030"))))
  '(secondary-selection                    ((t (:extend t :background "#292929"))))
  '(custom-button                          ((t (:background "#606060" :foreground "#000000" :box (:line-width (2 . 2) :style released-button)))))
+ '(warning                                ((t (:foreground "#ff5522"))))
 
  '(rainbow-delimiters-depth-1-face        ((t (:foreground "#cd0000"))))
  '(rainbow-delimiters-depth-2-face        ((t (:foreground "#006400"))))
@@ -61,6 +64,8 @@
  '(org-level-8                            ((t (:foreground "#108000"))))
  '(org-meta-line                          ((t (:foreground "#4d4d4d"))))
 
+ '(org-agenda-date-today                  ((t (:inherit org-agenda-date :weight bold))))
+ 
  '(visible-mark-active                    ((t (:background "#d0ffd0"))))
  '(visible-mark-face1                     ((t (:background "#80ff00"))))
  '(visible-mark-face2                     ((t (:background "#70a000"))))
@@ -70,6 +75,10 @@
  '(visible-mark-face6                     ((t (:background "#305000"))))
  '(visible-mark-face7                     ((t (:background "#205020"))))
  '(visible-mark-face8                     ((t (:background "#104020"))))
+
+ '(tab-bar                                ((t (:background "#1a1a1a" :foreground "Green" :box (:line-width (10 . 2) :color "#1a1a1a" :style flat-button) :height 1.0))))
+ '(tab-bar-tab                            ((t (:inherit tab-bar))))
+ '(tab-bar-tab-inactive                   ((t (:background "#1a1a1a" :foreground "#4d4d4d"))))
 
  '(deft-title-face                        ((t (:foreground "#ff00ff" :weight bold))))
  '(highlight-context-line-face            ((t (:background "#292929"))))

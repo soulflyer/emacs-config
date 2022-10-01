@@ -2,11 +2,14 @@
 ;;; Commentary:
 ;; Worth considering ivy-prescient.el to sort the entries returned according to what has been used recently
 ;; and most often.
-;; Include smex or counsel-M-x doesn't keep history.
+;; Include smex or counsel-M-x doesn't keep history.  (Trying amx instead)
 ;;; Code:
 (require 'use-package)
 
-(use-package smex
+;; (use-package smex
+;;   :ensure t)
+
+(use-package amx
   :ensure t)
 
 (use-package counsel

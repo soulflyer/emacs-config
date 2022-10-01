@@ -34,6 +34,7 @@
 (when (string= "acceptance\n" (shell-command-to-string "hostname -s"))
   (require 'iw-acceptance))
 
+;; TODO Reconsider how to do this so the server can be accessed by terminal and GUI clients
 (if (display-graphic-p)
     (require 'iw-gui-emacs)
   (require 'iw-terminal-emacs))
@@ -53,7 +54,7 @@
 (require 'iw-occur)
 (require 'iw-org)
 (require 'iw-regex)
-(require 'iw-reify)
+;;(require 'iw-reify)
 (require 'iw-single-window)
 (require 'iw-text)
 (require 'iw-term)
@@ -64,6 +65,7 @@
 (require 'iw-autocompile)
 (require 'iw-auto-insert)
 (require 'iw-browse-kill-ring)
+(require 'iw-burly)
 (require 'iw-counsel)
 (require 'iw-dash)
 (require 'iw-dashboard)

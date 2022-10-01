@@ -14,7 +14,9 @@
 
 (use-package git-gutter
   :ensure t
-  :init (global-git-gutter-mode +1)
+  :init
+  (global-git-gutter-mode +1)
+  (setq-default fringes-outside-margins t)
   :delight)
 
 (use-package magit

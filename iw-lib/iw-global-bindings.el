@@ -64,6 +64,9 @@
 
 (global-set-key (kbd "C-h x") 'howdoyou-query)
 
+(global-set-key (kbd "C-x w m") 'ace-swap-window)
+(global-set-key (kbd "C-x w r") 'window-swap-states)
+
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
 ;; A useful alternative is remap: see iw-org.el for an example
