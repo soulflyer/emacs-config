@@ -21,8 +21,7 @@
 
 (use-package annotate
   :ensure t
-  :bind (("C-c a"   . annotate-mode)
-	 ("C-c C-a" . annotate-mode)))
+  :bind (("C-c C-a" . annotate-mode)))
 
 (use-package lorem-ipsum
   :ensure t)

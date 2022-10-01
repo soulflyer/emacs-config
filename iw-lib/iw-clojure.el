@@ -51,7 +51,8 @@
          ("C-c c ["   . 'clojure-convert-collection-to-vector)
          ("C-c c '"   . 'clojure-convert-collection-to-quoted-list)
          ("C-c c ("   . 'clojure-convert-collection-to-list)
-         ("C-c c #"   . 'clojure-convert-collection-to-set)))
+         ("C-c c #"   . 'clojure-convert-collection-to-set)
+         ("C-c a"     . 'align-cljlet)))
 
 (use-package cider
   :ensure t
@@ -69,6 +70,9 @@
          cider-repl-mode-map
          ("S-<up>"   . 'cider-repl-previous-input)
          ("S-<down>" . 'cider-repl-next-input)))
+
+(use-package align-cljlet
+  :ensure t)
 
 ;; (use-package clj-refactor
 ;;   :ensure t
