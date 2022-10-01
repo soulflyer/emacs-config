@@ -66,9 +66,22 @@
 
 (global-set-key (kbd "C-x w m") 'ace-swap-window)
 (global-set-key (kbd "C-x w r") 'window-swap-states)
+(global-set-key (kbd "C-x C-r") 'resize-window)
 
 (global-set-key (kbd "C-c b l") 'bookmark-bmenu-list)
 (global-set-key (kbd "C-c b n") 'burly-bookmark-windows)
+
+;; these keys are never seen in terminal emacs as tmux grabs C-q
+;; Only rebinding them to avoid muscle memory problems switching to GUI Emacs
+;; There are problems with vterm though....
+(global-unset-key (kbd "C-q"))
+(global-set-key (kbd "C-q C-q") 'other-window)
+(global-set-key (kbd "C-q RET") 'window-swap-states)
+(global-set-key (kbd "C-q <up>") 'resize-window)
+(global-set-key (kbd "C-q <down>") 'resize-window)
+(global-set-key (kbd "C-q <left>") 'resize-window)
+(global-set-key (kbd "C-q <right>") 'resize-window)
+(global-set-key (kbd "s-`") 'tab-next)
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!

@@ -25,7 +25,9 @@
                 org-habit-show-all-today t
                 org-image-actual-width (list 240))
   (add-to-list 'display-buffer-alist
-               '("*Agenda Commands*" display-buffer-at-bottom))
+               '("*Agenda Commands*" display-buffer-in-direction
+                 (side . bottom)
+                 (inhibit-same-window . nil)))
   :config
   (font-lock-add-keywords
    'org-mode

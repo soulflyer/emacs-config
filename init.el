@@ -59,6 +59,7 @@
 (require 'iw-text)
 (require 'iw-term)
 (require 'iw-tweaks)
+(require 'iw-window)
 
 ;;Most of these are just a single package.
 (require 'iw-auto-complete)

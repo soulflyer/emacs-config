@@ -13,7 +13,7 @@
 (require 'use-package)
 
 (defun fortune-string-list (n)
-  "Creates a list of n fortunes"
+  "Create a list of N fortunes."
   (cl-loop for i
            below n
            collect (shell-command-to-string "fortune")))
@@ -22,9 +22,9 @@
   :ensure t
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((projects . 5)
+  (setq dashboard-items '((bookmarks . 5)
+                          (projects . 5)
                           (recents  . 12)
-                          (bookmarks . 5)
                           (registers . 5))
         initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))
         dashboard-projects-switch-function 'find-file
