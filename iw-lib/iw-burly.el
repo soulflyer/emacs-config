@@ -6,7 +6,8 @@
 ;;; Code:
 
 (use-package burly
-  :ensure t)
+  :ensure t
+  :init (burly-tabs-mode))
 
 (provide 'iw-burly)
 ;;; iw-burly.el ends here

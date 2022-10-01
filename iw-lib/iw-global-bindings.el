@@ -67,6 +67,9 @@
 (global-set-key (kbd "C-x w m") 'ace-swap-window)
 (global-set-key (kbd "C-x w r") 'window-swap-states)
 
+(global-set-key (kbd "C-c b l") 'bookmark-bmenu-list)
+(global-set-key (kbd "C-c b n") 'burly-bookmark-windows)
+
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
 ;; A useful alternative is remap: see iw-org.el for an example
