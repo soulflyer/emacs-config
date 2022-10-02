@@ -7,9 +7,11 @@
 (add-to-list 'load-path              "~/.emacs.d/lib")
 (add-to-list 'load-path              "~/.emacs.d/iw-lib")
 (setq custom-file                    "~/.emacs.d/etc/emacs-custom.el")
-(setq-default diary-file             "~/Documents/org-mode/diary"
-              bm-repository-file     "~/.emacs.d/etc/bm-repository"
-              org-agenda-files       '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes")
+(setq-default diary-file                        "~/Documents/org-mode/diary"
+              bm-repository-file                "~/.emacs.d/etc/bm-repository"
+              org-agenda-files                  '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes")
+              deft-directory                    "/Users/iain/Documents/org-mode/NotationalVelocity/"
+              undo-tree-history-directory-alist '(("." . "/Users/iain/emacs-backups/undo-tree"))
               world-clock-list       t
               zoneinfo-style-world-list '(("Asia/Saigon" "Vietnam")
                                           ("Europe/Kiev" "Ukraine")
@@ -35,14 +37,18 @@
   (require 'iw-acceptance))
 
 ;; TODO Reconsider how to do this so the server can be accessed by terminal and GUI clients
-(if (display-graphic-p)
-    (require 'iw-gui-emacs)
-  (require 'iw-terminal-emacs))
+;; (if (display-graphic-p)
+;;     (require 'iw-gui-emacs)
+;;   (require 'iw-terminal-emacs))
+;; It may be ok to just always include them both. Let's see
+(require 'iw-gui-emacs)
+(require 'iw-terminal-emacs)
 
 ;;  Add config for specific purposes.
 ;; (require 'iw-bookmark)
 (require 'iw-cleanup)
 (require 'iw-clojure)
+(require 'iw-display-buffer)
 (require 'iw-external)
 (require 'iw-folding)
 (require 'iw-generic-mode)
@@ -72,6 +78,7 @@
 (require 'iw-dashboard)
 (require 'iw-deft)
 (require 'iw-dired)
+(require 'iw-eshell)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
 ;;(require 'iw-forth)

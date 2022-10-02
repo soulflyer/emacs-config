@@ -19,7 +19,7 @@
         lsp-signature-auto-activate nil
         lsp-enable-indentation nil ; uncomment to use cider indentation instead of lsp
         lsp-completion-enable nil ; uncomment to use cider completion instead of lsp
-        )
+        lsp-log-io t)
   :hook ((clojure-mode       . lsp)
          (clojurec-mode      . lsp)
          (clojurescript-mode . lsp)
@@ -37,6 +37,14 @@
 ;; Don't add this until I can find a way to disable it without having to toggle it in every clojure window.
 (use-package lsp-ui
   :ensure t
+  :init
+  (setq lsp-ui-doc-alignment 'window
+        lsp-ui-doc-delay 1.5
+        lsp-ui-doc-enable nil
+        lsp-ui-doc-header t
+        lsp-ui-doc-max-width 100
+        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-use-childframe t)
   :commands lsp-ui-mode)
 
 (use-package lsp-ivy

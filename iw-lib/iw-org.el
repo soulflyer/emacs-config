@@ -114,8 +114,13 @@ TODO a cond in an if in a cond ?!? Yuk"
                                                  (alltodo "" nil))
                                                 nil)
                                                ("c" "Capture" org-capture "" nil))
-                org-confirm-babel-evaluate nil
-                org-babel-clojure-backend 'cider)
+                org-confirm-babel-evaluate   nil
+                org-babel-clojure-backend    'cider
+                org-link-frame-setup         '((vm . vm-visit-folder)
+                                               (vm-imap . vm-visit-imap-folder-other-frame)
+                                               (gnus . org-gnus-no-new-news)
+                                               (file . find-file)
+                                               (wl . wl)))
   
   ;; removed this line from custom-set-variables in emacs-custom.el
   ;; '(org-babel-load-languages '((clojure . t) (ditaa . t) (emacs-lisp . t)))

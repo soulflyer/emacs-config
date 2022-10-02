@@ -10,7 +10,8 @@
   :ensure t
   :bind ("M-s s" . flyspell-correct-at-point)
   :init
-  (setq flyspell-correct-interface #'flyspell-correct-avy-menu))
+  (setq flyspell-correct-interface #'flyspell-correct-avy-menu
+        ispell-dictionary "en"))
 
 (provide 'iw-spell)
 ;;; iw-spell.el ends here

@@ -16,7 +16,7 @@
       '((display-buffer-reuse-window
          display-buffer-reuse-mode-window
          display-buffer-same-window)
-        . ((mode . (org-mode org-agenda-mode help-mode apropos-mode diary-mode calendar-mode)))))
+        . ((mode . (help-mode apropos-mode diary-mode calendar-mode)))))
 
 (provide 'iw-display-buffer)
 ;;; iw-display-buffer.el ends here

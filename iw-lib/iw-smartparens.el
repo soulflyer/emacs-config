@@ -19,6 +19,7 @@
   (smartparens-global-mode)
   (smartparens-global-strict-mode)
   (show-paren-mode)
+  (setq sp-ignore-modes-list '(minibuffer-mode minibuffer-inactive-mode org-mode))
   :config
   (require 'smartparens-config)
   ;;(add-hook 'prog-mode-hook #'smartparens-mode)

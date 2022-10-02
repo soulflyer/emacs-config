@@ -16,6 +16,7 @@
   :ensure t
   :init
   (global-git-gutter-mode +1)
+  (setq git-gutter:hide-gutter t)
   (setq-default fringes-outside-margins t)
   :delight)
 

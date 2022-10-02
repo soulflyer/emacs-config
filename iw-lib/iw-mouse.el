@@ -23,6 +23,8 @@
 (initialise-mouse-mode)
 (add-hook 'after-make-frame-functions 'initialise-mouse-mode)
 
+;; Don't highlight links when the mouse is over them.
+(setq mouse-highlight nil)
 (setq mouse-yank-at-point t)
 
 (global-set-key [mouse-4]         #'(lambda () (interactive) (scroll-down 1)))

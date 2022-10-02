@@ -5,17 +5,24 @@
 ;;; Code:
 (message "Running GUI Emacs config")
 
-;;(require 'iw-edwina)
-;;(require 'iw-exwm)
-;;(require 'iw-workgroups2)
-
-;;(switch-to-buffer "*Messages*")
-
+;; These are not applied to gui emacsclient frames although the second t implies
+;; that they should be.  For now just leave them in emacs-custom.el too. The same
+;; problem is there for the cursor type too. (blink seems to work though)
+(set-face-attribute 'default nil :height 140)
 (when (member "Monaco" (font-family-list))
-  (set-frame-font "Monaco-12" t t))
+  (set-frame-font "Monaco" t t))
 
 (blink-cursor-mode 0)
-(setq cursor-type 'bar)
+(setq
+ cursor-type 'bar
+ cursor-in-non-selected-windows '(hbar . 1))
+
+(defun iw-set-font-size ()
+  "Adjust the font size in all windows."
+  (interactive)
+  (let (font-size)
+    (setq font-size (read-number "Text size: "))
+    (set-frame-font (font-spec :size font-size) t `(,(selected-frame)))))
 
 (use-package font-utils
   :ensure t)
