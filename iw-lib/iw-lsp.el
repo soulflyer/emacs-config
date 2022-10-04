@@ -38,13 +38,17 @@
 (use-package lsp-ui
   :ensure t
   :init
-  (setq lsp-ui-doc-alignment 'window
+  (setq lsp-ui-doc-alignment 'frame
         lsp-ui-doc-delay 1.5
-        lsp-ui-doc-enable nil
+        lsp-ui-doc-enable t
         lsp-ui-doc-header t
         lsp-ui-doc-max-width 100
-        lsp-ui-doc-show-with-cursor t
+        lsp-ui-doc-show-with-cursor nil
         lsp-ui-doc-use-childframe t)
+  :config
+  (bind-keys :prefix "C-c l"
+             :prefix-map my-lsp-ui-map
+             ("d" . lsp-describe-thing-at-point))
   :commands lsp-ui-mode)
 
 (use-package lsp-ivy

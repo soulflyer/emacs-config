@@ -48,8 +48,8 @@
               ;; ("M-["       . sp-wrap-with-square)
               ("M-{"       . sp-wrap-with-curly)))
 
-(sp-pair "<" ">")
-(sp-pair "*" "*")
+;; (sp-pair "<" ">")
+;; (sp-pair "*" "*")
 
 (defmacro def-pairs (pairs)
   "Define functions for pairing.  PAIRS is an alist of (NAME . STRING)
@@ -76,8 +76,8 @@ respectively."
             (curly        . "{")
             (single-quote . "'")
             (double-quote . "\"")
-            (asterisk     . "*")
-            (angles       . "<")
+            ;; (asterisk     . "*")
+            ;; (angles       . "<")
             ))
 
 (defun iw-backward-kill-sexp ()

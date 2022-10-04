@@ -1,12 +1,12 @@
 ;;; iw-dired --- tweaks to dired
 ;;; Commentary:
-;;; ls-lisp stops dired complaining about the builtin ls not handling the dired option.
-;;; Note the use of :map within the dired :bind.
+;;; ls-lisp stops Dired complaining about the builtin ls not handling the Dired option.
+;;; Note the use of :map within the Dired :bind.
 ;;; This ensures the bindings are added after dired-mode is entered.
 
 ;;; Code:
 (defun dired-make-file (new-file-name)
-  "Add file creation to dired NEW-FILE-NAME."
+  "Add file creation to DIRED NEW-FILE-NAME."
   (interactive "sFile name: ")
   (shell-command (concat "touch " new-file-name))
   (message "created %s" new-file-name)

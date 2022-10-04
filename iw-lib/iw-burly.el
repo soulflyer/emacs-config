@@ -9,7 +9,7 @@
   :ensure t
   :init
   (burly-tabs-mode)
-  (setq burly-bookmark-prefix ": "))
+  (setq burly-bookmark-prefix ""))
 
 (provide 'iw-burly)
 ;;; iw-burly.el ends here

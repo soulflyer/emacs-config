@@ -76,9 +76,11 @@
  '(visible-mark-face7                     ((t (:background "#205020"))))
  '(visible-mark-face8                     ((t (:background "#104020"))))
 
- '(tab-bar                                ((t (:background "#1a1a1a" :foreground "#20d030" :box (:line-width (10 . 2) :color "#1a1a1a" :style flat-button) :height 1.0))))
- '(tab-bar-tab                            ((t (:inherit tab-bar :box (:line-width (3 . 3) :color "#444444" :style flat-button)))))
+ '(tab-bar                                ((t (:background "#1a1a1a" :foreground "#20d030" :height 1.0))))
+ '(tab-bar-tab                            ((t (:inherit tab-bar))))
  '(tab-bar-tab-inactive                   ((t (:background "#1a1a1a" :foreground "#4d4d4d"))))
+
+ '(menu                                   ((t (:foreground "#2288ff"))))
 
  '(epe-dir-face                           ((t (:foreground "#44aa22"))))
  '(deft-title-face                        ((t (:foreground "#ff00ff" :weight bold))))
