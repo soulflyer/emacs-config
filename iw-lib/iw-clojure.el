@@ -10,7 +10,7 @@
 
 ;;; Code:
 (require 'use-package)
-(require 'cljstyle-mode)
+;;(require 'cljstyle-mode)
 
 (use-package clojure-mode
   :ensure t
@@ -34,7 +34,7 @@
                                                       nil)))))
                                     ;; (setq indent-line-function `cljstyle)
                                     ))
-  (add-hook 'clojure-mode-hook 'cljstyle-mode)
+  (add-hook 'clojure-mode-hook 'cljstyle-format-on-save-mode)
   :config
   :bind (("C-c C-x C-j j"   . 'cider-jack-in-clj)
          ("C-c C-x C-j C-j" . 'cider-jack-in-clj)
@@ -95,6 +95,9 @@
 
 ;;(require 're-jump)
 ;;(global-set-key (kbd "M->") 're-frame-jump-to-reg)
+
+(use-package cljstyle-format
+  :ensure t)
 
 (provide 'iw-clojure)
 ;;; iw-clojure.el ends here

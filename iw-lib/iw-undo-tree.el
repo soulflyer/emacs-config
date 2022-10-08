@@ -26,10 +26,6 @@
   :ensure t
   :init
   (global-undo-tree-mode)
-  (add-to-list 'display-buffer-alist
-               '("*undo-tree*" display-buffer-in-direction
-                 (side . right)
-                 (window-width . 20)))
   :bind (("C-_" . undo-tree-undo)
 	 ("C-M-_" . undo-tree-visualize))
   :delight)

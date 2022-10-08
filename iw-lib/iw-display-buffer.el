@@ -6,17 +6,28 @@
 
 ;;; Code:
 
-;; By default always open in the same window
-;; (setq display-buffer-base-action
-;;       '(( display-buffer-same-window)))
+(use-package shackle
+  :ensure t)
 
-;; Help and org-mode will try to reuse a window
-;; FIXME org-agenda doesn't seem to obey this.
+(setq split-window-preferred-function 'split-window-sensibly
+      split-width-threshold 80
+      pop-up-windows t)
+
 (setq display-buffer-base-action
       '((display-buffer-reuse-window
          display-buffer-reuse-mode-window
-         display-buffer-same-window)
-        . ((mode . (help-mode apropos-mode diary-mode calendar-mode)))))
+         display-buffer-same-window)))
+
+(setq display-buffer-alist
+      '(("*undo-tree*"     display-buffer-in-direction
+         (side . right)
+         (window-width . 30))
+        ("*calendar*"      (display-buffer-reuse-window
+                            display-buffer-below-selected))
+        ("diary"           display-buffer-use-some-window)
+        ("Agenda Commands" display-buffer-below-selected)
+        ("Org Select"      display-buffer-below-selected)
+        ("CAPTURE-"        display-buffer-below-selected)))
 
 (provide 'iw-display-buffer)
 ;;; iw-display-buffer.el ends here

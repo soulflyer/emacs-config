@@ -4,9 +4,6 @@
 ;;; it makes search result links open the file in the same window.
 
 ;;; Code:
-(setq split-window-preferred-function 'split-window-sensibly
-      split-width-threshold 80
-      pop-up-windows nil)
 
 (eval-after-load "compile"
   '(defun compilation-goto-locus (msg mk end-mk)
