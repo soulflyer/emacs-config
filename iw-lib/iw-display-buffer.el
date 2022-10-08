@@ -22,12 +22,14 @@
       '(("*undo-tree*"     display-buffer-in-direction
          (side . right)
          (window-width . 30))
-        ("*calendar*"      (display-buffer-reuse-window
+        ("*calendar*"      (display-buffer-reuse-window 
                             display-buffer-below-selected))
-        ("diary"           display-buffer-use-some-window)
+        ("diary"           (display-buffer-reuse-window 
+                            display-buffer-use-some-window))
         ("Agenda Commands" display-buffer-below-selected)
         ("Org Select"      display-buffer-below-selected)
         ("CAPTURE-"        display-buffer-below-selected)))
 
+;; display-buffer-full-frame
 (provide 'iw-display-buffer)
 ;;; iw-display-buffer.el ends here
