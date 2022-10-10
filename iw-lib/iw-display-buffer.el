@@ -9,9 +9,9 @@
 (use-package shackle
   :ensure t)
 
+;; Without this undo-tree appears below the window
 (setq split-window-preferred-function 'split-window-sensibly
-      split-width-threshold 80
-      pop-up-windows t)
+      split-width-threshold nil)
 
 (setq display-buffer-base-action
       '((display-buffer-reuse-window
@@ -20,16 +20,24 @@
 
 (setq display-buffer-alist
       '(("*undo-tree*"     display-buffer-in-direction
-         (side . right)
-         (window-width . 30))
+         (direction . right)
+         (window-width . 25))
         ("*calendar*"      (display-buffer-reuse-window
-                            display-buffer-same-window))
+                            display-buffer-same-window)
+         ;; TODO Find out why this doesn't work
+         ;; (preserve-size . (t . t))
+         )
         ("diary"           (display-buffer-reuse-window
                             display-buffer-in-direction)
          (direction . up))
+        ;; TODO Find out why this claims the full width:
         ("Agenda Commands" display-buffer-below-selected)
         ("Org Select"      display-buffer-below-selected)
-        ("CAPTURE-"        display-buffer-below-selected)))
+        ("Org Src"         display-buffer-below-selected)
+        ("CAPTURE-"        display-buffer-below-selected)
+        ("*cider-error*"   display-buffer-below-selected)
+        ("*cider-doc*"     display-buffer-same-window
+         (inhibit-same-window . nil))))
 
 ;; display-buffer-full-frame
 (provide 'iw-display-buffer)
