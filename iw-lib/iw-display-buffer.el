@@ -14,9 +14,7 @@
       split-width-threshold nil)
 
 (setq display-buffer-base-action
-      '((display-buffer-reuse-window
-         display-buffer-reuse-mode-window
-         display-buffer-same-window)))
+      '((display-buffer-same-window)))
 
 (setq display-buffer-alist
       '(("*undo-tree*"     display-buffer-in-direction
@@ -24,12 +22,17 @@
          (window-width . 25))
         ("*calendar*"      (display-buffer-reuse-window
                             display-buffer-same-window)
-         ;; TODO Find out why this doesn't work
+         ;; TODO Find out why these doesn't work
          ;; (preserve-size . (t . t))
+         ;; (window-height . nil)
+         ;; (window-height . 1.0)
+         ;; (window-height . 55)
          )
         ("diary"           (display-buffer-reuse-window
                             display-buffer-in-direction)
-         (direction . up))
+         (direction . up)
+         ;;(window-height . 1.0)
+         )
         ;; TODO Find out why this claims the full width:
         ("Agenda Commands" display-buffer-below-selected)
         ("Org Select"      display-buffer-below-selected)
