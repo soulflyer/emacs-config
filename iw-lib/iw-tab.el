@@ -35,7 +35,6 @@
   (cd directory))
 
 (defun tab-workspace-home-layout ()
-  (interactive)
   (deft)
   (split-window-right)
   (other-window 1)
@@ -69,6 +68,11 @@
       (tab-new)
       (tab-bar-rename-tab name)
       (tab-workspace-default-layout directory))))
+
+(defun tab-workspace-only-home ()
+  (interactive)
+  (tab-workspace-home)
+  (tab-close-other))
 
 (provide 'iw-tab)
 ;;; iw-tab.el ends here
