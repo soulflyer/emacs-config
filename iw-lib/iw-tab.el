@@ -1,4 +1,4 @@
-;;; iw-tab.el ---                                    -*- lexical-binding: t; -*-
+;;; iw-tab.el ---                                   -*- lexical-binding: t; -*-
 ;; Copyright (C) 2022  Iain Wood
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
 ;;; Commentary:
@@ -19,7 +19,8 @@
       (calendar)
     (if (tab-bar-tab-exists "Calendar")
         (tab-bar-select-tab-by-name "Calendar")
-      (tab-create "Calendar")
+      (tab-new)
+      (tab-bar-rename-tab "Calendar")
       (calendar)
       (diary-show-all-entries)
       (scroll-other-window-down))))
@@ -52,7 +53,8 @@
   (interactive)
   (if (tab-bar-tab-exists tab-bar-home-tab-name)
       (tab-bar-select-tab-by-name tab-bar-home-tab-name)
-    (tab-create tab-bar-home-tab-name)
+    (tab-new)
+    (tab-bar-rename-tab tab-bar-home-tab-name)
     (tab-workspace-home-layout)))
 
 (defun tab-workspace-new (&optional path-name tab-title)
@@ -63,7 +65,8 @@
     (message "Directory is: %s name is %s" directory name)
     (if (tab-bar-tab-exists name)
         (tab-bar-select-tab-by-name name)
-      (tab-create name)
+      (tab-new)
+      (tab-bar-rename-tab name)
       (tab-workspace-default-layout directory))))
 
 (provide 'iw-tab)
