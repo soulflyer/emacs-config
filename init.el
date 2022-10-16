@@ -62,6 +62,7 @@
 (require 'iw-regex)
 ;;(require 'iw-reify)
 (require 'iw-single-window)
+(require 'iw-tab)
 (require 'iw-text)
 (require 'iw-term)
 (require 'iw-tweaks)

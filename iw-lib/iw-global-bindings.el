@@ -83,7 +83,16 @@
 (global-set-key (kbd "C-q <left>")  'resize-window)
 (global-set-key (kbd "C-q <right>") 'resize-window)
 (global-set-key (kbd "C-q f")       'iw-set-font-size)
+(global-set-key (kbd "C-q d")       'tab-close)
+(global-set-key (kbd "C-q z")       'tab-new)
+(global-set-key (kbd "C-q x")       'delete-window)
 (global-set-key (kbd "s-`")         'tab-next)
+
+(global-set-key (kbd "C-q t h")     'tab-workspace-home)
+(global-set-key (kbd "C-q t e")     (lambda () (interactive) (tab-workspace-new "~/.emacs.d" "Emacs")))
+(global-set-key (kbd "C-q t p")     (lambda () (interactive) (tab-workspace-new "~/Code/profile")))
+(global-set-key (kbd "C-q t f")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/Frankie")))
+(global-set-key (kbd "C-q t x")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/framework" "Xiana")))
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
