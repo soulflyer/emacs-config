@@ -35,6 +35,7 @@
   (cd directory))
 
 (defun tab-workspace-home-layout ()
+  (interactive)
   (deft)
   (split-window-right)
   (other-window 1)

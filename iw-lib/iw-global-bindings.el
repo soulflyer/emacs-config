@@ -84,11 +84,13 @@
 (global-set-key (kbd "C-q <right>") 'resize-window)
 (global-set-key (kbd "C-q f")       'iw-set-font-size)
 (global-set-key (kbd "C-q d")       'tab-close)
+(global-set-key (kbd "C-q C-d")     'tab-close)
 (global-set-key (kbd "C-q z")       'tab-new)
 (global-set-key (kbd "C-q x")       'delete-window)
 (global-set-key (kbd "s-`")         'tab-next)
 
 (global-set-key (kbd "C-q t h")     'tab-workspace-home)
+(global-set-key (kbd "C-q t m")     'tab-workspace-new)
 (global-set-key (kbd "C-q t e")     (lambda () (interactive) (tab-workspace-new "~/.emacs.d" "Emacs")))
 (global-set-key (kbd "C-q t p")     (lambda () (interactive) (tab-workspace-new "~/Code/profile")))
 (global-set-key (kbd "C-q t f")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/Frankie")))
