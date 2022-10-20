@@ -5,6 +5,9 @@
 ;;
 ;;; Code:
 
+(setq tab-bar-close-button-show nil
+      tab-bar-show 1)
+
 (defun tab-bar-tab-names ()
   (mapcar #'(lambda (tab) (alist-get 'name tab))
 	  (tab-bar-tabs)))

@@ -34,6 +34,15 @@
    '(("\\(┃\\|┏.*┓\\|┣.*┫\\|┗.*┛\\|║\\|╔.*╗\\|╠.*╣\\|╚.*╝\\)" 1
       'font-lock-comment-face prepend)))
 
+  ;; Stop org-capture from taking over the whole frame:
+  ;; taken from https://stackoverflow.com/a/54251825/1671119
+  (defun my-org-capture-place-template-dont-delete-windows (oldfun &rest args)
+    (cl-letf (((symbol-function 'delete-other-windows) 'ignore))
+      (apply oldfun args)))
+
+  (with-eval-after-load "org-capture"
+    (advice-add 'org-capture-place-template :around 'my-org-capture-place-template-dont-delete-windows))
+  
   (defun iw-zetteldeft-return ()
     "Calls zettledeft-search-at-point if in a tag, and zettledeft-follow-link if in a link,
 otherwise it calls org-return
@@ -120,7 +129,8 @@ TODO a cond in an if in a cond ?!? Yuk"
                                                (vm-imap . vm-visit-imap-folder-other-frame)
                                                (gnus . org-gnus-no-new-news)
                                                (file . find-file)
-                                               (wl . wl)))
+                                               (wl . wl))
+                org-src-window-setup         'plain)
   
   ;; removed this line from custom-set-variables in emacs-custom.el
   ;; '(org-babel-load-languages '((clojure . t) (ditaa . t) (emacs-lisp . t)))
