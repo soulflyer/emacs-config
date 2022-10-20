@@ -45,7 +45,6 @@
 (require 'iw-terminal-emacs)
 
 ;;  Add config for specific purposes.
-;; (require 'iw-bookmark)
 (require 'iw-cleanup)
 (require 'iw-clojure)
 (require 'iw-display-buffer)
@@ -60,7 +59,6 @@
 (require 'iw-occur)
 (require 'iw-org)
 (require 'iw-regex)
-;;(require 'iw-reify)
 (require 'iw-single-window)
 (require 'iw-tab)
 (require 'iw-term)
@@ -81,7 +79,6 @@
 (require 'iw-eshell)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
-;;(require 'iw-forth)
 (require 'iw-hl-line)
 (require 'iw-ibuffer)
 (require 'iw-lisp)

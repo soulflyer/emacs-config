@@ -68,16 +68,16 @@
 (use-package beacon
   :ensure t
   :init
-  (setq beacon-size 2
-        beacon-blink-when-focused t
-        beacon-blink-when-point-moves-horizontally 1
-        beacon-blink-when-point-moves-vertically -1
-        beacon-color "gray"
-        beacon-blink-delay 0.3
-        beacon-blink-duration 0.1
-        beacon-dont-blink-major-modes '(cider-repl-mode)
-        beacon-dont-blink-commands nil
-        beacon-blink-when-window-scrolls t)
+  ;; (setq beacon-size 4
+  ;;       beacon-blink-when-focused t
+  ;;       beacon-blink-when-point-moves-horizontally 1
+  ;;       beacon-blink-when-point-moves-vertically 1
+  ;;       beacon-color "#444444"
+  ;;       beacon-blink-delay 1
+  ;;       beacon-blink-duration 1
+  ;;       beacon-dont-blink-major-modes '(cider-repl-mode)
+  ;;       beacon-dont-blink-commands nil
+  ;;       beacon-blink-when-window-scrolls t)
   :config
   (beacon-mode 1))
 

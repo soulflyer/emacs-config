@@ -90,7 +90,7 @@
 (global-set-key (kbd "s-`")         'tab-next)
 
 (global-set-key (kbd "C-q t h")     'tab-workspace-home)
-(global-set-key (kbd "C-q C-t C-h") 'tab-workspace-only-home)
+(global-set-key (kbd "C-q h")       'tab-workspace-only-home)
 (global-set-key (kbd "C-q t m")     'tab-workspace-new)
 (global-set-key (kbd "C-q t e")     (lambda () (interactive) (tab-workspace-new "~/.emacs.d" "Emacs")))
 (global-set-key (kbd "C-q t p")     (lambda () (interactive) (tab-workspace-new "~/Code/profile")))
