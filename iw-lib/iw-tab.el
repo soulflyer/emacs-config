@@ -32,7 +32,8 @@
   (split-window-below -15)
   (other-window 1)
   (eshell t)
-  (cd directory))
+  (cd directory)
+  (other-window 1))
 
 (defun tab-workspace-home-layout ()
   (deft)
@@ -45,7 +46,8 @@
   (split-window-below -12)
   (other-window 1)
   (eshell t)
-  (cd "~"))
+  (cd "~")
+  (other-window 1))
 
 (defvar tab-bar-home-tab-name "home")
 
@@ -62,7 +64,7 @@
   (interactive)
   (let ((directory (expand-file-name (or path-name default-directory)))
         (name (or tab-title (file-name-nondirectory (directory-file-name  (or path-name default-directory))))))
-    (message "Directory is: %s name is %s" directory name)
+    (message "Workspace directory is: %s, Tab name is %s" directory name)
     (if (tab-bar-tab-exists name)
         (tab-bar-select-tab-by-name name)
       (tab-new)
