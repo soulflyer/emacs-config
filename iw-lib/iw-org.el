@@ -156,6 +156,7 @@ TODO a cond in an if in a cond ?!? Yuk"
 
 ;; TODO I think this should be in :config with a mention of 'calendar in :commands.
 (global-set-key (kbd "C-c c") 'calendar)
+(define-key calendar-mode-map (kbd "q") 'tab-calendar-exit)
 
 (use-package verb
   :ensure t)

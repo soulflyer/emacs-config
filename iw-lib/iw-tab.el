@@ -5,6 +5,9 @@
 ;;
 ;;; Code:
 
+(defvar tab-bar-calendar-tab-name "Calendar")
+(defvar tab-bar-home-tab-name "home")
+
 (setq tab-bar-close-button-show nil
       tab-bar-show 1)
 
@@ -27,6 +30,14 @@
       (calendar)
       (diary-show-all-entries)
       (scroll-other-window-down))))
+
+(defun tab-calendar-exit ()
+  "Close the calendar tab if it exists, or the calendar window if not"
+  (interactive)
+  (if (not (and (tab-bar-mode) (tab-bar-tab-exists tab-bar-calendar-tab-name)))
+      (calendar-exit)
+    (tab-bar-select-tab-by-name tab-bar-calendar-tab-name)
+    (tab-bar-close-tab)))
 
 (defun tab-workspace-default-layout (directory)
   (dired directory)
@@ -51,8 +62,6 @@
   (eshell t)
   (cd "~")
   (other-window 1))
-
-(defvar tab-bar-home-tab-name "home")
 
 (defun tab-workspace-home ()
   (interactive)
