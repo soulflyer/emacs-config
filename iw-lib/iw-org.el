@@ -36,12 +36,16 @@
 
   ;; Stop org-capture from taking over the whole frame:
   ;; taken from https://stackoverflow.com/a/54251825/1671119
-  (defun my-org-capture-place-template-dont-delete-windows (oldfun &rest args)
+  (defun my-fn-dont-delete-windows (oldfun &rest args)
+    "redefine 'delete-other-windows' before calling OLDFUN which is passed in by a call to 'advice-add'"
     (cl-letf (((symbol-function 'delete-other-windows) 'ignore))
       (apply oldfun args)))
 
   (with-eval-after-load "org-capture"
-    (advice-add 'org-capture-place-template :around 'my-org-capture-place-template-dont-delete-windows))
+    (advice-add 'org-capture-place-template :around 'my-fn-dont-delete-windows))
+
+  (with-eval-after-load "org-agenda"
+    (advice-add 'org-agenda-get-restriction-and-command :around 'my-fn-dont-delete-windows))
   
   (defun iw-zetteldeft-return ()
     "Calls zettledeft-search-at-point if in a tag, and zettledeft-follow-link if in a link,
