@@ -16,8 +16,6 @@
 (global-set-key (kbd "C-x TAB")    'rectangle-mark-mode)
 (global-set-key (kbd "C-x SPC")    'set-mark-command)
 
-;; For GUI Emacs, terminal version doesn't see C-TAB
-(global-set-key (kbd "C-<tab>")    'other-window)
 
 ;; Who needs to suspend emacs from within? Much more useful to scroll text.
 (global-set-key (kbd "C-z")        'scroll-down)
@@ -106,7 +104,7 @@
             ;; FIXME the above work, but the following don't
             ("ESC <down>" . forward-paragraph)
             ("ESC <up>"   . backward-paragraph)
-
+            ("C-<tab>"    . 'other-window)
             ("C-c C-b"    . (lambda () (interactive) (find-file "~/Documents/books/bookshelf/")))
             ("C-c d e"    . zetteldeft-extract-region-to-note)
             ("C-c d 2"    . zetteldeft-tag-insert)
@@ -116,6 +114,9 @@
             ("C-c d z"    . iw-nv-zd)
             ("C-c C-j"    . avy-goto-char-in-line)
             ("C-c j"      . avy-goto-char-timer))
+
+;; For GUI Emacs, terminal version doesn't see C-TAB
+;; (global-set-key (kbd "C-<tab>")  'other-window)
 
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here
