@@ -1,7 +1,6 @@
 ;;; iw-git.el --- git config                         -*- lexical-binding: t; -*-
 
 ;;; Commentary:
-;; TODO consider git-timemachine https://gitlab.com/pidu/git-timemachine
 (require 'use-package)
 
 ;;; Code:
@@ -25,7 +24,12 @@
   :config
   (bind-keys :prefix "C-c g"
              :prefix-map my-magit-map
-             ("b" . magit-blame)))
+             ("b" . magit-blame))
+  :bind (("C-x C-g" . 'magit-file-dispatch)))
+
+(use-package git-timemachine
+  :ensure t)
+;; TODO add a binding in magit-file-dispatch to access this. Read about transients.
 
 ;; Wandersons (bartuka) fns for creating and removing a git worktree
 (defun bk/create-worktree ()
