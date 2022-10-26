@@ -104,7 +104,8 @@
             ;; FIXME the above work, but the following don't
             ("ESC <down>" . forward-paragraph)
             ("ESC <up>"   . backward-paragraph)
-            ("C-<tab>"    . 'other-window)
+            ;; For GUI Emacs, terminal version doesn't see C-TAB
+            ("C-<tab>"    . other-window)
             ("C-c C-b"    . (lambda () (interactive) (find-file "~/Documents/books/bookshelf/")))
             ("C-c d e"    . zetteldeft-extract-region-to-note)
             ("C-c d 2"    . zetteldeft-tag-insert)
@@ -115,7 +116,7 @@
             ("C-c C-j"    . avy-goto-char-in-line)
             ("C-c j"      . avy-goto-char-timer))
 
-;; For GUI Emacs, terminal version doesn't see C-TAB
+
 ;; (global-set-key (kbd "C-<tab>")  'other-window)
 
 (provide 'iw-global-bindings)
