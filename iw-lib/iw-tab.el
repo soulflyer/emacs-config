@@ -5,11 +5,13 @@
 ;;
 ;;; Code:
 
+(require 'calendar)
 (defvar tab-bar-calendar-tab-name "Calendar")
 (defvar tab-bar-home-tab-name "home")
 
 (setq tab-bar-close-button-show nil
-      tab-bar-show 1)
+      tab-bar-show 1
+      tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
 
 (defun tab-bar-tab-names ()
   (mapcar #'(lambda (tab) (alist-get 'name tab))
@@ -19,7 +21,8 @@
   (member name (tab-bar-tab-names)))
 
 (defun tab-calendar ()
-  "Open the calendar and diary in a new tab if 'tab-bar-mode' is on.  Otherwise just open the calendar."
+  "Open the calendar and diary in a new tab if \=tab-bar-mode\= is on.
+ Otherwise just open the calendar."
   (interactive)
   (if (not tab-bar-mode)
       (calendar)

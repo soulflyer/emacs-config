@@ -1,4 +1,4 @@
-;;; iw-org.el --- setup org                          -*- lexical-binding: t; -*-
+``';;; iw-org.el --- setup org                       -*- lexical-binding: t; -*-
 ;; Copyright (C) 2020  Iain Wood
 ;; Author: Iain Wood <iain@subversion.local>
 ;;; Commentary:
@@ -37,7 +37,8 @@
   ;; Stop org-capture from taking over the whole frame:
   ;; taken from https://stackoverflow.com/a/54251825/1671119
   (defun my-fn-dont-delete-windows (oldfun &rest args)
-    "redefine 'delete-other-windows' before calling OLDFUN which is passed in by a call to 'advice-add'"
+    "redefine \=delete-other-windows\= before calling OLDFUN which is passed in
+by a call to \=advice-add\="
     (cl-letf (((symbol-function 'delete-other-windows) 'ignore))
       (apply oldfun args)))
 
@@ -46,10 +47,10 @@
 
   (with-eval-after-load "org-agenda"
     (advice-add 'org-agenda-get-restriction-and-command :around 'my-fn-dont-delete-windows))
-  
+
   (defun iw-zetteldeft-return ()
-    "Calls zettledeft-search-at-point if in a tag, and zettledeft-follow-link if in a link,
-otherwise it calls org-return
+    "Calls zettledeft-search-at-point if in a tag, and zettledeft-follow-link
+if in a link, otherwise it calls org-return
 TODO a cond in an if in a cond ?!? Yuk"
     (interactive)
     (let ((in-thing (cond ((thing-at-point 'symbol)
@@ -134,7 +135,9 @@ TODO a cond in an if in a cond ?!? Yuk"
                                                (gnus . org-gnus-no-new-news)
                                                (file . find-file)
                                                (wl . wl))
-                org-src-window-setup         'plain)
+                org-src-window-setup         'plain
+                org-hide-emphasis-markers    t
+                org-hide-leading-stars       t)
   
   ;; removed this line from custom-set-variables in emacs-custom.el
   ;; '(org-babel-load-languages '((clojure . t) (ditaa . t) (emacs-lisp . t)))
@@ -151,6 +154,14 @@ TODO a cond in an if in a cond ?!? Yuk"
          ("C-c C-o" . org-agenda-open-link)
          ("RET"     . iw-zetteldeft-return)
          ("C-c l"   . iw-lyrics)))
+
+(use-package org-superstar
+  :ensure t
+  :config
+  (org-superstar-mode)
+  (setq org-superstar-cycle-headline-bullets nil
+        org-superstar-headline-bullets-list '(11035 9724 9642))
+  (add-hook 'org-mode-hook 'org-superstar-mode))
 
 (add-hook 'calendar-initial-window-hook 'diary-mark-entries)
 
