@@ -37,8 +37,8 @@
   ;; Stop org-capture from taking over the whole frame:
   ;; taken from https://stackoverflow.com/a/54251825/1671119
   (defun my-fn-dont-delete-windows (oldfun &rest args)
-    "redefine \=delete-other-windows\= before calling OLDFUN which is passed in
-by a call to \=advice-add\="
+    "redefine `delete-other-windows' before calling OLDFUN which is passed in
+by a call to `advice-add'"
     (cl-letf (((symbol-function 'delete-other-windows) 'ignore))
       (apply oldfun args)))
 

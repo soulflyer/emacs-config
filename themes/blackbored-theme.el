@@ -5,6 +5,7 @@
 (custom-theme-set-faces
  'blackbored
  '(default                                ((t (:background "#000000" :foreground "#e5e5e5"))))
+ '(bold                                   ((t (:box (:line-width (2 . 2) :color "#333333" :style flat-button) :weight bold))))
  '(mode-line                              ((t (:background "#333333" :foreground "#20d030"))))
  '(mode-line-inactive                     ((t (:background "#1a1a1a" :foreground "#4d4d4d"))))
  '(vertical-border                        ((t (:foreground "#1a1a1a"))))
