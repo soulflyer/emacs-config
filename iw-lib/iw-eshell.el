@@ -7,6 +7,20 @@
 ;; Neither of these are easily customizable
 ;;; Code:
 
+;; Taken from https://emacs.stackexchange.com/a/18569/2666
+(eshell-save-history-on-exit nil)
+
+(defun eshell-append-history ()
+  "Call `eshell-write-history' with the `append' parameter set to `t'."
+  (when eshell-history-ring
+    (let ((newest-cmd-ring (make-ring 1)))
+      (ring-insert newest-cmd-ring (car (ring-elements eshell-history-ring)))
+      (let ((eshell-history-ring newest-cmd-ring))
+        (eshell-write-history eshell-history-file-name t)))))
+
+(add-hook 'eshell-pre-command-hook #'eshell-append-history)
+
+
 (use-package eshell-prompt-extras
   :ensure t
   :init

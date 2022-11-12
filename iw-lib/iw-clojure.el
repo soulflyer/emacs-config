@@ -20,7 +20,7 @@
                                     (font-lock-add-keywords
                                      nil `(("(\\(fn\\)[\[[:space:]]"
                                             (0 (progn (compose-region (match-beginning 1)
-                                                                      (match-end 1) "λ")
+                                                                      (match-end 1) "λ.")
                                                       nil)))))
                                     (font-lock-add-keywords
                                      nil `(("\\(#\\)("
@@ -34,7 +34,7 @@
                                                       nil)))))
                                     ;; (setq indent-line-function `cljstyle)
                                     ))
-  ;;(add-hook 'clojure-mode-hook 'cljstyle-format-on-save-mode)
+  (add-hook 'clojure-mode-hook 'cljstyle-format-on-save-mode)
   :config
   :bind (("C-c C-x C-j j"   . 'cider-jack-in-clj)
          ("C-c C-x C-j C-j" . 'cider-jack-in-clj)
