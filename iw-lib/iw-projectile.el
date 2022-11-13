@@ -22,7 +22,8 @@
 (use-package projectile
   :ensure t
   :config
-  (setq projectile-completion-system 'ivy))
+  (setq projectile-completion-system 'ivy
+        projectile-create-missing-test-files t))
 
 (use-package ripgrep
   :ensure t)

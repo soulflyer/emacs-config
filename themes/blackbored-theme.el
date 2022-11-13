@@ -35,6 +35,8 @@
  '(highlight-indent-guides-character-face ((t (:foreground "#7f7f7f"))))
  '(term-color-blue                        ((t (:background "#5c5cff" :foreground "#5c5cff"))))
  '(term-color-red                         ((t (:background "#cd0000" :foreground "#cd0000"))))
+ '(eshell-ls-executable                   ((t (:foreground "#44aa22" :weight bold))))
+ '(success                                ((t (:foreground "#44aa22" :weight bold))))
  '(show-paren-match                       ((t (:background "#3d3d3d"))))
  '(widget-field                           ((t (:background "#212121" :foreground "#ff00ff"))))
  '(custom-variable-tag                    ((t (:foreground "#ff00ff" :weight bold))))
@@ -77,7 +79,7 @@
  '(visible-mark-face7                     ((t (:background "#205020"))))
  '(visible-mark-face8                     ((t (:background "#104020"))))
 
- '(tab-bar                                ((t (:background "#1a1a1a" :foreground "#20d030" :height 1.0))))
+ '(tab-bar                                ((t (:background "#1a1a1a" :foreground "#20d030" :height 1.1))))
  '(tab-bar-tab                            ((t (:inherit tab-bar))))
  '(tab-bar-tab-inactive                   ((t (:background "#1a1a1a" :foreground "#4d4d4d"))))
 

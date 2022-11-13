@@ -15,7 +15,9 @@
 
 (use-package paradox
   :ensure t
-  :init (paradox-enable))
+  :init (paradox-enable)
+  :config
+  (setq paradox-column-width-package 24))
 
 (use-package delight
   :ensure t)
