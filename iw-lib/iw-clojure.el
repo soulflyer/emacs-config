@@ -34,7 +34,8 @@
                                                       nil)))))
                                     ;; (setq indent-line-function `cljstyle)
                                     ))
-  (add-hook 'clojure-mode-hook 'cljstyle-format-on-save-mode)
+  ;; I don't like this. Call cljstyle-format-buffer by hand instead
+  ;;(add-hook 'clojure-mode-hook 'cljstyle-format-on-save-mode)
   :config
   :bind (("C-c C-x C-j j"   . 'cider-jack-in-clj)
          ("C-c C-x C-j C-j" . 'cider-jack-in-clj)
