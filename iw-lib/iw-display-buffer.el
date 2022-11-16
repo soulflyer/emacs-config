@@ -34,12 +34,16 @@
          ;;(window-height . 1.0)
          )
         ;; TODO Find out why this claims the full width:
-        ("Agenda Commands" display-buffer-below-selected)
-        ("Org Select"      display-buffer-below-selected)
-        ("Org Src"         display-buffer-below-selected)
-        ("CAPTURE-"        display-buffer-below-selected)
-        ("*cider-error*"   display-buffer-below-selected)
-        ("*cider-doc*"     display-buffer-same-window
+        ("Agenda Commands"     display-buffer-below-selected)
+        ("Org Select"          display-buffer-below-selected)
+        ("Org Src"             display-buffer-below-selected)
+        ("CAPTURE-"            display-buffer-below-selected)
+        ("*cider-error*"       display-buffer-below-selected)
+        ("*cider-doc*"         display-buffer-same-window
+         (inhibit-same-window . nil))
+        ("*cider-inspect*"     display-buffer-same-window
+         (inhibit-same-window . nil))
+        ("*cider-test-report*" display-buffer-same-window
          (inhibit-same-window . nil))))
 
 ;; display-buffer-full-frame

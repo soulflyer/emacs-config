@@ -8,8 +8,9 @@
 ;;; Code:
 
 ;; Taken from https://emacs.stackexchange.com/a/18569/2666
-(eshell-save-history-on-exit nil)
+
 (setq eshell-destroy-buffer-when-process-dies t
+      eshell-save-history-on-exit nil
       eshell-visual-subcommands '(("git" "log" "diff")))
 
 (defun eshell-append-history ()

@@ -12,11 +12,16 @@
 (use-package amx
   :ensure t)
 
+(use-package helpful
+  :ensure t)
+
 (use-package counsel
   :ensure t
   :config (setq ivy-count-format "%d/%d:"
                 ivy-use-virtual-buffers t
-                ivy-use-selectable-prompt t)
+                ivy-use-selectable-prompt t
+                counsel-describe-function-function #'helpful-callable
+                counsel-describe-variable-function #'helpful-variable)
 
   :bind (("M-x"     . counsel-M-x )
          ("C-s"     . swiper-thing-at-point)
