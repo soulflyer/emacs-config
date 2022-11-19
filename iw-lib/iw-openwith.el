@@ -16,7 +16,8 @@
                                 ("\\.\\(mp3\\|avi\\|wmv\\)\\'" "vlc" (file))
                                 ("\\.\\(doc\\|odt\\|xls\\|ods\\|ppt\\|odp\\)\\'" "open" (file))))
   :config
-  (openwith-mode t))
+  ;;(openwith-mode t)
+  )
 
 (provide 'iw-openwith)
 ;;; iw-openwith.el ends here

@@ -52,12 +52,13 @@
          ("C-c t p" . hl-todo-previous)))
 
 ;; This turns boxes made of -|+ into neat drawings using box-drawing unicode chars
-;; set to heavy because emacs insists on using the default font for the light versions
-;; of the bax drawing chars, even when redefined with unicode-chars
+;; aa2u-uniform-weight was set to heavy because emacs insisted on using the default
+;; font for the light versions of the box drawing chars, even when redefined with
+;; unicode-chars.
 (use-package ascii-art-to-unicode
   :ensure t
   :config
-  (setq aa2u-uniform-weight "HEAVY"))
+  (setq aa2u-uniform-weight "LIGHT"))
 
 (use-package string-inflection
   :ensure t

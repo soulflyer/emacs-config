@@ -155,13 +155,13 @@ TODO a cond in an if in a cond ?!? Yuk"
          ("RET"     . iw-zetteldeft-return)
          ("C-c l"   . iw-lyrics)))
 
-(use-package org-superstar
-  :ensure t
-  :config
-  (org-superstar-mode)
-  (setq org-superstar-cycle-headline-bullets nil
-        org-superstar-headline-bullets-list '(11035 9724 9642))
-  (add-hook 'org-mode-hook 'org-superstar-mode))
+;; (use-package org-superstar
+;;   :ensure t
+;;   :config
+;;   (org-superstar-mode)
+;;   (setq org-superstar-cycle-headline-bullets nil
+;;         org-superstar-headline-bullets-list '(11035 9724 9642))
+;;   (add-hook 'org-mode-hook 'org-superstar-mode))
 
 (add-hook 'calendar-initial-window-hook 'diary-mark-entries)
 
