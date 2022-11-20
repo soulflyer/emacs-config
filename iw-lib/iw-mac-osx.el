@@ -24,6 +24,11 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
+(defun iw-open-bookshelf ()
+  (interactive)
+  (shell-command (concat "osascript -e 'mount volume \"smb://iain@subversion.local/bookshelf\"'"))
+  (find-file "~/Documents/books/bookshelf/"))
+
 (when (not window-system)
   (setq interprogram-cut-function 'live-paste-to-osx))
 

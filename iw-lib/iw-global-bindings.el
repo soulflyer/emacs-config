@@ -106,7 +106,7 @@
             ("ESC <up>"   . backward-paragraph)
             ;; For GUI Emacs, terminal version doesn't see C-TAB
             ("C-<tab>"    . other-window)
-            ("C-c C-b"    . (lambda () (interactive) (find-file "~/Documents/books/bookshelf/")))
+            ("C-c C-b"    . iw-open-bookshelf)
             ("C-c d e"    . zetteldeft-extract-region-to-note)
             ("C-c d 2"    . zetteldeft-tag-insert)
             ("C-c d 3"    . zetteldeft-tag-insert)
