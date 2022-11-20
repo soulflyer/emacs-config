@@ -18,9 +18,21 @@
            below n
            collect (shell-command-to-string "fortune")))
 
+;; This definition is lifted from 'dashboard-widgets.el' with the call to
+;; 'dashboard-center-line' removed.
+(defun dashboard-insert-footer-not-centred ()
+  "Insert footer of dashboard."
+  (when-let ((footer (and dashboard-set-footer (dashboard-random-footer))))
+    (insert "\n")
+    (insert dashboard-footer-icon)
+    (insert " ")
+    (insert (propertize footer 'face 'dashboard-footer))
+    (insert "\n")))
+
 (use-package dashboard
   :ensure t
   :config
+  (advice-add 'dashboard-insert-footer :override #'dashboard-insert-footer-not-centred)      
   (dashboard-setup-startup-hook)
   (setq dashboard-items '((bookmarks . 5)
                           (projects . 5)
