@@ -32,6 +32,7 @@
     (setq eshell-highlight-prompt nil
           eshell-prompt-function 'epe-theme-lambda)))
 
+
 (use-package load-bash-alias
   :ensure t
   :config
