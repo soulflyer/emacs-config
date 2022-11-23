@@ -89,7 +89,7 @@
 ;; (require 'iw-popwin)
 (require 'iw-projectile)
 (require 'iw-rainbow-delimiters)
-(require 'iw-rainbow-mode)
+;; (require 'iw-rainbow-mode)
 ;; paredit or smartparens, not both. They use the same bindings.
 ;; (require 'iw-paredit)
 (require 'iw-smartparens)
