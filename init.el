@@ -52,6 +52,7 @@
 (require 'iw-folding)
 (require 'iw-generic-mode)
 (require 'iw-git)
+(require 'iw-apl)
 (require 'iw-haskell)
 (require 'iw-jump)
 (require 'iw-lsp)

@@ -57,12 +57,12 @@
  '(rainbow-delimiters-depth-9-face        ((t (:foreground "#d3d3d3"))))
  '(rainbow-delimiters-unmatched-face      ((t (:foreground "#e5e5e5"))))
 
- '(org-level-1                            ((t (:foreground "#80ff00"))))
- '(org-level-2                            ((t (:foreground "#70e000"))))
- '(org-level-3                            ((t (:foreground "#60d000"))))
- '(org-level-4                            ((t (:foreground "#50c800"))))
- '(org-level-5                            ((t (:foreground "#40b000"))))
- '(org-level-6                            ((t (:foreground "#30a000"))))
+ '(org-level-1                            ((t (:foreground "#80ff00" :height 1.3))))
+ '(org-level-2                            ((t (:foreground "#70e000" :height 1.25))))
+ '(org-level-3                            ((t (:foreground "#60d000" :height 1.2))))
+ '(org-level-4                            ((t (:foreground "#50c800" :height 1.15))))
+ '(org-level-5                            ((t (:foreground "#40b000" :height 1.1))))
+ '(org-level-6                            ((t (:foreground "#30a000" :height 1.05))))
  '(org-level-7                            ((t (:foreground "#209000"))))
  '(org-level-8                            ((t (:foreground "#108000"))))
  '(org-meta-line                          ((t (:foreground "#4d4d4d"))))
@@ -89,6 +89,9 @@
  '(deft-title-face                        ((t (:foreground "#ff00ff" :weight bold))))
  '(highlight-context-line-face            ((t (:background "#292929"))))
  '(sp-pair-overlay-face                   ((t nil)))
+
+ '(gnu-apl-default ((t (:family "hack nerd font mono"))) t)
+ '(gnu-apl-kbd-help-screen ((t (:inherit gnu-apl-default :height 1.3))))
  )
 (provide-theme 'blackbored)
 ;;; blackbored-theme.el ends here

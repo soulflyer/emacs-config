@@ -5,6 +5,7 @@
 ;;; Code:
 (message "Running GUI Emacs config")
 
+(add-to-list 'default-frame-alist '(undecorated . t))
 (set-face-attribute 'default nil :height 140)
 (when (member "MonacoB2" (font-family-list))
   (set-frame-font "MonacoB2" t t))
@@ -25,7 +26,8 @@
                 rainbow-r-colors nil
                 rainbow-x-colors nil
                 cursor-in-non-selected-windows '(hbar . 1)
-                cursor-type 'bar))
+                cursor-type 'bar)
+  (setq frame-resize-pixelwise t))
 
 (add-hook
  'server-after-make-frame-hook

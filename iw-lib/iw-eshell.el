@@ -23,7 +23,6 @@
 
 (add-hook 'eshell-pre-command-hook #'eshell-append-history)
 
-
 (use-package eshell-prompt-extras
   :ensure t
   :init
@@ -32,12 +31,13 @@
     (setq eshell-highlight-prompt nil
           eshell-prompt-function 'epe-theme-lambda)))
 
+(use-package eshell-git-prompt
+  :ensure t)
 
 (use-package load-bash-alias
   :ensure t
   :config
   (setq load-bash-alias-bashrc-file "~/.bashrc"))
-
 
 (provide 'iw-eshell)
 ;;; iw-eshell.el ends here
