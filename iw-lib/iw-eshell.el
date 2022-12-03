@@ -23,16 +23,48 @@
 
 (add-hook 'eshell-pre-command-hook #'eshell-append-history)
 
-(use-package eshell-prompt-extras
-  :ensure t
-  :init
-  (with-eval-after-load "esh-opt"
-    (autoload 'epe-theme-lambda "eshell-prompt-extras")
-    (setq eshell-highlight-prompt nil
-          eshell-prompt-function 'epe-theme-lambda)))
-
 (use-package eshell-git-prompt
   :ensure t)
+
+(defface eshell-git-prompt-clean-face
+  '((t :foreground "green"))
+  "Face for git branch (clean) in eshell git prompt theme `iain`"
+  :group 'eshell-faces)
+
+(defface eshell-git-prompt-ahead-face
+  '((t :foreground "gold"))
+  "Face for git branch (ahead) in eshell git prompt theme `iain`"
+  :group 'eshell-faces)
+
+(defface eshell-git-prompt-dirty-face
+  '((t :foreground "red"))
+  "Face for git branch (dirty) in eshell git prompt theme `iain`"
+  :group 'eshell-faces)
+
+(defun git-face ()
+  (if (eshell-git-prompt--collect-status)
+      (if (/= 0 (eshell-git-prompt--commits-ahead-of-remote))
+          'eshell-git-prompt-dirty-face
+        'eshell-git-prompt-ahead-face)
+    'eshell-git-prompt-clean-face))
+
+(defun eshell-git-prompt-iain ()
+  (let (branch prompt path-dir)
+    (setq branch (if (eshell-git-prompt--git-root-dir) (with-face (concat "(" (eshell-git-prompt--branch-name) ") ") (git-face))))
+    (setq prompt (with-face " λ: " 'eshell-git-prompt-clean-face))
+    (setq path-dir (with-face (eshell-git-prompt--shorten-directory-name) 'eshell-git-prompt-clean-face))
+    (eshell-git-prompt---str-read-only
+     (concat branch path-dir prompt))))
+
+(defconst eshell-git-prompt-iain-regexp "^[^\n#λ]*[#λ]:")
+
+;; (use-package eshell-prompt-extras
+;;   :ensure t
+;;   :init
+;;   (with-eval-after-load "esh-opt"
+;;     (autoload 'epe-theme-lambda "eshell-prompt-extras")
+;;     (setq eshell-highlight-prompt nil
+;;           eshell-prompt-function 'epe-theme-lambda)))
 
 (use-package load-bash-alias
   :ensure t
