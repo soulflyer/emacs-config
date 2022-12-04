@@ -51,10 +51,11 @@
 (defun eshell-git-prompt-iain ()
   (let (branch prompt path-dir)
     (setq branch (if (eshell-git-prompt--git-root-dir) (with-face (concat "(" (eshell-git-prompt--branch-name) ") ") (git-face))))
-    (setq prompt (with-face " λ: " 'eshell-git-prompt-clean-face))
+    (setq prompt (with-face " λ:" 'eshell-git-prompt-clean-face))
     (setq path-dir (with-face (eshell-git-prompt--shorten-directory-name) 'eshell-git-prompt-clean-face))
+    ;; The space is there because it will reset the colour. If it is part of prompt, then all typed text is in the prompt's face.
     (eshell-git-prompt---str-read-only
-     (concat branch path-dir prompt))))
+     (concat branch path-dir prompt " "))))
 
 (defconst eshell-git-prompt-iain-regexp "^[^\n#λ]*[#λ]: ")
 
