@@ -52,6 +52,11 @@ called when not in a directory under git control"
 
 (defun eshell-git-prompt-iain ()
   "Builds a prompt string similar to that produced by '_git_ps1'"
+  (when (eshell-git-prompt--git-root-dir)
+    (setq eshell-git-prompt-branch-name
+          (eshell-git-prompt--branch-name)
+          eshell-git-prompt-remote-branch-name
+          (eshell-git-prompt--remote-branch-name)))
   (let (branch prompt path-dir)
     (setq branch (if (eshell-git-prompt--git-root-dir) (with-face (concat "(" (eshell-git-prompt--branch-name) ") ") (git-face))))
     (setq prompt (with-face " λ:" 'eshell-git-prompt-clean-face))
