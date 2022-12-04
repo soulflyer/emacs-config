@@ -42,6 +42,8 @@
   :group 'eshell-faces)
 
 (defun git-face ()
+  "Returns the face that matches the status of the directory. Throws an error if
+called when not in a directory under git control"
   (if (eshell-git-prompt--collect-status)
       'eshell-git-prompt-dirty-face
     (if (= 0 (eshell-git-prompt--commits-ahead-of-remote))
@@ -49,6 +51,7 @@
       'eshell-git-prompt-ahead-face)))
 
 (defun eshell-git-prompt-iain ()
+  "Builds a prompt string similar to that produced by '_git_ps1'"
   (let (branch prompt path-dir)
     (setq branch (if (eshell-git-prompt--git-root-dir) (with-face (concat "(" (eshell-git-prompt--branch-name) ") ") (git-face))))
     (setq prompt (with-face " λ:" 'eshell-git-prompt-clean-face))
