@@ -42,7 +42,8 @@
         dashboard-projects-switch-function 'find-file
         dashboard-startup-banner (concat user-emacs-directory "banners/small-80.txt")
         dashboard-footer-messages (fortune-string-list 1)
-        dashboard-force-refresh t))
+        dashboard-force-refresh t
+        dashboard-footer-icon ""))
 
 ;; In order to see a new fortune with every emacsclient we must refresh the list and set
 ;; dashboard-force-refresh to something other than nil
