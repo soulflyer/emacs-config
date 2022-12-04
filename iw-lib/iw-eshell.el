@@ -43,10 +43,10 @@
 
 (defun git-face ()
   (if (eshell-git-prompt--collect-status)
-      (if (= 0 (eshell-git-prompt--commits-ahead-of-remote))
-          'eshell-git-prompt-dirty-face
-        'eshell-git-prompt-ahead-face)
-    'eshell-git-prompt-clean-face))
+      'eshell-git-prompt-dirty-face
+    (if (= 0 (eshell-git-prompt--commits-ahead-of-remote))
+        'eshell-git-prompt-clean-face
+      'eshell-git-prompt-ahead-face)))
 
 (defun eshell-git-prompt-iain ()
   (let (branch prompt path-dir)
