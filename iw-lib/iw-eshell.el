@@ -27,17 +27,17 @@
   :ensure t)
 
 (defface eshell-git-prompt-clean-face
-  '((t :foreground "green"))
+  '((t :foreground "#44aa22"))
   "Face for git branch (clean) in eshell git prompt theme `iain`"
   :group 'eshell-faces)
 
 (defface eshell-git-prompt-ahead-face
-  '((t :foreground "gold"))
+  '((t :foreground "#ee9a49"))
   "Face for git branch (ahead) in eshell git prompt theme `iain`"
   :group 'eshell-faces)
 
 (defface eshell-git-prompt-dirty-face
-  '((t :foreground "red"))
+  '((t :foreground "#ee0000"))
   "Face for git branch (dirty) in eshell git prompt theme `iain`"
   :group 'eshell-faces)
 
