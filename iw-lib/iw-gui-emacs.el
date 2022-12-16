@@ -16,6 +16,7 @@
 ;; Some things don't get applied if run at server startup and have to be run run when emacsclient starts a frame.
 ;; from https://emacs.stackexchange.com/a/62220/2666
 (defun init-gui-frame ()
+  (message "Running INIT-GUI-FRAME")
   (when (member "MonacoB2" (font-family-list))
     (set-frame-font "MonacoB2" t t))
   (set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji") nil 'prepend)

@@ -171,6 +171,15 @@ TODO a cond in an if in a cond ?!? Yuk"
 (defun iw-calendar-mode-hook ()
   (define-key calendar-mode-map (kbd "q") 'tab-calendar-exit))
 
+(defun iw-dirfunction ()
+  (cl-assert (buffer-file-name))
+  (concat (file-name-sans-extension (buffer-file-name)) "-images"))
+
+(use-package org-attach-screenshot
+  :ensure t
+  :config (setq org-attach-screenshot-command-line "screencapture -i %f"
+                org-attach-screenshot-dirfunction 'iw-dirfunction))
+
 (add-hook 'calendar-mode-hook 'iw-calendar-mode-hook)
 
 (use-package verb
@@ -178,6 +187,9 @@ TODO a cond in an if in a cond ?!? Yuk"
 
 (with-eval-after-load 'org
   (define-key org-mode-map (kbd "C-c C-r") verb-command-map))
+
+(use-package org-journal
+  :ensure t)
 
 (provide 'iw-org)
 ;;; iw-org.el ends here
