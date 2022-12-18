@@ -55,5 +55,23 @@
   :bind (("C-c w w" . counsel-web-search)
          ("C-c w s" . counsel-web-thing-at-point)))
 
+(defun browse-eww ()
+  "Set browse-url-browser-function to `eww`"
+  (interactive)
+  (message "Setting 'eww' as default browser")
+  (setq browse-url-browser-function 'eww))
+
+(defun browse-default ()
+  "Set browse-url-browser-function to `browse-url-default-macosx-browser`"
+  (interactive)
+  (message "Setting 'default' as default browser")
+  (setq browse-url-browser-function 'browse-url-default-macosx-browser))
+
+(defun browse-webkit ()
+  "Set browse-url-browser-function to `xwidget-webkit-browse-url`"
+  (interactive)
+  (message "Setting 'webkit' as default browser")
+  (setq browse-url-browser-function 'xwidget-webkit-browse-url))
 (provide 'iw-external)
+
 ;;; iw-external.el ends here

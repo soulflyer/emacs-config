@@ -39,3 +39,4 @@ org-roam.db
 /bookmarks
 *.orig
 /emojis/
+/iw-lib/.apl.history
