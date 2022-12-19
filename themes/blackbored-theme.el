@@ -66,6 +66,7 @@
  '(org-level-7                            ((t (:foreground "#209000"))))
  '(org-level-8                            ((t (:foreground "#108000"))))
  '(org-meta-line                          ((t (:foreground "#4d4d4d"))))
+ '(org-drawer                             ((t (:foreground "#444444"))))
 
  '(org-agenda-date-today                  ((t (:inherit org-agenda-date :weight bold))))
  
