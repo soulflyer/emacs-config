@@ -67,6 +67,20 @@ called when not in a directory under git control"
 
 (defconst eshell-git-prompt-iain-regexp "^[^\n#λ]*[#λ]: ")
 
+(setq eshell-git-prompt-themes
+      '((iain eshell-git-prompt-iain eshell-git-prompt-iain-regexp)
+        (robbyrussell eshell-git-prompt-robbyrussell eshell-git-prompt-robbyrussell-regexp)
+        (git-radar eshell-git-prompt-git-radar eshell-git-prompt-git-radar-regexp)
+        (powerline eshell-git-prompt-powerline eshell-git-prompt-powerline-regexp)
+        (multiline eshell-git-prompt-multiline eshell-git-prompt-multiline-regexp)
+        (multiline2 eshell-git-prompt-multiline2 eshell-git-prompt-multiline2-regexp)
+        (simple eshell-git-prompt-simple eshell-git-prompt-simple-regexp)
+        (default eshell-git-prompt-default-func eshell-git-prompt-default-regexp))
+      eshell-prompt-function 'eshell-git-prompt-iain
+      eshell-prompt-regexp "^[^\12#λ]*[#λ]: "
+      eshell-modules-list
+      '(eshell-alias eshell-banner eshell-basic eshell-cmpl eshell-dirs eshell-hist eshell-extpipe eshell-glob eshell-hist eshell-ls eshell-pred eshell-prompt eshell-script eshell-term eshell-unix))
+
 ;; (use-package eshell-prompt-extras
 ;;   :ensure t
 ;;   :init

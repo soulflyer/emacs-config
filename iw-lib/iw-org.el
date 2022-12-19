@@ -189,7 +189,15 @@ TODO a cond in an if in a cond ?!? Yuk"
   (define-key org-mode-map (kbd "C-c C-r") verb-command-map))
 
 (use-package org-journal
-  :ensure t)
+  :ensure t
+  :config (setq org-journal-date-format "%x"
+                org-journal-dir "~/Documents/org-mode/journal/"
+                org-journal-file-format "%Y"
+                org-journal-file-type 'yearly
+                org-journal-find-file 'find-file
+                org-journal-follow-mode t
+                org-journal-hide-entries-p nil
+                org-journal-time-format ""))
 
 (provide 'iw-org)
 ;;; iw-org.el ends here

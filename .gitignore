@@ -2,7 +2,7 @@
 flycheck_init.el
 .sx
 .tmux
-/etc
+/etc/bm-repository
 /var
 ac-comphist.dat
 async-bytecomp.log

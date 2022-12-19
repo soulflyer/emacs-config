@@ -22,7 +22,7 @@
          (window-width . 25))
         ("*calendar*"      (display-buffer-reuse-window
                             display-buffer-same-window)
-         ;; TODO Find out why these doesn't work
+         ;; TODO Find out why these don't work
          ;; (preserve-size . (t . t))
          ;; (window-height . nil)
          ;; (window-height . 1.0)
@@ -33,10 +33,13 @@
          (direction . up)
          ;;(window-height . 1.0)
          )
-        ;; TODO Find out why this claims the full width:
+        ("20[0-9][0-9]"    display-buffer-same-window
+         (inhibit-same-window . nil))
+        
         ("Agenda Commands"     display-buffer-below-selected)
         ("Org Select"          display-buffer-below-selected)
         ("Org Src"             display-buffer-below-selected)
+        ("Org Links"           display-buffer-below-selected)
         ("CAPTURE-"            display-buffer-below-selected)
         ("*cider-error*"       display-buffer-below-selected)
         ("*cider-doc*"         display-buffer-same-window
