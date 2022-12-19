@@ -26,9 +26,13 @@ This checks in turn:
            (describe-function sym))
           ((setq sym (variable-at-point)) (describe-variable sym)))))
 
-(define-key lisp-mode-shared-map  (kbd "M-RET")   'live-lisp-describe-thing-at-point)
+;; Helpful does the job. Should probably check if it is installed and use
+;; 'live-lisp-describe-thing-at-point' as a backup
+;; (define-key lisp-mode-shared-map  (kbd "M-RET")  'live-lisp-describe-thing-at-point)
+(define-key lisp-mode-shared-map  (kbd "M-RET")   'helpful-at-point)
 ;; Also handy for jumping to docs directly from an Info node
-(define-key Info-mode-map         (kbd "M-RET")   'live-lisp-describe-thing-at-point)
+;; (define-key Info-mode-map      (kbd "M-RET")   'live-lisp-describe-thing-at-point)
+(define-key Info-mode-map         (kbd "M-RET")   'helpful-at-point)
 
 ;;; Not necessary when using global aggressive indent
 ;;; (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)

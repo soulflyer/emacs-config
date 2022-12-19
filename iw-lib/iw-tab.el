@@ -78,13 +78,35 @@
   "Create a new workspace on DIRECTORY or the current directory."
   (interactive)
   (let ((directory (expand-file-name (or path-name default-directory)))
-        (name (or tab-title (file-name-nondirectory (directory-file-name  (or path-name default-directory))))))
+        (name (or tab-title
+                  (file-name-nondirectory
+                   (directory-file-name
+                    (or path-name default-directory))))))
     (message "Workspace directory is: %s, Tab name is %s" directory name)
     (if (tab-bar-tab-exists name)
         (tab-bar-select-tab-by-name name)
       (tab-new)
       (tab-bar-rename-tab name)
       (tab-workspace-default-layout directory))))
+
+(defun read-new-tab-name (&optional directory)
+  (read-directory-name "New tab: " directory))
+
+(require 'f)
+(defun read-new-tab-name-and-create (&optional path-name tab-title)
+  "Create a new workspace on DIRECTORY or the current directory."
+  (interactive)
+  (let ((directory (expand-file-name (read-new-tab-name (or path-name
+                                                            default-directory)))))
+    (let ((name (or tab-title
+                    (car (last (f-split directory))))))
+      (message "Workspace directory is: %s, Tab name is %s" directory name)
+      (if (tab-bar-tab-exists name)
+          (tab-bar-select-tab-by-name name)
+        (tab-new)
+        (tab-bar-rename-tab name)
+        (tab-workspace-default-layout directory)))))
+
 
 (defun tab-workspace-only-home ()
   (interactive)
