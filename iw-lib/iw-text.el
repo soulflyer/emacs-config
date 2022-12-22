@@ -1,3 +1,4 @@
+
 ;;; iw-text.el --- setup text tools                  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
@@ -74,12 +75,26 @@
   :custom
   (highlight-indent-guides-method 'character))
 
+(defun iw-buffer-face-hasklig ()
+  "Sets a different font in current buffer for box display"
+  (interactive)
+  (setq buffer-face-mode-face '(:family "Hasklig" :height 1.1))
+  (buffer-face-mode))
+
+(defun iw-buffer-face-default ()
+  "Sets the default font in current buffer"
+  (interactive)
+  (setq buffer-face-mode-face '(:family "MonacoB2"))
+  (buffer-face-mode))
+
+(global-set-key (kbd "C-c t f h") 'iw-buffer-face-hasklig)
+(global-set-key (kbd "C-c t f d") 'iw-buffer-face-default)
+(global-set-key (kbd "C-c t f s") 'iw-set-font-size)
 (global-set-key (kbd "C-c t c")   'comment-box)
 (global-set-key (kbd "C-c t t")   'toggle-truncate-lines)
 (global-set-key (kbd "C-c t v")   'visual-line-mode)
 (global-set-key (kbd "C-c t l")   'display-line-numbers-mode)
 (global-set-key (kbd "C-c t i")   'highlight-indent-guides-mode)
-(global-set-key (kbd "C-c t f")   'face-explorer-tooltip-mode)
 (global-set-key (kbd "C-c t h .") 'highlight-symbol-at-point)
 (global-set-key (kbd "C-c t h r") 'highlight-regexp)
 (global-set-key (kbd "C-c t h u") 'unhighlight-regexp)
