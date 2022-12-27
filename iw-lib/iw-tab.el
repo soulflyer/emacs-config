@@ -7,7 +7,7 @@
 
 (require 'calendar)
 (defvar tab-bar-calendar-tab-name "Calendar")
-(defvar tab-bar-home-tab-name "home")
+(defvar tab-bar-home-tab-name "Home")
 
 (setq tab-bar-close-button-show nil
       tab-bar-show 1

@@ -33,6 +33,8 @@ This checks in turn:
 ;; Also handy for jumping to docs directly from an Info node
 ;; (define-key Info-mode-map      (kbd "M-RET")   'live-lisp-describe-thing-at-point)
 (define-key Info-mode-map         (kbd "M-RET")   'helpful-at-point)
+;; and for jumping to help from help
+(define-key helpful-mode-map      (kbd "M-RET")   'helpful-at-point)
 
 ;;; Not necessary when using global aggressive indent
 ;;; (define-key lisp-mode-shared-map (kbd "RET") 'reindent-then-newline-and-indent)

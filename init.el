@@ -3,6 +3,7 @@
 ;;; Code:
 ;; Set some paths.
 (add-to-list 'package-archives       '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives       '("nongnu" . "https://elpa.nongnu.org/nongnu/") t)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path              "~/.emacs.d/lib")
 (add-to-list 'load-path              "~/.emacs.d/iw-lib")
@@ -47,6 +48,7 @@
 ;;  Add config for specific purposes.
 (require 'iw-cleanup)
 (require 'iw-clojure)
+(require 'iw-common-lisp)
 (require 'iw-display-buffer)
 (require 'iw-external)
 (require 'iw-folding)

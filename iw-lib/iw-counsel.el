@@ -11,6 +11,10 @@
 
 (use-package amx
   :ensure t)
+(amx-mode)
+
+(use-package ido-completing-read+
+  :ensure t)
 
 (use-package helpful
   :ensure t)

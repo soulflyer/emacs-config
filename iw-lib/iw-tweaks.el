@@ -81,6 +81,8 @@
   :config
   (beacon-mode 1))
 
+;; (require 'cursor-chg)
+
 (use-package origami
   :ensure t
   :bind (("C-c C-c f" . origami-mode)

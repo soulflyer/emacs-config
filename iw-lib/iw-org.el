@@ -141,11 +141,12 @@ TODO a cond in an if in a cond ?!? Yuk"
   
   ;; removed this line from custom-set-variables in emacs-custom.el
   ;; '(org-babel-load-languages '((clojure . t) (ditaa . t) (emacs-lisp . t)))
-  (org-babel-do-load-languages 'org-babel-load-languages '((emacs-lisp . t)
+  (org-babel-do-load-languages 'org-babel-load-languages '((clojure    . t)
                                                            (ditaa      . t)
+                                                           (emacs-lisp . t)
                                                            (python     . t)
                                                            (shell      . t)
-                                                           (clojure    . t)))
+                                                           (J          . t)))
   
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
   :bind (("C-c o" . org-agenda)
