@@ -17,7 +17,9 @@
   :ensure t)
 
 (use-package helpful
-  :ensure t)
+  :ensure t
+  :config
+  (define-key helpful-mode-map      (kbd "M-RET")   'helpful-at-point))
 
 (use-package counsel
   :ensure t
