@@ -34,6 +34,7 @@
          ("C-x C-f" . counsel-find-file)
          ("C-h v"   . counsel-describe-variable)
          ("C-h f"   . counsel-describe-function)
+         ("C-h k"   . helpful-key)
          ;; ido-dired and counsel-dired let me delete a path segment with one keystroke
          ("C-x C-d" . ido-dired)
 	 ("C-x d"   . counsel-dired)

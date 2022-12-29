@@ -74,4 +74,11 @@
   (setq browse-url-browser-function 'xwidget-webkit-browse-url))
 (provide 'iw-external)
 
+(defun iw-open-external ()
+  "view the current file in an external program"
+  (interactive)
+  (shell-command (concat "open " (buffer-file-name))))
+
+(define-key pdf-view-mode-map (kbd "x") 'iw-open-external)
+
 ;;; iw-external.el ends here
