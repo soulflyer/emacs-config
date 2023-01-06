@@ -23,7 +23,8 @@
   :ensure t
   :config
   (setq projectile-completion-system 'ivy
-        projectile-create-missing-test-files t))
+        projectile-create-missing-test-files t
+        projectile-find-dir-includes-top-level t))
 
 (use-package ripgrep
   :ensure t)

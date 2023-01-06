@@ -13,7 +13,7 @@
   :init
   (setq lsp-keymap-prefix "C-c l"
         lsp-lens-enable t
-        lsp-eldoc-enable-hover nil
+        lsp-eldoc-enable-hover t
         lsp-enable-indentation nil ; uncomment to use cider indentation instead of lsp
         lsp-completion-enable nil ; uncomment to use cider completion instead of lsp
         ;; lsp-log-io t
@@ -31,7 +31,7 @@
   :ensure t
   :init
   (setq lsp-ui-doc-alignment 'frame
-        lsp-ui-doc-delay 1.5
+        lsp-ui-doc-delay 0.5
         lsp-ui-doc-enable t
         lsp-ui-doc-header t
         lsp-ui-doc-max-width 100

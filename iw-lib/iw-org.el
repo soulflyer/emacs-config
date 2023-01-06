@@ -137,7 +137,12 @@ TODO a cond in an if in a cond ?!? Yuk"
                                                (wl . wl))
                 org-src-window-setup         'plain
                 org-hide-emphasis-markers    t
-                org-hide-leading-stars       t)
+                org-hide-leading-stars       t
+                org-file-apps                '((auto-mode . emacs)
+                                               (directory . emacs)
+                                               ("\\.mm\\'" . default)
+                                               ("\\.x?html?\\'" . default)
+                                               ("\\.pdf\\'" . emacs)))
   
   ;; removed this line from custom-set-variables in emacs-custom.el
   ;; '(org-babel-load-languages '((clojure . t) (ditaa . t) (emacs-lisp . t)))
@@ -199,6 +204,12 @@ TODO a cond in an if in a cond ?!? Yuk"
                 org-journal-follow-mode t
                 org-journal-hide-entries-p nil
                 org-journal-time-format ""))
+
+;; This has ob-j for literate J
+(use-package org-contrib
+  :ensure t
+  :config (setq-default j-console-cmd "jconsole"
+                        j-console-cmd-buffer-name "J Console"))
 
 (provide 'iw-org)
 ;;; iw-org.el ends here

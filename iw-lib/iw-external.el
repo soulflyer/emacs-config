@@ -72,7 +72,6 @@
   (interactive)
   (message "Setting 'webkit' as default browser")
   (setq browse-url-browser-function 'xwidget-webkit-browse-url))
-(provide 'iw-external)
 
 (defun iw-open-external ()
   "view the current file in an external program"
@@ -81,4 +80,7 @@
 
 (define-key pdf-view-mode-map (kbd "x") 'iw-open-external)
 
+(setq browse-url-browser-function 'xwidget-webkit-browse-url)
+
+(provide 'iw-external)
 ;;; iw-external.el ends here

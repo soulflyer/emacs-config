@@ -10,7 +10,9 @@
 ;;   :ensure t)
 
 (use-package amx
-  :ensure t)
+  :ensure t
+  :config (setq amx-history-length 40))
+
 (amx-mode)
 
 (use-package ido-completing-read+
