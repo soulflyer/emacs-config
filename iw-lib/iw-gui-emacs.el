@@ -61,5 +61,9 @@
   :config
   (pdf-tools-install))
 
+(use-package nov
+  :ensure t
+  :config (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
+
 (provide 'iw-gui-emacs)
 ;;; iw-gui-emacs.el ends here
