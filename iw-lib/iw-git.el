@@ -5,8 +5,9 @@
 
 ;;; Code:
 
-(use-package gitconfig-mode
-  :ensure t)
+;; TODO remove or FIXME
+;; (use-package gitconfig-mode
+;;   :ensure t)
 
 (use-package gitignore-mode
   :ensure t)

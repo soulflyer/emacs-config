@@ -15,8 +15,9 @@
 
 ;; Some things don't get applied if run at server startup and have to be run run when emacsclient starts a frame.
 ;; from https://emacs.stackexchange.com/a/62220/2666
-(defun init-gui-frame ()
-  (message "Running INIT-GUI-FRAME")
+;; TODO work out why this runs only once, and for a terminal client if that is run first
+(defun iw-server-after-make-frame ()
+  (message "************************* Running IW-SERVER-AFTER-MAKE-FRAME *******************************")
   (when (member "MonacoB2" (font-family-list))
     (set-frame-font "MonacoB2" t t))
   (set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji") nil 'prepend)
@@ -30,16 +31,25 @@
                 cursor-type 'bar)
   (setq frame-resize-pixelwise t))
 
-(add-hook
- 'server-after-make-frame-hook
- (let (done)
-   (lambda ()
-     (unless done
-       ;; still set done to true even if we hit a bug (otherwise we
-       ;; can never open a frame to see the problem)
-       (setq done t)
-       (init-gui-frame)))))
+(defun iw-after-make-frame-functions ()
+  (message "************************* Running IW-AFTER-MAKE-FRAME-FUNCTIONS ****************************"))
 
+;; (add-hook
+;;  'server-after-make-frame-hook
+;;  (let (done)
+;;    (lambda ()
+;;      (unless done
+;;        ;; still set done to true even if we hit a bug (otherwise we
+;;        ;; can never open a frame to see the problem)
+;;        (setq done t)
+;;        (init-gui-frame)))))
+(add-hook 'server-after-make-frame-hook 'iw-server-after-make-frame)
+;;(add-hook 'after-make-frame-functions 'iw-after-make-frame-functions)
+;; (add-hook 'after-make-frame-functions
+;;           (lambda ()
+;;             ;; we want some font only in GUI Emacs
+;;             (when (display-graphics-p)
+;;               (set-frame-font "DejaVu Sans Mono 28"))))
 (blink-cursor-mode 0)
 (setq
  cursor-type 'bar

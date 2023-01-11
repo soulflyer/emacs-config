@@ -40,3 +40,4 @@ org-roam.db
 *.orig
 /emojis/
 /iw-lib/.apl.history
+/nov-places

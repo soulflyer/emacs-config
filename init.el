@@ -1,6 +1,15 @@
 ;;; init.el --- all starts here
 ;;; Commentary:
 ;;; Code:
+
+;; This setup makes extensive use of package and use-package.  Install them first.
+(require 'package)
+(package-initialize)
+(when (not (package-installed-p 'use-package))
+  (package-install 'use-package))
+(require 'use-package)
+(require 'use-package-ensure)
+
 ;; Set some paths.
 (add-to-list 'package-archives       '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives       '("nongnu" . "https://elpa.nongnu.org/nongnu/") t)
@@ -26,7 +35,6 @@
 (load custom-file)
 (load-theme  'blackbored)
 
-;; This setup makes extensive use of package and use-package.  Install them first.
 (require 'iw-package)
 
 ;; Add config for specific systems and machines.

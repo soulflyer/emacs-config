@@ -5,13 +5,6 @@
 ;;
 
 ;;; Code:
-(require 'package)
-
-(package-initialize)
-(when (not (package-installed-p 'use-package))
-  (package-install 'use-package))
-(require 'use-package)
-(require 'use-package-ensure)
 
 (use-package paradox
   :ensure t
