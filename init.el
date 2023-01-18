@@ -44,13 +44,14 @@
   (require 'iw-subversion))
 (when (string= "acceptance\n" (shell-command-to-string "hostname -s"))
   (require 'iw-acceptance))
+(require 'iw-client-start)
 
 ;; TODO Reconsider how to do this so the server can be accessed by terminal and GUI clients
-(if (display-graphic-p)
-    (message "GUI Emacs")
-  (message "Not GUI Emacs"))
+;; (if (display-graphic-p)
+;;     (message "GUI Emacs")
+;;   (message "Not GUI Emacs"))
 ;; It may be ok to just always include them both. Let's see
-(require 'iw-gui-emacs)
+;; (require 'iw-gui-emacs)
 (require 'iw-terminal-emacs)
 
 ;;  Add config for specific purposes.
@@ -96,13 +97,9 @@
 (require 'iw-javascript)
 (require 'iw-mouse)
 (require 'iw-multiple-cursors)
-;; ;; popwin messes up edwina display, so maybe only use this when not in GUI Emacs
-;; (require 'iw-popwin)
 (require 'iw-projectile)
 (require 'iw-rainbow-delimiters)
-;; (require 'iw-rainbow-mode)
-;; paredit or smartparens, not both. They use the same bindings.
-;; (require 'iw-paredit)
+(require 'iw-rainbow-mode)
 (require 'iw-smartparens)
 (require 'iw-spell)
 (require 'iw-text)

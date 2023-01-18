@@ -36,17 +36,16 @@
              ("a" . sx-ask)
              ("s" . sx-search)))
 
-;; (use-package hyperspace
-;;   :ensure t)
+(use-package hyperspace
+  :ensure t)
 
 (use-package google-translate
   :ensure t)
 
 ;; This is newer and asynchronous, but doesn't seem to work for Vietnamese
-(use-package go-translate
-  :ensure t
-  :config (setq go-translate-target-language "vn"
-                go-translate-local-language "en"))
+;; (use-package go-translate
+;;   :ensure t
+;;   :config (setq gts-translate-list '(("en" "vn"))))
 
 (use-package counsel-web
   :ensure t
@@ -76,9 +75,7 @@
 (defun iw-open-external ()
   "view the current file in an external program"
   (interactive)
-  (shell-command (concat "open " (buffer-file-name))))
-
-(define-key pdf-view-mode-map (kbd "x") 'iw-open-external)
+  (shell-command (concat "open \"" (buffer-file-name) "\"")))
 
 (setq browse-url-browser-function 'xwidget-webkit-browse-url)
 

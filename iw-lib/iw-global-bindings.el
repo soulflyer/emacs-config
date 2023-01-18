@@ -61,6 +61,7 @@
 (global-set-key (kbd "C-x 8 k")     "⬛")
 
 (global-set-key (kbd "C-h x")       'howdoyou-query)
+(global-set-key (kbd "C-h SPC")     'hyperspace)
 
 (global-set-key (kbd "C-x w m")     'ace-swap-window)
 (global-set-key (kbd "C-x w r")     'window-swap-states)

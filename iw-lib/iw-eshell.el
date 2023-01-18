@@ -11,7 +11,7 @@
 
 (setq eshell-destroy-buffer-when-process-dies t
       eshell-save-history-on-exit nil
-      eshell-visual-subcommands '(("git" "log" "diff")))
+      eshell-visual-subcommands '(("git" "log" "diff" "show")))
 
 (defun eshell-append-history ()
   "Call `eshell-write-history' with the `append' parameter set to `t'."
@@ -32,7 +32,7 @@
   :group 'eshell-faces)
 
 (defface eshell-git-prompt-ahead-face
-  '((t :foreground "#ee9a49"))
+  '((t :foreground "#ee9f49"))
   "Face for git branch (ahead) in eshell git prompt theme `iain`"
   :group 'eshell-faces)
 
