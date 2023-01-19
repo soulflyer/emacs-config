@@ -35,6 +35,13 @@
   (pdf-tools-install)
   (define-key pdf-view-mode-map (kbd "x") 'iw-open-external))
 
+(use-package org-pdftools
+  :ensure t
+  :hook (org-mode . org-pdftools-setup-link))
+
+(use-package org-noter-pdftools
+  :ensure t)
+
 (use-package nov
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))

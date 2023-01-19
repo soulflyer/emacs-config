@@ -70,6 +70,9 @@
 (global-set-key (kbd "C-c b l")     'bookmark-bmenu-list)
 (global-set-key (kbd "C-c b n")     'burly-bookmark-windows)
 
+(global-set-key (kbd "C-c e")       (lambda () (interactive) (eshell t)))
+(global-set-key (kbd "C-c C-e")     (lambda () (interactive) (eshell t)))
+
 ;; these keys are never seen in terminal emacs as tmux grabs C-q
 ;; Only rebinding them to avoid muscle memory problems switching to GUI Emacs
 ;; There are problems with vterm though....

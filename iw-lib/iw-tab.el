@@ -44,7 +44,7 @@
 
 (defun tab-workspace-default-layout (directory)
   (dired directory)
-  (split-window-right)
+  (split-window-right (truncate (* (frame-width) 0.6)))
   (other-window 1)
   (split-window-below -15)
   (other-window 1)
@@ -54,7 +54,7 @@
 
 (defun tab-workspace-home-layout ()
   (deft)
-  (split-window-right)
+  (split-window-right (truncate (* (frame-width) 0.6)))
   (other-window 1)
   (org-agenda-list)
   (split-window-below 15)

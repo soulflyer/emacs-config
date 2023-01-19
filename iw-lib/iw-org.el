@@ -1,4 +1,4 @@
-``';;; iw-org.el --- setup org                       -*- lexical-binding: t; -*-
+;;; iw-org.el --- setup org                          -*- lexical-binding: t; -*-
 ;; Copyright (C) 2020  Iain Wood
 ;; Author: Iain Wood <iain@subversion.local>
 ;;; Commentary:

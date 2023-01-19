@@ -95,6 +95,7 @@
 (require 'iw-ibuffer)
 (require 'iw-lisp)
 (require 'iw-javascript)
+(require 'iw-markdown)
 (require 'iw-mouse)
 (require 'iw-multiple-cursors)
 (require 'iw-projectile)
