@@ -99,6 +99,11 @@
 (global-set-key (kbd "C-q t p")     (lambda () (interactive) (tab-workspace-new "~/Code/profile")))
 (global-set-key (kbd "C-q t f")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/Frankie")))
 (global-set-key (kbd "C-q t x")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/framework" "Xiana")))
+(global-set-key (kbd "C-q t a")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/Clojure/photo-api")))
+(global-set-key (kbd "C-q t c a")   (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/Clojure/photo-api")))
+(global-set-key (kbd "C-q t c h")   (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/Clojure/hinh-anh")))
+(global-set-key (kbd "C-q t i")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/Clojure/image-lib")))
+(global-set-key (kbd "C-q t c i")   (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/Clojure/image-lib")))
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
@@ -111,9 +116,9 @@
             ("C-<tab>"  . other-window)
             ("C-c b b"  . iw-open-bookshelf)
             ("C-c b l"   . (lambda ()
-                            (interactive)
-                            (find-file
-                             "~/Documents/org-mode/NotationalVelocity/2206230744 library.org")))
+                             (interactive)
+                             (find-file
+                              "~/Documents/org-mode/NotationalVelocity/2206230744 library.org")))
             ("C-c d e"  . zetteldeft-extract-region-to-note)
             ("C-c d 2"  . zetteldeft-tag-insert)
             ("C-c d 3"  . zetteldeft-tag-insert)
