@@ -25,8 +25,10 @@
   :bind (("C-x C-g" . 'magit-file-dispatch)))
 
 (use-package git-timemachine
-  :ensure t)
-;; TODO add a binding in magit-file-dispatch to access this. Read about transients.
+  :ensure t
+  :config
+  (transient-insert-suffix 'magit-file-dispatch "B"
+    '("x" "Time Machine" git-timemachine)))
 
 ;; Wandersons (bartuka) fns for creating and removing a git worktree
 (defun bk/create-worktree ()

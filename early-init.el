@@ -1,1 +1,1 @@
-(setq byte-compile-warnings '(cl-functions))
+(setq byte-compile-warnings nil)
