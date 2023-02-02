@@ -151,7 +151,8 @@ TODO a cond in an if in a cond ?!? Yuk"
                                                            (emacs-lisp . t)
                                                            (python     . t)
                                                            (shell      . t)
-                                                           (J          . t)))
+                                                           (J          . t)
+                                                           (verb       . t)))
   
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
   :bind (("C-c o" . org-agenda)
