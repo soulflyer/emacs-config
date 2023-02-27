@@ -18,9 +18,10 @@
   (xwidget-webkit-current-url)
   (browse-url-default-macosx-browser (first kill-ring)))
 
-(define-key xwidget-webkit-mode-map (kbd "c") 'xwidget-webkit-copy)
-(define-key xwidget-webkit-mode-map (kbd "x") 'browse-open-in-external)
-(define-key eww-mode-map (kbd "x")            'browse-open-in-external)
+(define-key xwidget-webkit-mode-map (kbd "c")   'xwidget-webkit-copy)
+(define-key xwidget-webkit-mode-map (kbd "x")   'browse-open-in-external)
+(define-key xwidget-webkit-mode-map (kbd "TAB") 'xwwp-follow-link)
+(define-key eww-mode-map (kbd "x")              'browse-open-in-external)
 
 (provide 'iw-xwidget)
 ;;; iw-xwidget.el ends here

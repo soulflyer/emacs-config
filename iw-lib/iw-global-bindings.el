@@ -70,8 +70,10 @@
 (global-set-key (kbd "C-c b l")     'bookmark-bmenu-list)
 (global-set-key (kbd "C-c b n")     'burly-bookmark-windows)
 
-(global-set-key (kbd "C-c e")       (lambda () (interactive) (eshell t)))
-(global-set-key (kbd "C-c C-e")     (lambda () (interactive) (eshell t)))
+(defun start-new-eshell ()  (interactive) (eshell t))
+
+(global-set-key (kbd "C-c e")       'start-new-eshell)
+(global-set-key (kbd "C-c C-e")     'start-new-eshell)
 
 ;; these keys are never seen in terminal emacs as tmux grabs C-q
 ;; Only rebinding them to avoid muscle memory problems switching to GUI Emacs
@@ -91,19 +93,30 @@
 (global-set-key (kbd "C-q x")       'delete-window)
 (global-set-key (kbd "s-`")         'tab-next)
 
-(global-set-key (kbd "C-q t h")     'tab-workspace-home)
-(global-set-key (kbd "C-q h")       'tab-workspace-only-home)
-(global-set-key (kbd "C-q t m")     'read-new-tab-name-and-create)
-(global-set-key (kbd "C-q c")       'tab-calendar)
-(global-set-key (kbd "C-q t e")     (lambda () (interactive) (tab-workspace-new "~/.emacs.d" "Emacs")))
-(global-set-key (kbd "C-q t p")     (lambda () (interactive) (tab-workspace-new "~/Code/profile")))
-(global-set-key (kbd "C-q t f")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/Frankie")))
-(global-set-key (kbd "C-q t x")     (lambda () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/framework" "Xiana")))
-(global-set-key (kbd "C-q t a")     (lambda () (interactive) (tab-workspace-new "~/Code/Clojure/photo-api")))
-(global-set-key (kbd "C-q t c a")   (lambda () (interactive) (tab-workspace-new "~/Code/Clojure/photo-api")))
-(global-set-key (kbd "C-q t c h")   (lambda () (interactive) (tab-workspace-new "~/Code/Clojure/hinh-anh")))
-(global-set-key (kbd "C-q t i")     (lambda () (interactive) (tab-workspace-new "~/Code/Clojure/image-lib")))
-(global-set-key (kbd "C-q t c i")   (lambda () (interactive) (tab-workspace-new "~/Code/Clojure/image-lib")))
+(defun tab-emacs     () (interactive) (tab-workspace-new "~/.emacs.d" "Emacs"))
+(defun tab-photo-api () (interactive) (tab-workspace-new "~/Code/Clojure/photo-api"))
+(defun tab-hinh-anh  () (interactive) (tab-workspace-new "~/Code/Clojure/hinh-anh"))
+(defun tab-image-lib () (interactive) (tab-workspace-new "~/Code/Clojure/image-lib"))
+(defun tab-frankie   () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/Frankie"))
+(defun tab-profile   () (interactive) (tab-workspace-new "~/Code/profile"))
+(defun tab-xiana     () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/framework" "Xiana"))
+(defun tab-overtone  () (interactive) (tab-workspace-new "~/Code/Clojure/overtone"))
+
+(global-set-key (kbd "C-q t h")   'tab-workspace-home)
+(global-set-key (kbd "C-q h")     'tab-workspace-only-home)
+(global-set-key (kbd "C-q t m")   'read-new-tab-name-and-create)
+(global-set-key (kbd "C-q c")     'tab-calendar)
+(global-set-key (kbd "C-q t e")   'tab-emacs)
+(global-set-key (kbd "C-q t a")   'tab-photo-api)
+(global-set-key (kbd "C-q t c a") 'tab-photo-api)
+(global-set-key (kbd "C-q t c h") 'tab-hinh-anh)
+(global-set-key (kbd "C-q t c i") 'tab-image-lib)
+(global-set-key (kbd "C-q t c o") 'tab-overtone)
+(global-set-key (kbd "C-q t f")   'tab-frankie)
+(global-set-key (kbd "C-q t i")   'tab-image-lib)
+(global-set-key (kbd "C-q t o")   'tab-overtone)
+(global-set-key (kbd "C-q t p")   'tab-profile)
+(global-set-key (kbd "C-q t x")   'tab-xiana)
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!

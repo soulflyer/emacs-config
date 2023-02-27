@@ -35,6 +35,7 @@
         ("CAPTURE-"                    display-buffer-below-selected)
         ("*cider-error*"               display-buffer-below-selected)
         ("*cider-doc*"                 display-buffer-same-window (inhibit-same-window . nil))
+        ("*cider-ns-browser*"          display-buffer-same-window (inhibit-same-window . nil))
         ("*cider-inspect*"             display-buffer-same-window (inhibit-same-window . nil))
         ("*cider-test-report*"         display-buffer-same-window (inhibit-same-window . nil))
         ("*J Console*"                 display-buffer-same-window (inhibit-same-window . nil))

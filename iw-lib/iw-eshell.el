@@ -22,6 +22,7 @@
         (eshell-write-history eshell-history-file-name t)))))
 
 (add-hook 'eshell-pre-command-hook #'eshell-append-history)
+(define-key eshell-mode-map (kbd "C-r") 'counsel-esh-history)
 
 (use-package eshell-git-prompt
   :ensure t)
@@ -80,14 +81,6 @@ called when not in a directory under git control"
       eshell-prompt-regexp "^[^\12#λ]*[#λ]: "
       eshell-modules-list
       '(eshell-alias eshell-banner eshell-basic eshell-cmpl eshell-dirs eshell-hist eshell-extpipe eshell-glob eshell-hist eshell-ls eshell-pred eshell-prompt eshell-script eshell-term eshell-unix))
-
-;; (use-package eshell-prompt-extras
-;;   :ensure t
-;;   :init
-;;   (with-eval-after-load "esh-opt"
-;;     (autoload 'epe-theme-lambda "eshell-prompt-extras")
-;;     (setq eshell-highlight-prompt nil
-;;           eshell-prompt-function 'epe-theme-lambda)))
 
 (use-package load-bash-alias
   :ensure t
