@@ -33,7 +33,7 @@
   :ensure t)
 
 (defun iw-projectile-ripgrep-re-frame-defn ()
-  "Find a reframe event or subscription definition."
+  "Find a string preceeded by a <SPC>, useful for finding reframe event or subscription definitions."
   (interactive)
   (projectile-ripgrep (concat " " (projectile-symbol-or-selection-at-point))))
 
