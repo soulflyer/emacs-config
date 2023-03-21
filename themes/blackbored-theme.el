@@ -45,6 +45,7 @@
  '(secondary-selection                    ((t (:extend t :background "#292929"))))
  '(custom-button                          ((t (:background "#606060" :foreground "#000000" :box (:line-width (2 . 2) :style released-button)))))
  '(warning                                ((t (:foreground "#ff5522"))))
+ '(ansi-color-blue                        ((t (:background "#3050ff" :foreground "#3050ff"))))
  '(ansi-color-bright-blue                 ((t (:background "#4876ff" :foreground "#4876ff"))))
  '(rainbow-delimiters-depth-1-face        ((t (:foreground "#cd0000"))))
  '(rainbow-delimiters-depth-2-face        ((t (:foreground "#006400"))))

@@ -41,3 +41,6 @@ org-roam.db
 /emojis/
 /iw-lib/.apl.history
 /nov-places
+/codeium
+/lib/codeium.el
+/iw-lib/iw-secret.el

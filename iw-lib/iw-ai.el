@@ -1,0 +1,37 @@
+;;; iw-ai.el ---                                     -*- lexical-binding: t; -*-
+;; Copyright (C) 2023  Iain Wood
+;; Author: Iain Wood <iain@soulflyer.co.uk>
+;;; Commentary:
+;;
+;;; Code:
+(use-package company
+  :ensure t
+  :config
+  (global-company-mode t)
+  (setq-default
+   company-idle-delay 0.05
+   company-require-match nil
+   company-minimum-prefix-length 0
+   
+   ;; get only preview
+   company-frontends '(company-preview-frontend)
+   ;; also get a drop down
+   ;; company-frontends '(company-pseudo-tooltip-frontend company-preview-frontend)
+   ))
+
+;; (use-package company-tabnine :ensure t)
+;; (add-to-list 'company-backends #'company-tabnine)
+
+;; we recommend using use-package to organize your init.el
+(use-package codeium
+  ;; if you use straight
+  ;; :straight '(:type git :host github :repo "Exafunction/codeium.el")
+  ;; otherwise, make sure that the codeium.el file is on load-path
+  
+  :init
+  ;; use globally
+  (add-to-list 'completion-at-point-functions #'codeium-completion-at-point)
+  )
+
+(provide 'iw-ai)
+;;; iw-ai.el ends here

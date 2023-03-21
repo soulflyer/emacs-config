@@ -160,6 +160,7 @@ TODO a cond in an if in a cond ?!? Yuk"
          ("C-c i"   . org-insert-structure-template)
          ("C-c C-o" . org-agenda-open-link)
          ("RET"     . iw-zetteldeft-return)
+         ("C-c SPC" . iw-lyrics)
          ("C-c l"   . iw-lyrics)))
 
 (use-package org-superstar

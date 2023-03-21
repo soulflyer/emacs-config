@@ -55,6 +55,7 @@
 (require 'iw-terminal-emacs)
 
 ;;  Add config for specific purposes.
+(require 'iw-ai)
 (require 'iw-cleanup)
 (require 'iw-clojure)
 (require 'iw-common-lisp)
@@ -109,6 +110,8 @@
 (require 'iw-which-key)
 (require 'iw-xwidget)
 (require 'iw-yasnippet)
+
+(require 'iw-secret)
 
 ;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)

@@ -11,7 +11,8 @@
 
 (setq tab-bar-close-button-show nil
       tab-bar-show 1
-      tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
+      tab-bar-format '(tab-bar-format-tabs tab-bar-separator)
+      tab-bar-auto-width nil)
 
 (defun tab-bar-tab-names ()
   (mapcar #'(lambda (tab) (alist-get 'name tab))
