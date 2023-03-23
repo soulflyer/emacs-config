@@ -89,7 +89,7 @@
 (global-set-key (kbd "C-q f")       'iw-set-font-size)
 (global-set-key (kbd "C-q d")       'tab-close)
 (global-set-key (kbd "C-q C-d")     'tab-close)
-(global-set-key (kbd "C-q z")       'tab-new)
+(global-set-key (kbd "C-q z")       'zygospore-toggle-delete-other-windows)
 (global-set-key (kbd "C-q x")       'delete-window)
 (global-set-key (kbd "s-`")         'tab-next)
 

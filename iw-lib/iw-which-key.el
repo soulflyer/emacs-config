@@ -25,9 +25,13 @@
 ;;; Code:
 
 (use-package which-key
+  :ensure t
   :config
   (which-key-mode t)
   :delight)
+
+(use-package free-keys
+  :ensure t)
 
 (provide 'iw-which-key)
 ;;; iw-which-key.el ends here

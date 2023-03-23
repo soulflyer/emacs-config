@@ -37,5 +37,8 @@ Keys supported:
        (define-key tmap [right] (lmb (enlarge-window-horizontally 1)))
        tmap) 't)))
 
+(use-package zygospore
+  :ensure t)
+
 (provide 'iw-window)
 ;;; iw-window.el ends here
