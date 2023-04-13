@@ -5,6 +5,9 @@
 ;;
 ;;; Code:
 
+(use-package markdown-mode
+  :ensure t)
+
 (use-package impatient-showdown
   :ensure t
   :config

@@ -31,7 +31,7 @@
 ;; This will save the system clipboard to the kill ring before a kill
 ;; which would overwrite it due to live-paste-to-osx.
 ;; Careful. it may fill the kill ring with junk.
-(setq-default save-interprogram-paste-before-kill t)
+;;(setq-default save-interprogram-paste-before-kill t)
 
 (provide 'iw-browse-kill-ring)
 ;;; iw-browse-kill-ring.el ends here

@@ -44,3 +44,4 @@ org-roam.db
 /codeium
 /lib/codeium.el
 /iw-lib/iw-secret.el
+/eln-cache/

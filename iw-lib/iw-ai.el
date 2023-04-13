@@ -7,20 +7,20 @@
 (use-package company
   :ensure t
   :config
-  (global-company-mode t)
+  (global-company-mode -1)
   (setq-default
-   company-idle-delay 0.05
+   company-idle-delay 1.05
    company-require-match nil
    company-minimum-prefix-length 0
    
    ;; get only preview
-   company-frontends '(company-preview-frontend)
+   ;; company-frontends '(company-preview-frontend)
    ;; also get a drop down
-   ;; company-frontends '(company-pseudo-tooltip-frontend company-preview-frontend)
+   company-frontends '(company-pseudo-tooltip-frontend company-preview-frontend)
    ))
 
-;; (use-package company-tabnine :ensure t)
-;; (add-to-list 'company-backends #'company-tabnine)
+(use-package company-tabnine :ensure t)
+(add-to-list 'company-backends #'company-tabnine)
 
 ;; we recommend using use-package to organize your init.el
 (use-package codeium
