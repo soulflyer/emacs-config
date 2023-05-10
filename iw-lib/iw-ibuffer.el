@@ -40,7 +40,8 @@
 			          (mark filename))
                 )
   :bind (("C-x b"   . ibuffer)
-	 ("C-x C-b" . ibuffer)))
+	 ("C-x C-b" . ibuffer)
+         :map ibuffer-mode-map ("\\" . ibuffer-switch-to-saved-filter-groups)))
 
 (provide 'iw-ibuffer)
 ;;; iw-ibuffer.el ends here
