@@ -10,7 +10,8 @@
   :ensure t
   :init (paradox-enable)
   :config
-  (setq paradox-column-width-package 24))
+  (setq paradox-column-width-package 24
+        paradox-github-token t))
 
 (use-package delight
   :ensure t)

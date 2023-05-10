@@ -15,7 +15,9 @@
   :config (setq ibuffer-formats '((mark modified read-only git-status-mini " "
 				        (size 7 -1 :left :elide)
 				        (name))
-			          (mark filename)))
+			          (mark filename))
+                ibuffer-saved-filter-groups '(("default" ("modified" (modified) (visiting-file))))
+                ibuffer-saved-filters '(("modified" (modified) (visiting-file))))
   :bind (("C-x b"   . ibuffer)
 	 ("C-x C-b" . ibuffer)))
 

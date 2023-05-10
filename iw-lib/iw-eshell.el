@@ -11,7 +11,8 @@
 
 (setq eshell-destroy-buffer-when-process-dies t
       eshell-save-history-on-exit nil
-      eshell-visual-subcommands '(("git" "log" "diff" "show")))
+      eshell-visual-subcommands '(("git" "log" "diff" "show"))
+      eshell-history-size nil)
 
 (defun eshell-append-history ()
   "Call `eshell-write-history' with the `append' parameter set to `t'."

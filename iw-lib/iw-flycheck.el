@@ -5,6 +5,7 @@
 (use-package flycheck
   :ensure t
   :config
+  (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
   (setq-default flycheck-emacs-lisp-load-path 'inherit)
   (add-hook 'after-init-hook #'global-flycheck-mode))
 

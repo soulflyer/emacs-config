@@ -7,6 +7,8 @@
 (require 'use-package)
 
 ;;; Code:
+(setq js-indent-level 2)
+
 (use-package js-comint
   :ensure t)
 

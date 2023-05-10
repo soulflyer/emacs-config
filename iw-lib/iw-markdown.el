@@ -11,7 +11,8 @@
 (use-package impatient-showdown
   :ensure t
   :config
-  (setq impatient-showdown-markdown-background-color "#ddccaa")
+  (setq impatient-showdown-markdown-background-color "#ddccaa"
+        impatient-showdown-flavor 'github)
   :bind (:map markdown-mode-map
               ("C-c m s" . impatient-showdown-mode)))
 
