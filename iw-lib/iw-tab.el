@@ -114,5 +114,10 @@
   (tab-workspace-home)
   (tab-close-other))
 
+(defun tab-kill-and-close ()
+  (interactive)
+  (projectile-kill-buffers)
+  (tab-close))
+
 (provide 'iw-tab)
 ;;; iw-tab.el ends here
