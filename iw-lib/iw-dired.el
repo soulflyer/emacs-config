@@ -20,7 +20,8 @@
       ls-lisp-verbosity '(uid))
 
 (use-package dired
-  :pin manual
+;;  :pin manual
+  :config (setq find-file-visit-truename t)
   :bind (:map dired-mode-map
 	      ("f"   . 'dired-make-file)
 	      ("/"   . 'dired-up-directory)
