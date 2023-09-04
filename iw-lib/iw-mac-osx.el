@@ -20,12 +20,12 @@
 ;; FIXME This is being run when emacs is started as a daemon and fills the kill-ring with junk
 ;; It may still be useful in terminal emacs
 
-;; (defun live-paste-to-osx (text &optional push)
-;;   "Paste TEXT to the clipboard.  PUSH."
-;;   (let ((process-connection-type nil))
-;;     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-;;       (process-send-string proc text)
-;;       (process-send-eof proc))))
+(defun live-paste-to-osx (text &optional push)
+  "Paste TEXT to the clipboard.  PUSH."
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
 ;;
 ;; (when (not window-system)
 ;;   (setq interprogram-cut-function 'live-paste-to-osx))

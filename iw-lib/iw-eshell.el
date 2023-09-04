@@ -15,7 +15,7 @@
       eshell-history-size nil)
 
 (defun eshell-append-history ()
-  "Call `eshell-write-history' with the `append' parameter set to `t'."
+  "Call `eshell-write-history' with the `append' parameter set to t."
   (when eshell-history-ring
     (let ((newest-cmd-ring (make-ring 1)))
       (ring-insert newest-cmd-ring (car (ring-elements eshell-history-ring)))

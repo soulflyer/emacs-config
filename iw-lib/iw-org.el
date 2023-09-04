@@ -23,7 +23,8 @@
                 org-lowest-priority 73
                 org-habit-graph-column 40
                 org-habit-show-all-today t
-                org-image-actual-width (list 240))
+                org-image-actual-width (list 240)
+                org-startup-indented t)
   ;; (add-to-list 'display-buffer-alist
   ;;              '("*Agenda Commands*" display-buffer-in-direction
   ;;                (side . bottom)
@@ -212,6 +213,9 @@ TODO a cond in an if in a cond ?!? Yuk"
   :ensure t
   :config (setq-default j-console-cmd "jconsole"
                         j-console-cmd-buffer-name "J Console"))
+
+(use-package ob-async
+  :ensure t)
 
 (provide 'iw-org)
 ;;; iw-org.el ends here
