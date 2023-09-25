@@ -65,16 +65,18 @@
 ;; (blink-cursor-mode 0)
 ;; (setq cursor-type 'bar)
 ;; Terminal emacs uses the settings in iTerm profiles.
+;; FIXME This seems to be the root cause of emacs slowing down. Find out what causes this
+;; and fix it or create a fn to turn it off.
 (use-package beacon
   :ensure t
   :init
-  (setq beacon-size 6
+  (setq beacon-size 4
         beacon-blink-when-focused t
         beacon-blink-when-point-moves-horizontally 0
         beacon-blink-when-point-moves-vertically 0
         beacon-color "#a424a4"
-        beacon-blink-delay 0
-        beacon-blink-duration 1
+        beacon-blink-delay 0.2
+        beacon-blink-duration 0.3
         beacon-dont-blink-major-modes '(cider-repl-mode)
         beacon-dont-blink-commands nil
         beacon-blink-when-window-scrolls t)

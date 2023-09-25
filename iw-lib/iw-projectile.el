@@ -4,7 +4,7 @@
 ;;; Commentary:
 
 ;; iw-projectile-ripgrep-re-frame-defn is a quick and dirty method of locating
-;; re-frame definitions. It assumes that the name of an event or subcription in
+;; re-frame definitions.  It assumes that the name of an event or subcription in
 ;; its definiton will be preceded by a space, and any call to it will not as
 ;; they are wrapped in square brackets.  If the code is formatted strictly this
 ;; will (always/usually?) be true.
@@ -41,10 +41,10 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "M-p")   'projectile-command-map)
 
-(global-set-key [f4] 'projectile-find-file)
-(global-set-key [f5] 'iw-projectile-ripgrep-re-frame-defn)
-(global-set-key [f6] 'counsel-projectile-rg)
-(global-set-key [f7] 'projectile-ripgrep)
+(global-set-key [f2] 'projectile-find-file)
+(global-set-key [f3] 'iw-projectile-ripgrep-re-frame-defn)
+(global-set-key [f4] 'counsel-projectile-rg)
+(global-set-key [f5] 'projectile-ripgrep)
 
 (add-hook 'ripgrep-search-mode-hook #'(lambda () (define-key ripgrep-search-mode-map (kbd "TAB") 'compilation-next-error)))
 
