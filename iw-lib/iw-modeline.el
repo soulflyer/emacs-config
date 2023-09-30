@@ -2,7 +2,12 @@
 ;; Copyright (C) 2023  Iain Wood
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
 ;;; Commentary:
+;; This allows a different colour to be used for the modeline text based on a
+;; variable 'project-colour' set in dir-locals.el like this:
 ;;
+;; ((nil . ((project-colour . "#d0d040"))))
+;;
+;; Works in files, Dired, and eshell.  In eshell the colour will change when cd-ing.
 ;;; Code:
 
 (defvar project-colour  "#20d030")
