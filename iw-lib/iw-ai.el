@@ -31,6 +31,16 @@
   :init
   ;; use globally
   (add-to-list 'completion-at-point-functions #'codeium-completion-at-point)
+  :config
+  ;;(setq use-dialog-box nil) ;; do not use popup boxes
+
+  ;; get codeium status in the modeline
+  (setq codeium-mode-line-enable
+        (lambda (api) (not (memq api '(CancelRequest Heartbeat AcceptCompletion)))))
+
+  ;;(add-to-list 'mode-line-format '(:eval (car-safe codeium-mode-line)) t)
+  ;; alternatively for a more extensive mode-line
+  (add-to-list 'mode-line-format '(-50 "" codeium-mode-line) t)
   )
 
 (provide 'iw-ai)
