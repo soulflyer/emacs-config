@@ -40,7 +40,17 @@
   :ensure t)
 
 (use-package google-translate
-  :ensure t)
+  :ensure t
+  :config
+  (setq google-translate-translation-to-kill-ring t)
+  (defun french-to-english ()
+    "Set to and from languages for google translate."
+    (setq google-translate-default-source-language "fr")
+    (setq google-translate-default-target-language "en"))
+  (defun vietnamese-to-english ()
+    "Set to and from languages for google translate."
+    (setq google-translate-default-source-language "vn")
+    (setq google-translate-default-target-language "en")))
 
 ;; This is newer and asynchronous, but doesn't seem to work for Vietnamese
 ;; (use-package go-translate
@@ -55,25 +65,25 @@
          ("C-c w s" . counsel-web-thing-at-point)))
 
 (defun browse-eww ()
-  "Set browse-url-browser-function to `eww`"
+  "Set `browse-url-browser-function` to `eww`."
   (interactive)
   (message "Setting 'eww' as default browser")
   (setq browse-url-browser-function 'eww))
 
 (defun browse-default ()
-  "Set browse-url-browser-function to `browse-url-default-macosx-browser`"
+  "Set `browse-url-browser-function` to `browse-url-default-macosx-browser`."
   (interactive)
   (message "Setting 'default' as default browser")
   (setq browse-url-browser-function 'browse-url-default-macosx-browser))
 
 (defun browse-webkit ()
-  "Set browse-url-browser-function to `xwidget-webkit-browse-url`"
+  "Set `browse-url-browser-function` to `xwidget-webkit-browse-url`."
   (interactive)
   (message "Setting 'webkit' as default browser")
   (setq browse-url-browser-function 'xwidget-webkit-browse-url))
 
 (defun iw-open-external ()
-  "view the current file in an external program"
+  "View the current file in an external program."
   (interactive)
   (shell-command (concat "open \"" (buffer-file-name) "\"")))
 

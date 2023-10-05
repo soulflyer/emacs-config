@@ -72,7 +72,8 @@
          ("S-<up>"   . 'cider-repl-previous-input)
          ("S-<down>" . 'cider-repl-next-input))
   :config (setq cider-eldoc-display-for-symbol-at-point t
-                cider-use-tooltips nil))
+                cider-use-tooltips nil
+                cider-debug-prompt 'minibuffer))
 
 (use-package align-cljlet
   :ensure t)

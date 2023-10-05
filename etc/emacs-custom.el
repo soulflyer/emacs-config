@@ -194,7 +194,8 @@
                  ascii-art-to-unicode applescript-mode annotate amx
                  aggressive-indent ace-mc ace-jump-buffer a))
  '(safe-local-variable-values
-   '((project-colour . "#d02040") (project-colour . "#d0d040")
+   '((project-colour . "#deb887") (project-colour . "#ff7f00")
+     (project-colour . "#d02040") (project-colour . "#d0d040")
      (project-colour . "#d020d0") (project-colour . "#4080ff")
      (project-colour . "#4040ff") (project-colour . "#000088")
      (project-colour . "#2030d0") (project-colour . "#20d030")
