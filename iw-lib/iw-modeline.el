@@ -20,7 +20,11 @@
 (add-hook 'window-buffer-change-functions #'iw-change-modeline-colour)
 (add-hook 'eshell-after-prompt-hook #'iw-change-modeline-colour)
 (add-hook 'eshell-after-prompt-hook #'hack-dir-local-variables-non-file-buffer)
-(add-hook 'window-buffer-change-functions #'hack-dir-local-variables-non-file-buffer)
+
+;; Using an anonymous fn here because hack-dir-local-variables-non-file-buffer takes no params,
+;; but window-buffer-change-functions expects fns that take 1 param.
+(add-hook 'window-buffer-change-functions #'(lambda (_) (hack-dir-local-variables-non-file-buffer)))
+
 (add-hook 'dired-before-readin-hook #'iw-change-modeline-colour)
 
 (provide 'iw-modeline)

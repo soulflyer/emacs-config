@@ -148,58 +148,55 @@
      "67544a979ecfbc12719b2b8d40ba78c7ee487e392102ca39663c2d7d6e03b6ce"
      "2ce9803cc084659ba3cbc453561ae3b7956713ea4a5f65d744238084b35bdc02"
      default))
+ '(dired-guess-shell-alist-user '((".pdf" "open")))
  '(org-modules
    '(ol-bbdb ol-bibtex ol-docview ol-eww ol-gnus org-habit ol-info ol-irc
              ol-mhe ol-rmail ol-w3m))
  '(package-selected-packages
-   '(groovy-mode flycheck-clojure inf-clojure align-cljlet cider
-                 clojure-mode magit minimap ob-async org-async
-                 with-editor user-keys company-tabnine wanderlust w3m
-                 mew blimp markdown-mode fzf zygospore free-keys
-                 font-utils xwwp projectile typescript-mode flycheck
-                 deft vterm ace-jump-mode abc-mode org-noter-pdftools
-                 org-pdf-tools org-pdftools hyperspace git-modes nov
-                 impatient-showdown ido-completing-read+ org-contrib
-                 ob-translate ob-applescript j-mode org-journal
-                 org-attach-screenshot org-download gnu-apl-mode
-                 lsp-docker emojify emoji-cheat-sheet-plus helpful
-                 ccls eshell-vterm eshell-syntax-highlighting
-                 git-timemachine org-superstar lsp-treemacs
-                 lsp-origami lsp-ivy lsp-ui lsp-mode zetteldeft
-                 yaml-mode yaml xwwp-follow-link-ivy xhair
-                 xah-get-thing workgroups2 which-key web-mode
-                 visual-regexp visual-ascii-mode visible-mark verb
-                 unidecode unicode-fonts undo-tree underline-with-char
-                 ts-comint treemacs tide sx string-inflection
-                 smartparens shackle ripgrep register-list
-                 rainbow-mode rainbow-delimiters quelpa-use-package
-                 prog-fill popwin pdf-tools paradox palimpsest paced
-                 osx-dictionary origami org-roam org-cliplink openwith
-                 ob-mongo nvm neil multi-vterm mongo make-color lyrics
-                 lorem-ipsum load-bash-alias lively launchctl
-                 jump-char js-comint ivy-rich iregister ibuffer-git
-                 howdoyou horoscope hl-todo highlight-indent-guides
-                 highlight-context-line goto-last-change
-                 goto-char-preview google-translate go-translate
-                 gitignore-mode gitconfig-mode git-gutter
-                 flyspell-correct-avy-menu flx-ido fira-code-mode
-                 face-explorer exwm expand-region exec-path-from-shell
-                 eterm-256color eshell-prompt-extras eshell-git-prompt
-                 edwina eaf dynamic-spaces direnv dired-ranger
-                 dired-efap delight dashboard dark-souls dap-mode crdt
-                 counsel-web counsel-projectile counsel-dash company
-                 command-log-mode cljstyle-format burly
-                 browse-kill-ring bm beacon banner-comment back-button
-                 auto-complete auto-compile ascii-table
-                 ascii-art-to-unicode applescript-mode annotate amx
-                 aggressive-indent ace-mc ace-jump-buffer a))
+   '(elpy groovy-mode flycheck-clojure inf-clojure align-cljlet cider
+          clojure-mode magit minimap ob-async org-async with-editor
+          user-keys company-tabnine wanderlust w3m mew blimp
+          markdown-mode fzf zygospore free-keys font-utils xwwp
+          projectile typescript-mode flycheck deft vterm ace-jump-mode
+          abc-mode org-noter-pdftools org-pdf-tools org-pdftools
+          hyperspace git-modes nov impatient-showdown
+          ido-completing-read+ org-contrib ob-translate ob-applescript
+          j-mode org-journal org-attach-screenshot org-download
+          gnu-apl-mode lsp-docker emojify emoji-cheat-sheet-plus
+          helpful ccls eshell-vterm eshell-syntax-highlighting
+          git-timemachine org-superstar lsp-treemacs lsp-origami
+          lsp-ivy lsp-ui lsp-mode zetteldeft yaml-mode yaml
+          xwwp-follow-link-ivy xhair xah-get-thing workgroups2
+          which-key web-mode visual-regexp visual-ascii-mode
+          visible-mark verb unidecode unicode-fonts undo-tree
+          underline-with-char ts-comint treemacs tide sx
+          string-inflection smartparens shackle ripgrep register-list
+          rainbow-mode rainbow-delimiters quelpa-use-package prog-fill
+          popwin pdf-tools paradox palimpsest paced osx-dictionary
+          origami org-roam org-cliplink openwith ob-mongo nvm neil
+          multi-vterm mongo make-color lyrics lorem-ipsum
+          load-bash-alias lively launchctl jump-char js-comint
+          ivy-rich iregister ibuffer-git howdoyou horoscope hl-todo
+          highlight-indent-guides highlight-context-line
+          goto-last-change goto-char-preview google-translate
+          go-translate gitignore-mode gitconfig-mode git-gutter
+          flyspell-correct-avy-menu flx-ido fira-code-mode
+          face-explorer exwm expand-region exec-path-from-shell
+          eterm-256color eshell-prompt-extras eshell-git-prompt edwina
+          eaf dynamic-spaces direnv dired-ranger dired-efap delight
+          dashboard dark-souls dap-mode crdt counsel-web
+          counsel-projectile counsel-dash company command-log-mode
+          cljstyle-format burly browse-kill-ring bm beacon
+          banner-comment back-button auto-complete auto-compile
+          ascii-table ascii-art-to-unicode applescript-mode annotate
+          amx aggressive-indent ace-mc ace-jump-buffer a))
  '(safe-local-variable-values
-   '((project-colour . "#deb887") (project-colour . "#ff7f00")
-     (project-colour . "#d02040") (project-colour . "#d0d040")
-     (project-colour . "#d020d0") (project-colour . "#4080ff")
-     (project-colour . "#4040ff") (project-colour . "#000088")
-     (project-colour . "#2030d0") (project-colour . "#20d030")
-     (project-colour . "#d02030")
+   '((project-colour . "#9e0404") (project-colour . "#deb887")
+     (project-colour . "#ff7f00") (project-colour . "#d02040")
+     (project-colour . "#d0d040") (project-colour . "#d020d0")
+     (project-colour . "#4080ff") (project-colour . "#4040ff")
+     (project-colour . "#000088") (project-colour . "#2030d0")
+     (project-colour . "#20d030") (project-colour . "#d02030")
      (eval progn
            (make-variable-buffer-local
             'cider-jack-in-nrepl-middlewares)

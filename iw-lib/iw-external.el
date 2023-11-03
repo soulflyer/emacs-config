@@ -45,10 +45,12 @@
   (setq google-translate-translation-to-kill-ring t)
   (defun french-to-english ()
     "Set to and from languages for google translate."
+    (interactive)
     (setq google-translate-default-source-language "fr")
     (setq google-translate-default-target-language "en"))
   (defun vietnamese-to-english ()
     "Set to and from languages for google translate."
+    (interactive)
     (setq google-translate-default-source-language "vn")
     (setq google-translate-default-target-language "en")))
 
