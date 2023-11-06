@@ -21,8 +21,7 @@
   :config
   (bind-keys :prefix "C-c g"
              :prefix-map my-magit-map
-             ("b" . magit-blame))
-  :bind (("C-x C-g" . 'magit-file-dispatch)))
+             ("b" . magit-blame)))
 
 (use-package git-timemachine
   :ensure t

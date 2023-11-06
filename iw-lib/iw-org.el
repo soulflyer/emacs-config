@@ -181,6 +181,7 @@ TODO a cond in an if in a cond ?!? Yuk"
   (define-key calendar-mode-map (kbd "q") 'tab-calendar-exit))
 
 (defun iw-dirfunction ()
+  "Whatever."
   (cl-assert (buffer-file-name))
   (concat (file-name-sans-extension (buffer-file-name)) "-images"))
 
@@ -216,6 +217,12 @@ TODO a cond in an if in a cond ?!? Yuk"
 
 (use-package ob-async
   :ensure t)
+
+(use-package org-appear
+  :ensure t
+  :config
+  (add-hook 'org-mode-hook 'org-appear-mode)
+  (setq org-appear-delay 1))
 
 (provide 'iw-org)
 ;;; iw-org.el ends here

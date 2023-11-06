@@ -31,6 +31,7 @@
         ("Agenda Commands"             display-buffer-below-selected)
         ("Org Select"                  display-buffer-below-selected)
         ("Org Src"                     display-buffer-below-selected)
+        ("Org Attach"                  display-buffer-below-selected)
         ("Org Links"                   display-buffer-no-window (allow-no-window . t))
         ("CAPTURE-"                    display-buffer-below-selected)
         ("*cider-error*"               display-buffer-below-selected)
