@@ -13,7 +13,7 @@
   :init
   (setq openwith-associations '(("\\.\\(png\\|jp?g\\|pdf\\)\\'" "open" (file))
                                 ("\\.torrent\\'" "open" (file))
-                                ("\\.\\(mp3\\|avi\\|wmv\\)\\'" "vlc" (file))
+                                ("\\.\\(mp3\\|avi\\|wmv\\)\\'" "/Applications/Audacity.app/Contents/MacOS/Audacity" (file))
                                 ("\\.\\(doc\\|odt\\|xls\\|ods\\|ppt\\|odp\\)\\'" "open" (file))))
   :config
   ;;(openwith-mode t)

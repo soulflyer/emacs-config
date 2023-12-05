@@ -121,13 +121,12 @@
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
 ;; A useful alternative is remap: see iw-org.el for an example
-(bind-keys* ("M-n"      . forward-paragraph)
-            ("M-p"      . backward-paragraph)
-            ("M-<down>" . forward-paragraph)
+(bind-keys* ("M-<down>" . forward-paragraph)
             ("M-<up>"   . backward-paragraph)
             ;; For GUI Emacs, terminal version doesn't see C-TAB
-            ("C-<tab>"  . other-window)
-            ("C-c b b"  . iw-open-bookshelf)
+            ("C-<tab>"   . other-window)
+            ("C-S-<tab>" . previous-window-any-frame)
+            ("C-c b b"   . iw-open-bookshelf)
             ("C-c b l"   . (lambda ()
                              (interactive)
                              (find-file

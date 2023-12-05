@@ -52,7 +52,8 @@ by a call to `advice-add'"
   (defun iw-zetteldeft-return ()
     "Calls zettledeft-search-at-point if in a tag, and zettledeft-follow-link
 if in a link, otherwise it calls org-return
-TODO a cond in an if in a cond ?!? Yuk"
+TODO a cond in an if in a cond ?!? Yuk
+FIXME does nothing if at the end of a colapsed heading"
     (interactive)
     (let ((in-thing (cond ((thing-at-point 'symbol)
                            (if ; at the end of a symbol
@@ -178,6 +179,7 @@ TODO a cond in an if in a cond ?!? Yuk"
 (global-set-key (kbd "C-c c") 'calendar)
 
 (defun iw-calendar-mode-hook ()
+  "Whatever."
   (define-key calendar-mode-map (kbd "q") 'tab-calendar-exit))
 
 (defun iw-dirfunction ()

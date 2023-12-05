@@ -25,9 +25,12 @@
         ("diary"           (display-buffer-reuse-window
                             display-buffer-in-direction)
          (direction . up))
+        ("Org Agenda"      (display-buffer-reuse-window)
+         (dedicated . t))
+        ("sing.org"        display-buffer-reuse-mode-window
+         (mode . deft-mode))
         ("20[0-9][0-9]"    display-buffer-same-window
          (inhibit-same-window . nil))
-        
         ("Agenda Commands"             display-buffer-below-selected)
         ("Org Select"                  display-buffer-below-selected)
         ("Org Src"                     display-buffer-below-selected)
