@@ -57,7 +57,7 @@ Otherwise, ask for a note name and create a new file."
 
 (defun iw-nv-zd ()
   "This relies on the babashka script nv-zd which converts a deft note in a
-text file into a zetteldeft note in an org file and returns the new file name"
+text file into a zetteldeft note in an org file and returns the new file name."
   (interactive)
   (let ((command (format "nv-zd '%s'" (buffer-file-name))))
     (zetteldeft-find-file (shell-command-to-string command))

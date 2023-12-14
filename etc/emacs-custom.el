@@ -149,11 +149,6 @@
      "2ce9803cc084659ba3cbc453561ae3b7956713ea4a5f65d744238084b35bdc02"
      default))
  '(dired-guess-shell-alist-user '((".pdf" "open")))
- '(emms-browser-switch-to-playlist-on-add t)
- '(emms-player-list '(emms-player-vlc emms-player-vlc-playlist))
- '(emms-player-vlc-command-name "/Applications/VLC.app/Contents/MacOS/VLC")
- '(emms-player-vlc-playlist-command-name "/Applications/VLC.app/Contents/MacOS/VLC")
- '(emms-source-file-default-directory "~/Music/Collection/")
  '(lyrics-backend 'lyrics-musixmatch)
  '(org-download-timestamp "")
  '(org-modules
@@ -223,4 +218,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(emms-browser-album-face ((t (:foreground "#4c83ff" :height 1.1))))
+ '(emms-browser-artist-face ((t (:foreground "#33dd33" :height 1.3))))
+ '(emms-browser-track-face ((t (:foreground "#ee33ee" :height 1.0)))))

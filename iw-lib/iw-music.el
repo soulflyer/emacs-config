@@ -39,5 +39,27 @@
 ;; (use-package versuri
 ;;   :ensure t)
 
+(use-package emms
+  :ensure t
+  :config (emms-all)
+  (setq emms-source-file-default-directory "~/Music/Collection"
+        emms-browser-switch-to-playlist-on-add t
+        ;; emms-player-list '(emms-player-vlc emms-player-vlc-playlist)
+        ;; emms-player-vlc-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
+        ;; emms-player-vlc-playlist-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
+        emms-player-list '(emms-player-mpd)
+        emms-player-mpd-server-name "localhost"
+        emms-player-mpd-server-port "6600"
+        emms-player-mpd-music-directory "/Volumes/Collection")
+  (add-to-list 'emms-info-functions 'emms-info-mpd)
+
+  :bind (:map emms-browser-mode-map
+              ("p"     . emms-playlist-mode-go)
+              ("A"     . emms-browser-add-tracks)
+              ("C-a"   . emms-browser-add-tracks)
+              ("d"     . emms-browser-view-in-dired)
+              ("RET"   . emms-browser-toggle-subitems)
+              ("<tab>" . emms-browser-next-non-track)))
+
 (provide 'iw-music)
 ;;; iw-music.el ends here
