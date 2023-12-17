@@ -70,7 +70,7 @@
 (global-set-key (kbd "C-c b l")     'bookmark-bmenu-list)
 (global-set-key (kbd "C-c b n")     'burly-bookmark-windows)
 
-(defun start-new-eshell ()  (interactive) (eshell t))
+(defun start-new-eshell () "Whatever." (interactive) (eshell t))
 
 (global-set-key (kbd "C-c e")       'start-new-eshell)
 (global-set-key (kbd "C-c C-e")     'start-new-eshell)
@@ -93,14 +93,14 @@
 (global-set-key (kbd "C-q x")       'delete-window)
 (global-set-key (kbd "s-`")         'tab-next)
 
-(defun tab-emacs     () (interactive) (tab-workspace-new "~/.emacs.d" "Emacs"))
-(defun tab-photo-api () (interactive) (tab-workspace-new "~/Code/Clojure/photo-api"))
-(defun tab-hinh-anh  () (interactive) (tab-workspace-new "~/Code/Clojure/hinh-anh"))
-(defun tab-image-lib () (interactive) (tab-workspace-new "~/Code/Clojure/image-lib"))
-(defun tab-frankie   () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/Frankie"))
-(defun tab-profile   () (interactive) (tab-workspace-new "~/Code/profile"))
-(defun tab-xiana     () (interactive) (tab-workspace-new "~/Code/Flexiana/open-source/framework" "Xiana"))
-(defun tab-overtone  () (interactive) (tab-workspace-new "~/Code/Clojure/overtone"))
+(defun tab-emacs     () "Whatever."(interactive) (tab-workspace-new "~/.emacs.d" "Emacs"))
+(defun tab-photo-api () "Whatever."(interactive) (tab-workspace-new "~/Code/Clojure/photo-api"))
+(defun tab-hinh-anh  () "Whatever."(interactive) (tab-workspace-new "~/Code/Clojure/hinh-anh"))
+(defun tab-image-lib () "Whatever."(interactive) (tab-workspace-new "~/Code/Clojure/image-lib"))
+(defun tab-frankie   () "Whatever."(interactive) (tab-workspace-new "~/Code/Flexiana/open-source/Frankie"))
+(defun tab-profile   () "Whatever."(interactive) (tab-workspace-new "~/Code/profile"))
+(defun tab-xiana     () "Whatever."(interactive) (tab-workspace-new "~/Code/Flexiana/open-source/framework" "Xiana"))
+(defun tab-overtone  () "Whatever."(interactive) (tab-workspace-new "~/Code/Clojure/overtone"))
 
 (global-set-key (kbd "C-q t h")   'tab-workspace-home)
 (global-set-key (kbd "C-q h")     'tab-workspace-only-home)

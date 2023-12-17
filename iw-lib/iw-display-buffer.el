@@ -13,8 +13,11 @@
 (setq split-window-preferred-function 'split-window-sensibly
       split-width-threshold nil)
 
-(setq display-buffer-base-action
-      '((display-buffer-same-window)))
+(setq display-buffer-base-action '((display-buffer-same-window))
+      switch-to-buffer-obey-display-actions t)
+;; Check out https://www.masteringemacs.org/article/demystifying-emacs-window-manager
+;; emms uses switch-to-buffer not display-buffer so switch-to-buffer-obey-display-actions
+;; needs to be set to t
 
 (setq display-buffer-alist
       '(("*undo-tree*"     display-buffer-in-direction
@@ -29,6 +32,8 @@
          (dedicated . t))
         ("sing.org"        display-buffer-reuse-mode-window
          (mode . deft-mode))
+        ("emms-browser-search" display-buffer-reuse-mode-window
+         (mode . emms-browser-mode))
         ("20[0-9][0-9]"    display-buffer-same-window
          (inhibit-same-window . nil))
         ("Agenda Commands"             display-buffer-below-selected)

@@ -162,7 +162,8 @@ FIXME does nothing if at the end of a colapsed heading"
          ("C-c i"   . org-insert-structure-template)
          ("C-c C-o" . org-agenda-open-link)
          ("RET"     . iw-zetteldeft-return)
-         ("C-c SPC" . iw-lyrics)
+         ("C-c SPC SPC" . iw-lyrics)
+         ("C-c SPC RET" . iw-emms-play-track)
          ("C-c l"   . iw-lyrics)))
 
 (use-package org-superstar
