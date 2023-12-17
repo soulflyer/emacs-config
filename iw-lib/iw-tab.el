@@ -36,7 +36,7 @@
       (scroll-other-window-down))))
 
 (defun tab-calendar-exit ()
-  "Close the calendar tab if it exists, or the calendar window if not"
+  "Close the calendar tab if it exists, or the calendar window if not."
   (interactive)
   (if (not (and (tab-bar-mode) (tab-bar-tab-exists tab-bar-calendar-tab-name)))
       (calendar-exit)
@@ -44,6 +44,7 @@
     (tab-bar-close-tab)))
 
 (defun tab-workspace-default-layout (directory)
+  "Whatever DIRECTORY."
   (dired directory)
   (split-window-right (truncate (* (frame-width) 0.6)))
   (other-window 1)
@@ -54,13 +55,14 @@
   (other-window 1))
 
 (defun tab-workspace-home-layout ()
+  "Whatever."
   (deft)
   (split-window-right (truncate (* (frame-width) 0.6)))
   (other-window 1)
   (org-agenda-list)
   (split-window-below 15)
   (other-window 1)
-  (dired "~/Code")
+  (emms-browser)
   (split-window-below -12)
   (other-window 1)
   (eshell t)
@@ -68,6 +70,7 @@
   (other-window 1))
 
 (defun tab-workspace-home ()
+  "Whatever."
   (interactive)
   (if (tab-bar-tab-exists tab-bar-home-tab-name)
       (tab-bar-select-tab-by-name tab-bar-home-tab-name)
@@ -76,7 +79,7 @@
     (tab-workspace-home-layout)))
 
 (defun tab-workspace-new (&optional path-name tab-title)
-  "Create a new workspace on DIRECTORY or the current directory."
+  "Create a new workspace called TAB-TITLE on PATH-NAME or the current directory."
   (interactive)
   (let ((directory (expand-file-name (or path-name default-directory)))
         (name (or tab-title
@@ -91,11 +94,12 @@
       (tab-workspace-default-layout directory))))
 
 (defun read-new-tab-name (&optional directory)
+  "Whatever DIRECTORY."
   (read-directory-name "New tab: " directory))
 
 (require 'f)
 (defun read-new-tab-name-and-create (&optional path-name tab-title)
-  "Create a new workspace on DIRECTORY or the current directory."
+  "Create a new workspace called TAB-TITLE on PATH-NAME or the current directory."
   (interactive)
   (let ((directory (expand-file-name (read-new-tab-name (or path-name
                                                             default-directory)))))
@@ -110,11 +114,13 @@
 
 
 (defun tab-workspace-only-home ()
+  "Whatever."
   (interactive)
   (tab-workspace-home)
   (tab-close-other))
 
 (defun tab-kill-and-close ()
+  "Whatever."
   (interactive)
   (projectile-kill-buffers)
   (tab-close))

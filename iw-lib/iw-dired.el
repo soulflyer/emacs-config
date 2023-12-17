@@ -20,8 +20,9 @@
       ls-lisp-verbosity '(uid))
 
 (use-package dired
-;;  :pin manual
-  :config (setq find-file-visit-truename t)
+  ;;  :pin manual
+  :config (setq find-file-visit-truename t
+                dired-guess-shell-alist-user '((".pdf" "open")))
   :bind (:map dired-mode-map
 	      ("f"   . 'dired-make-file)
 	      ("/"   . 'dired-up-directory)

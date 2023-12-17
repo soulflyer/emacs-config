@@ -48,10 +48,32 @@
         ;; emms-player-vlc-playlist-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
         emms-player-list '(emms-player-mpd)
         emms-info-functions '(emms-info-mpd)
-        emms-player-mpd-server-name "localhost"
+        emms-mode-line-titlebar-function '(lambda nil (concat "🎵" (emms-mode-line-playlist-current)))
+        emms-player-mpd-server-name "127.0.0.1"
         emms-player-mpd-server-port "6600"
-        emms-player-mpd-music-directory "/Volumes/Collection")
+        emms-player-mpd-music-directory "/Volumes/Collection"
+        ;;emms-mode-line-titlebar-function 'ignore
+        ;;emms-player-mpd-verbose t
+        emms-player-mpd
+        '(*player* (start . emms-player-mpd-start) (stop . stop-mpd)
+                   (playablep . emms-player-mpd-playable-p)
+                   (regex .
+                          "\\(\\.\\(m3u\\|pls\\|\\(?:16sv\\|3g[2p]\\|4xm\\|8svx\\|a\\(?:a[3c]\\|c3\\|dx\\|fc\\|if[cf]?\\|law\\|mr\\|nim\\|p[ce]\\|sf\\|trac\\|ud\\|v\\(?:m2\\|[is]\\)\\|[lu]\\)\\|b\\(?:ap\\|fi\\)\\|c\\(?:93\\|a[fk]\\|in\\|mv\\|pk\\)\\|d\\(?:aud\\|ct\\|ff\\|ivx\\|sf\\|ts\\|vd?\\|xa\\)\\|eac3\\|f\\(?:ilm\\|l\\(?:ac\\|[cilvx]\\)\\)\\|g\\(?:726\\|sm\\|xf\\)\\|htk\\|i\\(?:ff\\|ss\\)\\|m\\(?:1v\\|2\\(?:ts\\|[tv]\\)\\|4[abv]\\|ad\\|id\\|j\\(?:2\\|p\\(?:e?g\\)\\)\\|k[av]\\|lp\\|mf?\\|ov\\|p\\(?:eg\\|ga\\|[+1-4cgpu]\\)\\|v[ei]\\|xf\\)\\|n\\(?:c\\|sv\\|u[tv]\\)\\|o\\(?:g[agmvx]\\|m[ag]\\|pus\\)\\|p\\(?:af\\|sp\\|v[af]\\)\\|q\\(?:cp\\|t\\)\\|r\\(?:3d\\|am\\|l2\\|mvb\\|oq\\|pl\\|t\\(?:\\(?:p\\|sps?\\)://\\)\\|vc\\|[am]\\)\\|s\\(?:d2\\|f\\|hn\\|mk\\|nd\\|o[ln]\\|px\\|tr\\|vx\\|wf\\)\\|t\\(?:ak\\|g[iqv]\\|hp\\|sp?\\|ta\\)\\|uv2?\\|v\\(?:b\\|id\\|md\\|o[bc]\\|p6\\)\\|w\\(?:64\\|av\\|ebm\\|m[av]\\|s\\(?:aud\\|vga\\)\\|ve?\\)\\|x\\(?:vid\\|[ai]\\)\\)\\)\\'\\)\\|\\(\\`\\(?:Other\\|f\\(?:eatures:\\|tp\\(?:s?://\\)\\)\\|gopher://\\|h\\(?:\\(?:ls\\+https?\\|ttps?\\)://\\)\\|i\\(?:cu\\|pv6\\)\\|mms\\(?:[ht]://\\)\\|nfs://\\|rt\\(?:\\(?:mp\\(?:ts\\|[st]\\)?\\|p\\|sps?\\)://\\)\\|s\\(?:\\(?:mb\\|rtp\\)://\\)\\|tcp\\|un\\)\\)")
+                   (pause . emms-player-mpd-pause)
+                   (resume . emms-player-mpd-pause)
+                   (seek . emms-player-mpd-seek)
+                   (seek-to . emms-player-mpd-seek-to)))
   ;;  (add-to-list 'emms-info-functions 'emms-info-mpd)
+  (add-hook 'emms-playlist-mode-hook
+            (lambda ()
+              (message "running playlist mode hook")
+              (setq mode-line-format '("%e"
+                                       mode-line-misc-info
+                                       mode-line-buffer-identification
+                                       mode-line-end-spaces)
+                    global-mode-string '(""
+                                         emms-playing-time-string
+                                         emms-mode-line-string))))
 
   ;; The emms mpd stop function doesn't work. This is lifted from emms.el
   ;; Removing the disconnect fixes the problem.
