@@ -64,17 +64,19 @@
                    (seek . emms-player-mpd-seek)
                    (seek-to . emms-player-mpd-seek-to)))
   ;;  (add-to-list 'emms-info-functions 'emms-info-mpd)
-  (add-hook 'emms-playlist-mode-hook
-            (lambda ()
-              (message "running playlist mode hook")
-              (setq mode-line-format '("%e"
-                                       mode-line-misc-info
-                                       mode-line-buffer-identification
-                                       mode-line-end-spaces)
-                    global-mode-string '(""
-                                         emms-playing-time-string
-                                         emms-mode-line-string))))
+  (defun emms-short-modeline ()
+    (message "running playlist mode hook")
+    (setq mode-line-format '("%e"
+                             mode-line-misc-info
+                             mode-line-buffer-identification
+                             mode-line-end-spaces)
+          global-mode-string '(""
+                               emms-playing-time-string
+                               emms-mode-line-string)))
 
+  (add-hook 'emms-playlist-mode-hook 'emms-short-modeline)
+  (add-hook 'emms-browser-mode-hook 'emms-short-modeline)
+  
   ;; The emms mpd stop function doesn't work. This is lifted from emms.el
   ;; Removing the disconnect fixes the problem.
   (defun stop-mpd ()
@@ -93,7 +95,6 @@
     "Search for STR using FIELDS."
     (let* ((prompt (format "Searching with %S: " fields))
            (str (or search-string (read-string prompt))))
-      (message "Fields: %s, String: %s" fields str)
       (emms-browser-search-buffer-go)
       (emms-with-inhibit-read-only-t
        (emms-browser-render-search
@@ -103,23 +104,21 @@
       (goto-char (point-min))))
 
   (defun iw-emms-play (play-all)
-    "Plays the song, or the whole catalog if ARTIST is not nil, using emms."
+    "Passes the song to emms, or the whole catalog if ARTIST is not nil."
     (let* ((artist-song (split-string (org-entry-get nil "ITEM") ": "))
            (artist (second artist-song))
            (track  (first artist-song)))
-      (message "Artist: %s" artist)
-      (message "Song: %s" track)
       (if play-all
           (iw-emms-browser-search '(info-artist) artist)
         (iw-emms-browser-search '(info-title) track))))
 
   (defun iw-emms-play-track ()
-    "Plays the track on the current line."
+    "Opens an emms playlist with all tracks that match the title on the current line."
     (interactive)
     (iw-emms-play nil))
 
   (defun iw-emms-play-artist ()
-    "Opens a playlist of all the artist on the current lines catalog."
+    "Opens an emms playlist containing all the artists catalog."
     (interactive)
     (iw-emms-play t))
 

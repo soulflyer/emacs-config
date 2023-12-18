@@ -33,7 +33,7 @@
         ("sing.org"        display-buffer-reuse-mode-window
          (mode . deft-mode))
         ("emms-browser-search" display-buffer-reuse-mode-window
-         (mode . emms-browser-mode))
+         (mode . (emms-browser-mode emms-playlist-mode)))
         ("20[0-9][0-9]"    display-buffer-same-window
          (inhibit-same-window . nil))
         ("Agenda Commands"             display-buffer-below-selected)
