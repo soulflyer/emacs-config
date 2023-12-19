@@ -23,6 +23,8 @@
                 org-lowest-priority 73
                 org-habit-graph-column 40
                 org-habit-show-all-today t
+                org-habit-preceding-days 15
+                org-habit-following-days 15
                 org-image-actual-width (list 240)
                 org-startup-indented t)
   ;; (add-to-list 'display-buffer-alist

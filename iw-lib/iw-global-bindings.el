@@ -67,9 +67,6 @@
 (global-set-key (kbd "C-x w r")     'window-swap-states)
 (global-set-key (kbd "C-x C-r")     'resize-window)
 
-(global-set-key (kbd "C-c b l")     'bookmark-bmenu-list)
-(global-set-key (kbd "C-c b n")     'burly-bookmark-windows)
-
 (defun start-new-eshell () "Whatever." (interactive) (eshell t))
 
 (global-set-key (kbd "C-c e")       'start-new-eshell)
@@ -118,6 +115,10 @@
 (global-set-key (kbd "C-q t p")   'tab-profile)
 (global-set-key (kbd "C-q t x")   'tab-xiana)
 
+(global-set-key (kbd "C-c b") 'iw-open-bookshelf)
+(global-set-key (kbd "C-c l") 'iw-open-library)
+(global-set-key (kbd "C-c i") 'emms-browser)
+
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
 ;; A useful alternative is remap: see iw-org.el for an example
@@ -126,11 +127,6 @@
             ;; For GUI Emacs, terminal version doesn't see C-TAB
             ("C-<tab>"   . other-window)
             ("C-S-<tab>" . previous-window-any-frame)
-            ("C-c b b"   . iw-open-bookshelf)
-            ("C-c b l"   . (lambda ()
-                             (interactive)
-                             (find-file
-                              "~/Documents/org-mode/NotationalVelocity/2206230744 library.org")))
             ("C-c d e"  . zetteldeft-extract-region-to-note)
             ("C-c d 2"  . zetteldeft-tag-insert)
             ("C-c d 3"  . zetteldeft-tag-insert)

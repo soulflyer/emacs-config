@@ -132,7 +132,10 @@
          ("<tab>" . emms-browser-next-non-track)
          :map
          emms-playlist-mode-map
-         ("F"     . emms-show-all)))
+         ("F"     . emms-show-all)
+         ("SPC"   . emms-pause)
+         ("."     . emms-seek-forward)
+         (","     . emms-seek-backward)))
 
 (provide 'iw-music)
 ;;; iw-music.el ends here

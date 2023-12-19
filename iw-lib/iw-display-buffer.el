@@ -30,8 +30,17 @@
          (direction . up))
         ("Org Agenda"      (display-buffer-reuse-window)
          (dedicated . t))
-        ("sing.org"        display-buffer-reuse-mode-window
-         (mode . deft-mode))
+        ;; FIXME The following 3 items should be in one regex
+        ;; but this doesn't work.
+        ("sing\.org"
+         (display-buffer-reuse-mode-window)
+         (mode . (deft-mode org-mode lyrics-show-mode)))
+        ("\.pdf"
+         (display-buffer-reuse-mode-window)
+         (mode . (deft-mode org-mode lyrics-show-mode)))
+        ("EMMS-TAGS"
+         (display-buffer-reuse-mode-window)
+         (mode . (deft-mode org-mode lyrics-show-mode)))
         ("emms-browser-search" display-buffer-reuse-mode-window
          (mode . (emms-browser-mode emms-playlist-mode)))
         ("20[0-9][0-9]"    display-buffer-same-window
