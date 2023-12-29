@@ -32,7 +32,7 @@
          (dedicated . t))
         ;; FIXME The following 3 items should be in one regex
         ;; but this doesn't work.
-        ("sing\.org"
+        ("\.org"
          (display-buffer-reuse-mode-window)
          (mode . (deft-mode org-mode lyrics-show-mode)))
         ("\.pdf"

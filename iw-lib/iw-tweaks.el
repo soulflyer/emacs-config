@@ -99,5 +99,10 @@
 ;; Turn on the line/col display in the status bar
 (column-number-mode 1)
 
+(use-package persistent-scratch
+  :ensure t
+  :commands persistent-scratch-setup-default
+  :hook (after-init . persistent-scratch-setup-default))
+
 (provide 'iw-tweaks)
 ;;; iw-tweaks.el ends here

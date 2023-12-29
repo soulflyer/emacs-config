@@ -44,8 +44,7 @@
     (tab-bar-close-tab)))
 
 (defun tab-workspace-default-layout (directory)
-  "Whatever DIRECTORY."
-  (dired directory)
+  `  (dired directory)
   (split-window-right (truncate (* (frame-width) 0.6)))
   (other-window 1)
   (split-window-below -15)
@@ -55,7 +54,6 @@
   (other-window 1))
 
 (defun tab-workspace-home-layout ()
-  "Whatever."
   (deft)
   (split-window-right (truncate (* (frame-width) 0.6)))
   (other-window 1)
@@ -70,7 +68,6 @@
   (other-window 1))
 
 (defun tab-workspace-home ()
-  "Whatever."
   (interactive)
   (if (tab-bar-tab-exists tab-bar-home-tab-name)
       (tab-bar-select-tab-by-name tab-bar-home-tab-name)
@@ -94,7 +91,6 @@
       (tab-workspace-default-layout directory))))
 
 (defun read-new-tab-name (&optional directory)
-  "Whatever DIRECTORY."
   (read-directory-name "New tab: " directory))
 
 (require 'f)

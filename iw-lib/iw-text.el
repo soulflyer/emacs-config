@@ -47,7 +47,8 @@
   (setq-default hl-todo-keyword-faces
                 '(("TODO"    . "#FF0000")
                   ("FIXME"   . "#9F40FF")
-                  ("CLARIFY" . "#ff8000")))
+                  ("CLARIFY" . "#ff8000")
+                  ("NOTE"    . "#40ff40")))
   (global-hl-todo-mode)
   :bind (("C-c t n" . hl-todo-next)
          ("C-c t p" . hl-todo-previous)))

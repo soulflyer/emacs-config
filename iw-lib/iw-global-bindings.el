@@ -89,6 +89,7 @@
 (global-set-key (kbd "C-q z")       'zygospore-toggle-delete-other-windows)
 (global-set-key (kbd "C-q x")       'delete-window)
 (global-set-key (kbd "s-`")         'tab-next)
+(global-set-key (kbd "s-~")         'tab-previous)
 
 (defun tab-emacs     () "Whatever."(interactive) (tab-workspace-new "~/.emacs.d" "Emacs"))
 (defun tab-photo-api () "Whatever."(interactive) (tab-workspace-new "~/Code/Clojure/photo-api"))
@@ -115,9 +116,10 @@
 (global-set-key (kbd "C-q t p")   'tab-profile)
 (global-set-key (kbd "C-q t x")   'tab-xiana)
 
-(global-set-key (kbd "C-c b") 'iw-open-bookshelf)
-(global-set-key (kbd "C-c l") 'iw-open-library)
-(global-set-key (kbd "C-c i") 'emms-browser)
+(global-set-key (kbd "C-c b")     'iw-open-bookshelf)
+(global-set-key (kbd "C-c l")     'iw-open-library)
+(global-set-key (kbd "C-c i")     'emms-browser)
+(global-set-key (kbd "C-c C-i")   'emms)
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!

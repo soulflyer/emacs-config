@@ -1,0 +1,22 @@
+(["*scratch*" ";; This buffer is for text that is not saved, and for Lisp evaluation.
+;; To create a file, visit it with <open> and enter text in its buffer.
+(setq emms-browser-info-title-format \"[%2c] %T: %t\")
+(emms-playlist-current-selected-track)
+(defvar example-track '(*track*
+                        (type . file)
+                        (name . \"/Volumes/Collection/MachineHead/The-Burning-Red/14. The Burning Red.mp3\")
+                        (info-playing-time . 404)
+                        (info-genre . \"Nu Metal\")
+                        (info-year . \"1999\")
+                        (info-tracknumber . \"14\")
+                        (info-album . \"The Burning Red\")
+                        (info-title . \"The Burning Red\")
+                        (info-artist . \"Machine Head\")
+                        (info-albumartist . \"Machine Head\")
+                        (info-date . \"1999\")
+                        (info-mtime 25991 11367 730701 200000)
+                        (last-played 25994 20341 1833 0)
+                        (play-count . 2)))
+
+(emms-track-get example-track 'play-count)
+" (194 . 182) lisp-interaction-mode nil nil])

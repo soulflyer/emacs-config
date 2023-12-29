@@ -28,7 +28,8 @@
 	      ("/"   . 'dired-up-directory)
 	      ("\\"  . 'dired-up-directory)
               ("C-s" . 'swiper)
-              ("1"   . 'dired-do-shell-command)))
+              ("1"   . 'dired-do-shell-command)
+              ("E"   . 'emms-add-dired)))
 
 (use-package openwith
   :ensure t)
