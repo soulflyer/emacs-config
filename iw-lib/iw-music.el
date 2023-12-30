@@ -77,8 +77,13 @@
                                emms-playing-time-string
                                emms-mode-line-string)))
 
+  (defun emms-mpd-crop ()
+    (shell-command "mpc crop")
+    (message "Cropped mpd playlist"))
+
   (add-hook 'emms-playlist-mode-hook 'emms-short-modeline)
   (add-hook 'emms-browser-mode-hook 'emms-short-modeline)
+  (add-hook 'emms-playlist-cleared-hook 'emms-mpd-crop)
   
   ;; The emms mpd stop function doesn't work. This is lifted from emms.el
   ;; Removing the disconnect fixes the problem.
@@ -218,6 +223,7 @@
          ("d"     . emms-browser-view-in-dired)
          ("RET"   . emms-browser-toggle-subitems)
          ("<tab>" . emms-browser-next-non-track)
+         ("C-s"   . swiper)
          :map
          emms-playlist-mode-map
          ("F"     . emms-show-all)
