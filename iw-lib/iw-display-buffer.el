@@ -60,7 +60,8 @@
         ("*cider-test-report*"         display-buffer-same-window (inhibit-same-window . nil))
         ("*J Console*"                 display-buffer-same-window (inhibit-same-window . nil))
         ("*Projectile Commander Help*" display-buffer-same-window (inhibit-same-window . nil))
-        ("*Info*"                      display-buffer-same-window (inhibit-same-window . nil))))
+        ("*Info*"                      display-buffer-same-window (inhibit-same-window . nil))
+        ("\*Man "                      display-buffer-same-window (inhibit-same-window . nil))))
 
 ;; display-buffer-full-frame
 (provide 'iw-display-buffer)

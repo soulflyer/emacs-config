@@ -41,19 +41,21 @@
 (use-package emms
   :ensure t
   :config (emms-all)
-  (setq emms-source-file-default-directory "/Volumes/Collection"
+  (setq emms-source-file-default-directory "~/Music/Collection"
         emms-browser-switch-to-playlist-on-add t
         ;; emms-player-list '(emms-player-vlc emms-player-vlc-playlist)
         ;; emms-player-vlc-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
         ;; emms-player-vlc-playlist-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
         emms-player-list '(emms-player-mpd)
         emms-info-functions '(emms-info-native
-                              emms-info-cueinfo
-                              emms-info-mpd)
+                              ;;emms-info-cueinfo
+                              ;;emms-info-mpd
+                              ;;emms-info-exiftool
+                              )
         emms-mode-line-titlebar-function '(lambda nil (concat "🎵" (emms-mode-line-playlist-current)))
         emms-player-mpd-server-name "127.0.0.1"
         emms-player-mpd-server-port "6600"
-        emms-player-mpd-music-directory "/Volumes/Collection"
+        emms-player-mpd-music-directory "~/Music/Collection"
         emms-playlist-default-major-mode 'emms-mark-mode
         ;;emms-mode-line-titlebar-function 'ignore
         ;;emms-player-mpd-verbose t
@@ -144,74 +146,84 @@
 
   (advice-add 'emms-info-track-description :override 'iw-emms-info-track-description)
 
-  (defun iw-emms-browser-format-line (bdata &optional target)
-    "Return a propertized string to be inserted in the buffer."
-    (unless target
-      (setq target 'browser))
-    (let* ((name (or (emms-browser-bdata-name bdata) "misc"))
-           (level (emms-browser-bdata-level bdata))
-           (type (emms-browser-bdata-type bdata))
-           (indent (emms-browser-make-indent level))
-           (track (emms-browser-bdata-first-track bdata))
-           (path (emms-track-get track 'name))
-           (face (emms-browser-get-face bdata))
-           (format (emms-browser-get-format bdata target))
-           (props (list 'emms-browser-bdata bdata))
-           (format-choices
-            `(("i" . ,indent)
-              ("n" . ,name)
-              ("y" . ,(emms-track-get-year track))
-              ("A" . ,(emms-track-get track 'info-album))
-              ("a" . ,(emms-track-get track 'info-artist))
-              ("C" . ,(emms-track-get track 'info-composer))
-              ("p" . ,(emms-track-get track 'info-performer))
-              ("t" . ,(emms-track-get track 'info-title))
-	      ("D" . ,(emms-browser-disc-number track))
-              ("T" . ,(emms-browser-track-number track))
-              ("d" . ,(emms-browser-track-duration track))))
-	   str)
-      (when (equal type 'info-album)
-        (setq format-choices (append format-choices
-                                     `(("cS" . ,(emms-browser-get-cover-str path 'small))
-                                       ("cM" . ,(emms-browser-get-cover-str path 'medium))
-                                       ("cL" . ,(emms-browser-get-cover-str path 'large))))))
+  (defun make--covers ()
+    (shell-command "convert -resize 60x60 cover.jpg ./cover_small.jpg")
+    (shell-command "convert -resize 120x120 cover.jpg ./cover_med.jpg"))
+
+  (defun make-covers ()
+    (message "Make covers in %s" default-directory)
+    (let* ((has-cover (directory-files default-directory nil "cover.jpg")))
+      (if has-cover (make--covers)
+        (message "No cover found"))))
+  
+  ;; (defun iw-emms-browser-format-line (bdata &optional target)
+  ;;   "Return a propertized string to be inserted in the buffer."
+  ;;   (unless target
+  ;;     (setq target 'browser))
+  ;;   (let* ((name (or (emms-browser-bdata-name bdata) "misc"))
+  ;;          (level (emms-browser-bdata-level bdata))
+  ;;          (type (emms-browser-bdata-type bdata))
+  ;;          (indent (emms-browser-make-indent level))
+  ;;          (track (emms-browser-bdata-first-track bdata))
+  ;;          (path (emms-track-get track 'name))
+  ;;          (face (emms-browser-get-face bdata))
+  ;;          (format (emms-browser-get-format bdata target))
+  ;;          (props (list 'emms-browser-bdata bdata))
+  ;;          (format-choices
+  ;;           `(("i" . ,indent)
+  ;;             ("n" . ,name)
+  ;;             ("y" . ,(emms-track-get-year track))
+  ;;             ("A" . ,(emms-track-get track 'info-album))
+  ;;             ("a" . ,(emms-track-get track 'info-artist))
+  ;;             ("C" . ,(emms-track-get track 'info-composer))
+  ;;             ("p" . ,(emms-track-get track 'info-performer))
+  ;;             ("t" . ,(emms-track-get track 'info-title))
+  ;;             ("D" . ,(emms-browser-disc-number track))
+  ;;             ("T" . ,(emms-browser-track-number track))
+  ;;             ("d" . ,(emms-browser-track-duration track))))
+  ;;          str)
+  ;;     (when (equal type 'info-album)
+  ;;       (setq format-choices (append format-choices
+  ;;                                    `(("cS" . ,(emms-browser-get-cover-str path 'small))
+  ;;                                      ("cM" . ,(emms-browser-get-cover-str path 'medium))
+  ;;                                      ("cL" . ,(emms-browser-get-cover-str path 'large))))))
 
 
-      (when (functionp format)
-        (setq format (funcall format bdata format-choices)))
+  ;;     (when (functionp format)
+  ;;       (setq format (funcall format bdata format-choices)))
 
-      (setq str
-            (with-temp-buffer
-              (insert format)
-              (goto-char (point-min))
-              (let ((start (point-min)))
-                ;; jump over any image
-                (when (re-search-forward "%c[SML]" nil t)
-                  (setq start (point)))
-                ;; jump over the indent
-                (when (re-search-forward "%i" nil t)
-                  (setq start (point)))
-                (add-text-properties start (point-max)
-                                     (list 'face face)))
-              (buffer-string)))
+  ;;     (setq str
+  ;;           (with-temp-buffer
+  ;;             (insert format)
+  ;;             (goto-char (point-min))
+  ;;             (let ((start (point-min)))
+  ;;               ;; jump over any image
+  ;;               (when (re-search-forward "%c[SML]" nil t)
+  ;;                 (setq start (point)))
+  ;;               ;; jump over the indent
+  ;;               (when (re-search-forward "%i" nil t)
+  ;;                 (setq start (point)))
+  ;;               (add-text-properties start (point-max)
+  ;;                                    (list 'face face)))
+  ;;             (buffer-string)))
 
-      (setq str (emms-browser-format-spec str format-choices))
+  ;;     (setq str (emms-browser-format-spec str format-choices))
 
-      ;; give tracks a 'boost' if they're not top-level
-      ;; (covers take up an extra space)
-      (when (and (eq type 'info-title)
-                 (not (string= indent "")))
-        (setq str (concat " " str)))
+  ;;     ;; give tracks a 'boost' if they're not top-level
+  ;;     ;; (covers take up an extra space)
+  ;;     (when (and (eq type 'info-title)
+  ;;                (not (string= indent "")))
+  ;;       (setq str (concat " " str)))
 
-      ;; if we're in playlist mode, add a track
-      (when (and (eq target 'playlist)
-                 (eq type 'info-title))
-        (setq props
-              (append props `(emms-track ,track))))
+  ;;     ;; if we're in playlist mode, add a track
+  ;;     (when (and (eq target 'playlist)
+  ;;                (eq type 'info-title))
+  ;;       (setq props
+  ;;             (append props `(emms-track ,track))))
 
-      ;; add properties to the whole string
-      (add-text-properties 0 (length str) props str)
-      str))
+  ;;     ;; add properties to the whole string
+  ;;     (add-text-properties 0 (length str) props str)
+  ;;     str))
 
   ;;(advice-add 'emms-browser-format-line :override 'iw-emms-browser-format-line)
   

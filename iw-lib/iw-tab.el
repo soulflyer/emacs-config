@@ -44,7 +44,7 @@
     (tab-bar-close-tab)))
 
 (defun tab-workspace-default-layout (directory)
-  `  (dired directory)
+  (dired directory)
   (split-window-right (truncate (* (frame-width) 0.6)))
   (other-window 1)
   (split-window-below -15)
@@ -54,6 +54,7 @@
   (other-window 1))
 
 (defun tab-workspace-home-layout ()
+  (interactive)
   (deft)
   (split-window-right (truncate (* (frame-width) 0.6)))
   (other-window 1)
@@ -65,6 +66,9 @@
   (other-window 1)
   (eshell t)
   (cd "~")
+  (eshell/clear-scrollback)
+  (eshell-send-input)
+  (recenter-top-bottom 0)
   (other-window 1))
 
 (defun tab-workspace-home ()
