@@ -120,6 +120,7 @@
 (global-set-key (kbd "C-c l")     'iw-open-library)
 (global-set-key (kbd "C-c i")     'emms-browser)
 (global-set-key (kbd "C-c C-i")   'emms)
+(global-set-key [f8]              'emms-pause)
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!

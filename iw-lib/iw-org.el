@@ -159,6 +159,12 @@ FIXME does nothing if at the end of a colapsed heading"
                                                            (verb       . t)))
   
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
+
+  (defun iw-lyrics-and-play ()
+    (interactive)
+    (iw-lyrics)
+    (iw-emms-play-track))
+
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
          ("C-c i"   . org-insert-structure-template)
@@ -166,7 +172,8 @@ FIXME does nothing if at the end of a colapsed heading"
          ("RET"     . iw-zetteldeft-return)
          ("C-c SPC SPC" . iw-lyrics)
          ("C-c SPC RET" . iw-emms-play-track)
-         ("C-c l"   . iw-lyrics)))
+         ("C-c l"   . iw-lyrics)
+         ([f6]      . iw-lyrics-and-play)))
 
 (use-package org-superstar
   :ensure t

@@ -20,16 +20,22 @@
       ls-lisp-verbosity '(uid))
 
 (use-package dired
-  ;;  :pin manual
   :config (setq find-file-visit-truename t
-                dired-guess-shell-alist-user '((".pdf" "open")))
+                dired-guess-shell-alist-user '((".pdf" "open")
+                                               (".mp3" "open")))
+  (defun download-enable ()
+    (interactive)
+    (org-download-enable)
+    (message "Enabling drag and drop downloads for the current directory."))
+
   :bind (:map dired-mode-map
 	      ("f"   . 'dired-make-file)
 	      ("/"   . 'dired-up-directory)
 	      ("\\"  . 'dired-up-directory)
               ("C-s" . 'swiper)
               ("1"   . 'dired-do-shell-command)
-              ("E"   . 'emms-add-dired)))
+              ("E"   . 'emms-add-dired)
+              ("e"   . 'download-enable)))
 
 (use-package openwith
   :ensure t)
