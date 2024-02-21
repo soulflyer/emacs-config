@@ -53,7 +53,8 @@
          ("C-c c '"         . 'clojure-convert-collection-to-quoted-list)
          ("C-c c ("         . 'clojure-convert-collection-to-list)
          ("C-c c #"         . 'clojure-convert-collection-to-set)
-         ("C-c a"           . 'align-cljlet)))
+         ("C-c a"           . 'align-cljlet)
+         ("M-RET"           . 'lsp-describe-thing-at-point)))
 
 (use-package cider
   :ensure t

@@ -164,7 +164,6 @@ FIXME does nothing if at the end of a colapsed heading"
     (interactive)
     (iw-lyrics)
     (iw-emms-play-track))
-
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
          ("C-c i"   . org-insert-structure-template)
