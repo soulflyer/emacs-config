@@ -21,8 +21,7 @@
 
 (use-package dired
   :config (setq find-file-visit-truename t
-                dired-guess-shell-alist-user '((".pdf" "open")
-                                               (".mp3" "open")))
+                dired-guess-shell-alist-user '((".*" "open")))
   (defun download-enable ()
     (interactive)
     (org-download-enable)
