@@ -28,5 +28,7 @@
 (use-package yaml-mode
   :ensure t)
 
+(add-to-list 'auto-mode-alist '("\\.vcvs\\'" . yaml-mode))
+
 (provide 'iw-extra-file-types)
 ;;; iw-extra-file-types.el ends here

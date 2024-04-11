@@ -14,5 +14,8 @@
 (global-set-key (kbd "C-c f u") 'hs-show-block)
 (global-set-key (kbd "C-c f a") 'hs-show-all)
 (global-set-key (kbd "C-c f h") 'hs-hide-all)
+
+(add-hook 'prog-mode-hook #'hs-minor-mode)
+
 (provide 'iw-folding)
 ;;; iw-folding.el ends here

@@ -56,10 +56,10 @@
 (require 'iw-terminal-emacs)
 
 ;;  Add config for specific purposes.
-(require 'iw-ai)
 (require 'iw-cleanup)
 (require 'iw-clojure)
 ;;(require 'iw-common-lisp)
+(require 'iw-completion)
 (require 'iw-display-buffer)
 (require 'iw-external)
 (require 'iw-folding)
@@ -81,7 +81,6 @@
 (require 'iw-window)
 
 ;;Most of these are just a single package.
-(require 'iw-auto-complete)
 (require 'iw-autocompile)
 (require 'iw-auto-insert)
 (require 'iw-browse-kill-ring)

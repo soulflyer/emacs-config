@@ -215,7 +215,7 @@ FIXME does nothing if at the end of a colapsed heading"
                 org-journal-dir "~/Documents/org-mode/journal/"
                 org-journal-file-format "%Y"
                 org-journal-file-type 'yearly
-                org-journal-find-file 'find-file
+                org-journal-find-file-fn 'find-file
                 org-journal-follow-mode t
                 org-journal-hide-entries-p nil
                 org-journal-time-format ""))
@@ -234,6 +234,11 @@ FIXME does nothing if at the end of a colapsed heading"
   :config
   (add-hook 'org-mode-hook 'org-appear-mode)
   (setq org-appear-delay 1))
+
+(use-package org-download
+  :ensure t
+  :config
+  (add-hook 'dired-mode-hook 'org-download-enable))
 
 (provide 'iw-org)
 ;;; iw-org.el ends here

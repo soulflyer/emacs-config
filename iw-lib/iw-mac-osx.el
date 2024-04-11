@@ -32,7 +32,8 @@
 
 (defun iw-open-bookshelf ()
   (interactive)
-  (shell-command (concat "osascript -e 'mount volume \"smb://iain@subversion.local/bookshelf\"'"))
+  ;; TODO add an if to check if *crucial* is not mounted and try to mount the remote version of bookshelf
+  ;;(shell-command (concat "osascript -e 'mount volume \"smb://iain@subversion.local/bookshelf\"'"))
   (find-file "~/Documents/books/bookshelf/"))
 
 (provide 'iw-mac-osx)
