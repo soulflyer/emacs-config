@@ -26,7 +26,8 @@
                 org-habit-preceding-days 15
                 org-habit-following-days 15
                 org-image-actual-width (list 240)
-                org-startup-indented t)
+                org-startup-indented t
+                org-startup-with-inline-images t)
   ;; (add-to-list 'display-buffer-alist
   ;;              '("*Agenda Commands*" display-buffer-in-direction
   ;;                (side . bottom)

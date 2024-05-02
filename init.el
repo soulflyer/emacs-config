@@ -94,6 +94,7 @@
 (require 'iw-expand-region)
 (require 'iw-flycheck)
 (require 'iw-hl-line)
+(require 'iw-html)
 (require 'iw-ibuffer)
 (require 'iw-lisp)
 (require 'iw-javascript)
