@@ -40,7 +40,8 @@
   :config
   (bind-keys :prefix "C-c l"
              :prefix-map my-lsp-ui-map
-             ("d" . lsp-describe-thing-at-point))
+             ("d" . lsp-describe-thing-at-point)
+             ("t" . lsp-treemacs-symbols))
   :commands lsp-ui-mode)
 
 (use-package lsp-ivy

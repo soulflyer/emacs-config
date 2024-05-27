@@ -1,0 +1,6 @@
+alias biff clj -M:dev
+alias ll ls -la $*
+alias gl git log --oneline --graph --decorate
+alias gs git status
+alias ga git add .
+alias gp git push origin
