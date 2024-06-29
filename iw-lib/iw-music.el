@@ -47,9 +47,9 @@
         ;; emms-player-vlc-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
         ;; emms-player-vlc-playlist-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
         emms-player-list '(emms-player-mpd)
-        emms-info-functions '(emms-info-native
+        emms-info-functions '(;;emms-info-native
                               ;;emms-info-cueinfo
-                              ;;emms-info-mpd
+                              emms-info-mpd
                               ;;emms-info-exiftool
                               )
         emms-mode-line-titlebar-function '(lambda nil (concat "🎵" (emms-mode-line-playlist-current)))
@@ -59,6 +59,7 @@
         emms-playlist-default-major-mode 'emms-mark-mode
         ;;emms-mode-line-titlebar-function 'ignore
         ;;emms-player-mpd-verbose t
+        emms-last-played-keep-count nil
         emms-player-mpd
         '(*player* (start . emms-player-mpd-start) (stop . stop-mpd)
                    (playablep . emms-player-mpd-playable-p)
@@ -236,6 +237,7 @@
          ("RET"   . emms-browser-toggle-subitems)
          ("<tab>" . emms-browser-next-non-track)
          ("C-s"   . swiper)
+         ("SPC"   . emms-browser-add-tracks-and-play)
          :map
          emms-playlist-mode-map
          ("F"     . emms-show-all)

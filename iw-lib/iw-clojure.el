@@ -11,6 +11,8 @@
 ;;; Code:
 (require 'use-package)
 ;;(require 'cljstyle-mode)
+(require 'cider-storm)
+(define-key cider-mode-map (kbd "C-c C-f") 'cider-storm-map)
 
 (use-package clojure-mode
   :ensure t
@@ -43,7 +45,8 @@
          ("C-c C-x C-j C-s" . 'cider-jack-in-cljs)
          ("C-c C-x C-j RET" . 'cider-jack-in-clj&cljs)
          :map clojure-mode-map
-         ("TAB"             . 'indent-region)
+         ;;("TAB"           . 'indent-region)
+         ("TAB"             . 'cljstyle-format-buffer)
          ("C-c c m"         . 'clojure-convert-collection-to-map)
          ("C-c c v"         . 'clojure-convert-collection-to-vector)
          ("C-c c l"         . 'clojure-convert-collection-to-list)
@@ -58,20 +61,14 @@
 
 (use-package cider
   :ensure t
-  :bind (:map
-         cider-mode-map
-         ("M-RET" . 'cider-doc)
-         :map cider-repl-mode-map
-         ("M-RET" . 'cider-doc)
-         ("C-c q" . 'cider-quit)
-         ("C-c h" . 'cider-browse-ns-all))
+  :bind (:map cider-repl-mode-map
+              ("M-RET" . 'cider-doc)
+              ("C-c q" . 'cider-quit)
+              ("C-c h" . 'cider-browse-ns-all)
+              ("S-<up>"   . 'cider-repl-previous-input)
+              ("S-<down>" . 'cider-repl-next-input))
   :init
   (add-hook 'cider-repl-mode-hook #'(lambda () (setq scroll-conservatively 101)))
-  
-  :bind (:map
-         cider-repl-mode-map
-         ("S-<up>"   . 'cider-repl-previous-input)
-         ("S-<down>" . 'cider-repl-next-input))
   :config (setq cider-eldoc-display-for-symbol-at-point t
                 cider-use-tooltips nil
                 cider-debug-prompt 'minibuffer))

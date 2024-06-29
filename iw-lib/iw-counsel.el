@@ -6,14 +6,14 @@
 ;;; Code:
 (require 'use-package)
 
-;; (use-package smex
-;;   :ensure t)
+(use-package smex
+  :ensure t)
 
-(use-package amx
-  :ensure t
-  :config (setq amx-history-length 40))
+;; (use-package amx
+;;   :ensure t
+;;   :config (setq amx-history-length 40))
 
-(amx-mode)
+;; (amx-mode)
 
 (use-package ido-completing-read+
   :ensure t)

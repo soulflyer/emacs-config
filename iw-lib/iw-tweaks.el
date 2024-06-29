@@ -10,7 +10,8 @@
 
 ;; Save minbuffer history
 (setq-default savehist-autosave-interval 30)
-(setq savehist-mode t)
+(savehist-mode 1)
+(setq savehist-additional-variables '(command-history))
 
 (setq-default glogal-visual-line-mode t)
 (add-hook 'dired-mode-hook          (lambda () (visual-line-mode -1)))

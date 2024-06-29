@@ -26,10 +26,10 @@ Keys supported:
     (set-transient-map
      (let ((tmap (make-sparse-keymap)))
        (define-key tmap "-"     (lmb (shrink-window 1)))
-       (define-key tmap [up]    (lmb (shrink-window 1)))
+       (define-key tmap [up]    (lmb (enlarge-window 1)))
        (define-key tmap "+"     (lmb (enlarge-window 1)))
        (define-key tmap "="     (lmb (enlarge-window 1)))
-       (define-key tmap [down]  (lmb (enlarge-window 1)))
+       (define-key tmap [down]  (lmb (shrink-window 1)))
        (define-key tmap "{"     (lmb (shrink-window-horizontally 1)))
        (define-key tmap "["     (lmb (shrink-window-horizontally 1)))
        (define-key tmap [left]  (lmb (shrink-window-horizontally 1)))
