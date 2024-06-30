@@ -156,6 +156,21 @@
     (let* ((has-cover (directory-files default-directory nil "cover.jpg")))
       (if has-cover (make--covers)
         (message "No cover found"))))
+
+  ;;(setq stats-db  (sqlite-open "~/.mpd/stats.db"))
+  ;; TODO move this into emms?
+  (defun get-play-count (track)
+    (sqlite-execute (sqlite-open "~/.mpd/stats.db")
+                    (format "SELECT play_count FROM song WHERE uri=\"%s\""
+                            (string-trim-left (emms-track-get track 'name)
+                                              (concat (expand-file-name emms-player-mpd-music-directory) "/")))))
+
+  (defun get-current-track-play-count ()
+    (interactive)
+    (message (format "Play count %d" (first (first (get-play-count (emms-playlist-current-selected-track)))))))
+
+
+  ;; The following is an alternative way to hack emms. Currently I have the source installed localy, modified to add playcount stuff etc.
   
   ;; (defun iw-emms-browser-format-line (bdata &optional target)
   ;;   "Return a propertized string to be inserted in the buffer."
@@ -238,12 +253,14 @@
          ("<tab>" . emms-browser-next-non-track)
          ("C-s"   . swiper)
          ("SPC"   . emms-browser-add-tracks-and-play)
+         ("A"     . emms-browser-search-by-artist-at-point)
          :map
          emms-playlist-mode-map
          ("F"     . emms-show-all)
          ("SPC"   . emms-pause)
          ("."     . emms-seek-forward)
-         (","     . emms-seek-backward)))
+         (","     . emms-seek-backward)
+         ("A"     . emms-browser-search-by-artist-at-point)))
 
 (provide 'iw-music)
 ;;; iw-music.el ends here
