@@ -45,3 +45,4 @@ org-roam.db
 /iw-lib/iw-secret.el
 /eln-cache/
 emms/
+.persistent-scratch

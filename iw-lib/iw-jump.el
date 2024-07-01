@@ -1,4 +1,4 @@
-;;; iw-jump.el --- Setup jumping.                    -*- lexical-binding: t; -*-
+;;; iw-jumaap.el --- Setup jumping.                  -*- lexical-binding: t; -*-
 ;; Copyright (C) 2020  Iain Wood
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
 
@@ -21,11 +21,11 @@
 ;;; Code:
 
 (use-package ace-jump-mode
-  :ensure t)
+  :ensure t
+  :bind (("M-j" . ace-jump-word-mode)))
 
 (use-package jump-char
-  :ensure t
-  :bind (("M-j" . jump-char-forward)))
+  :ensure t)
 
 (use-package back-button
   :ensure t
