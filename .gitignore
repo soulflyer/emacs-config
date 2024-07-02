@@ -46,3 +46,4 @@ org-roam.db
 /eln-cache/
 emms/
 .persistent-scratch
+eshell/lastdir

@@ -242,6 +242,13 @@
   ;;     str))
 
   ;;(advice-add 'emms-browser-format-line :override 'iw-emms-browser-format-line)
+
+  (emms-browser-make-filter "since-yesterday"  (emms-browser-filter-only-recent 2))
+  (emms-browser-make-filter "this-week"        (emms-browser-filter-only-recent 7))
+  (emms-browser-make-filter "this-month"       (emms-browser-filter-only-recent 31))
+  (emms-browser-make-filter "this-year"        (emms-browser-filter-only-recent 365))
+  (emms-browser-make-filter "all"              'ignore)
+  (emms-browser-set-filter (assoc "all" emms-browser-filters))
   
   :bind (:map
          emms-browser-mode-map
