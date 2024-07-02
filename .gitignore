@@ -47,3 +47,6 @@ org-roam.db
 emms/
 .persistent-scratch
 eshell/lastdir
+*.elc
+/lib/cider-storm-stepper.el
+/lib/cider-storm.el
