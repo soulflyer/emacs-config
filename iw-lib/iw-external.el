@@ -89,7 +89,7 @@
   (interactive)
   (shell-command (concat "open \"" (buffer-file-name) "\"")))
 
-(setq browse-url-browser-function 'xwidget-webkit-browse-url)
+(setq browse-url-browser-function 'browse-url-default-macosx-browser)
 
 (provide 'iw-external)
 ;;; iw-external.el ends here

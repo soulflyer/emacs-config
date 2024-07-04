@@ -50,3 +50,5 @@ eshell/lastdir
 *.elc
 /lib/cider-storm-stepper.el
 /lib/cider-storm.el
+/elpy/
+/multisession/
