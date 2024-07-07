@@ -22,7 +22,8 @@
 
 (use-package ace-jump-mode
   :ensure t
-  :bind (("M-j" . ace-jump-word-mode)))
+  ;; This binding works, unlike the one in iw-global-bindings...
+  :bind (("M-j" . avy-goto-char-timer)))
 
 (use-package jump-char
   :ensure t)
@@ -33,6 +34,7 @@
   (back-button-mode 1)
   :bind (:map back-button-mode-map
               ("C-x SPC" . nil)))
+;;TODO find out why back-button bindings sometimes work and sometimes don't, IDIOT, its C-x not C-c
 
 ;; (use-package frog-jump-buffer
 ;;   :ensure t)

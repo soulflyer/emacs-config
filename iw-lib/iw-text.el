@@ -48,6 +48,7 @@
                 '(("TODO"    . "#FF0000")
                   ("FIXME"   . "#9F40FF")
                   ("CLARIFY" . "#ff8000")
+                  ("IDIOT"   . "#FF88FF")
                   ("NOTE"    . "#40ff40")))
   (global-hl-todo-mode)
   :bind (("C-c t n" . hl-todo-next)
