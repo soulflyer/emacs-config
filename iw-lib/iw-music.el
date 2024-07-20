@@ -148,8 +148,10 @@
   (advice-add 'emms-info-track-description :override 'iw-emms-info-track-description)
 
   (defun make--covers ()
-    (shell-command "convert -resize 60x60 cover.jpg ./cover_small.jpg")
-    (shell-command "convert -resize 120x120 cover.jpg ./cover_med.jpg"))
+    (shell-command "convert -resize 60x60   cover.jpg ./cover_small.jpg")
+    (shell-command "convert -resize 120x120 cover.jpg ./cover_med.jpg")
+    (shell-command "convert -resize 240x240 cover.jpg ./cover_large.jpg")
+    (shell-command "convert -resize 480x480 cover.jpg ./cover_huge.jpg"))
 
   (defun make-covers ()
     (message "Make covers in %s" default-directory)
@@ -261,13 +263,21 @@
          ("C-s"   . swiper)
          ("SPC"   . emms-browser-add-tracks-and-play)
          ("A"     . emms-browser-search-by-artist-at-point)
+         ("r"     . emms-rate)
+         ("c"     . emms-comment)
+         ("R"     . emms-browser-goto-random)
+         ("l"     . emms-love)
          :map
          emms-playlist-mode-map
          ("F"     . emms-show-all)
          ("SPC"   . emms-pause)
          ("."     . emms-seek-forward)
          (","     . emms-seek-backward)
-         ("A"     . emms-browser-search-by-artist-at-point)))
+         ("A"     . emms-browser-search-by-artist-at-point)
+         ("r"     . emms-rate)
+         ("c"     . emms-comment)
+         ("R"     . emms-random)
+         ("l"     . emms-love)))
 
 (provide 'iw-music)
 ;;; iw-music.el ends here

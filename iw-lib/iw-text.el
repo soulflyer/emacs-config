@@ -20,9 +20,9 @@
 (use-package unidecode
   :ensure t)
 
-(use-package annotate
-  :ensure t
-  :bind (("C-c C-a" . annotate-mode)))
+;; (use-package annotate
+;;   :ensure t
+;;   :bind (("C-c C-a" . annotate-mode)))
 
 (use-package lorem-ipsum
   :ensure t)
@@ -89,6 +89,16 @@
   (setq buffer-face-mode-face '(:family "MonacoB2"))
   (buffer-face-mode))
 
+(defun iw-space-to-hyphen ()
+  (interactive)
+  (delete-char 1)
+  (insert "-"))
+
+(defun iw-space-to-underbar ()
+  (interactive)
+  (delete-char 1)
+  (insert "_"))
+
 (global-set-key (kbd "C-c t f h") 'iw-buffer-face-hasklig)
 (global-set-key (kbd "C-c t f d") 'iw-buffer-face-default)
 (global-set-key (kbd "C-c t f s") 'iw-set-font-size)
@@ -102,7 +112,8 @@
 (global-set-key (kbd "C-c t h u") 'unhighlight-regexp)
 (global-set-key (kbd "C-c t h l") 'highlight-lines-matching-regexp)
 (global-set-key (kbd "C-c t h p") 'highlight-phrase)
-
+(global-set-key (kbd "C-.")       'iw-space-to-hyphen)
+(global-set-key (kbd "C-,")       'iw-space-to-underbar)
 ;; This makes insert overwrite the current selection
 (delete-selection-mode 1)
 

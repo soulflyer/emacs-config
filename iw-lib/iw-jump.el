@@ -23,7 +23,7 @@
 (use-package ace-jump-mode
   :ensure t
   ;; This binding works, unlike the one in iw-global-bindings...
-  :bind (("M-j" . avy-goto-char-timer)))
+  :bind (("M-j" . ace-jump-word-mode)))
 
 (use-package jump-char
   :ensure t)

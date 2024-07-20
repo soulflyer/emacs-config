@@ -122,6 +122,9 @@
 (global-set-key (kbd "C-c C-i")   'emms)
 (global-set-key [f8]              'emms-pause)
 
+(global-unset-key (kbd "C-M-i"))
+(keymap-unset cider-mode-map "C-M-i")
+
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
 ;; A useful alternative is remap: see iw-org.el for an example

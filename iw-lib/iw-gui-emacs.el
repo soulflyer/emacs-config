@@ -36,6 +36,8 @@
 (set-fontset-font t 'tirhuta         (font-spec :family "Noto Sans Tirhuta"))
 (set-fontset-font t 'wancho          (font-spec :family "Noto Sans Wancho"))
 
+(set-fontset-font t 'musical-symbol  (font-spec :family "Noto Music"))
+
 (blink-cursor-mode 0)
 (setq-default
  cursor-type 'bar

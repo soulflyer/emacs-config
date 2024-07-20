@@ -11,8 +11,8 @@
 ;;; Code:
 (require 'use-package)
 ;;(require 'cljstyle-mode)
-(require 'cider-storm)
-(define-key cider-mode-map (kbd "C-c C-f") 'cider-storm-map)
+;; (require 'cider-storm)
+;; (define-key cider-mode-map (kbd "C-c C-f") 'cider-storm-map)
 
 (use-package clojure-mode
   :ensure t
