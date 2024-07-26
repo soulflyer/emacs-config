@@ -26,12 +26,11 @@
 ;; mostly to cleanup when gui emacsclient insists on adding the menu bar. Kinda handy anyway.
 (global-set-key (kbd "M-m")         'menu-bar-mode)
 
-;; Shortcuts for C-x-digit commands
-(global-set-key (kbd "M-1")         'delete-other-windows)
-(global-set-key (kbd "M-0")         'delete-window)
 (global-set-key (kbd "M-o")         'other-window)
-(global-set-key (kbd "M-2")         'split-window-below)
-(global-set-key (kbd "M-3")         'split-window-right)
+(global-set-key (kbd "M-2")         'projectile-find-file)
+(global-set-key (kbd "M-3")         'iw-projectile-ripgrep-re-frame-defn)
+(global-set-key (kbd "M-4")         'counsel-projectile-rg)
+(global-set-key (kbd "M-5")         'projectile-ripgrep)
 
 ;; Tmux steals C-q so this will have to do instead.
 (global-set-key (kbd "M-q")         'quoted-insert)
@@ -120,6 +119,7 @@
 (global-set-key (kbd "C-c l")     'iw-open-library)
 (global-set-key (kbd "C-c i")     'emms-browser)
 (global-set-key (kbd "C-c C-i")   'emms)
+(global-set-key (kbd "C-c C-m")   'emms-metaplaylist-mode-go)
 (global-set-key [f8]              'emms-pause)
 
 (global-unset-key (kbd "C-M-i"))

@@ -245,12 +245,22 @@
 
   ;;(advice-add 'emms-browser-format-line :override 'iw-emms-browser-format-line)
 
+  (defun emms-browser-filter-rating (rating)
+    (lambda (track)
+      (< (funcall 'emms-sticker-db-rating track) rating)))
+
+  (emms-browser-make-filter "5-star"           (emms-browser-filter-rating 10))
+  (emms-browser-make-filter "4-star"           (emms-browser-filter-rating 8))
   (emms-browser-make-filter "since-yesterday"  (emms-browser-filter-only-recent 2))
   (emms-browser-make-filter "this-week"        (emms-browser-filter-only-recent 7))
   (emms-browser-make-filter "this-month"       (emms-browser-filter-only-recent 31))
   (emms-browser-make-filter "this-year"        (emms-browser-filter-only-recent 365))
   (emms-browser-make-filter "all"              'ignore)
   (emms-browser-set-filter (assoc "all" emms-browser-filters))
+
+  ;; Add the stored playlists
+  (emms-playlist-new-from-saved "5-star")
+  (emms-playlist-new-from-saved "4-star")
   
   :bind (:map
          emms-browser-mode-map
@@ -267,6 +277,13 @@
          ("c"     . emms-comment)
          ("R"     . emms-browser-goto-random)
          ("l"     . emms-love)
+         ("f a"   . emms-browser-show-all)
+         ("f y"   . emms-browser-show-since-yesterday)
+         ("f 4"   . emms-browser-show-4-star)
+         ("f 5"   . emms-browser-show-5-star)
+         ("f w"   . emms-browser-show-this-week)
+         ("f m"   . emms-browser-show-this-month)
+         ("f y"   . emms-browser-show-this-year)
          :map
          emms-playlist-mode-map
          ("F"     . emms-show-all)
