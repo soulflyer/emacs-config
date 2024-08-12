@@ -259,6 +259,7 @@
   (emms-browser-set-filter (assoc "all" emms-browser-filters))
 
   ;; Add the stored playlists
+  (emms-playlist-new)
   (emms-playlist-new-from-saved "5-star")
   (emms-playlist-new-from-saved "4-star")
   

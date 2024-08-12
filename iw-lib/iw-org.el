@@ -241,5 +241,9 @@ FIXME does nothing if at the end of a colapsed heading"
   :config
   (add-hook 'dired-mode-hook 'org-download-enable))
 
+(require 'org-pretty-table)
+;; Turn on org-pretty-table-mode and call iw-buffer-face-hasklig
+;; to get the tables to look good.
+
 (provide 'iw-org)
 ;;; iw-org.el ends here
