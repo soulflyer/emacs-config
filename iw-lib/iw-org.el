@@ -149,6 +149,12 @@ FIXME does nothing if at the end of a colapsed heading"
                                                ("\\.x?html?\\'" . default)
                                                ("\\.pdf\\'" . emacs)))
   
+
+  (autoload 'LilyPond-mode "lilypond-mode" "LilyPond Editing Mode" t)
+  (add-to-list 'auto-mode-alist '("\\.ly\\'" . LilyPond-mode))
+  (add-to-list 'auto-mode-alist '("\\.ily\\'" . LilyPond-mode))
+  (add-hook 'LilyPond-mode-hook (lambda () (turn-on-font-lock)))
+  
   ;; removed this line from custom-set-variables in emacs-custom.el
   ;; '(org-babel-load-languages '((clojure . t) (ditaa . t) (emacs-lisp . t)))
   (org-babel-do-load-languages 'org-babel-load-languages '((clojure    . t)
@@ -157,6 +163,7 @@ FIXME does nothing if at the end of a colapsed heading"
                                                            (python     . t)
                                                            (shell      . t)
                                                            (J          . t)
+                                                           (lilypond   . t)
                                                            (verb       . t)))
   
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
