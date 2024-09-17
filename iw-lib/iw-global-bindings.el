@@ -125,6 +125,9 @@
 (global-unset-key (kbd "C-M-i"))
 (keymap-unset cider-mode-map "C-M-i")
 
+;; Muscle memory is causing me to occasionaly delete the region when trying to hit M-x
+(global-unset-key (kbd "s-x"))
+
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
 ;; A useful alternative is remap: see iw-org.el for an example

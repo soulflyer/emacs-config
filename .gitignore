@@ -52,3 +52,4 @@ eshell/lastdir
 /lib/cider-storm.el
 /elpy/
 /multisession/
+.persistent-scratch
