@@ -150,7 +150,11 @@
      (sql-product . postgres)))
  '(savehist-file "~/.emacs-history")
  '(warning-minimum-level :error)
- '(warning-suppress-types '((emacs) (org))))
+ '(warning-suppress-types '((emacs) (org)))
+ '(web-mode-attr-indent-offset 2)
+ '(web-mode-attr-value-indent-offset 2)
+ '(web-mode-enable-auto-expanding t)
+ '(web-mode-enable-auto-indentation t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

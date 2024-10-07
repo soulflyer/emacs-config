@@ -171,6 +171,10 @@
     (interactive)
     (message (format "Play count %d" (first (first (get-play-count (emms-playlist-current-selected-track)))))))
 
+  (defun restart-mpd ()
+    "restart mpd service"
+    (interactive)
+    (shell-command "brew services restart mpd"))
 
   ;; The following is an alternative way to hack emms. Currently I have the source installed localy, modified to add playcount stuff etc.
   

@@ -101,7 +101,7 @@
 
 (global-set-key (kbd "C-q t h")   'tab-workspace-home)
 (global-set-key (kbd "C-q h")     'tab-workspace-only-home)
-(global-set-key (kbd "C-q t m")   'read-new-tab-name-and-create)
+(global-set-key (kbd "C-q t t")   'read-new-tab-name-and-create)
 (global-set-key (kbd "C-q c")     'tab-calendar)
 (global-set-key (kbd "C-q t e")   'tab-emacs)
 (global-set-key (kbd "C-q t a")   'tab-photo-api)
@@ -111,6 +111,7 @@
 (global-set-key (kbd "C-q t c o") 'tab-overtone)
 (global-set-key (kbd "C-q t f")   'tab-frankie)
 (global-set-key (kbd "C-q t i")   'tab-image-lib)
+(global-set-key (kbd "C-q t m")   'tab-music)
 (global-set-key (kbd "C-q t o")   'tab-overtone)
 (global-set-key (kbd "C-q t p")   'tab-profile)
 (global-set-key (kbd "C-q t x")   'tab-xiana)
@@ -124,6 +125,12 @@
 
 (global-unset-key (kbd "C-M-i"))
 (keymap-unset cider-mode-map "C-M-i")
+
+(keymap-unset emms-browser-mode-map "E")
+(keymap-unset emms-browser-mode-map "2")
+(keymap-unset emms-browser-mode-map "3")
+(keymap-unset emms-browser-mode-map "4")
+
 
 ;; Muscle memory is causing me to occasionaly delete the region when trying to hit M-x
 (global-unset-key (kbd "s-x"))
