@@ -126,12 +126,6 @@
 (global-unset-key (kbd "C-M-i"))
 (keymap-unset cider-mode-map "C-M-i")
 
-(keymap-unset emms-browser-mode-map "E")
-(keymap-unset emms-browser-mode-map "2")
-(keymap-unset emms-browser-mode-map "3")
-(keymap-unset emms-browser-mode-map "4")
-
-
 ;; Muscle memory is causing me to occasionaly delete the region when trying to hit M-x
 (global-unset-key (kbd "s-x"))
 

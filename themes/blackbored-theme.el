@@ -5,7 +5,9 @@
 (custom-theme-set-faces
  'blackbored
  '(default                                ((t (:background "#000000" :foreground "#e5e5e5"))))
- '(bold                                   ((t (:box (:line-width (2 . 2) :color "#333333" :style flat-button) :weight bold))))
+ '(bold                                   ((t (:box (:line-width (2 . 2) :color "#333333" :style flat-button) :weight bold :foreground "#ffffff"))))
+ '(italic                                 ((t (:background "#000000" :foreground "#8a8a8a" :slant italic))))
+ '(org-verbatim                           ((t (:background "#000000" :foreground "#cd6040" :weight bold))))
  '(mode-line                              ((t (:background "#333333" :foreground "#20d030"))))
  '(mode-line-inactive                     ((t (:background "#1a1a1a" :foreground "#4d4d4d"))))
  '(vertical-border                        ((t (:foreground "#1a1a1a"))))
@@ -93,7 +95,6 @@
  '(sp-pair-overlay-face                   ((t nil)))
 
  '(gnu-apl-default ((t (:family "hack nerd font mono"))) t)
- '(gnu-apl-kbd-help-screen ((t (:inherit gnu-apl-default :height 1.3))))
- )
+ '(gnu-apl-kbd-help-screen ((t (:inherit gnu-apl-default :height 1.3)))))
 (provide-theme 'blackbored)
 ;;; blackbored-theme.el ends here
