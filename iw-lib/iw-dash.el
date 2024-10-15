@@ -15,7 +15,7 @@
   (add-hook 'emacs-lisp-mode-hook (lambda () (setq-local counsel-dash-docsets '("Emacs_Lisp"))))
   (add-hook 'clojure-mode-hook (lambda () (setq-local counsel-dash-docsets '("Clojure"))))
   (add-hook 'shell-script-mode-hook (lambda () (setq-local counsel-dash-docsets '("Bash"))))
-  :bind (("C-c C-d d" . counsel-dash-at-point )))
+  :bind (("C-c C-d C-d" . counsel-dash-at-point )))
 
 (provide 'iw-dash)
 ;;; iw-dash.el ends here

@@ -27,14 +27,32 @@
     (org-download-enable)
     (message "Enabling drag and drop downloads for the current directory."))
 
+  (defun dired-downloads ()
+    "Open dired in the ~/Downloads directory"
+    (interactive)
+    (dired "~/Downloads"))
+
+  (defun dired-movies ()
+    "Open dired in /Volumes/Crucial/Movies"
+    (interactive)
+    (dired "/Volumes/Crucial/Movies"))
+
+  (defun dired-collection ()
+    "Open dired in the ~/Music/Collection directory"
+    (interactive)
+    (dired "~/Music/Collection"))
+  
   :bind (:map dired-mode-map
-	      ("f"   . 'dired-make-file)
-	      ("/"   . 'dired-up-directory)
-	      ("\\"  . 'dired-up-directory)
-              ("C-s" . 'swiper)
-              ("1"   . 'dired-do-shell-command)
-              ("E"   . 'emms-add-dired)
-              ("e"   . 'download-enable)))
+	      ("f"     . dired-make-file)
+	      ("/"     . dired-up-directory)
+	      ("\\"    . dired-up-directory)
+              ("C-s"   . swiper)
+              ("1"     . dired-do-shell-command)
+              ("E"     . emms-add-dired)
+              ("e"     . download-enable)
+              ("C-d d" . dired-downloads)
+              ("C-d c" . dired-collection)
+              ("C-d m" . dired-movies)))
 
 (use-package openwith
   :ensure t)

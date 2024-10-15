@@ -48,7 +48,7 @@
         ;; emms-player-vlc-playlist-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
         emms-player-list '(emms-player-mpd)
         emms-info-functions '(;;emms-info-native
-                              ;;emms-info-cueinfo
+                              emms-info-cueinfo
                               emms-info-mpd
                               ;;emms-info-exiftool
                               )
