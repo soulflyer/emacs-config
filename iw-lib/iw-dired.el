@@ -41,6 +41,16 @@
     "Open dired in the ~/Music/Collection directory"
     (interactive)
     (dired "~/Music/Collection"))
+
+  (defun dired-home ()
+    "Open dired in the home directory"
+    (interactive)
+    (dired "~"))
+
+  (defun dired-pictures ()
+    "Open dired in the ~/Pictures directory"
+    (interactive)
+    (dired "~/Pictures"))
   
   :bind (:map dired-mode-map
 	      ("f"     . dired-make-file)
@@ -52,7 +62,9 @@
               ("e"     . download-enable)
               ("C-d d" . dired-downloads)
               ("C-d c" . dired-collection)
-              ("C-d m" . dired-movies)))
+              ("C-d h" . dired-home)
+              ("C-d m" . dired-movies)
+              ("C-d p" . dired-pictures)))
 
 (use-package openwith
   :ensure t)
