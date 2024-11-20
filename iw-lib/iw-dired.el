@@ -51,6 +51,11 @@
     "Open dired in the ~/Pictures directory"
     (interactive)
     (dired "~/Pictures"))
+
+  (defun dired-tmp ()
+    "Open dired in /tmp"
+    (interactive)
+    (dired "/tmp"))
   
   :bind (:map dired-mode-map
 	      ("f"     . dired-make-file)
@@ -64,7 +69,8 @@
               ("C-d c" . dired-collection)
               ("C-d h" . dired-home)
               ("C-d m" . dired-movies)
-              ("C-d p" . dired-pictures)))
+              ("C-d p" . dired-pictures)
+              ("C-d t" . dired-tmp)))
 
 (use-package openwith
   :ensure t)

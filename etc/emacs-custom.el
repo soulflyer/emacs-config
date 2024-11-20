@@ -6,7 +6,9 @@
  '(avy-timeout-seconds 1.0)
  '(cider-injected-nrepl-version "1.1.2")
  '(connection-local-criteria-alist
-   '(((:application tramp :protocol "kubernetes")
+   '(((:application tramp :machine "acceptance")
+      tramp-connection-local-darwin-ps-profile)
+     ((:application tramp :protocol "kubernetes")
       tramp-kubernetes-connection-local-default-profile)
      ((:application eshell)
       eshell-connection-default-profile)

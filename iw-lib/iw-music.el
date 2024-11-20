@@ -266,6 +266,7 @@
   (emms-playlist-new)
   (emms-playlist-new-from-saved "5-star")
   (emms-playlist-new-from-saved "4-star")
+  (emms-playlist-new-from-saved "working-on")
 
   (keymap-unset emms-browser-mode-map "E")
   (keymap-unset emms-browser-mode-map "2")
