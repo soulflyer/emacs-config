@@ -61,7 +61,7 @@
   (org-agenda-list)
   (split-window-below 15)
   (other-window 1)
-  (emms-browser)
+  (dired "~/")
   (split-window-below -12)
   (other-window 1)
   (eshell t)
