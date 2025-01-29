@@ -272,7 +272,10 @@
   (keymap-unset emms-browser-mode-map "2")
   (keymap-unset emms-browser-mode-map "3")
   (keymap-unset emms-browser-mode-map "4")
-  
+
+  (global-set-key [f7] 'emms-seek-backward)
+  (global-set-key [f9] 'emms-seek-forward)
+
   :bind (:map
          emms-browser-mode-map
          ("p"     . emms-playlist-mode-go)

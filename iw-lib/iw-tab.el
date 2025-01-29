@@ -125,10 +125,9 @@
     (split-window-below 25)
     (other-window 1)
     (dired "~/Music/Collection")
-    (split-window-below -15)
+    (split-window-below -5)
     (other-window 1)
-    (emms)
-    (emms-metaplaylist-mode-go)))
+    (emms)))
 
 (defun tab-workspace-only-home ()
   "Whatever."
