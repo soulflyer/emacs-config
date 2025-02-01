@@ -119,7 +119,7 @@
  '(flycheck-disabled-checkers '(emacs-lisp-checkdoc))
  '(history-length 10000)
  '(list-command-history-max nil)
- '(lyrics-backend 'lyrics-musixmatch)
+ '(lyrics-backend 'lyrics-azlyrics)
  '(org-babel-lilypond-commands '("/opt/homebrew/bin/lilypond" "open" "open"))
  '(org-download-screenshot-method "screencapture -i %s")
  '(org-download-timestamp "")

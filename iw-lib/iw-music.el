@@ -263,11 +263,13 @@
   (emms-browser-set-filter (assoc "all" emms-browser-filters))
 
   ;; Add the stored playlists
+  ;; TODO read all the saved playlists instead of manually specifying each one
   (emms-playlist-new)
   (emms-playlist-new-from-saved "5-star")
   (emms-playlist-new-from-saved "4-star")
   (emms-playlist-new-from-saved "working-on")
-
+  (emms-playlist-new-from-saved "Candidates")
+  
   (keymap-unset emms-browser-mode-map "E")
   (keymap-unset emms-browser-mode-map "2")
   (keymap-unset emms-browser-mode-map "3")
