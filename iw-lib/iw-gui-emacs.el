@@ -5,6 +5,8 @@
 ;;; Code:
 (message "Running GUI Emacs config")
 
+;; Removes the window decoration bar including the red/yellow/green dots and the drag area
+;; replace with this: (set-frame-parameter nil 'undecorated nil)
 (add-to-list 'default-frame-alist '(undecorated . t))
 (set-face-attribute 'default nil :height 140)
 (when (member "MonacoB2" (font-family-list))

@@ -252,5 +252,7 @@ FIXME does nothing if at the end of a colapsed heading"
 ;; Turn on org-pretty-table-mode and call iw-buffer-face-hasklig
 ;; to get the tables to look good.
 
+(require 'org-yt)
+
 (provide 'iw-org)
 ;;; iw-org.el ends here

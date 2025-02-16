@@ -125,7 +125,7 @@
     (split-window-below 25)
     (other-window 1)
     (dired "~/Music/Collection")
-    (split-window-below -5)
+    (split-window-below -10)
     (other-window 1)
     (emms)))
 
