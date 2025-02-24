@@ -21,7 +21,7 @@
 (setq-default diary-file                        "~/Documents/org-mode/diary"
               bm-repository-file                "~/.emacs.d/etc/bm-repository"
               org-agenda-files                  '("~/Documents/org-mode/agenda" "~/Documents/org-mode/notes")
-              deft-directory                    "/Users/iain/Documents/org-mode/NotationalVelocity/"
+              deft-directory                    "~/Documents/org-mode/NotationalVelocity/"
               undo-tree-history-directory-alist '(("." . "/Users/iain/emacs-backups/undo-tree"))
               world-clock-list       t
               zoneinfo-style-world-list '(("Asia/Saigon" "Vietnam")
