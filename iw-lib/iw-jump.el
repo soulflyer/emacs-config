@@ -1,4 +1,4 @@
-;;; iw-jumaap.el --- Setup jumping.                  -*- lexical-binding: t; -*-
+;;; iw-jump.el --- Setup jumping.                    -*- lexical-binding: t; -*-
 ;; Copyright (C) 2020  Iain Wood
 ;; Author: Iain Wood <iain@soulflyer.co.uk>
 
@@ -35,12 +35,22 @@
   :bind (:map back-button-mode-map
               ("C-x SPC" . nil)))
 ;;TODO find out why back-button bindings sometimes work and sometimes don't, IDIOT, its C-x not C-c
+;; Use C-x left and C-x right to jump back and forward between recent locations in the file.
 
 ;; (use-package frog-jump-buffer
 ;;   :ensure t)
 
 (use-package ace-jump-buffer
   :ensure t)
+
+(use-package bln-mode
+  :ensure t
+  :bind (("s-<left>"   . bln-backward-half)
+         ("s-<right>"  . bln-forward-half)
+         ("s-<up>"     . bln-backward-half-v)
+         ("s-<down>"   . bln-forward-half-v)
+         ("M-s-<up>"   . bln-backward-half-b)
+         ("M-s-<down>" . bln-forward-half-b)))
 
 ;; (use-package jump-tree
 ;;   :ensure t)

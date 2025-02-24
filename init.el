@@ -115,7 +115,7 @@
 (require 'iw-xwidget)
 (require 'iw-yasnippet)
 
-(require 'iw-secret)
+;;(require 'iw-secret)
 
 ;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)

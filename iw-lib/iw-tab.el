@@ -62,7 +62,7 @@
   (split-window-below 15)
   (other-window 1)
   (dired "~/")
-  (split-window-below -12)
+  (split-window-below -15)
   (other-window 1)
   (eshell t)
   (cd "~")
