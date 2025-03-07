@@ -9,9 +9,10 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Save minbuffer history
-(setq-default savehist-autosave-interval 30)
-(savehist-mode 1)
-(setq savehist-additional-variables '(command-history))
+;; FIXME this seems to be responsible for poor responsiveness
+;; (setq-default savehist-autosave-interval 30)
+;; (savehist-mode 1)
+;; (setq savehist-additional-variables '(command-history))
 
 (setq-default glogal-visual-line-mode t)
 (add-hook 'dired-mode-hook          (lambda () (visual-line-mode -1)))

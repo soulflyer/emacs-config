@@ -89,6 +89,15 @@
   (interactive)
   (shell-command (concat "open \"" (buffer-file-name) "\"")))
 
+(defun iw-open-app (app-string)
+  (shell-command (concat "open -a " app-string)))
+
+(defun open-app ()
+  (interactive)
+  (if (region-active-p)
+      (iw-open-app (buffer-substring (region-beginning) (region-end)))
+    (iw-open-app (thing-at-point 'word 'no-properties))))
+
 (setq browse-url-browser-function 'browse-url-default-macosx-browser)
 
 (provide 'iw-external)
