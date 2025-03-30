@@ -22,7 +22,8 @@
          (clojurec-mode      . lsp)
          (clojurescript-mode . lsp)
          (js-mode            . lsp)
-         (lsp-mode           . lsp-enable-which-key-integration))
+         (lsp-mode           . lsp-enable-which-key-integration)
+         (python-mode        . lsp))
   ;;(setq lsp-clojure-custom-server-command '("bash" "-c" "/opt/homebrew/bin/clojure-lsp"))
   :commands lsp)
 
