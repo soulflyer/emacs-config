@@ -48,9 +48,9 @@
         ;; emms-player-vlc-playlist-command-name "/Applications/VLC.app/Contents/MacOS/VLC"
         emms-player-list '(emms-player-mpd)
         emms-info-functions '(;;emms-info-native
-                              emms-info-cueinfo
-                              emms-info-mpd
-                              ;;emms-info-exiftool
+                              ;;emms-info-cueinfo
+                              ;;emms-info-mpd
+                              emms-info-exiftool
                               )
         emms-mode-line-titlebar-function '(lambda nil (concat "🎵" (emms-mode-line-playlist-current)))
         emms-player-mpd-server-name "127.0.0.1"

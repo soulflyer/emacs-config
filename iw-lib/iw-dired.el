@@ -56,7 +56,12 @@
     "Open dired in /tmp"
     (interactive)
     (dired "/tmp"))
-  
+
+  (defun dired-code ()
+    "Open dired in ~/Code"
+    (interactive)
+    (dired "~/Code"))
+
   :bind (:map dired-mode-map
 	      ("f"     . dired-make-file)
 	      ("/"     . dired-up-directory)
@@ -70,7 +75,8 @@
               ("C-d h" . dired-home)
               ("C-d m" . dired-movies)
               ("C-d p" . dired-pictures)
-              ("C-d t" . dired-tmp)))
+              ("C-d t" . dired-tmp)
+              ("C-d C" . dired-code)))
 
 (use-package openwith
   :ensure t)
