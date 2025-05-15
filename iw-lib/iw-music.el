@@ -287,7 +287,7 @@
          ("RET"   . emms-browser-toggle-subitems)
          ("<tab>" . emms-browser-next-non-track)
          ("C-s"   . swiper)
-         ("SPC"   . emms-browser-add-tracks-and-play)
+         ("SPC"   . emms-pause)
          ("A"     . emms-browser-search-by-artist-at-point)
          ("r"     . emms-rate)
          ("c"     . emms-comment)
