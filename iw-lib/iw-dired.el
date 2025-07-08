@@ -57,6 +57,11 @@
     (interactive)
     (dired "/tmp"))
 
+  (defun dired-bookshelf ()
+    "Open dired in ~/Documents/books/bookshelf"
+    (interactive)
+    (dired "~/Documents/books/bookshelf"))
+
   (defun dired-code ()
     "Open dired in ~/Code"
     (interactive)
@@ -76,6 +81,7 @@
               ("C-d m" . dired-movies)
               ("C-d p" . dired-pictures)
               ("C-d t" . dired-tmp)
+              ("C-d b" . dired-bookshelf)
               ("C-d C" . dired-code)))
 
 (use-package openwith

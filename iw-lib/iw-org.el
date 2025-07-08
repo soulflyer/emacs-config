@@ -164,6 +164,7 @@ FIXME does nothing if at the end of a colapsed heading"
                                                            (shell      . t)
                                                            (J          . t)
                                                            (lilypond   . t)
+                                                           (arduino    . t)
                                                            (verb       . t)))
   
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
