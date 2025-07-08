@@ -56,6 +56,7 @@
 (require 'iw-terminal-emacs)
 
 ;;  Add config for specific purposes.
+(require 'iw-arduino)
 (require 'iw-cleanup)
 (require 'iw-clojure)
 ;;(require 'iw-common-lisp)
