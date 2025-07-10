@@ -31,7 +31,8 @@
                 counsel-describe-function-function #'helpful-callable
                 counsel-describe-variable-function #'helpful-variable)
 
-  :bind (("M-x"     . counsel-M-x )
+  :bind (("M-x"     . counsel-M-x)
+         ("s-x"     . counsel-M-x)
          ("C-s"     . swiper-thing-at-point)
          ("C-x C-f" . counsel-find-file)
          ("C-h v"   . counsel-describe-variable)

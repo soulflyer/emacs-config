@@ -27,10 +27,6 @@
 (global-set-key (kbd "M-m")         'menu-bar-mode)
 
 (global-set-key (kbd "M-o")         'other-window)
-(global-set-key (kbd "M-2")         'projectile-find-file)
-(global-set-key (kbd "M-3")         'iw-projectile-ripgrep-re-frame-defn)
-(global-set-key (kbd "M-4")         'counsel-projectile-rg)
-(global-set-key (kbd "M-5")         'projectile-ripgrep)
 
 ;; Tmux steals C-q so this will have to do instead.
 (global-set-key (kbd "M-q")         'quoted-insert)

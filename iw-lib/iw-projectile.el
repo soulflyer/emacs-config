@@ -42,10 +42,14 @@
 ;;(define-key projectile-mode-map (kbd "M-p")  'projectile-command-map)
 (define-key projectile-command-map (kbd "p") 'projectile-ibuffer)
 
-(global-set-key [f2] 'projectile-find-file)
-(global-set-key [f3] 'iw-projectile-ripgrep-re-frame-defn)
-(global-set-key [f4] 'counsel-projectile-rg)
-(global-set-key [f5] 'projectile-ripgrep)
+(global-set-key [f2]        'projectile-find-file)
+(global-set-key [f3]        'iw-projectile-ripgrep-re-frame-defn)
+(global-set-key [f4]        'counsel-projectile-rg)
+(global-set-key [f5]        'projectile-ripgrep)
+(global-set-key (kbd "M-2") 'projectile-find-file)
+(global-set-key (kbd "M-3") 'iw-projectile-ripgrep-re-frame-defn)
+(global-set-key (kbd "M-4") 'counsel-projectile-rg)
+(global-set-key (kbd "M-5") 'projectile-ripgrep)
 
 (add-hook 'ripgrep-search-mode-hook #'(lambda () (define-key ripgrep-search-mode-map (kbd "TAB") 'compilation-next-error)))
 
