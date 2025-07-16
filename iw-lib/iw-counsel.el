@@ -1,3 +1,4 @@
+
 ;;; iw-counsel --- add counsel
 ;;; Commentary:
 ;; Worth considering ivy-prescient.el to sort the entries returned according to what has been used recently
@@ -30,7 +31,6 @@
                 ivy-use-selectable-prompt t
                 counsel-describe-function-function #'helpful-callable
                 counsel-describe-variable-function #'helpful-variable)
-
   :bind (("M-x"     . counsel-M-x)
          ("s-x"     . counsel-M-x)
          ("C-s"     . swiper-thing-at-point)

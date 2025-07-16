@@ -4,6 +4,7 @@
 ;;; Mode specific bindings are in the setup file for that mode
 ;;; Code:
 
+(global-set-key (kbd "s-x")         'counsel-M-x)
 (global-set-key (kbd "M-~")         'switch-to-next-buffer)
 (global-set-key (kbd "M-`")         'switch-to-prev-buffer)
 (global-set-key (kbd "C-\\")        'align-regexp)

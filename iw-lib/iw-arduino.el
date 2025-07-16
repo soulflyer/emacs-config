@@ -8,6 +8,8 @@
 (setq-default arduino-mode-home "~/Code/Arduino")
 
 (use-package arduino-mode
+  :mode (("\\.ino\\'" . arduino-mode))
+  :commands (arduino-mode)
   :ensure t)
 
 (use-package arduino-cli-mode

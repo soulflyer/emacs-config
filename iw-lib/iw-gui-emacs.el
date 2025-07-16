@@ -72,5 +72,12 @@
   :ensure t
   :config (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode)))
 
+;; Bindings to command don't all work on daemon startup. This one gets ignored.
+(global-set-key (kbd "s-x") 'counsel-M-x)
+
+;; Similarly, this gets ignored. I think it needs to be a cons because add-to-list would not add
+;; these as they are already in the alist, just being ignored.
+(setq auto-mode-alist (cons '("\\.\\(pde\\|ino\\)$" . arduino-mode) auto-mode-alist))
+
 (provide 'iw-gui-emacs)
 ;;; iw-gui-emacs.el ends here

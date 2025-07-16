@@ -25,7 +25,7 @@
                 org-habit-show-all-today t
                 org-habit-preceding-days 15
                 org-habit-following-days 15
-                org-image-actual-width (list 240)
+                org-image-actual-width (list 400)
                 org-startup-indented t
                 org-startup-with-inline-images t)
   ;; (add-to-list 'display-buffer-alist

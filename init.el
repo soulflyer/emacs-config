@@ -47,14 +47,6 @@
   (require 'iw-acceptance))
 (require 'iw-client-start)
 
-;; TODO Reconsider how to do this so the server can be accessed by terminal and GUI clients
-;; (if (display-graphic-p)
-;;     (message "GUI Emacs")
-;;   (message "Not GUI Emacs"))
-;; It may be ok to just always include them both. Let's see
-;; (require 'iw-gui-emacs)
-(require 'iw-terminal-emacs)
-
 ;;  Add config for specific purposes.
 (require 'iw-arduino)
 (require 'iw-cleanup)
@@ -73,6 +65,7 @@
 (require 'iw-music)
 (require 'iw-modeline)
 (require 'iw-occur)
+(require 'iw-openwith)
 (require 'iw-org)
 (require 'iw-regex)
 (require 'iw-single-window)
