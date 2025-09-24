@@ -173,6 +173,16 @@ FIXME does nothing if at the end of a colapsed heading"
     (interactive)
     (iw-lyrics)
     (iw-emms-play-track))
+
+  (defun iw-save-org-files ()
+    (interactive)
+    (org-save-all-org-buffers)
+    (unison)
+    (let ((user-input (read-string "Input for unison:")))
+      (if (get-buffer-process "*unison*")
+          (process-send-string "*unison*" user-input)
+        (kill-buffer "*unison*"))))
+
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
          ("C-c i"   . org-insert-structure-template)
@@ -182,6 +192,22 @@ FIXME does nothing if at the end of a colapsed heading"
          ("C-c SPC RET" . iw-emms-play-track)
          ("C-c l"   . iw-lyrics)
          ([f6]      . iw-lyrics-and-play)))
+
+;; This only works when run by hand after emacs has started
+;; (with-eval-after-load "org"
+;;   (keymap-unset org-agenda-mode-map "S")
+;;   (keymap-set org-agenda-mode-map "S" 'iw-save-org-files))
+
+;; This works but binds the key in org-mode as well as org-agenda-mode:
+;; (add-hook 'org-agenda-mode-hook
+;;           (lambda ()
+;;             (keymap-set org-agenda-mode-map "S" 'iw-save-org-files)))
+
+;;same for this:
+(add-hook 'org-agenda-mode-hook
+          (lambda ()
+            (local-set-key (kbd "S") 'iw-save-org-files)))
+
 
 (use-package org-superstar
   :ensure t
@@ -258,22 +284,19 @@ FIXME does nothing if at the end of a colapsed heading"
 (use-package unison
   :ensure t
   :config
-  (setq unison-args '("org-mode"))
-  :bind (:map
-         org-agenda-mode-map
-         ("P" . iw-save-org-files)))
+  (setq unison-args '("org-mode")))
 
-(defun iw-save-org-files ()
-  (interactive)
-  (org-save-all-org-buffers)
-  (unison)
-  (let ((user-input (read-string "Input for unison:")))
-    (if (get-buffer-process "*unison*")
-        (process-send-string "*unison*" user-input)
-      (kill-buffer "*unison*"))))
+;; (defun iw-save-org-files ()
+;;   (interactive)
+;;   (org-save-all-org-buffers)
+;;   (unison)
+;;   (let ((user-input (read-string "Input for unison:")))
+;;     (if (get-buffer-process "*unison*")
+;;         (process-send-string "*unison*" user-input)
+;;       (kill-buffer "*unison*"))))
 
-(keymap-unset org-agenda-mode-map "S")
-(keymap-set org-agenda-mode-map "S" 'iw-save-org-files)
+;; (keymap-unset org-agenda-mode-map "S")
+;; (keymap-set org-agenda-mode-map "S" 'iw-save-org-files)
 
 (provide 'iw-org)
 ;;; iw-org.el ends here

@@ -144,6 +144,8 @@
 
 
 ;; (global-set-key (kbd "C-<tab>")  'other-window)
+(keymap-unset org-agenda-mode-map "S")
+(keymap-set org-agenda-mode-map "S" 'iw-save-org-files)
 
 (provide 'iw-global-bindings)
 ;;; iw-global-bindings.el ends here
