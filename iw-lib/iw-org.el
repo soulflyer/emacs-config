@@ -207,21 +207,148 @@ FIXME does nothing if at the end of a colapsed heading"
          ("C-c l"   . iw-lyrics)
          ([f6]      . iw-lyrics-and-play)))
 
-;; This only works when run by hand after emacs has started
-;; (with-eval-after-load "org"
-;;   (keymap-unset org-agenda-mode-map "S")
-;;   (keymap-set org-agenda-mode-map "S" 'iw-save-org-files))
+;; Redefine some fns so org capture stays in one window
+(with-eval-after-load "org"
+  (defun org-capture-place-template (&optional inhibit-wconf-store)
+    "Insert the template at the target location, and display the buffer.
+When INHIBIT-WCONF-STORE is non-nil, don't store the window configuration, as it
+may have been stored before."
+    (unless inhibit-wconf-store
+      (org-capture-put :return-to-wconf (current-window-configuration)))
+    (delete-other-windows)
+    (org-pop-to-buffer-same-window
+     (org-capture-get-indirect-buffer (org-capture-get :buffer) "CAPTURE"))
+    (widen)
+    (org-fold-show-all)
+    (goto-char (org-capture-get :pos))
+    (setq-local outline-level 'org-outline-level)
+    (pcase (org-capture-get :type)
+      ((or `nil `entry) (org-capture-place-entry))
+      (`table-line (org-capture-place-table-line))
+      (`plain (org-capture-place-plain-text))
+      (`item (org-capture-place-item))
+      (`checkitem (org-capture-place-item)))
+    (setq-local org-capture-current-plist org-capture-plist)
+    (org-capture--run-template-functions :hook 'local)
+    (org-capture-mode 1))
+  (defun org-mks (table title &optional prompt specials)
+    "Select a member of an alist with multiple keys.
 
-;; This works but binds the key in org-mode as well as org-agenda-mode:
-;; (add-hook 'org-agenda-mode-hook
-;;           (lambda ()
-;;             (keymap-set org-agenda-mode-map "S" 'iw-save-org-files)))
+TABLE is the alist which should contain entries where the car is a string.
+There should be two types of entries.
 
-;;same for this:
+1. prefix descriptions like (\"a\" \"Description\")
+   This indicates that `a' is a prefix key for multi-letter selection, and
+   that there are entries following with keys like \"ab\", \"ax\"...
+
+2. Select-able members must have more than two elements, with the first
+   being the string of keys that lead to selecting it, and the second a
+   short description string of the item.
+
+The command will then make a temporary buffer listing all entries
+that can be selected with a single key, and all the single key
+prefixes.  When you press the key for a single-letter entry, it is selected.
+When you press a prefix key, the commands (and maybe further prefixes)
+under this key will be shown and offered for selection.
+
+TITLE will be placed over the selection in the temporary buffer,
+PROMPT will be used when prompting for a key.  SPECIALS is an
+alist with (\"key\" \"description\") entries.  When one of these
+is selected, only the bare key is returned."
+    (save-window-excursion
+      (let ((inhibit-quit t)
+            (buffer (org-pop-to-buffer-same-window "*Org Select*"))
+            (prompt (or prompt "Select: "))
+            case-fold-search
+            current)
+        (unwind-protect
+            (catch 'exit
+              (while t
+                (erase-buffer)
+                (insert title "\n\n")
+                (let ((des-keys nil)
+                      (allowed-keys '("\C-g"))
+                      (tab-alternatives '("\s" "\t" "\r"))
+                      (cursor-type nil))
+                  ;; Populate allowed keys and descriptions keys
+                  ;; available with CURRENT selector.
+                  (let ((re (format "\\`%s\\(.\\)\\'"
+                                    (if current (regexp-quote current) "")))
+                        (prefix (if current (concat current " ") "")))
+                    (dolist (entry table)
+                      (pcase entry
+                        ;; Description.
+                        (`(,(and key (pred (string-match re))) ,desc)
+                         (let ((k (match-string 1 key)))
+                           (push k des-keys)
+                           ;; Keys ending in tab, space or RET are equivalent.
+                           (if (member k tab-alternatives)
+                               (push "\t" allowed-keys)
+                             (push k allowed-keys))
+                           (insert prefix "[" k "]" "..." "  " desc "..." "\n")))
+                        ;; Usable entry.
+                        (`(,(and key (pred (string-match re))) ,desc . ,_)
+                         (let ((k (match-string 1 key)))
+                           (insert prefix "[" k "]" "     " desc "\n")
+                           (push k allowed-keys)))
+                        (_ nil))))
+                  ;; Insert special entries, if any.
+                  (when specials
+                    (insert "----------------------------------------------------\
+---------------------------\n")
+                    (pcase-dolist (`(,key ,description) specials)
+                      (insert (format "[%s]     %s\n" key description))
+                      (push key allowed-keys)))
+                  ;; Display UI and let user select an entry or
+                  ;; a sub-level prefix.
+                  (goto-char (point-min))
+                  (org-fit-window-to-buffer)
+                  (message "") ; With this line the prompt appears in
+                                        ; the minibuffer. Else keystrokes may
+                                        ; appear, which is spurious.
+                  (let ((pressed (org--mks-read-key
+                                  allowed-keys prompt
+                                  (not (pos-visible-in-window-p (1- (point-max)))))))
+                    (setq current (concat current pressed))
+                    (cond
+                     ((equal pressed "\C-g") (user-error "Abort"))
+                     ;; Selection is a prefix: open a new menu.
+                     ((member pressed des-keys))
+                     ;; Selection matches an association: return it.
+                     ((let ((entry (assoc current table)))
+                        (and entry (throw 'exit entry))))
+                     ;; Selection matches a special entry: return the
+                     ;; selection prefix.
+                     ((assoc current specials) (throw 'exit current))
+                     (t (error "No entry available")))))))
+          (when buffer (kill-buffer buffer))))))
+  (defun org-capture-place-template (&optional inhibit-wconf-store)
+    "Insert the template at the target location, and display the buffer.
+When INHIBIT-WCONF-STORE is non-nil, don't store the window configuration, as it
+may have been stored before."
+    (unless inhibit-wconf-store
+      (org-capture-put :return-to-wconf (current-window-configuration)))
+    (delete-other-windows)
+    (org-switch-to-buffer-other-window
+     (org-capture-get-indirect-buffer (org-capture-get :buffer) "CAPTURE"))
+    (widen)
+    (org-fold-show-all)
+    (goto-char (org-capture-get :pos))
+    (setq-local outline-level 'org-outline-level)
+    (pcase (org-capture-get :type)
+      ((or `nil `entry) (org-capture-place-entry))
+      (`table-line (org-capture-place-table-line))
+      (`plain (org-capture-place-plain-text))
+      (`item (org-capture-place-item))
+      (`checkitem (org-capture-place-item)))
+    (setq-local org-capture-current-plist org-capture-plist)
+    (org-capture--run-template-functions :hook 'local)
+    (org-capture-mode 1)))
+
+
 (add-hook 'org-agenda-mode-hook
           (lambda ()
             (local-set-key (kbd "S") 'iw-save-org-files)))
-
 
 (use-package org-superstar
   :ensure t
