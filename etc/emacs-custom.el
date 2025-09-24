@@ -118,6 +118,7 @@
  '(eval-expression-print-length nil)
  '(flycheck-disabled-checkers '(emacs-lisp-checkdoc))
  '(history-length 10000)
+ '(ispell-query-replace-choices t)
  '(list-command-history-max nil)
  '(lyrics-backend 'lyrics-azlyrics)
  '(org-attach-use-inheritance t)
@@ -127,6 +128,7 @@
  '(org-modules
    '(ol-bbdb ol-bibtex ol-docview ol-eww ol-gnus org-habit ol-info ol-irc ol-mhe ol-rmail ol-w3m))
  '(org-pretty-table-charset "╒╕╘╛╤╡╧╞╪═│")
+ '(org-reverse-note-order t)
  '(package-selected-packages
    '(arduino-cli-mode arduino-mode bln-mode smex clj-refactor eat org-noter-pdftools org-pdftools pdf-tools multiple-cursors haskell-mode feature-mode persistent-scratch org-appear elpy groovy-mode flycheck-clojure inf-clojure align-cljlet cider clojure-mode magit minimap ob-async org-async with-editor user-keys company-tabnine wanderlust w3m mew blimp markdown-mode fzf zygospore free-keys font-utils xwwp projectile typescript-mode flycheck deft vterm ace-jump-mode abc-mode org-pdf-tools hyperspace git-modes nov impatient-showdown ido-completing-read+ org-contrib ob-translate ob-applescript j-mode org-journal org-attach-screenshot org-download gnu-apl-mode lsp-docker emojify emoji-cheat-sheet-plus helpful ccls eshell-vterm eshell-syntax-highlighting git-timemachine org-superstar lsp-treemacs lsp-origami lsp-ivy lsp-ui lsp-mode zetteldeft yaml-mode yaml xwwp-follow-link-ivy xhair xah-get-thing workgroups2 which-key web-mode visual-regexp visual-ascii-mode visible-mark verb unidecode unicode-fonts undo-tree underline-with-char ts-comint treemacs tide sx string-inflection smartparens shackle ripgrep register-list rainbow-mode rainbow-delimiters quelpa-use-package prog-fill popwin paradox palimpsest paced osx-dictionary origami org-roam org-cliplink openwith ob-mongo nvm neil multi-vterm mongo make-color lyrics lorem-ipsum load-bash-alias lively launchctl jump-char js-comint ivy-rich iregister ibuffer-git howdoyou horoscope hl-todo highlight-indent-guides highlight-context-line goto-last-change goto-char-preview google-translate go-translate gitignore-mode gitconfig-mode git-gutter flyspell-correct-avy-menu flx-ido fira-code-mode face-explorer exwm expand-region exec-path-from-shell eterm-256color eshell-prompt-extras eshell-git-prompt edwina eaf dynamic-spaces direnv dired-ranger dired-efap delight dashboard dark-souls dap-mode crdt counsel-web counsel-projectile counsel-dash company command-log-mode cljstyle-format burly browse-kill-ring bm beacon banner-comment back-button auto-complete auto-compile ascii-table ascii-art-to-unicode applescript-mode annotate amx aggressive-indent ace-mc ace-jump-buffer a))
  '(projectile-globally-unignored-files nil)
