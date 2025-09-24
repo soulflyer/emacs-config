@@ -73,10 +73,10 @@
   (setq browse-url-browser-function 'eww))
 
 (defun browse-default ()
-  "Set `browse-url-browser-function` to `browse-url-default-macosx-browser`."
+  "Set `browse-url-browser-function` to `browse-url-default-browser`."
   (interactive)
   (message "Setting 'default' as default browser")
-  (setq browse-url-browser-function 'browse-url-default-macosx-browser))
+  (setq browse-url-browser-function 'browse-url-default-browser))
 
 (defun browse-webkit ()
   "Set `browse-url-browser-function` to `xwidget-webkit-browse-url`."
@@ -98,7 +98,7 @@
       (iw-open-app (buffer-substring (region-beginning) (region-end)))
     (iw-open-app (thing-at-point 'word 'no-properties))))
 
-(setq browse-url-browser-function 'browse-url-default-macosx-browser)
+(setq browse-url-browser-function 'browse-url-default-browser)
 
 (provide 'iw-external)
 ;;; iw-external.el ends here

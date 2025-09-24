@@ -18,7 +18,7 @@
 (setq-default bookmark-fringe-mark nil
               bookmark-sort-flag nil)
 
-(defvar emacs-backup-dir "/Users/iain/emacs-backups")
+(defvar emacs-backup-dir "~/emacs-backups")
 (setq backup-directory-alist         `((".*" . ,emacs-backup-dir))
       auto-save-file-name-transforms `((".*" ,(concat emacs-backup-dir "/autosaves/\\1") t)))
 

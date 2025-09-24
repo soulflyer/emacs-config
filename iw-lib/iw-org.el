@@ -174,7 +174,7 @@ FIXME does nothing if at the end of a colapsed heading"
                                                            (verb       . t)))
 
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
-
+  
   (defun iw-lyrics-and-play ()
     (interactive)
     (iw-lyrics)
@@ -269,6 +269,26 @@ FIXME does nothing if at the end of a colapsed heading"
 ;; to get the tables to look good.
 
 (require 'org-yt)
+
+(use-package unison
+  :ensure t
+  :config
+  (setq unison-args '("org-mode"))
+  :bind (:map
+         org-agenda-mode-map
+         ("P" . iw-save-org-files)))
+
+(defun iw-save-org-files ()
+  (interactive)
+  (org-save-all-org-buffers)
+  (unison)
+  (let ((user-input (read-string "Input for unison:")))
+    (if (get-buffer-process "*unison*")
+        (process-send-string "*unison*" user-input)
+      (kill-buffer "*unison*"))))
+
+(keymap-unset org-agenda-mode-map "S")
+(keymap-set org-agenda-mode-map "S" 'iw-save-org-files)
 
 (provide 'iw-org)
 ;;; iw-org.el ends here
