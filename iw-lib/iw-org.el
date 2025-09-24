@@ -92,7 +92,12 @@ FIXME does nothing if at the end of a colapsed heading"
                 org-log-done                'time
                 org-default-notes-file      "~/Documents/org-mode/notes/new-notes"
                 org-taxonomy-file           "~/Documents/org-mode/plans/taxonomy.org"
-                org-capture-templates       '(("e"
+                org-capture-templates       '(("b"
+                                               "Build"
+                                               plain
+                                               (file "~/Documents/org-mode/notes/build.org")
+                                               "** TODO [#C] %?")
+                                              ("e"
                                                "Emacs"
                                                plain
                                                (file+headline "~/Documents/org-mode/notes/emacs.org" "Emacs TODOs")
@@ -105,8 +110,8 @@ FIXME does nothing if at the end of a colapsed heading"
                                               ("s"
                                                "Sing use: <artist>:<title>"
                                                plain
-                                               (file "~/Documents/org-mode/agenda/sing.org")
-                                               "* %?: ")
+                                               (file+headline "~/Documents/org-mode/agenda/sing.org" "Candidates")
+                                               "** %?: ")
                                               ("p"
                                                "Plan"
                                                plain
@@ -148,8 +153,8 @@ FIXME does nothing if at the end of a colapsed heading"
                                                ("\\.mm\\'" . default)
                                                ("\\.x?html?\\'" . default)
                                                ("\\.pdf\\'" . emacs)))
-  
 
+  (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
   (autoload 'LilyPond-mode "lilypond-mode" "LilyPond Editing Mode" t)
   (add-to-list 'auto-mode-alist '("\\.ly\\'" . LilyPond-mode))
   (add-to-list 'auto-mode-alist '("\\.ily\\'" . LilyPond-mode))
@@ -165,8 +170,9 @@ FIXME does nothing if at the end of a colapsed heading"
                                                            (J          . t)
                                                            (lilypond   . t)
                                                            (arduino    . t)
+                                                           (abc        . t)
                                                            (verb       . t)))
-  
+
   (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
   
   (defun iw-lyrics-and-play ()
@@ -182,6 +188,14 @@ FIXME does nothing if at the end of a colapsed heading"
       (if (get-buffer-process "*unison*")
           (process-send-string "*unison*" user-input)
         (kill-buffer "*unison*"))))
+
+  ;; this is from https://kimi.im/2022-04-29-background-color-of-inline-image-for-orgmode
+  ;; Sets the background of inline images when they are created. abc generates svg images
+  ;; with transparent backgrounds and black notes. Can also add "%%bgcolor white" to header
+  (defun org--create-inline-image-advice (img)
+    (nconc img (list :background "#f8f8f8")))
+  (advice-add 'org--create-inline-image
+              :filter-return #'org--create-inline-image-advice)
 
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
