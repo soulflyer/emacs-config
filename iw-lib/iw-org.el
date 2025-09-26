@@ -329,7 +329,7 @@ may have been stored before."
     (unless inhibit-wconf-store
       (org-capture-put :return-to-wconf (current-window-configuration)))
     (delete-other-windows)
-    (org-switch-to-buffer-other-window
+    (org-pop-to-buffer-same-window
      (org-capture-get-indirect-buffer (org-capture-get :buffer) "CAPTURE"))
     (widen)
     (org-fold-show-all)
