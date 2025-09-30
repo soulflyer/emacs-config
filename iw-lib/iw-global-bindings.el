@@ -7,6 +7,8 @@
 (global-set-key (kbd "s-x")         'counsel-M-x)
 (global-set-key (kbd "M-~")         'switch-to-next-buffer)
 (global-set-key (kbd "M-`")         'switch-to-prev-buffer)
+(global-set-key (kbd "M-\\")        'switch-to-next-buffer)
+(global-set-key (kbd "M-|")         'switch-to-prev-buffer)
 (global-set-key (kbd "C-\\")        'align-regexp)
 (global-set-key (kbd "M-;")         'live-delete-whitespace-except-one)
 (global-set-key (kbd "M-/")         'comment-dwim)
@@ -86,6 +88,8 @@
 (global-set-key (kbd "C-q x")       'delete-window)
 (global-set-key (kbd "s-`")         'tab-next)
 (global-set-key (kbd "s-~")         'tab-previous)
+(global-set-key (kbd "s-\\")        'tab-next)
+(global-set-key (kbd "s-|")         'tab-previous)
 
 (defun tab-emacs          () "Whatever."(interactive) (tab-workspace-new "~/.emacs.d" "Emacs"))
 (defun tab-photo-api      () "Whatever."(interactive) (tab-workspace-new "~/Code/Clojure/photo-api"))
