@@ -88,8 +88,11 @@
 (global-set-key (kbd "C-q x")       'delete-window)
 (global-set-key (kbd "s-`")         'tab-next)
 (global-set-key (kbd "s-~")         'tab-previous)
+(global-set-key (kbd "C-q n")       'tab-next)
+(global-set-key (kbd "C-q p")       'tab-previous)
 (global-set-key (kbd "s-\\")        'tab-next)
 (global-set-key (kbd "s-|")         'tab-previous)
+(global-set-key (kbd "C-q TAB")     'tab-switch)
 
 (defun tab-emacs          () "Whatever."(interactive) (tab-workspace-new "~/.emacs.d" "Emacs"))
 (defun tab-photo-api      () "Whatever."(interactive) (tab-workspace-new "~/Code/Clojure/photo-api"))
