@@ -182,12 +182,13 @@ FIXME does nothing if at the end of a colapsed heading"
 
   (defun iw-save-org-files ()
     (interactive)
+    (if (not (eq nil (get-buffer "*unison*")))
+        (kill-buffer "*unison*"))
     (org-save-all-org-buffers)
     (unison)
     (let ((user-input (read-string "Input for unison:")))
       (if (get-buffer-process "*unison*")
-          (process-send-string "*unison*" user-input)
-        (kill-buffer "*unison*"))))
+          (process-send-string "*unison*" user-input))))
 
   ;; this is from https://kimi.im/2022-04-29-background-color-of-inline-image-for-orgmode
   ;; Sets the background of inline images when they are created. abc generates svg images
