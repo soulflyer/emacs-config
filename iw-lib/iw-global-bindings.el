@@ -4,11 +4,11 @@
 ;;; Mode specific bindings are in the setup file for that mode
 ;;; Code:
 
-(global-set-key (kbd "s-x")         'counsel-M-x)
+(global-set-key (kbd "s-x")         'execute-extended-command)
 (global-set-key (kbd "M-~")         'switch-to-next-buffer)
 (global-set-key (kbd "M-`")         'switch-to-prev-buffer)
-(global-set-key (kbd "M-\\")        'switch-to-next-buffer)
-(global-set-key (kbd "M-|")         'switch-to-prev-buffer)
+(global-set-key (kbd "M-\\")        'switch-to-prev-buffer)
+(global-set-key (kbd "M-|")         'switch-to-next-buffer)
 (global-set-key (kbd "C-\\")        'align-regexp)
 (global-set-key (kbd "M-;")         'live-delete-whitespace-except-one)
 (global-set-key (kbd "M-/")         'comment-dwim)
@@ -129,7 +129,7 @@
 (keymap-unset cider-mode-map "C-M-i")
 
 ;; Muscle memory is causing me to occasionaly delete the region when trying to hit M-x
-(global-unset-key (kbd "s-x"))
+;; (global-unset-key (kbd "s-x"))
 
 ;; These are added to a minor mode map that is generally applied so that keybindings here
 ;; will over-ride ones made elsewhere like the heinous org-mode M-n that moves paragraphs!
