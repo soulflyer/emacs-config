@@ -173,7 +173,7 @@ FIXME does nothing if at the end of a colapsed heading"
                                                            (abc        . t)
                                                            (verb       . t)))
 
-  (define-key org-mode-map [remap org-meta-return] 'live-lisp-describe-thing-at-point)
+  (define-key org-mode-map [remap org-meta-return] 'helpful-at-point)
   
   (defun iw-lyrics-and-play ()
     (interactive)

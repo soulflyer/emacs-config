@@ -9,7 +9,7 @@
   :ensure t
   :custom
   ;; (vertico-scroll-margin 0) ;; Different scroll margin
-  (vertico-count 20) ;; Show more candidates
+  (vertico-count 8) ;; Show more candidates
   (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
   (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
   :init
@@ -173,7 +173,11 @@
 (use-package helpful
   :ensure t
   :config
-  (define-key helpful-mode-map      (kbd "M-RET")   'helpful-at-point))
+  (global-set-key (kbd "M-RET") #'helpful-at-point)
+  (global-set-key (kbd "C-h f") #'helpful-callable)
+  (global-set-key (kbd "C-h v") #'helpful-variable)
+  (global-set-key (kbd "C-h k") #'helpful-key)
+  (global-set-key (kbd "C-h x") #'helpful-command))
 
 (provide 'iw-vertico)
 ;;; iw-vertico.el ends here
