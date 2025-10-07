@@ -10,10 +10,14 @@
   :custom
   ;; (vertico-scroll-margin 0) ;; Different scroll margin
   (vertico-count 8) ;; Show more candidates
-  (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
+  (vertico-resize f) ;; Grow and shrink the Vertico minibuffer
   (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
   :init
-  (vertico-mode))
+  (vertico-mode)
+  :bind (:map vertico-map
+              ("DEL" . vertico-directory-delete-word)
+              ("M-DEL" . vertico-directory-delete-char)))
+
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist

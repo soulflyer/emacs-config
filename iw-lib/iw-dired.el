@@ -67,6 +67,11 @@
     (interactive)
     (dired "~/Code"))
 
+  (defun dired-lyrics ()
+    "Open dired in ~/Documents/org-mode/lyrics"
+    (interactive)
+    (dired "~/Documents/org-mode/lyrics"))
+  
   :bind
   (("C-x C-d" . dired)
    :map dired-mode-map
@@ -84,7 +89,8 @@
    ("C-d p"   . dired-pictures)
    ("C-d t"   . dired-tmp)
    ("C-d b"   . dired-bookshelf)
-   ("C-d C"   . dired-code)))
+   ("C-d C"   . dired-code)
+   ("C-d l"   . dired-lyrics)))
 
 (use-package openwith
   :ensure t)

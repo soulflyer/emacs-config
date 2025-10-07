@@ -5,7 +5,6 @@
 
 ;;; Code:
 (require 'use-package)
-(require 'iw-lisp)
 
 (use-package org
   :init
@@ -107,6 +106,16 @@ FIXME does nothing if at the end of a colapsed heading"
                                                plain
                                                (file+headline "~/Documents/org-mode/notes/fixme.org" "FIXME TODOs")
                                                "** TODO [#C] %?")
+                                              ("l"
+                                               "Linux"
+                                               plain
+                                               (file+headline "~/Documents/org-mode/notes/linux.org" "Linux TODOs")
+                                               "** TODO [#B] %?")
+                                              ("m"
+                                               "Music"
+                                               plain
+                                               (file+headline "~/Documents/org-mode/notes/music.org" "FIXME TODOs")
+                                               "** TODO [#D] %?")
                                               ("s"
                                                "Sing use: <artist>:<title>"
                                                plain
@@ -691,10 +700,21 @@ is selected, only the bare key is returned."
 
 (require 'org-yt)
 
+(use-package org-modern
+  :ensure t)
+
 (use-package unison
   :ensure t
   :config
-  (setq unison-args '("org-mode")))
+  (setq unison-args '("org-mode")
+        org-modern-fold-stars '(("⯈" . "🟩")
+                                ("⯈" . "⯀")
+                                ("▶" . "■")
+                                ("▷" . "□")
+                                ("▹" . "▫")
+                                ("▸" . "▫"))
+        org-modern-priority nil
+        org-modern-todo nil))
 
 ;; (defun iw-save-org-files ()
 ;;   (interactive)
