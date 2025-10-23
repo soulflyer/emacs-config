@@ -102,6 +102,7 @@
 
   ;; This is lifted from emms-browser-search and would be any easy PR if PRs to
   ;; emms were easy. They are not.
+  ;; Just adds the optional search-string parameter
   (defun iw-emms-browser-search (fields &optional search-string)
     "Search for STR using FIELDS."
     (let* ((prompt (format "Searching with %S: " fields))

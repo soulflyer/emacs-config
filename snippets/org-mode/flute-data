@@ -1,0 +1,120 @@
+# -*- mode: snippet -*-
+# name: flute-data
+# key: flute-data
+# --
+:PROPERTIES:
+:ATTACH_DIR: /Users/iain/Code/ImmutableCollection/flute-bore-visualizer/models/images
+:END:
+* Name ${1:FluteName}
+[[file:images/${2:Image}.png]]
+** Plan
+#+ATTR_ORG: :width 1000
+[[file:images/${3:Plan}.png]]
+** Head Joint
+*** Plan Extract
+#+ATTR_ORG: :width 150
+[[file:images/$2-bore1.png]]
+*** Data
+|----------+---------------|
+| Diameter | Distance from |
+|----------+---------------|
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+** Middle Joint
+*** Plan Extract
+#+ATTR_ORG: :width 150
+[[file:images/$2-bore2.png]]
+*** Data
+|----------+---------------|
+| Diameter | Distance from |
+|----------+---------------|
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+** Right Hand Joint
+*** Plan Extract
+#+ATTR_ORG: :width 150
+[[file:images/$2-bore3.png]]
+*** Data
+|----------+---------------|
+| Diameter | Distance from |
+|----------+---------------|
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+** Foot Joint
+*** Plan Extract
+#+ATTR_ORG: :width 150
+[[file:images/$2-bore4.png]]
+*** Data
+|----------+---------------|
+| Diameter | Distance from |
+|----------+---------------|
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |
+|          |               |

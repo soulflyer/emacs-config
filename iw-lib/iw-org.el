@@ -117,7 +117,7 @@ FIXME does nothing if at the end of a colapsed heading"
                                                (file+headline "~/Documents/org-mode/notes/music.org" "FIXME TODOs")
                                                "** TODO [#D] %?")
                                               ("s"
-                                               "Sing use: <artist>:<title>"
+                                               "Sing use: <title>:<artist>"
                                                plain
                                                (file+headline "~/Documents/org-mode/agenda/sing.org" "Candidates")
                                                "** %?: ")

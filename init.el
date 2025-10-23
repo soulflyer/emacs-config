@@ -45,6 +45,8 @@
   (require 'iw-subversion))
 (when (string= "acceptance\n" (shell-command-to-string "hostname -s"))
   (require 'iw-acceptance))
+(when (string= "transcendence\n" (shell-command-to-string "hostname -s"))
+  (require 'iw-transcendence))
 (require 'iw-client-start)
 
 ;;  Add config for specific purposes.
