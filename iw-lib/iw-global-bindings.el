@@ -12,7 +12,8 @@
 (global-set-key (kbd "C-\\")        'align-regexp)
 (global-set-key (kbd "M-;")         'live-delete-whitespace-except-one)
 (global-set-key (kbd "M-/")         'comment-dwim)
-(global-set-key (kbd "C-;")         'iw-eol-and-delete-whitespace-except-one)
+;;(global-set-key (kbd "C-;")       'iw-eol-and-delete-whitespace-except-one)
+(global-set-key (kbd "C-;")         'live-delete-whitespace-except-one)
 
 ;; This is not the default behavior, where C-x SPC selects rectangle-mark-mode
 ;; C-space is used by MacOS, so set C-x SPC to the more useful set-mark-command

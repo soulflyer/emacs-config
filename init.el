@@ -16,7 +16,7 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path              "~/.emacs.d/lib")
 (add-to-list 'load-path              "~/.emacs.d/iw-lib")
-(add-to-list 'load-path              "~/Code/emms")
+;;(add-to-list 'load-path            "~/Code/emms")
 (setq custom-file                    "~/.emacs.d/etc/emacs-custom.el")
 (setq-default diary-file                        "~/Documents/org-mode/diary"
               bm-repository-file                "~/.emacs.d/etc/bm-repository"
@@ -87,6 +87,7 @@
 (require 'iw-deft)
 (require 'iw-dired)
 (require 'iw-eshell)
+(require 'iw-emms)
 (require 'iw-expand-region)
 (require 'iw-flycheck)
 (require 'iw-hl-line)

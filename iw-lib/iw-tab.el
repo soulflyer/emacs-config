@@ -122,13 +122,10 @@
     (emms-browser)
     (split-window-right (truncate (* (frame-width) 0.6)))
     (other-window 1)
-    (dired "/Volumes/Crucial/Movies")
+    (dired "~/Downloads")
     (split-window-below 25)
     (other-window 1)
-    (dired "~/Music/Collection")
-    (split-window-below -10)
-    (other-window 1)
-    (emms)))
+    (dired "~/Music/Collection")))
 
 (defun tab-workspace-only-home ()
   "Whatever."
