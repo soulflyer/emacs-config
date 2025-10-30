@@ -52,6 +52,9 @@
   (add-hook 'emms-browser-mode-hook 'emms-short-modeline)
   (add-hook 'emms-playlist-cleared-hook 'emms-mpd-crop)
 
+  ;; These 2 functions are necessary because the emms-seek functions cause the playback to stop,
+  ;; at least on Linux. Pausing and unpausing gets it going again.
+  ;; TODO check periodically to see if this is still the case.
   (defun emms-skip-forward ()
     (interactive)
     (emms-pause)
@@ -64,17 +67,96 @@
     (emms-seek-backward)
     (emms-pause))
   
-  ;;(setq stats-db  (sqlite-open "~/.mpd/stats.db"))
-  ;; TODO move this into emms?
-  ;; (defun get-play-count (track)
-  ;;   (sqlite-execute (sqlite-open "~/.mpd/stats.db")
-  ;;                   (format "SELECT play_count FROM song WHERE uri=\"%s\""
-  ;;                           (string-trim-left (emms-track-get track 'name)
-  ;;                                             (concat (expand-file-name emms-player-mpd-music-directory) "/")))))
+  (defun trim-track-name (name)
+    "Remove the first parts of the path and the leading slash leaving only artist/album/track."
+    (string-trim-left
+     name
+     (concat (expand-file-name emms-player-mpd-music-directory) "/")))
+  
+  (defun stats-db-play-count (track)
+    (let ((count))
+      (condition-case nil
+          (setq count (first
+                       (first
+                        (sqlite-execute
+                         (sqlite-open "~/.config/mpd/stats.db")
+                         (format
+                          "SELECT play_count FROM song WHERE uri=\"%s\""
+                          (trim-track-name (emms-track-get track 'name)))))))
+        (error 0))
+      (if (and (numberp count) (< 0 count))
+          count)))
 
-  ;; (defun get-current-track-play-count ()
-  ;;   (interactive)
-  ;;   (message (format "Play count %d" (first (first (get-play-count (emms-playlist-current-selected-track)))))))
+  (defun get-current-track-play-count ()
+    (interactive)
+    (message
+     (format "Play count of %s is: %d"
+             (emms-track-get (emms-playlist-current-selected-track) 'info-title)
+             (stats-db-play-count (emms-playlist-current-selected-track)))))
+
+  (defun emms-sticker-db-comments (track)
+    (let* ((name (trim-track-name (emms-track-get track 'name)))
+           (comments (shell-command-to-string (concat "mpc sticker \"" name "\" get comment"))))
+      (if (not (string-prefix-p "MPD error" comments))
+          (s-trim (string-trim-left comments "comment=")))))
+
+  (defun emms-set-sticker-db-comments (track comment)
+    (let* ((name (trim-track-name (emms-track-get track 'name))))
+      (shell-command-to-string (concat "mpc sticker \"" name "\" set comment " comment))
+      (message (format "Set comments of %s to %s" name comment))))
+
+  (defun emms-comment ()
+    (interactive)
+    (let* ((track (emms-browser-bdata-first-track (emms-browser-bdata-at-point)))
+           (old-comment (emms-sticker-db-comments track))
+           (comment (concat "\"" (read-string "Comment: " old-comment) "\"")))
+      (emms-set-sticker-db-comments track comment)))
+
+  
+  (defun stars (n)
+    "Returns a string representing a rating from 0-5 stars, including halves."
+    (let* ((star "🔶")
+           (half-star (if (= 1 n)
+                          "🔹"
+                        "🔸"))
+           (whole (floor (/ n 2)))
+           (half (ceiling (- n (* 2 whole))))
+           (output-format ""))
+      (dotimes (number whole output-format)
+        (setq output-format (concat "%1$s" output-format)))
+      (if (> half 0)
+          (setq output-format (concat "%2$s" output-format)))
+      (format output-format star half-star)))
+
+  (defun emms-love ()
+    (interactive)
+    (let* ((track (emms-browser-bdata-first-track (emms-browser-bdata-at-point)))
+           (old-comment (emms-sticker-db-comments track))
+           (loved (string-prefix-p "🩷" old-comment))
+           (comment (if loved
+                        (concat "\"" (substring old-comment 1 nil) "\"")
+                      (concat "\"🩷" old-comment "\""))))
+      (emms-set-sticker-db-comments track comment)
+      (message (format "Set comment to %s - %S" comment loved))))
+
+  (defun emms-sticker-db-rating (track)
+    (let* ((name (trim-track-name (emms-track-get track 'name)))
+           (rating-string (shell-command-to-string (concat "mpc sticker \""  name "\" get rating")))
+           (rating (string-to-number (string-trim-left rating-string "rating="))))
+      rating))
+
+  (defun emms-set-sticker-db-rating (track n)
+    (let* ((name (trim-track-name (emms-track-get track 'name)))
+           (rating (number-to-string n)))
+      (shell-command-to-string (concat "mpc sticker \"" name "\" set rating " rating))
+      (format "Set rating of %s to %s" name (stars n))))
+
+  (defun emms-rate ()
+    (interactive)
+    (let ((track (emms-browser-bdata-first-track (emms-browser-bdata-at-point)))
+          (rating (read-number "Rating (number of half stars): ")))
+      (emms-set-sticker-db-rating track rating)))
+
 
   ;; (defun emms-browser-filter-rating (rating)
   ;;   (lambda (track)
@@ -96,16 +178,18 @@
   ;; (emms-playlist-new-from-saved "4-star")
   ;; (emms-playlist-new-from-saved "working-on")
   ;; (emms-playlist-new-from-saved "Candidates")
-  
+
   ;; (keymap-unset emms-browser-mode-map "E")
   ;; (keymap-unset emms-browser-mode-map "2")
   ;; (keymap-unset emms-browser-mode-map "3")
   ;; (keymap-unset emms-browser-mode-map "4")
 
-  (global-set-key [f7] 'emms-seek-backward)
-  (global-set-key [f9] 'emms-seek-forward)
+  ;; (global-set-key [f7] 'emms-seek-backward)
+  ;; (global-set-key [f9] 'emms-seek-forward)
 
-  :bind (:map
+  :bind (("<f7>"  . emms-seek-backward)
+         ("<f9>"  . emms-seek-forward)
+         :map
          emms-browser-mode-map
          ("p"     . emms-playlist-mode-go)
          ("a"     . emms-browser-add-tracks)
