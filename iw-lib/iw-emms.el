@@ -271,6 +271,23 @@
 
   (advice-add 'emms-browser-track-artist-and-title-format :override 'iw-emms-browser-track-artist-and-title-format)
 
+  (defun iw-emms-browser-year-and-album-fmt (_bdata fmt)
+    (concat
+     "%i%cL"
+     (let ((year (emms-browser-format-elem fmt "y")))
+       (if (and year (not (string= year "0")))
+           "(%y) "
+         ""))
+     "%n%i🎹 %g"
+     (let ((comment (emms-browser-format-elem fmt "k")))
+       (if (and comment (not (string= comment "")))
+           (concat " 🫧" (if (string-prefix-p "🩷" comment)
+                            (substring comment 1 nil)
+                          comment))
+         ""))))
+
+  (advice-add 'emms-browser-year-and-album-fmt :override 'iw-emms-browser-year-and-album-fmt)
+  
   ;; (defun emms-browser-filter-rating (rating)
   ;;   (lambda (track)
   ;;     (< (funcall 'emms-sticker-db-rating track) rating)))
