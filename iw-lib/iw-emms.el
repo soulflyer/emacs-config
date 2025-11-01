@@ -250,18 +250,17 @@
   (defun iw-emms-browser-track-artist-and-title-format (_bdata fmt)
     (let ((comment (emms-browser-format-elem fmt "k")))
       (concat
+       (let ((track (emms-browser-format-elem fmt "T")))
+         (if (and track (not (string= track "0")))
+             "%2.2T "
+           "  "))
+       "|%5d|"
        (if (and comment (not (string= comment "")))
            (if (string-prefix-p "🩷" comment)
                "🩷"
              "  ")
          "  ")
-       "%10r"
-       " |%5d| "
-       (let ((track (emms-browser-format-elem fmt "T")))
-         (if (and track (not (string= track "0")))
-             "%2.2T "
-           "  "))
-       "%-36.35t "
+       "%10r %-36.35t"
        (if comment
            (if (string-prefix-p "🩷" comment)
                (if (> 1 (length comment))
@@ -278,16 +277,84 @@
        (if (and year (not (string= year "0")))
            "(%y) "
          ""))
-     "%n%i🎹 %g"
+     "%n%i🎹 %g%i"
      (let ((comment (emms-browser-format-elem fmt "k")))
        (if (and comment (not (string= comment "")))
            (concat " 🫧" (if (string-prefix-p "🩷" comment)
-                            (substring comment 1 nil)
-                          comment))
+                             (substring comment 1 nil)
+                           comment))
          ""))))
 
   (advice-add 'emms-browser-year-and-album-fmt :override 'iw-emms-browser-year-and-album-fmt)
+
+  ;; This is old code lifted from EMMS. There may be a better way to search for all tracks
+  ;; by a given artist, but I can't find one that doesn't mean I have to wait while the
+  ;; library is reloaded after I'm finished. This way alows me to go instantly back to the
+  ;; full list of bands by pressing Q
+  (defun emms-browser-matches-p (track search-list)
+    (let (no-match matched)
+      (dolist (item search-list)
+        (setq matched nil)
+        (dolist (field (car item))
+          (let ((track-field (emms-track-get track field "")))
+            (when (and track-field (string-match (cadr item) track-field))
+              (setq matched t))))
+        (unless matched
+          (setq no-match t)))
+      (not no-match)))
+
+  (defun emms-browser-render-search (tracks)
+    (let ((entries
+           (emms-browser-make-sorted-alist 'info-artist tracks)))
+      (dolist (entry entries)
+        (emms-browser-insert-top-level-entry (car entry)
+                                             (cdr entry)
+                                             'info-artist))))
+
+  (defun emms-browser-filter-cache (search-list)
+    "Return a list of tracks that match SEARCH-LIST.
+SEARCH-LIST is a list of cons pairs, in the form:
+
+  ((field1 field2) string)
+
+If string matches any of the fields in a cons pair, it will be
+included."
+
+    (let (tracks)
+      (maphash (lambda (_k track)
+                 (when (emms-browser-matches-p track search-list)
+                   (push track tracks)))
+               emms-cache-db)
+      tracks))
   
+  (defun emms-browser-search-buffer-go ()
+    "Create a new search buffer, or clean the existing one."
+    (switch-to-buffer
+     (get-buffer-create "*emms-browser-search*"))
+    (emms-browser-mode t)
+    ;;(use-local-map emms-browser-search-mode-map)
+    (emms-with-inhibit-read-only-t
+     (delete-region (point-min) (point-max))))
+  
+  (defun emms-browser-search-noninteractive (fields str)
+    "Search for STR using FIELDS."
+    (emms-browser-search-buffer-go)
+    (emms-with-inhibit-read-only-t
+     (emms-browser-render-search
+      (emms-browser-filter-cache
+       (list (list fields str)))))
+    (emms-browser-expand-all)
+    (goto-char (point-min)))
+
+  (defun emms-browser-search-by-artist-at-point ()
+    (interactive)
+    (emms-browser-search-noninteractive
+     '(info-artist)
+     (emms-track-get
+      (emms-browser-bdata-first-track
+       (emms-browser-bdata-at-point))
+      'info-artist)))
+
   ;; (defun emms-browser-filter-rating (rating)
   ;;   (lambda (track)
   ;;     (< (funcall 'emms-sticker-db-rating track) rating)))
