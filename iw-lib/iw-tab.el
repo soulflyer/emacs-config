@@ -125,7 +125,8 @@
     (dired "~/Downloads")
     (split-window-below 25)
     (other-window 1)
-    (dired "~/Music/Collection")))
+    (dired "~/Music/Collection")
+    (other-window 1)))
 
 (defun tab-workspace-only-home ()
   "Whatever."

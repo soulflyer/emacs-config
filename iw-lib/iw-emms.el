@@ -157,6 +157,119 @@
           (rating (read-number "Rating (number of half stars): ")))
       (emms-set-sticker-db-rating track rating)))
 
+  (defun iw-emms-browser-format-line (bdata &optional target)
+    "Return a propertized string to be inserted in the buffer.
+     Lifted from emms-browser.el, emms-browser-format-line.
+     Adds ability to specify play-count, rating, and comment."
+    (unless target
+      (setq target 'browser))
+    (let* ((name (or (emms-browser-bdata-name bdata) "misc"))
+           (level (emms-browser-bdata-level bdata))
+           (type (emms-browser-bdata-type bdata))
+           (indent (emms-browser-make-indent level))
+           (track (emms-browser-bdata-first-track bdata))
+           (path (emms-track-get track 'name))
+           (face (emms-browser-get-face bdata))
+           (format (emms-browser-get-format bdata target))
+           (props (list 'emms-browser-bdata bdata))
+           ;; ***** The following 3 are added *************
+           ;; (play-count (stats-db-play-count track))
+           (comments (emms-sticker-db-comments track))
+           (rating     (stars (emms-sticker-db-rating track)))
+           ;; *********************************************
+           (format-choices
+            `(("i" . ,indent)
+              ("n" . ,name)
+              ;; The following 3 are added
+              ;; ("c" . ,play-count)
+              ("k" . ,comments)
+              ("r" . ,rating)
+              ;; *************************
+              ("y" . ,(emms-track-get-year track))
+              ("A" . ,(emms-track-get track 'info-album))
+              ("a" . ,(emms-track-get track 'info-artist))
+              ("o" . ,(emms-track-get track 'info-albumartist))
+              ("C" . ,(emms-track-get track 'info-composer))
+              ("p" . ,(emms-track-get track 'info-performer))
+              ("t" . ,(emms-track-get track 'info-title))
+              ("g" . ,(emms-track-get track 'info-genre))
+	      ("D" . ,(emms-browser-disc-number track))
+              ("T" . ,(emms-browser-track-number track))
+              ("d" . ,(emms-browser-track-duration track))))
+	   str)
+      (when (equal type 'info-album)
+        (setq format-choices
+              (append format-choices
+                      `(("cS" . ,(emms-browser-get-cover-str path 'small))
+                        ("cM" . ,(emms-browser-get-cover-str path 'medium))
+                        ("cL" . ,(emms-browser-get-cover-str path 'large))))))
+      (when (functionp format)
+        (setq format (funcall format bdata format-choices)))
+      (setq str
+            (with-temp-buffer
+              (insert format)
+              (goto-char (point-min))
+              (let ((start (point-min)))
+                ;; jump over any image
+                (when (re-search-forward "%c[SML]" nil t)
+                  (setq start (point)))
+                ;; jump over the indent
+                (when (re-search-forward "%i" nil t)
+                  (setq start (point)))
+                (add-text-properties start (point-max)
+                                     (list 'face face)))
+              (buffer-string)))
+      (setq str (emms-browser-format-spec str format-choices))
+      ;; give tracks a 'boost' if they're not top-level
+      ;; (covers take up an extra space)
+      (when (and (eq type 'info-title)
+                 (not (string= indent "")))
+        (setq str (concat " " str)))
+      ;; if we're in playlist mode, add a track
+      (when (and (eq target 'playlist)
+                 (eq type 'info-title))
+        (setq props
+              (append props `(emms-track ,track))))
+      ;; add properties to the whole string
+      (add-text-properties 0 (length str) props str)
+      str))
+
+  (advice-add 'emms-browser-format-line :override 'iw-emms-browser-format-line)
+
+  ;; Current version from emms in the elpa dir
+  ;; (defun emms-browser-track-artist-and-title-format (_bdata fmt)
+  ;;   (concat
+  ;;    "%i"
+  ;;    (let ((track (emms-browser-format-elem fmt "T")))
+  ;;      (if (and track (not (string= track "0")))
+  ;;          "%T. "
+  ;;        ""))
+  ;;    "%n"))
+
+  ;; Old modified version from my emms repo
+  (defun iw-emms-browser-track-artist-and-title-format (_bdata fmt)
+    (let ((comment (emms-browser-format-elem fmt "k")))
+      (concat
+       (if (and comment (not (string= comment "")))
+           (if (string-prefix-p "🩷" comment)
+               "🩷"
+             "  ")
+         "  ")
+       "%10r"
+       " |%5d| "
+       (let ((track (emms-browser-format-elem fmt "T")))
+         (if (and track (not (string= track "0")))
+             "%2.2T "
+           "  "))
+       "%-36.35t "
+       (if comment
+           (if (string-prefix-p "🩷" comment)
+               (if (> 1 (length comment))
+                   (concat "🫧" (substring comment 1 nil))
+                 "")
+             (concat "🫧" comment))))))
+
+  (advice-add 'emms-browser-track-artist-and-title-format :override 'iw-emms-browser-track-artist-and-title-format)
 
   ;; (defun emms-browser-filter-rating (rating)
   ;;   (lambda (track)
