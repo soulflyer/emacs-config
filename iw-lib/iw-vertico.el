@@ -16,7 +16,9 @@
   (vertico-mode)
   :bind (:map vertico-map
               ("DEL" . vertico-directory-delete-word)
-              ("M-DEL" . vertico-directory-delete-char)))
+              ("M-DEL" . backward-delete-char)
+              ("C-<backspace>" . backward-delete-char)
+              ("C-q" . minibuffer-keyboard-quit)))
 
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.

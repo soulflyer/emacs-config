@@ -38,17 +38,39 @@
 ;; (use-package versuri
 ;;   :ensure t)
 
-(defun make--covers ()
-  (shell-command "convert -resize 60x60   cover.jpg ./cover_small.jpg")
-  (shell-command "convert -resize 120x120 cover.jpg ./cover_med.jpg")
-  (shell-command "convert -resize 240x240 cover.jpg ./cover_large.jpg")
-  (shell-command "convert -resize 480x480 cover.jpg ./cover_huge.jpg"))
+;; TODO add a path parameter
+(defun make--covers (path)
+  (shell-command (format "convert -resize 60x60   %s/cover.jpg %s/cover_small.jpg" path path))
+  (shell-command (format "convert -resize 120x120 %s/cover.jpg %s/cover_med.jpg"   path path))
+  (shell-command (format "convert -resize 240x240 %s/cover.jpg %s/cover_large.jpg" path path))
+  (shell-command (format "convert -resize 480x480 %s/cover.jpg %s/cover_huge.jpg"  path path)))
 
-(defun make-covers ()
-  (message "Make covers in %s" default-directory)
-  (let* ((has-cover (directory-files default-directory nil "cover.jpg")))
-    (if has-cover (make--covers)
+;; TODO send a path parameter to make--covers, default to default-directory
+(defun make-covers (&optional path)
+  "Look for cover.jpg and generate small, medium, large, and huge versions"
+  (interactive)
+  (let* ((directory (if path
+                        path
+                      default-directory))
+         (has-cover (directory-files directory nil "cover.jpg")))
+    (message "Make covers in %s" directory)
+    (if has-cover (make--covers directory)
       (message "No cover found"))))
+
+(defun import--music (path)
+  (message "Updating mpd db")
+  (shell-command "mpc -w update")
+  (message "creating covers in %s" path)
+  (make-covers path)
+  (message "Adding tracks in %s to emms" path)
+  (emms-add-directory path))
+
+(defun import-music (&optional path)
+  (interactive)
+  (let* ((directory (if path
+                        path
+                      default-directory)))
+    (import--music directory)))
 
 (provide 'iw-music)
 ;;; iw-music.el ends here

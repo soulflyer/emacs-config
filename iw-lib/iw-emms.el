@@ -151,6 +151,12 @@
       (shell-command-to-string (concat "mpc sticker \"" name "\" set rating " rating))
       (format "Set rating of %s to %s" name (stars n))))
 
+  (defun emms-sticker-db-playcount (track)
+    (let* ((name (trim-track-name (emms-track-get track 'name)))
+           (playcount-string (shell-command-to-string (concat "mpc sticker \""  name "\" get playcount")))
+           (playcount (string-to-number (string-trim-left playcount-string "playcount="))))
+      playcount))
+  
   (defun emms-rate ()
     (interactive)
     (let ((track (emms-browser-bdata-first-track (emms-browser-bdata-at-point)))
@@ -173,7 +179,7 @@
            (format (emms-browser-get-format bdata target))
            (props (list 'emms-browser-bdata bdata))
            ;; ***** The following 3 are added *************
-           ;; (play-count (stats-db-play-count track))
+           (playcount (emms-sticker-db-playcount track))
            (comments (emms-sticker-db-comments track))
            (rating     (stars (emms-sticker-db-rating track)))
            ;; *********************************************
@@ -181,7 +187,7 @@
             `(("i" . ,indent)
               ("n" . ,name)
               ;; The following 3 are added
-              ;; ("c" . ,play-count)
+              ("c" . ,playcount)
               ("k" . ,comments)
               ("r" . ,rating)
               ;; *************************
@@ -236,17 +242,6 @@
 
   (advice-add 'emms-browser-format-line :override 'iw-emms-browser-format-line)
 
-  ;; Current version from emms in the elpa dir
-  ;; (defun emms-browser-track-artist-and-title-format (_bdata fmt)
-  ;;   (concat
-  ;;    "%i"
-  ;;    (let ((track (emms-browser-format-elem fmt "T")))
-  ;;      (if (and track (not (string= track "0")))
-  ;;          "%T. "
-  ;;        ""))
-  ;;    "%n"))
-
-  ;; Old modified version from my emms repo
   (defun iw-emms-browser-track-artist-and-title-format (_bdata fmt)
     (let ((comment (emms-browser-format-elem fmt "k")))
       (concat
@@ -254,7 +249,11 @@
          (if (and track (not (string= track "0")))
              "%2.2T "
            "  "))
-       "|%5d|"
+       "%5d "
+       (let ((playcount (emms-browser-format-elem fmt "c")))
+         (if (and playcount (not (= playcount 0)))
+             "🔊%-3.3c"
+           "     "))
        (if (and comment (not (string= comment "")))
            (if (string-prefix-p "🩷" comment)
                "🩷"
@@ -289,8 +288,8 @@
 
   ;; This is old code lifted from EMMS. There may be a better way to search for all tracks
   ;; by a given artist, but I can't find one that doesn't mean I have to wait while the
-  ;; library is reloaded after I'm finished. This way alows me to go instantly back to the
-  ;; full list of bands by pressing Q
+  ;; library is reloaded after I'm finished. This way uses a separate buffer so it allows
+  ;; me to go instantly back to the full list of bands by pressing Q
   (defun emms-browser-matches-p (track search-list)
     (let (no-match matched)
       (dolist (item search-list)
