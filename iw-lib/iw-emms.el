@@ -354,6 +354,37 @@ included."
        (emms-browser-bdata-at-point))
       'info-artist)))
 
+  (defun iw-emms-browser-search (fields &optional search-string)
+    "Search for STR using FIELDS."
+    (let* ((prompt (format "Searching with %S: " fields))
+           (str (or search-string (read-string prompt))))
+      (emms-browser-search-buffer-go)
+      (emms-with-inhibit-read-only-t
+       (emms-browser-render-search
+        (emms-browser-filter-cache
+         (list (list fields str)))))
+      (emms-browser-expand-all)
+      (goto-char (point-min))))
+
+  (defun iw-emms-play (play-all)
+    "Passes the song to emms, or the whole catalog if ARTIST is not nil."
+    (let* ((artist-song (split-string (org-entry-get nil "ITEM") ": "))
+           (artist (second artist-song))
+           (track  (first artist-song)))
+      (if play-all
+          (iw-emms-browser-search '(info-artist) artist)
+        (iw-emms-browser-search '(info-title) track))))
+
+  (defun iw-emms-play-track ()
+    "Opens an emms playlist with all tracks that match the title on the current line."
+    (interactive)
+    (iw-emms-play nil))
+
+  (defun iw-emms-play-artist ()
+    "Opens an emms playlist containing all the artists catalog."
+    (interactive)
+    (iw-emms-play t))
+
   ;; (defun emms-browser-filter-rating (rating)
   ;;   (lambda (track)
   ;;     (< (funcall 'emms-sticker-db-rating track) rating)))
@@ -383,8 +414,8 @@ included."
   ;; (global-set-key [f7] 'emms-seek-backward)
   ;; (global-set-key [f9] 'emms-seek-forward)
 
-  :bind (("<f7>"  . emms-seek-backward)
-         ("<f9>"  . emms-seek-forward)
+  :bind (("<f7>"  . emms-skip-backward)
+         ("<f9>"  . emms-skip-forward)
          :map
          emms-browser-mode-map
          ("p"     . emms-playlist-mode-go)
@@ -393,7 +424,7 @@ included."
          ("d"     . emms-browser-view-in-dired)
          ("RET"   . emms-browser-toggle-subitems)
          ("<tab>" . emms-browser-next-non-track)
-         ("C-s"   . swiper)
+         ("C-s"   . consult-line)
          ("SPC"   . emms-pause)
          ("A"     . emms-browser-search-by-artist-at-point)
          ("r"     . emms-rate)

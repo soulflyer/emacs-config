@@ -58,9 +58,9 @@
     (dired "/tmp"))
 
   (defun dired-bookshelf ()
-    "Open dired in ~/Documents/books/bookshelf"
+    "Open dired in ~/Documents/bookshelf"
     (interactive)
-    (dired "~/Documents/books/bookshelf"))
+    (dired "~/Documents/bookshelf"))
 
   (defun dired-code ()
     "Open dired in ~/Code"

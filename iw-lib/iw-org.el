@@ -652,8 +652,7 @@ is selected, only the bare key is returned."
 
 (use-package org-attach-screenshot
   :ensure t
-  :config (setq org-attach-screenshot-command-line "screencapture -i %f"
-                org-attach-screenshot-dirfunction 'iw-dirfunction))
+  :config (setq org-attach-screenshot-dirfunction 'iw-dirfunction))
 
 (add-hook 'calendar-mode-hook 'iw-calendar-mode-hook)
 

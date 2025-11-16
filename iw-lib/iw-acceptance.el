@@ -27,7 +27,7 @@
 
 (setq lsp-clojure-server-command '("/opt/homebrew/bin/clojure-lsp")
       org-ditaa-jar-path "/opt/homebrew/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar"
-      org-attach-screenshot-command-line "gnome-screencapture -i %f")
+      org-attach-screenshot-command-line "screencapture -i %f")
 
 (provide 'iw-acceptance)
 ;;; iw-acceptance.el ends here

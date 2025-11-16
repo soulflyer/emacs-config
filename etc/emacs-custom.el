@@ -128,7 +128,6 @@
  '(org-agenda-show-all-dates nil)
  '(org-attach-use-inheritance t)
  '(org-babel-lilypond-commands '("/opt/homebrew/bin/lilypond" "open" "open"))
- '(org-download-screenshot-method "screencapture -i %s")
  '(org-download-timestamp "")
  '(org-modern-block-name t)
  '(org-modern-label-border nil)
