@@ -10,6 +10,16 @@
 ;; replace with this: (set-frame-parameter nil 'undecorated nil)
 (add-to-list 'default-frame-alist '(undecorated . t))
 
+(defun decorate ()
+  "Add the OS top bar"
+  (interactive)
+  (set-frame-parameter nil 'undecorated nil))
+
+(defun undecorate ()
+  "Remove the OS top bar"
+  (interactive)
+  (set-frame-parameter nil 'undecorated t))
+
 (setq frame-resize-pixelwise t)
 
 (blink-cursor-mode 0)

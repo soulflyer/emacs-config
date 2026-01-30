@@ -39,6 +39,7 @@
                           (recents  . 12)
                           (registers . 5))
         initial-buffer-choice (lambda () (get-buffer-create "*dashboard*"))
+        ;;initial-buffer-choice (lambda () (tab-workspace-home))
         dashboard-projects-switch-function 'find-file
         dashboard-startup-banner (concat user-emacs-directory "banners/small-80.txt")
         dashboard-footer-messages (fortune-string-list 1)

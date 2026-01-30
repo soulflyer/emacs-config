@@ -161,7 +161,8 @@ FIXME does nothing if at the end of a colapsed heading"
                                                (directory . emacs)
                                                ("\\.mm\\'" . default)
                                                ("\\.x?html?\\'" . default)
-                                               ("\\.pdf\\'" . emacs)))
+                                               ("\\.pdf\\'" . "evince %s")
+                                               ("\\.vcv\\'" . "/usr/local/bin/Rack %s")))
 
   (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
   (autoload 'LilyPond-mode "lilypond-mode" "LilyPond Editing Mode" t)
@@ -195,7 +196,7 @@ FIXME does nothing if at the end of a colapsed heading"
         (kill-buffer "*unison*"))
     (org-save-all-org-buffers)
     (unison)
-    (let ((user-input (read-string "Input for unison:")))
+    (let ((user-input (read-string "Input for unison: " "y" "y" "y")))
       (if (get-buffer-process "*unison*")
           (process-send-string "*unison*" user-input))))
 

@@ -119,7 +119,7 @@
 (global-set-key (kbd "C-q t o")   'tab-overtone)
 (global-set-key (kbd "C-q t p")   'tab-profile)
 
-(global-set-key (kbd "C-c b")     'iw-open-bookshelf)
+;;(global-set-key (kbd "C-c b")   'iw-open-bookshelf)
 (global-set-key (kbd "C-c C-l")   'iw-open-library)
 (global-set-key (kbd "C-c i")     'emms-browser)
 (global-set-key (kbd "C-c C-i")   'emms)

@@ -49,7 +49,7 @@
   (require 'iw-transcendence))
 (require 'iw-client-start)
 
-;;  Add config for specific purposes.
+;; Add config for specific purposes.
 (require 'iw-arduino)
 (require 'iw-cleanup)
 (require 'iw-clojure)
@@ -116,14 +116,19 @@
 ;; Add the extra bindings last so they don't get overwriiten.
 (require 'iw-global-bindings)
 
-;; TODO move these to somewhere else
-(defun slurp (f)
-  (with-temp-buffer
-    (insert-file-contents f)
-    (buffer-substring-no-properties
-     (point-min)
-     (point-max))))
+;; FIXME Can't do this as the window splits are attempted before the frame is
+;; resized so they fail.
+;;(setq initial-buffer-choice (lambda () (tab-workspace-home)))
 
-(message (concat "\n\n" (slurp (concat user-emacs-directory "banners/banner.txt")) "\n\n"))
+;; TODO move these to somewhere else
+;; FIXME erm, these don't seem to do anything
+;; (defun slurp (f)
+;;   (with-temp-buffer
+;;     (insert-file-contents f)
+;;     (buffer-substring-no-properties
+;;      (point-min)
+;;      (point-max))))
+
+;; (message (concat "\n\n" (slurp (concat user-emacs-directory "banners/banner.txt")) "\n\n"))
 
 ;;; init.el ends here

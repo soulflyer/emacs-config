@@ -73,7 +73,17 @@
     (dired "~/Documents/org-mode/lyrics"))
   
   :bind
-  (("C-x C-d" . dired)
+  ;; TODO turn this lot into a keymap so I don't have to add entries twice
+  (("C-x C-d"   . nil)
+   ("C-x C-d d" . dired-downloads)
+   ("C-x C-d c" . dired-collection)
+   ("C-x C-d h" . dired-home)
+   ("C-x C-d m" . dired-movies)
+   ("C-x C-d p" . dired-pictures)
+   ("C-x C-d t" . dired-tmp)
+   ("C-x C-d b" . dired-bookshelf)
+   ("C-x C-d C" . dired-code)
+   ("C-x C-d l" . dired-lyrics)
    :map dired-mode-map
    ("f"       . dired-make-file)
    ("/"       . dired-up-directory)
