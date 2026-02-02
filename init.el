@@ -58,6 +58,7 @@
 (require 'iw-display-buffer)
 (require 'iw-external)
 (require 'iw-folding)
+(require 'iw-font)
 (require 'iw-generic-mode)
 (require 'iw-git)
 (require 'iw-apl)
