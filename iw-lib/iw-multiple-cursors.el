@@ -8,6 +8,7 @@
 
 ;;; Code:
 
+(keymap-global-unset "C-c m")
 (use-package multiple-cursors
   :ensure t
   :bind (("C-c m n" . mc/mark-next-like-this)
