@@ -76,15 +76,15 @@
 (use-package align-cljlet
   :ensure t)
 
-;; (use-package clj-refactor
-;;   :ensure t
-;;   :init
-;;   (add-hook 'clojure-mode-hook (lambda ()
-;;                                  (clj-refactor-mode 1)
-;;                                  (cljr-add-keybindings-with-prefix "C-c C-r")))
-;;   :config
-;;   ;; There are 2 things trying to add ns defns. No idea what the other is so turn this one off
-;;   (setq cljr-add-ns-to-blank-clj-files nil))
+(use-package clj-refactor
+  :ensure t
+  :init
+  (add-hook 'clojure-mode-hook (lambda ()
+                                 (clj-refactor-mode 1)
+                                 (cljr-add-keybindings-with-prefix "C-c C-r")))
+  :config
+  ;; There are 2 things trying to add ns defns. No idea what the other is so turn this one off
+  (setq cljr-add-ns-to-blank-clj-files nil))
 
 (use-package inf-clojure
   :ensure t)
@@ -98,7 +98,7 @@
   (setq neil-prompt-for-version-p nil
         neil-inject-dep-to-project-p t))
 
-;;(require 're-jump)
+(require 're-jump)
 ;;(global-set-key (kbd "M->") 're-frame-jump-to-reg)
 
 (use-package cljstyle-format

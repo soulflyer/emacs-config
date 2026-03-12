@@ -91,7 +91,12 @@ FIXME does nothing if at the end of a colapsed heading"
                 org-log-done                'time
                 org-default-notes-file      "~/Documents/org-mode/notes/new-notes"
                 org-taxonomy-file           "~/Documents/org-mode/plans/taxonomy.org"
-                org-capture-templates       '(("b"
+                org-capture-templates       '(("B"
+                                               "Bike"
+                                               plain
+                                               (file "~/Documents/org-mode/agenda/bike.org")
+                                               "** TODO [#D] %?")
+                                              ("b"
                                                "Build"
                                                plain
                                                (file "~/Documents/org-mode/notes/build.org")
@@ -207,6 +212,9 @@ FIXME does nothing if at the end of a colapsed heading"
     (nconc img (list :background "#f8f8f8")))
   (advice-add 'org--create-inline-image
               :filter-return #'org--create-inline-image-advice)
+  ;; This is the command needed to ensure tagging a habit as done doesn't just close it.
+  ;; Trying it here to see if this means I don't need to do it by hand.
+  (load-library "org-element.el")
 
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
@@ -701,13 +709,9 @@ is selected, only the bare key is returned."
 (require 'org-yt)
 
 (use-package org-modern
-  :ensure t)
-
-(use-package unison
   :ensure t
   :config
-  (setq unison-args '("org-mode")
-        org-modern-fold-stars '(("⯈" . "🟩")
+  (setq org-modern-fold-stars '(("⯈" . "🟩")
                                 ("⯈" . "⯀")
                                 ("▶" . "■")
                                 ("▷" . "□")
@@ -716,17 +720,10 @@ is selected, only the bare key is returned."
         org-modern-priority nil
         org-modern-todo nil))
 
-;; (defun iw-save-org-files ()
-;;   (interactive)
-;;   (org-save-all-org-buffers)
-;;   (unison)
-;;   (let ((user-input (read-string "Input for unison:")))
-;;     (if (get-buffer-process "*unison*")
-;;         (process-send-string "*unison*" user-input)
-;;       (kill-buffer "*unison*"))))
-
-;; (keymap-unset org-agenda-mode-map "S")
-;; (keymap-set org-agenda-mode-map "S" 'iw-save-org-files)
+(use-package unison
+  :ensure t
+  :config
+  (setq unison-args '("org-mode")))
 
 (provide 'iw-org)
 ;;; iw-org.el ends here

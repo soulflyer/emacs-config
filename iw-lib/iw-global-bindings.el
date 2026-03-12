@@ -58,6 +58,9 @@
 (global-set-key (kbd "C-x 8 b")     "🟦")
 (global-set-key (kbd "C-x 8 B")     "🟫")
 (global-set-key (kbd "C-x 8 k")     "⬛")
+(global-set-key (kbd "C-x 8 f")     "♭")
+(global-set-key (kbd "C-x 8 s")     "♯")
+(global-set-key (kbd "C-x 8 n")     "♮")
 
 (global-set-key (kbd "C-h x")       'howdoyou-query)
 (global-set-key (kbd "C-h SPC")     'hyperspace)

@@ -5,7 +5,8 @@
 ;;
 ;;; Code:
 
-(setq org-attach-screenshot-command-line "gnome-screenshot -a --file %f")
+;; (setq org-attach-screenshot-command-line "gnome-screenshot -a --file %f")
+(setq org-attach-screenshot-command-line "spectacle -o %f")
 
 (provide 'iw-transcendence)
 ;;; iw-transcendence.el ends here
