@@ -58,6 +58,7 @@
       (message "No cover found"))))
 
 (defun import--music (path)
+  "Create covers and add music to mpd and emms"
   (message "Updating mpd db")
   (shell-command "mpc -w update")
   (message "creating covers in %s" path)
@@ -66,6 +67,7 @@
   (emms-add-directory path))
 
 (defun import-music (&optional path)
+  "Create covers and add music to mpd and emms"
   (interactive)
   (let* ((directory (if path
                         path

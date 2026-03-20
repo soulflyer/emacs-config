@@ -42,8 +42,12 @@
   (bind-keys :prefix "C-c l"
              :prefix-map my-lsp-ui-map
              ("d" . lsp-describe-thing-at-point)
-             ("t" . lsp-treemacs-symbols))
-  :commands lsp-ui-mode)
+             ("t" . lsp-treemacs-symbols)
+             ("e" . counsel-flycheck)
+             ("E" . lsp-ui-flycheck-list))
+  :commands lsp-ui-mode
+  :bind (:map lsp-mode-map
+              ("s-r" . lsp-find-references)))
 
 (use-package lsp-ivy
   :ensure t

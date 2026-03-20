@@ -25,6 +25,11 @@
   (ac-config-default)
   (global-auto-complete-mode t))
 
+;; Added to workaround this issue: https://github.com/auto-complete/auto-complete/issues/533
+(add-hook 'auto-complete-mode-hook
+          (lambda ()
+            (setq ac-sources (remove 'ac-source-abbrev ac-sources))))
+
 ;; (use-package company-tabnine :ensure t)
 ;; (add-to-list 'company-backends #'company-tabnine)
 
