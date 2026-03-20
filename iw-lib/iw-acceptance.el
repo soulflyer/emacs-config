@@ -29,5 +29,7 @@
       org-ditaa-jar-path "/opt/homebrew/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar"
       org-attach-screenshot-command-line "screencapture -i %f")
 
+(set-fontset-font t 'symbol          (font-spec :family "Menlo"))
+
 (provide 'iw-acceptance)
 ;;; iw-acceptance.el ends here
