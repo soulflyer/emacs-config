@@ -6,6 +6,7 @@
  '(arduino-executable "arduino")
  '(avy-timeout-seconds 1.0)
  '(cider-injected-nrepl-version "1.1.2")
+ '(column-number-mode t)
  '(connection-local-criteria-alist
    '(((:application tramp :machine "acceptance")
       tramp-connection-local-darwin-ps-profile)
@@ -120,6 +121,7 @@
       (shell-file-name . "/bin/sh") (shell-command-switch . "-c"))
      (tramp-connection-local-default-system-profile
       (path-separator . ":") (null-device . "/dev/null"))))
+ '(cursor-type 'bar)
  '(custom-safe-themes
    '("21c03755bb86db9ae6bd495f993512a79fb29cd897e10cd926b0a9a9d877e30c"
      "8aea5fd8c8e82e6bc5905c94b38fbae723bd085ae85bcdedd431ac6e17a124d0"
@@ -168,8 +170,7 @@
  '(deft-strip-summary-regexp
    "\\([\12\11]\\|^#\\+[[:upper:]_]+:.*$\\|:[[:upper:]_]+.*$\\|^#[ ]*[Tags|TAGS].*$\\|^|-.*$\\|^[*]+ \\)")
  '(eval-expression-print-length nil)
- '(flycheck-disabled-checkers '(emacs-lisp-checkdoc))
- '(global-org-modern-mode t)
+ '(flycheck-disabled-checkers '(emacs-lisp-checkdoc org-lint))
  '(history-length 10000)
  '(ispell-query-replace-choices t)
  '(list-command-history-max nil)
@@ -194,11 +195,12 @@
                      arduino-cli-mode arduino-mode
                      ascii-art-to-unicode auto-compile auto-complete
                      back-button banner-comment beacon bln-mode
-                     browse-kill-ring burly cljstyle-format consult
-                     counsel-dash counsel-projectile counsel-web
-                     dashboard delight dired-efap dired-ranger direnv
-                     dynamic-spaces elpy emms eshell-git-prompt
-                     expand-region face-explorer flycheck-clojure
+                     browse-kill-ring burly clj-refactor
+                     cljstyle-format consult counsel-dash
+                     counsel-projectile counsel-web dashboard delight
+                     dired-efap dired-ranger direnv dynamic-spaces
+                     elpy emms eshell-git-prompt expand-region
+                     face-explorer flycheck-clojure
                      flyspell-correct-avy-menu free-keys git-gutter
                      git-modes git-timemachine gnu-apl-mode
                      google-translate goto-char-preview
@@ -208,10 +210,11 @@
                      inf-clojure iregister js-comint jump-char lively
                      lorem-ipsum lsp-ivy lsp-origami lsp-treemacs
                      lsp-ui lyrics magit make-color marginalia
-                     multi-vterm multiple-cursors neil nvm ob-async
-                     openwith orderless org-appear
+                     multi-vterm multiple-cursors neil nov nvm
+                     ob-async openwith orderless org-appear
                      org-attach-screenshot org-contrib org-download
-                     org-journal org-modern org-superstar palimpsest
+                     org-journal org-modern org-noter-pdftools
+                     org-pdftools org-superstar palimpsest pdf-tools
                      persistent-scratch prog-fill rainbow-delimiters
                      rainbow-mode register-list ripgrep shackle
                      smartparens string-inflection sx tide ts-comint
@@ -241,6 +244,8 @@
       "shadow.cljs.devtools.server.nrepl/middleware")
      (sql-postgres-login-params) (sql-product . postgres)))
  '(savehist-file "~/.emacs-history")
+ '(tab-bar-mode t)
+ '(tool-bar-mode nil)
  '(vertico-flat-annotate t)
  '(warning-minimum-level :error)
  '(warning-suppress-types '((emacs) (org)))
@@ -253,6 +258,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "PfEd" :slant normal :weight regular :height 159 :width normal))))
  '(emms-browser-album-face ((t (:foreground "#4c83ff" :height 1.1))))
  '(emms-browser-artist-face ((t (:foreground "#33dd33"))))
  '(emms-browser-composer-face ((t (:foreground "#aaaaff"))))

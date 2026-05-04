@@ -13,12 +13,19 @@
   (vertico-resize nil) ;; Grow and shrink the Vertico minibuffer
   (vertico-cycle t) ;; Enable cycling for `vertico-next/previous'
   :init
+  (defun minibuf-hack ()
+    "Allow delete to exit the minibuffer when there are no chars left"
+    (interactive)
+    (if (length> (minibuffer-contents) 0)
+        (backward-delete-char 1)
+      (minibuffer-keyboard-quit)))
   (vertico-mode)
   :bind (:map vertico-map
-              ("DEL" . vertico-directory-delete-word)
-              ("M-DEL" . backward-delete-char)
+              ("M-DEL" . vertico-directory-delete-word)
+              ("DEL" . minibuf-hack)
               ("C-<backspace>" . backward-delete-char)
               ("C-q" . minibuffer-keyboard-quit)))
+
 
 
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
