@@ -25,11 +25,20 @@
 
 ;;; Code:
 
+(message "Running acceptance.el")
 (setq lsp-clojure-server-command '("/opt/homebrew/bin/clojure-lsp")
       org-ditaa-jar-path "/opt/homebrew/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar"
       org-attach-screenshot-command-line "screencapture -i %f")
 
-(set-fontset-font t 'symbol          (font-spec :family "Menlo"))
+(defun iw-set-mac-fonts ()
+  (message "hello from iw-set-mac-fonts")
+  (set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji"))
+  (set-fontset-font t 'symbol          (font-spec :family "Menlo")))
+
+(add-hook 'before-make-frame-hook 'iw-set-mac-fonts)
+
+(add-to-list 'face-font-rescale-alist
+             (cons (font-spec :family "Apple Color Emoji") 0.8575) t)
 
 (provide 'iw-acceptance)
 ;;; iw-acceptance.el ends here
