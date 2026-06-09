@@ -7,17 +7,27 @@
 
 ;; This sets the font size, height is given in 1/10 pts
 (set-face-attribute 'default nil :height 140)
-(if (member "MonacoB2" (font-family-list))
-    (set-frame-font "MonacoB2" t t)
-  (set-frame-font "DejaVu Sans Mono" t t))
+
+;; (if (member "MonacoB2" (font-family-list))
+;;     (set-frame-font "MonacoB2" t t)
+;;   (set-frame-font "DejaVu Sans Mono" t t))
+
+;; Messes up ♭ and ♮
 ;;(set-frame-font "Liberation Mono" t t)
+
+;; Messes up vertical table borders
 ;;(set-frame-font "Noto Sans Mono" t t)
-;;(set-frame-font "Dejavu Sans Mono" t t)
+
+;; Messes up VN chars with 2 "accents"
+(set-frame-font "Dejavu Sans Mono" t t)
+
+;; Messes up pretty tables
+;;(set-frame-font "MonacoB2" t t)
+
 (when (member "Noto Color Emoji" (font-family-list))
   (set-fontset-font t 'emoji (font-spec :family "Noto Color Emoji") nil 'prepend)
   (add-to-list 'face-font-rescale-alist (cons (font-spec :family "Noto Color Emoji") 0.99) t)
   )
-
 
 ;; Set some fonts so the hello page displays correctly
 (set-fontset-font t 'adlam           (font-spec :family "Noto Sans Adlam"))
