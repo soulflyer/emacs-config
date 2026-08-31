@@ -24,7 +24,7 @@
                 org-habit-show-all-today t
                 org-habit-preceding-days 15
                 org-habit-following-days 15
-                org-image-actual-width (list 400)
+                org-image-actual-width (list 800)
                 org-startup-indented t
                 org-startup-with-inline-images t)
   ;; (add-to-list 'display-buffer-alist
@@ -166,6 +166,7 @@ FIXME does nothing if at the end of a colapsed heading"
                                                (directory . emacs)
                                                ("\\.mm\\'" . default)
                                                ("\\.x?html?\\'" . default)
+                                               ("\\.pdf::\\([0-9]+\\)\\'" . "evince -p %1 %s")
                                                ("\\.pdf\\'" . "evince %s")
                                                ("\\.vcv\\'" . "/usr/local/bin/Rack %s")))
 
@@ -657,7 +658,9 @@ is selected, only the bare key is returned."
 (defun iw-dirfunction ()
   "Whatever."
   (cl-assert (buffer-file-name))
-  (concat (file-name-sans-extension (buffer-file-name)) "-images"))
+  (concat
+   (subst-char-in-string ?\  ?- (file-name-sans-extension (buffer-file-name)))
+   "-images"))
 
 (use-package org-attach-screenshot
   :ensure t
