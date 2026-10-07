@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: patch
+# key: patch
+# --
+[[file:VCV-Patches/$1.vcv][patch]

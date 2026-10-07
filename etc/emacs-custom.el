@@ -206,22 +206,22 @@
                      google-translate goto-char-preview
                      goto-last-change haskell-mode helpful
                      highlight-context-line highlight-indent-guides
-                     hl-todo hyperspace ibuffer-git impatient-showdown
-                     inf-clojure iregister js-comint jump-char lively
-                     lorem-ipsum lsp-ivy lsp-origami lsp-treemacs
-                     lsp-ui lyrics magit make-color marginalia
-                     multi-vterm multiple-cursors neil nov nvm
-                     ob-async openwith orderless org-appear
-                     org-attach-screenshot org-contrib org-download
-                     org-journal org-modern org-noter-pdftools
-                     org-pdftools org-superstar palimpsest pdf-tools
-                     persistent-scratch prog-fill rainbow-delimiters
-                     rainbow-mode register-list ripgrep shackle
-                     smartparens string-inflection sx tide ts-comint
-                     typescript-mode underline-with-char undo-tree
-                     unidecode unison verb vertico visible-mark
-                     visual-ascii-mode visual-regexp web-mode xwwp
-                     zetteldeft zygospore))
+                     hl-todo howdoyou hyperspace ibuffer-git
+                     impatient-showdown inf-clojure iregister
+                     js-comint jump-char lively lorem-ipsum lsp-ivy
+                     lsp-origami lsp-treemacs lsp-ui lyrics magit
+                     make-color marginalia multi-vterm
+                     multiple-cursors neil nov nvm ob-async openwith
+                     orderless org-appear org-attach-screenshot
+                     org-contrib org-download org-journal org-modern
+                     org-noter-pdftools org-pdftools org-superstar
+                     palimpsest pdf-tools persistent-scratch prog-fill
+                     rainbow-delimiters rainbow-mode register-list
+                     ripgrep shackle smartparens string-inflection sx
+                     tide ts-comint typescript-mode
+                     underline-with-char undo-tree unidecode unison
+                     verb vertico visible-mark visual-ascii-mode
+                     visual-regexp web-mode xwwp zetteldeft zygospore))
  '(projectile-globally-unignored-files nil)
  '(projectile-indexing-method 'alien)
  '(safe-local-variable-values

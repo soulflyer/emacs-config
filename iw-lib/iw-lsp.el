@@ -33,7 +33,7 @@
   :init
   (setq lsp-ui-doc-alignment 'frame
         lsp-ui-doc-delay 0.5
-        lsp-ui-doc-enable t
+        lsp-ui-doc-enable nil
         lsp-ui-doc-header t
         lsp-ui-doc-max-width 100
         lsp-ui-doc-show-with-cursor nil
@@ -44,7 +44,8 @@
              ("d" . lsp-describe-thing-at-point)
              ("t" . lsp-treemacs-symbols)
              ("e" . counsel-flycheck)
-             ("E" . lsp-ui-flycheck-list))
+             ("E" . lsp-ui-flycheck-list)
+             ("l" . lsp-find-references))
   :commands lsp-ui-mode
   :bind (:map lsp-mode-map
               ("s-r" . lsp-find-references)))

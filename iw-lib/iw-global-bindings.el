@@ -11,7 +11,7 @@
 (global-set-key (kbd "M-|")         'switch-to-next-buffer)
 (global-set-key (kbd "C-\\")        'align-regexp)
 (global-set-key (kbd "M-;")         'live-delete-whitespace-except-one)
-(global-set-key (kbd "M-/")         'comment-dwim)
+(global-set-key (kbd "M-/")         'comment-or-uncomment-region)
 ;;(global-set-key (kbd "C-;")       'iw-eol-and-delete-whitespace-except-one)
 (global-set-key (kbd "C-;")         'live-delete-whitespace-except-one)
 
@@ -66,6 +66,7 @@
 (global-set-key (kbd "C-x 8 5 / 8") "⅝")
 (global-set-key (kbd "C-x 8 7 / 8") "⅞")
 
+;; FIXME howdoyou doesn't find any answers
 (global-set-key (kbd "C-h x")       'howdoyou-query)
 (global-set-key (kbd "C-h SPC")     'hyperspace)
 
