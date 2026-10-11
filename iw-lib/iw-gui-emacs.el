@@ -8,6 +8,8 @@
 
 ;; Removes the window decoration bar including the red/yellow/green dots and the drag area
 ;; replace with this: (set-frame-parameter nil 'undecorated nil)
+;; re-add with this:  (set-frame-parameter nil 'undecorated t)
+;; hit command shift z to re-maximize window on mac
 (add-to-list 'default-frame-alist '(undecorated . t))
 
 (defun decorate ()

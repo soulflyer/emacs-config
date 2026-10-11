@@ -167,7 +167,7 @@ FIXME does nothing if at the end of a colapsed heading"
                                                ("\\.mm\\'" . default)
                                                ("\\.x?html?\\'" . default)
                                                ("\\.pdf\\'" . "evince %s")
-                                               ("\\.vcv\\'" . "/usr/local/bin/Rack %s")))
+                                               ("\\.vcv\\'" . "~/bin/vcv-rack %s")))
 
   (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
   (autoload 'LilyPond-mode "lilypond-mode" "LilyPond Editing Mode" t)
