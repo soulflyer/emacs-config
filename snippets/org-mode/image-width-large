@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# key: image-width-large
+# name: image-width-large
+# --
+#+ATTR_ORG: :width 1200

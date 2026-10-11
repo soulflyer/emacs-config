@@ -71,6 +71,17 @@
     "Open dired in ~/Documents/org-mode/lyrics"
     (interactive)
     (dired "~/Documents/org-mode/lyrics"))
+
+  (defun dired-zetteldeft ()
+    "Open dired in ~/Documents/org-mode/NotationalVelocity"
+    (interactive)
+    (same-window-prefix)
+    (dired "~/Documents/org-mode/NotationalVelocity"))
+
+  (defun dired-up-directory-same-window ()
+    (interactive)
+    (same-window-prefix)
+    (dired-up-directory))
   
   :bind
   ;; TODO turn this lot into a keymap so I don't have to add entries twice
@@ -85,10 +96,11 @@
    ("C-x C-d b"   . dired-bookshelf)
    ("C-x C-d C"   . dired-code)
    ("C-x C-d l"   . dired-lyrics)
+   ("C-x C-d z"   . dired-zetteldeft)
    :map dired-mode-map
    ("f"           . dired-make-file)
-   ("/"           . dired-up-directory)
-   ("\\"          . dired-up-directory)
+   ("/"           . dired-up-directory-same-window)
+   ("\\"          . dired-up-directory-same-window)
    ;;("C-s"       . swiper)
    ("1"           . dired-do-shell-command)
    ("E"           . emms-add-dired)
@@ -101,7 +113,8 @@
    ("C-d t"       . dired-tmp)
    ("C-d b"       . dired-bookshelf)
    ("C-d C"       . dired-code)
-   ("C-d l"       . dired-lyrics)))
+   ("C-d l"       . dired-lyrics)
+   ("C-d z"       . dired-zeteldeft)))
 
 (use-package openwith
   :ensure t)
