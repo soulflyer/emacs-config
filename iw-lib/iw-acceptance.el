@@ -28,7 +28,14 @@
 (message "Running acceptance.el")
 (setq lsp-clojure-server-command '("/opt/homebrew/bin/clojure-lsp")
       org-ditaa-jar-path "/opt/homebrew/Cellar/ditaa/0.11.0_1/libexec/ditaa-0.11.0-standalone.jar"
-      org-attach-screenshot-command-line "screencapture -i %f")
+      org-attach-screenshot-command-line "screencapture -i %f"
+      org-file-apps                '((auto-mode . emacs)
+                                     (directory . emacs)
+                                     ("\\.mm\\'" . default)
+                                     ("\\.x?html?\\'" . default)
+                                     ("\\.pdf::\\([0-9]+\\)\\'" . "evince -p %1 %s")
+                                     ("\\.pdf\\'" . default)
+                                     ("\\.vcv\\'" . "~/bin/vcv-rack %s")))
 
 (defun iw-set-mac-fonts ()
   (message "hello from iw-set-mac-fonts")

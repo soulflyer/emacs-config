@@ -165,14 +165,7 @@ FIXME does nothing if at the end of a colapsed heading"
                                                (wl . wl))
                 org-src-window-setup         'plain
                 org-hide-emphasis-markers    t
-                org-hide-leading-stars       t
-                org-file-apps                '((auto-mode . emacs)
-                                               (directory . emacs)
-                                               ("\\.mm\\'" . default)
-                                               ("\\.x?html?\\'" . default)
-                                               ("\\.pdf::\\([0-9]+\\)\\'" . "evince -p %1 %s")
-                                               ("\\.pdf\\'" . "evince %s")
-                                               ("\\.vcv\\'" . "/usr/local/bin/Rack %s")))
+                org-hide-leading-stars       t)
 
   (add-hook 'org-babel-after-execute-hook 'org-redisplay-inline-images)
   (autoload 'LilyPond-mode "lilypond-mode" "LilyPond Editing Mode" t)
