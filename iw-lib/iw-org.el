@@ -20,13 +20,17 @@
                                            (?I :foreground "#575757")))
                 org-use-speed-commands t
                 org-lowest-priority 73
-                org-habit-graph-column 40
+                org-habit-graph-column 42
                 org-habit-show-all-today t
                 org-habit-preceding-days 15
                 org-habit-following-days 15
                 org-image-actual-width (list 800)
                 org-startup-indented t
-                org-startup-with-inline-images t)
+                org-startup-with-inline-images t
+                org-agenda-prefix-format '((agenda . " %i %-13:c%?-12t% s")
+                                           (todo . " %i %-13:c")
+                                           (tags . " %i %-13:c")
+                                           (search . " %i %-13:c")))
   ;; (add-to-list 'display-buffer-alist
   ;;              '("*Agenda Commands*" display-buffer-in-direction
   ;;                (side . bottom)
@@ -631,8 +635,7 @@ is selected, only the bare key is returned."
                      ;; selection prefix.
                      ((assoc current specials) (throw 'exit current))
                      (t (error "No entry available")))))))
-          (when buffer (kill-buffer buffer))))))
-  )
+          (when buffer (kill-buffer buffer)))))))
 
 (add-hook 'org-agenda-mode-hook
           (lambda ()
