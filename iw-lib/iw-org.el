@@ -212,7 +212,7 @@ FIXME does nothing if at the end of a colapsed heading"
               :filter-return #'org--create-inline-image-advice)
   ;; This is the command needed to ensure tagging a habit as done doesn't just close it.
   ;; Trying it here to see if this means I don't need to do it by hand. TODO try a hook.
-  (load-library "org-element.el")
+  (add-hook 'org-agenda-mode-hook (lambda () (load-library "org-element.el")))
 
   :bind (("C-c o" . org-agenda)
          :map org-mode-map
