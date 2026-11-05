@@ -15,7 +15,7 @@
                                            ("\\.x?html?\\'" . default)
                                            ("\\.pdf::\\([0-9]+\\)\\'" . "evince -p %1 %s")
                                            ("\\.pdf\\'" . "evince %s")
-                                           ("\\.vcv\\'" . "~/bin/vcv-rack %s")))
+                                           ("\\.vcv\\'" . "~/Applications/vcv-rack.sh %s")))
 
 (provide 'iw-transcendence)
 ;;; iw-transcendence.el ends here
