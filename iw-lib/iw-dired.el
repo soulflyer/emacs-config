@@ -72,6 +72,11 @@
     (interactive)
     (dired "~/Documents/org-mode/lyrics"))
 
+  (defun dired-songsheets ()
+    "Open dired in ~/Documents/org-mode/crib-sheets"
+    (interactive)
+    (dired "~/Documents/org-mode/crib-sheets"))
+
   (defun dired-zetteldeft ()
     "Open dired in ~/Documents/org-mode/NotationalVelocity"
     (interactive)
@@ -96,6 +101,7 @@
    ("C-x C-d b"   . dired-bookshelf)
    ("C-x C-d C"   . dired-code)
    ("C-x C-d l"   . dired-lyrics)
+   ("C-x C-d s"   . dired-songsheets)
    ("C-x C-d z"   . dired-zetteldeft)
    :map dired-mode-map
    ("f"           . dired-make-file)
@@ -114,7 +120,8 @@
    ("C-d b"       . dired-bookshelf)
    ("C-d C"       . dired-code)
    ("C-d l"       . dired-lyrics)
-   ("C-d z"       . dired-zeteldeft)))
+   ("C-d s"       . dired-songsheets)
+   ("C-d z"       . dired-zetteldeft)))
 
 (use-package openwith
   :ensure t)
