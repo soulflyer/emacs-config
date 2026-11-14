@@ -74,5 +74,7 @@
                       default-directory)))
     (import--music directory)))
 
+(use-package fretboard :ensure t)
+
 (provide 'iw-music)
 ;;; iw-music.el ends here

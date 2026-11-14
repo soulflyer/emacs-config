@@ -201,8 +201,8 @@
                      dired-efap dired-ranger direnv dynamic-spaces
                      elpy emms eshell-git-prompt expand-region
                      face-explorer flycheck-clojure
-                     flyspell-correct-avy-menu free-keys git-gutter
-                     git-modes git-timemachine gnu-apl-mode
+                     flyspell-correct-avy-menu free-keys fretboard
+                     git-gutter git-modes git-timemachine gnu-apl-mode
                      google-translate goto-char-preview
                      goto-last-change haskell-mode helpful
                      highlight-context-line highlight-indent-guides
