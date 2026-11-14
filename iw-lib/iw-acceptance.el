@@ -39,7 +39,7 @@
 
 (defun iw-set-mac-fonts ()
   (message "hello from iw-set-mac-fonts")
-  (set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji"))
+  ;;(set-fontset-font t 'emoji (font-spec :family "Apple Color Emoji"))
   (set-fontset-font t 'symbol          (font-spec :family "Menlo")))
 
 (add-hook 'before-make-frame-hook 'iw-set-mac-fonts)
