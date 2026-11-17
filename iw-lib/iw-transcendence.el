@@ -15,7 +15,9 @@
                                            ("\\.x?html?\\'" . default)
                                            ("\\.pdf::\\([0-9]+\\)\\'" . "evince -p %1 %s")
                                            ("\\.pdf\\'" . "evince %s")
-                                           ("\\.vcv\\'" . "~/Applications/vcv-rack.sh %s")))
+                                           ("\\.vcv\\'" . "~/Applications/vcv-rack.sh %s"))
+      org-babel-lilypond-commands '("/usr/bin/lilypond" "open" "open")
+      org-babel-lilypond-ly-command "/usr/bin/lilypond")
 
 (provide 'iw-transcendence)
 ;;; iw-transcendence.el ends here

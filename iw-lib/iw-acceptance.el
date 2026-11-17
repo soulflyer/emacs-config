@@ -35,7 +35,9 @@
                                      ("\\.x?html?\\'" . default)
                                      ("\\.pdf::\\([0-9]+\\)\\'" . "evince -p %1 %s")
                                      ("\\.pdf\\'" . default)
-                                     ("\\.vcv\\'" . "~/bin/vcv-rack %s")))
+                                     ("\\.vcv\\'" . "~/bin/vcv-rack %s"))
+      org-babel-lilypond-commands '("/opt/homebrew/bin/lilypond" "open" "open")
+      org-babel-lilypond-ly-command "/opt/homebrew/bin/lilypond")
 
 (defun iw-set-mac-fonts ()
   (message "hello from iw-set-mac-fonts")

@@ -181,7 +181,6 @@
  '(org-agenda-compact-blocks t)
  '(org-agenda-show-all-dates nil)
  '(org-attach-use-inheritance t)
- '(org-babel-lilypond-commands '("/usr/bin/lilypond" "open" "open"))
  '(org-download-timestamp "")
  '(org-modern-block-name t)
  '(org-modern-label-border nil)
